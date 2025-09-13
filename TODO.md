@@ -14,7 +14,7 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 
 ## Backend (FastAPI) — `backend/`
 
-- [ ] Create `backend/main.py` to bootstrap FastAPI app on port 8001.
+- [x] Create `backend/main.py` to bootstrap FastAPI app on port 8001.
 - [ ] Add CORS for `http://127.0.0.1:5173` and later production domains.
 - [ ] Endpoints:
   - [ ] `GET /api/env`: Return filtered environment variables (API-related and task configs).
