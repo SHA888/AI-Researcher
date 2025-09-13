@@ -17,10 +17,290 @@ import base64
 
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
-# If you want to use proxy, please uncomment the following lines
-os.environ['https_proxy'] = 'http://100.68.161.73:3128'
-os.environ['http_proxy'] = 'http://100.68.161.73:3128'
-os.environ['no_proxy'] = 'localhost,127.0.0.1,0.0.0.0'
+"""
+Optional proxy configuration
+Configuration is controlled via environment variables (e.g., from .env):
+  - USE_PROXY=true|false (default: false)
+  - HTTP_PROXY, HTTPS_PROXY, NO_PROXY
+
+We do NOT hardcode any proxy by default. If USE_PROXY is set to a truthy value,
+we apply the given proxy variables to the current process environment.
+"""
+from dotenv import find_dotenv
+load_dotenv(find_dotenv(), override=True)
+
+def _strtobool(v: str | None) -> bool:
+    if v is None:
+        return False
+    return str(v).strip().lower() in {"1", "true", "t", "yes", "y", "on"}
+
+if _strtobool(os.getenv("USE_PROXY", "false")):
+    http_proxy = os.getenv("HTTP_PROXY") or os.getenv("http_proxy")
+    https_proxy = os.getenv("HTTPS_PROXY") or os.getenv("https_proxy")
+    no_proxy = os.getenv("NO_PROXY") or os.getenv("no_proxy")
+
+    if https_proxy:
+        os.environ["HTTPS_PROXY"] = https_proxy
+        os.environ["https_proxy"] = https_proxy
+    if http_proxy:
+        os.environ["HTTP_PROXY"] = http_proxy
+        os.environ["http_proxy"] = http_proxy
+    if no_proxy:
+        os.environ["NO_PROXY"] = no_proxy
+        os.environ["no_proxy"] = no_proxy
+
+# =====================
+# High-contrast CSS for dark themes
+# Controlled by env: HIGH_CONTRAST (default: true)
+# =====================
+_HIGH_CONTRAST = _strtobool(os.getenv("HIGH_CONTRAST", "true"))
+
+_BASE_CONTRAST_CSS = """
+/* Improve visibility in dark themes and low-contrast environments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --panel-background: #121212;
+    --background-fill-primary: #0e0f10;
+    --background-fill-secondary: #1a1c1e;
+    --body-text-color: #e8e8e8;
+    --link-text-color: #ffd166; /* amber-ish */
+    --border-color-primary: #3a3f44;
+    --block-title-text-color: #ffffff;
+    --shadow-spread: 0px;
+  }
+  .gradio-container,
+  body,
+  .block,
+  .panel,
+  .tabs {
+    background-color: var(--panel-background) !important;
+    color: var(--body-text-color) !important;
+  }
+  table, th, td {
+    background-color: #141619 !important;
+    color: #f0f0f0 !important;
+    border-color: var(--border-color-primary) !important;
+  }
+  thead th {
+    background-color: #1f2428 !important;
+    color: #ffcc66 !important;
+  }
+  .btn, button, .gr-button, .gradio-button {
+    background-color: #ffb703 !important;
+    color: #101010 !important;
+    border: 1px solid #ffb703 !important;
+  }
+  .btn:hover, button:hover, .gr-button:hover, .gradio-button:hover {
+    background-color: #ffd166 !important;
+    border-color: #ffd166 !important;
+    color: #000 !important;
+  }
+  input, textarea, select, .gr-textbox, .gr-text-area, .gr-select, .gr-dropdown {
+    background-color: #0f1113 !important;
+    color: #e8e8e8 !important;
+    border: 1px solid #3a3f44 !important;
+  }
+  .status-indicator.status-running { background-color: #52d273 !important; }
+  .status-indicator.status-error { background-color: #ff6b6b !important; }
+}
+
+/* Ensure tables are readable in any theme */
+table, th, td {
+  border-color: #3a3f44 !important;
+}
+"""
+
+CUSTOM_CSS = _BASE_CONTRAST_CSS if _HIGH_CONTRAST else ""
+
+# Runtime theme generator using [data-theme] attribute on <html> (documentElement)
+def generate_theme_css(theme: str = "System", high_contrast: bool = True) -> str:
+    """
+    Build CSS that defines palettes for html[data-theme='light'|'dark'] and applies
+    by toggling the attribute. Uses str.format with doubled braces for literal CSS braces.
+    """
+    # Palettes
+    dark_bg = "#121212"
+    dark_bg2 = "#1a1c1e"
+    dark_text = "#e8e8e8"
+    dark_border = "#3a3f44"
+    light_bg = "#ffffff"
+    light_bg2 = "#f5f6f8"
+    light_text = "#1a1c1e"
+    light_border = "#d0d7de"
+    primary = "#ffb703"
+    primary_hover = "#ffd166"
+
+    base_css = """
+    /* Light theme */
+    html[data-theme='light'] {{
+      color-scheme: light;
+      --panel-background: {light_bg};
+      --background-fill-primary: {light_bg};
+      --background-fill-secondary: {light_bg2};
+      --body-text-color: {light_text};
+      --link-text-color: {primary};
+      --border-color-primary: {light_border};
+      --block-title-text-color: {light_text};
+    }}
+    html[data-theme='light'] body, html[data-theme='light'] .gradio-container, html[data-theme='light'] * {{
+      background-color: var(--panel-background) !important;
+      color: var(--body-text-color) !important;
+      border-color: var(--border-color-primary) !important;
+      box-shadow: none !important;
+    }}
+    html[data-theme='light'] a {{ color: var(--link-text-color) !important; }}
+    html[data-theme='light'] input, html[data-theme='light'] textarea, html[data-theme='light'] select {{ background-color: #ffffff !important; }}
+    html[data-theme='light'] ::placeholder {{ color: #6b7280 !important; }}
+    html[data-theme='light'] thead th {{ background-color: var(--background-fill-secondary) !important; color: {primary} !important; }}
+    html[data-theme='light'] .gr-button, html[data-theme='light'] button {{ background-color: {primary} !important; color: #101010 !important; border: 1px solid {primary} !important; }}
+    html[data-theme='light'] .gr-button:hover, html[data-theme='light'] button:hover {{ background-color: {primary_hover} !important; border-color: {primary_hover} !important; }}
+
+    /* Dark theme */
+    html[data-theme='dark'] {{
+      color-scheme: dark;
+      --panel-background: {dark_bg};
+      --background-fill-primary: {dark_bg};
+      --background-fill-secondary: {dark_bg2};
+      --body-text-color: {dark_text};
+      --link-text-color: {primary};
+      --border-color-primary: {dark_border};
+      --block-title-text-color: {dark_text};
+    }}
+    html[data-theme='dark'] body, html[data-theme='dark'] .gradio-container, html[data-theme='dark'] * {{
+      background-color: var(--panel-background) !important;
+      color: var(--body-text-color) !important;
+      border-color: var(--border-color-primary) !important;
+      box-shadow: none !important;
+    }}
+    html[data-theme='dark'] a {{ color: var(--link-text-color) !important; }}
+    html[data-theme='dark'] input, html[data-theme='dark'] textarea, html[data-theme='dark'] select {{ background-color: #0f1113 !important; }}
+    html[data-theme='dark'] ::placeholder {{ color: #9ca3af !important; }}
+    html[data-theme='dark'] thead th {{ background-color: var(--background-fill-secondary) !important; color: {primary} !important; }}
+    html[data-theme='dark'] .gr-button, html[data-theme='dark'] button {{ background-color: {primary} !important; color: #101010 !important; border: 1px solid {primary} !important; }}
+    html[data-theme='dark'] .gr-button:hover, html[data-theme='dark'] button:hover {{ background-color: {primary_hover} !important; border-color: {primary_hover} !important; }}
+    html [class*='status-indicator'] .status-running {{ background-color: #52d273 !important; }}
+    html [class*='status-indicator'] .status-error {{ background-color: #ff6b6b !important; }}
+    """.format(
+        light_bg=light_bg,
+        light_bg2=light_bg2,
+        light_text=light_text,
+        light_border=light_border,
+        primary=primary,
+        primary_hover=primary_hover,
+        dark_bg=dark_bg,
+        dark_bg2=dark_bg2,
+        dark_text=dark_text,
+        dark_border=dark_border,
+    )
+
+    if high_contrast:
+        base_css += """
+        html[data-theme] table, html[data-theme] th, html[data-theme] td { border-color: var(--border-color-primary) !important; }
+        html[data-theme] thead th { font-weight: 700 !important; }
+        """
+
+    # Script to set/remove attribute and persist in localStorage; also apply saved value on load
+    if theme == "Dark":
+        set_attr = "document.documentElement.setAttribute('data-theme','dark'); localStorage.setItem('ai_researcher_theme','dark');"
+    elif theme == "Light":
+        set_attr = "document.documentElement.setAttribute('data-theme','light'); localStorage.setItem('ai_researcher_theme','light');"
+    else:
+        set_attr = "document.documentElement.removeAttribute('data-theme'); localStorage.removeItem('ai_researcher_theme');"
+
+    boot = (
+        "(function(){try{var t=localStorage.getItem('ai_researcher_theme');"
+        "if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}"
+        "}catch(e){}})();"
+    )
+
+    return f"<script>{boot}{set_attr}</script><style>{base_css}</style>"
+
+# Simpler, reliable style-vars updater not relying on JS execution
+def theme_style_vars(theme: str, high_contrast: bool) -> str:
+    """Return a <style> tag that sets :root CSS variables for the selected theme."""
+    if theme == "Dark":
+        vars_css = """
+        :root {
+          --panel-background: #121212;
+          --background-fill-primary: #121212;
+          --background-fill-secondary: #1a1c1e;
+          --body-text-color: #e8e8e8;
+          --link-text-color: #ffb703;
+          --border-color-primary: #3a3f44;
+          --block-title-text-color: #e8e8e8;
+        }
+        body, .gradio-container, * {
+          background-color: var(--panel-background) !important;
+          color: var(--body-text-color) !important;
+          border-color: var(--border-color-primary) !important;
+        }
+        input, textarea, select { background-color: #0f1113 !important; }
+        thead th { background-color: var(--background-fill-secondary) !important; color: #ffb703 !important; }
+        .gr-button, button { background-color: #ffb703 !important; color: #101010 !important; border: 1px solid #ffb703 !important; }
+        .gr-button:hover, button:hover { background-color: #ffd166 !important; border-color: #ffd166 !important; }
+        """
+    elif theme == "Light":
+        vars_css = """
+        :root {
+          --panel-background: #ffffff;
+          --background-fill-primary: #ffffff;
+          --background-fill-secondary: #f5f6f8;
+          --body-text-color: #1a1c1e;
+          --link-text-color: #ffb703;
+          --border-color-primary: #d0d7de;
+          --block-title-text-color: #1a1c1e;
+        }
+        body, .gradio-container, * {
+          background-color: var(--panel-background) !important;
+          color: var(--body-text-color) !important;
+          border-color: var(--border-color-primary) !important;
+        }
+        input, textarea, select { background-color: #ffffff !important; }
+        thead th { background-color: var(--background-fill-secondary) !important; color: #ffb703 !important; }
+        .gr-button, button { background-color: #ffb703 !important; color: #101010 !important; border: 1px solid #ffb703 !important; }
+        .gr-button:hover, button:hover { background-color: #ffd166 !important; border-color: #ffd166 !important; }
+        """
+    else:
+        # System: choose based on prefers-color-scheme
+        vars_css = """
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --panel-background: #121212;
+            --background-fill-primary: #121212;
+            --background-fill-secondary: #1a1c1e;
+            --body-text-color: #e8e8e8;
+            --link-text-color: #ffb703;
+            --border-color-primary: #3a3f44;
+            --block-title-text-color: #e8e8e8;
+          }
+        }
+        @media (prefers-color-scheme: light) {
+          :root {
+            --panel-background: #ffffff;
+            --background-fill-primary: #ffffff;
+            --background-fill-secondary: #f5f6f8;
+            --body-text-color: #1a1c1e;
+            --link-text-color: #ffb703;
+            --border-color-primary: #d0d7de;
+            --block-title-text-color: #1a1c1e;
+          }
+        }
+        body, .gradio-container, * {
+          background-color: var(--panel-background) !important;
+          color: var(--body-text-color) !important;
+          border-color: var(--border-color-primary) !important;
+        }
+        input, textarea, select { background-color: #ffffff !important; }
+        thead th { background-color: var(--background-fill-secondary) !important; color: #ffb703 !important; }
+        .gr-button, button { background-color: #ffb703 !important; color: #101010 !important; border: 1px solid #ffb703 !important; }
+        .gr-button:hover, button:hover { background-color: #ffd166 !important; border-color: #ffd166 !important; }
+        """
+    if high_contrast:
+        vars_css += """
+        table, th, td { border-color: var(--border-color-primary) !important; }
+        thead th { font-weight: 700 !important; }
+        """
+    return f"<style>{vars_css}</style>"
 
 def setup_path():
     # logs_dir = os.path.join("casestudy_results", f'agent_{container_name}', 'logs')
@@ -1039,7 +1319,217 @@ def create_ui():
                 updated_index
             )
 
-    with gr.Blocks(theme=gr.themes.Soft(primary_hue="amber")) as app:
+    with gr.Blocks(theme=gr.themes.Soft(primary_hue="amber"), css=CUSTOM_CSS) as app:
+        # Inject both Light/Dark CSS and set theme attribute on startup
+        css_both = """
+        <style id="ai-theme-base">
+        html[data-theme='light'] *, html[data-theme='light'] body { 
+          background-color: #ffffff !important; color: #1a1c1e !important; border-color: #d0d7de !important;
+        }
+        html[data-theme='light'] thead th { background-color: #f5f6f8 !important; color: #ffb703 !important; }
+        html[data-theme='light'] input, html[data-theme='light'] textarea, html[data-theme='light'] select { background-color: #ffffff !important; }
+        html[data-theme='light'] .gr-button, html[data-theme='light'] button { background-color: #ffb703 !important; color: #101010 !important; border: 1px solid #ffb703 !important; }
+        html[data-theme='light'] .gr-button:hover, html[data-theme='light'] button:hover { background-color: #ffd166 !important; border-color: #ffd166 !important; }
+
+        html[data-theme='dark'] *, html[data-theme='dark'] body { 
+          background-color: #121212 !important; color: #e8e8e8 !important; border-color: #3a3f44 !important;
+        }
+        html[data-theme='dark'] thead th { background-color: #1a1c1e !important; color: #ffb703 !important; }
+        html[data-theme='dark'] input, html[data-theme='dark'] textarea, html[data-theme='dark'] select { background-color: #0f1113 !important; }
+        html[data-theme='dark'] .gr-button, html[data-theme='dark'] button { background-color: #ffb703 !important; color: #101010 !important; border: 1px solid #ffb703 !important; }
+        html[data-theme='dark'] .gr-button:hover, html[data-theme='dark'] button:hover { background-color: #ffd166 !important; border-color: #ffd166 !important; }
+
+        html[data-contrast='high'] table, html[data-contrast='high'] th, html[data-contrast='high'] td { border-color: currentColor !important; }
+        html[data-contrast='high'] thead th { font-weight: 700 !important; }
+        </style>
+        <script>
+        (function(){
+          try{
+            var t = localStorage.getItem('ai_researcher_theme');
+            if(t==='dark' || t==='light'){
+              document.documentElement.setAttribute('data-theme', t);
+            } else {
+              if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+                document.documentElement.setAttribute('data-theme','dark');
+              } else {
+                document.documentElement.setAttribute('data-theme','light');
+              }
+            }
+          }catch(e){}
+        })();
+        </script>
+        """
+        gr.HTML(value=css_both, visible=True)
+        # Runtime theme controls
+        def theme_style_update(theme_choice, high_contrast):
+            return generate_theme_css(theme_choice, bool(high_contrast))
+
+        default_theme = os.getenv("THEME", "System")
+        default_hc = _HIGH_CONTRAST
+
+        with gr.Row():
+            theme_dd = gr.Dropdown(
+                label="Theme",
+                choices=["System", "Light", "Dark"],
+                value=default_theme,
+                scale=1,
+                elem_id="theme-dd",
+            )
+            hc_cb = gr.Checkbox(
+                label="High Contrast",
+                value=bool(default_hc),
+                scale=1,
+                elem_id="theme-hc",
+            )
+            # Quick theme buttons (JS powered, no backend call)
+            btn_system = gr.Button("System", variant="secondary", elem_id="btn-system")
+            btn_light = gr.Button("Light", variant="secondary", elem_id="btn-light")
+            btn_dark = gr.Button("Dark", variant="secondary", elem_id="btn-dark")
+        # Hidden style injector not used for base; keep for potential future tweaks
+        style_html = gr.HTML(value="", visible=False)
+
+        # JS: reliable setter of theme variables
+        theme_js_boot = gr.HTML(value=("""
+        <script>
+        (function(){{
+          const VARS_LIGHT = {{
+            '--panel-background': '#ffffff',
+            '--background-fill-primary': '#ffffff',
+            '--background-fill-secondary': '#f5f6f8',
+            '--body-text-color': '#1a1c1e',
+            '--link-text-color': '#ffb703',
+            '--border-color-primary': '#d0d7de',
+            '--block-title-text-color': '#1a1c1e'
+          }};
+          const VARS_DARK = {{
+            '--panel-background': '#121212',
+            '--background-fill-primary': '#121212',
+            '--background-fill-secondary': '#1a1c1e',
+            '--body-text-color': '#e8e8e8',
+            '--link-text-color': '#ffb703',
+            '--border-color-primary': '#3a3f44',
+            '--block-title-text-color': '#e8e8e8'
+          }};
+
+          function setVarsOnRoot(vars) {{
+            const r = document.documentElement;
+            Object.keys(vars).forEach(k => r.style.setProperty(k, vars[k]));
+          }}
+
+          function injectStyle(root, css) {{
+            if (!root) return;
+            let el = root.getElementById && root.getElementById('ai-theme-vars');
+            if (!el) {{
+              el = document.createElement('style');
+              el.id = 'ai-theme-vars';
+              root.appendChild(el);
+            }}
+            el.textContent = css;
+          }}
+
+          function varsToCss(vars) {{
+            const lines = Object.keys(vars).map(k => `${k}: ${vars[k]};`);
+            return `:root{${lines.join('')}}`;
+          }}
+
+          function setVarsInShadowRoots(vars) {{
+            const css = varsToCss(vars);
+            const walker = document.createTreeWalker(document, NodeFilter.SHOW_ELEMENT);
+            let node;
+            while ((node = walker.nextNode())) {{
+              if (node.shadowRoot) {{
+                injectStyle(node.shadowRoot, css);
+              }}
+            }}
+          }}
+
+          window.applyTheme = function(theme, highContrast) {{
+            try {{
+              if(theme === 'Dark') {{
+                document.documentElement.setAttribute('data-theme','dark');
+                localStorage.setItem('ai_researcher_theme','dark');
+                setVarsOnRoot(VARS_DARK);
+                setVarsInShadowRoots(VARS_DARK);
+              }} else if(theme === 'Light') {{
+                document.documentElement.setAttribute('data-theme','light');
+                localStorage.setItem('ai_researcher_theme','light');
+                setVarsOnRoot(VARS_LIGHT);
+                setVarsInShadowRoots(VARS_LIGHT);
+              }} else {{
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.removeItem('ai_researcher_theme');
+                // Fallback to system preference
+                if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {{
+                  setVarsOnRoot(VARS_DARK);
+                  setVarsInShadowRoots(VARS_DARK);
+                }} else {{
+                  setVarsOnRoot(VARS_LIGHT);
+                  setVarsInShadowRoots(VARS_LIGHT);
+                }}
+              }}
+              // High contrast toggle via thicker borders / bold headers
+              if(highContrast) {{
+                document.documentElement.setAttribute('data-contrast','high');
+              }} else {{
+                document.documentElement.removeAttribute('data-contrast');
+              }}
+            }} catch(e) {{ console.warn('applyTheme error', e); }}
+          }}
+
+          // Apply on load from localStorage
+          try {{
+            const t = localStorage.getItem('ai_researcher_theme');
+            if(t === 'dark') {{ window.applyTheme('Dark', __HC__); }}
+            else if(t === 'light') {{ window.applyTheme('Light', __HC__); }}
+          }} catch(e) {{}}
+        })();
+        </script>
+        """).replace("__HC__", ("true" if default_hc else "false")), visible=False)
+
+        # Bind client-side events to ensure switching even without server callbacks
+        gr.HTML(value="""
+        <script>
+        (function(){
+          function getVal(id){const el=document.getElementById(id);return el && (el.value||el.checked);} 
+          function applyFromControls(){
+            const dd=document.getElementById('theme-dd');
+            const hc=document.getElementById('theme-hc');
+            if(dd){ window.applyTheme(dd.value, hc && hc.checked); }
+          }
+          const dd=document.getElementById('theme-dd');
+          const hc=document.getElementById('theme-hc');
+          if(dd){ dd.addEventListener('change', applyFromControls); }
+          if(hc){ hc.addEventListener('change', applyFromControls); }
+          const bs=document.getElementById('btn-system');
+          const bl=document.getElementById('btn-light');
+          const bd=document.getElementById('btn-dark');
+          if(bs){ bs.addEventListener('click', ()=>window.applyTheme('System', (hc&&hc.checked))); }
+          if(bl){ bl.addEventListener('click', ()=>window.applyTheme('Light', (hc&&hc.checked))); }
+          if(bd){ bd.addEventListener('click', ()=>window.applyTheme('Dark', (hc&&hc.checked))); }
+        })();
+        </script>
+        """)
+
+        # High Contrast live toggle (no reload)
+        hc_cb.change(None, inputs=[hc_cb], outputs=[], js="(h)=>{ if(h){document.documentElement.setAttribute('data-contrast','high');} else {document.documentElement.removeAttribute('data-contrast');}}")
+
+        # Button helpers to set dropdown and style together
+        def on_button_system(high_contrast: bool):
+            theme_choice = "System"
+            return gr.update(value=theme_choice), theme_style_vars(theme_choice, high_contrast)
+
+        def on_button_light(high_contrast: bool):
+            theme_choice = "Light"
+            return gr.update(value=theme_choice), theme_style_vars(theme_choice, high_contrast)
+
+        def on_button_dark(high_contrast: bool):
+            theme_choice = "Dark"
+            return gr.update(value=theme_choice), theme_style_vars(theme_choice, high_contrast)
+
+        # Apply buttons: save to localStorage and reload (most robust)
+        btn_system.click(js="()=>{ try{ localStorage.removeItem('ai_researcher_theme'); }catch(e){} window.location.reload(); }")
+        btn_light.click(js="()=>{ try{ localStorage.setItem('ai_researcher_theme','light'); }catch(e){} window.location.reload(); }")
+        btn_dark.click(js="()=>{ try{ localStorage.setItem('ai_researcher_theme','dark'); }catch(e){} window.location.reload(); }")
     #     gr.HTML("""
     #             <script>
     #             function scrollToBottom() {
