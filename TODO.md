@@ -34,10 +34,10 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 
 ## Frontend (React/Vite/Tailwind) — `webui/`
 
-- [ ] Scaffold: `npm create vite@latest webui -- --template react-ts`.
-- [ ] Install Tailwind: `npm i -D tailwindcss postcss autoprefixer` and `npx tailwindcss init -p`.
-- [ ] Configure Tailwind to use dark mode class strategy and include `index.html`, `src/**/*` in `content`.
-- [ ] Install client libs: `@tanstack/react-query`, `axios`.
+- [x] Scaffold: `npm create vite@latest webui -- --template react-ts`.
+- [x] Install Tailwind: `npm i -D tailwindcss postcss autoprefixer` and `npx tailwindcss init -p`.
+- [x] Configure Tailwind to use dark mode class strategy and include `index.html`, `src/**/*` in `content`.
+- [x] Install client libs: `@tanstack/react-query`, `axios`.
 
 ### App structure
 - [ ] `src/App.tsx` with router and layout.
