@@ -14,7 +14,7 @@ Recently, attention has shifted towards [new trend or approach], exemplified by 
 
 A related methodology for addressing [specific challenge] was recently proposed by [researchers], who reported [complexity or limitation], thus constraining applications in [context]. In another relevant approach, [other researchers] transformed [specific structures] to [application], necessitating [describe any required preprocessing].
 
-Our proposed method is grounded in [foundational theory or technique], originally developed by [research source]. In contrast to previous works, we focus on [task or problem area] in [context or situation]. We demonstrate that, in this context, several simplifications can be implemented (see Section [number]) that enhance both [aspect 1] and [aspect 2] in [specific scenario]. 
+Our proposed method is grounded in [foundational theory or technique], originally developed by [research source]. In contrast to previous works, we focus on [task or problem area] in [context or situation]. We demonstrate that, in this context, several simplifications can be implemented (see Section [number]) that enhance both [aspect 1] and [aspect 2] in [specific scenario].
 
 \begin{equation}
     [Mathematical formulation of key components]
@@ -26,6 +26,6 @@ Our proposed method is grounded in [foundational theory or technique], originall
     [Formal definition or description]
 \end{equation}
 
-[Detailed explanation of terms in the equations and their significance]. 
+[Detailed explanation of terms in the equations and their significance].
 
 [Summarization of how these concepts relate to your work or the advancement you're proposing].

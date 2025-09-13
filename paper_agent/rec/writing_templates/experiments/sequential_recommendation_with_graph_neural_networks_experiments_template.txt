@@ -1,6 +1,6 @@
 ```latex
 \section{Experiments}
-In this section, we conduct experiments to evaluate our proposed method on [describe datasets] with the purpose of answering the following research questions: 
+In this section, we conduct experiments to evaluate our proposed method on [describe datasets] with the purpose of answering the following research questions:
 
 \begin{itemize}
     \item RQ1: [Describe the question related to performance comparison with existing methods]

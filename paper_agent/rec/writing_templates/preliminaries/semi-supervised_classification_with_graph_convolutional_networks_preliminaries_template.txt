@@ -24,7 +24,7 @@ Going back to our definition, we now have:
 g_{\theta}' \star x \approx [insert corresponding equation]
 \end{equation}
 
-with [explain any new definitions or adjustments made]. Note that this expression is now [describe the properties of the expression]. 
+with [explain any new definitions or adjustments made]. Note that this expression is now [describe the properties of the expression].
 
 \subsection{[Next Subsection Title]}
 
@@ -32,7 +32,7 @@ A [description of the model/method] can therefore be built by [explain the const
 
 In this way, we can still recover a rich class of [filter functions or models] by [describe what happens when this model/method is applied]. [Provide additional insight into the practical implications or expected results of this model/method].
 
-Furthermore, under these approximations, [restate or simplify previous equations as needed]. The filter parameters can be [discuss parameter sharing or constraints around parameters]. 
+Furthermore, under these approximations, [restate or simplify previous equations as needed]. The filter parameters can be [discuss parameter sharing or constraints around parameters].
 
 Additionally, it can be beneficial to [describe best practices, e.g., constraints, simplification techniques]. This leaves us with the following expression:
 
@@ -48,7 +48,7 @@ We can generalize this definition to [insert generalization description] as foll
 Z = [insert general expression here]
 \end{equation}
 
-where [describe the components of the generalized expression]. This operation has complexity [discuss computational complexity or efficiency]. 
+where [describe the components of the generalized expression]. This operation has complexity [discuss computational complexity or efficiency].
 
 \section{[Next Major Section Title]}
 

@@ -27,14 +27,14 @@ pass@1 means the success rate of the first choice of the output of the model. yo
 """
 
 REF = r"""
-The exmaple of math reasoning on MATH-500 dataset is in the directory `/workplace/dataset_candidate/math_reasoning`: 
+The exmaple of math reasoning on MATH-500 dataset is in the directory `/workplace/dataset_candidate/math_reasoning`:
 # Reasoning on MATH-500
 
 Reasoning on MATH-500 dataset with DeepSeek Chat.
 
 ```bash
 cd /path/to/math_reasoning
-python run_infer.py 
+python run_infer.py
 ```
 
 Args:

@@ -14,7 +14,7 @@ We evaluate different [type of tasks, e.g., recommender systems] on [number] sta
 
 [Multiple sentences explaining the motivation and intuition behind the proposed method]
 
-We first conducted some preprocessing on the datasets. For [Dataset 1], we [details of preprocessing specific to Dataset 1]. For [Dataset 2], we [details of preprocessing specific to Dataset 2]. 
+We first conducted some preprocessing on the datasets. For [Dataset 1], we [details of preprocessing specific to Dataset 1]. For [Dataset 2], we [details of preprocessing specific to Dataset 2].
 
 [Further explanations on data handling or specific strategies used in the datasets]
 

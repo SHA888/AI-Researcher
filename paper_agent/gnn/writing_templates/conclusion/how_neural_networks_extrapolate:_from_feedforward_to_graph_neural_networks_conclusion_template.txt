@@ -4,7 +4,7 @@ In this paper, we have taken an initial step towards [main objective or problem 
 
 Inspired by [previous work or technique], we suggest that [explanation or insight related to the proposed method]. Specifically, our findings [summarize how they align with existing literature or empirical results].
 
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 Formally, we define [concept] as follows:
 

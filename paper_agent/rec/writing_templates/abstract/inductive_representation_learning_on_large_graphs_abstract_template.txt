@@ -6,9 +6,9 @@ Low-dimensional embeddings of nodes in large graphs have proved extremely useful
 
 \section{Introduction}
 
-Inspired by [Previous Work/Technique], we propose [Module Name] to address [Challenge]. 
+Inspired by [Previous Work/Technique], we propose [Module Name] to address [Challenge].
 
-To tackle [Challenge], our method consists of three main components: [Component 1], [Component 2], and [Component 3]. 
+To tackle [Challenge], our method consists of three main components: [Component 1], [Component 2], and [Component 3].
 
 \textbf{Motivation} \\
 [Multiple sentences explaining the motivation and intuition behind the proposed method]
@@ -22,9 +22,9 @@ To tackle [Challenge], our method consists of three main components: [Component 
 
 \section{Methodology}
 
-\subsection{Key Concepts} 
+\subsection{Key Concepts}
 
-Formally, we define [Concept] as follows: 
+Formally, we define [Concept] as follows:
 
 \begin{equation}
 [Mathematical formulation of the key components]

@@ -18,7 +18,7 @@ For each of [number] experimental settings ([setting 1], [setting 2], and [setti
 [Mathematical formulation of the key components]
 \end{equation}
 
-where [explanation of symbols and terms used]. 
+where [explanation of symbols and terms used].
 
 The [function used] in this setting is designed to [purpose of function]; for this purpose, [description of the function and its effects]. We demonstrate [other findings or assumptions related to the function] in [appendix/reference].
 
@@ -28,7 +28,7 @@ The [function used] in this setting is designed to [purpose of function]; for th
 [Mathematical formulation of the key components]
 \end{equation}
 
-with parameters defined as in [reference]. Note that [explanation of an alternative approach or method]. 
+with parameters defined as in [reference]. Note that [explanation of an alternative approach or method].
 
 For [specific dataset], our encoder is [encoder type with specific layers or structures]:
 
@@ -46,7 +46,7 @@ where [description of methodology/configurations used]. Given the [context], [ex
 
 In this setting, we opted to use [methodology for negative sampling]. We found this method to be the most stable, considering [explanation of challenges]. Additionally, we apply [other techniques] to enhance the robustness of our approach.
 
-[Readout, discriminator, and additional training details]. Across all [number] experimental settings, we employed identical [functions/methods] and architectures. 
+[Readout, discriminator, and additional training details]. Across all [number] experimental settings, we employed identical [functions/methods] and architectures.
 
 For the [specific function], we use [description of method]:
 
@@ -68,8 +68,8 @@ The results of our comparative evaluation experiments are summarized in [referen
 
 For the [specific tasks], we report [evaluation metrics], averaged after [number] runs of training, and reuse the metrics already reported in [reference for comparisons]. Specifically, as our setup is [methodology description], we compare against [other methods].
 
-Our results demonstrate [summary of key findings and comparisons]. We particularly note that [explanation of insights or observations]. 
+Our results demonstrate [summary of key findings and comparisons]. We particularly note that [explanation of insights or observations].
 
-[Additional discussions regarding performance and limitations], including insights about the [general trends seen in the experiments]. 
+[Additional discussions regarding performance and limitations], including insights about the [general trends seen in the experiments].
 
 While we cannot say that these trends will hold universally, we generally found benefits from employing [specific architectural decisions].

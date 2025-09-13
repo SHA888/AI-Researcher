@@ -1,9 +1,10 @@
 import dataclasses
-from tree_sitter import Language
-import tree_sitter
 import glob
 import uuid
+
+import tree_sitter
 from loguru import logger
+
 
 @dataclasses.dataclass
 class Snippet:
@@ -96,7 +97,8 @@ class CodeParser:
             parsed_contents.extend(parsed_content)
 
         return parsed_contents
-    
+
+
 def to_dataframe_row(embedded_snippets: list[Snippet]):
     """
     Helper function to convert Embedded Snippet object to a dataframe row

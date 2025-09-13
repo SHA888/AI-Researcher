@@ -1,9 +1,11 @@
-import torch
 import logging
+
+import torch
+from data_processing.dataset import get_train_val_test_split, load_dataset
 from model.diffusion import DiffusionModel
-from data_processing.dataset import load_dataset, get_train_val_test_split
-from training.train import train_epoch, evaluate
 from torch import optim
+from training.train import evaluate, train_epoch
+
 
 def main():
     # Setup logging
@@ -11,7 +13,7 @@ def main():
     logger = logging.getLogger(__name__)
 
     # Set device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     logger.info(f"Using device: {device}")
 
     # Load dataset (using Cora as it's lightweight)
@@ -27,7 +29,7 @@ def main():
         num_classes=num_classes,
         num_layers=2,
         tau=0.1,
-        lambda_reg=1.0
+        lambda_reg=1.0,
     ).to(device)
 
     # Setup optimizer
@@ -54,9 +56,10 @@ def main():
     # Final testing
     logger.info("Evaluating on test set...")
     test_loss, test_acc = evaluate(model, data, test_mask, device)
-    logger.info(f"Final Results:")
+    logger.info("Final Results:")
     logger.info(f"Best Val Acc: {best_val_acc:.4f}")
     logger.info(f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.4f}")
+
 
 if __name__ == "__main__":
     main()

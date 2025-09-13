@@ -23,7 +23,7 @@
 
 \noindent [Summarize the results succinctly, emphasizing the key findings.] Example: "The experimental results show that our proposed [method name] significantly outperforms [mention existing baselines or state-of-the-art models]."
 
-\noindent [Add any additional insights or implications of the results.] For instance: "Moreover, when applied to [specific context or models], [your method] consistently achieves better performance." 
+\noindent [Add any additional insights or implications of the results.] For instance: "Moreover, when applied to [specific context or models], [your method] consistently achieves better performance."
 
 \noindent [Mention any future work or contributions to the community, if applicable.] You can say, "Our framework will be open-source based on [specific platform] in the near future."
 

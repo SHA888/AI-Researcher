@@ -5,7 +5,7 @@ With the explosive growth of [relevant context or phenomenon], [target audience 
 
 \subsection{Prior Work}
 
-[Earlier work or studies]. Specifically, [discuss specific applications of earlier methods or models]. [Another relevant work] [describe this work's contributions and methods]. However, [discuss limitations of previous approaches]. 
+[Earlier work or studies]. Specifically, [discuss specific applications of earlier methods or models]. [Another relevant work] [describe this work's contributions and methods]. However, [discuss limitations of previous approaches].
 
 \subsection{Generalization Analysis for [Relevant Topic]}
 

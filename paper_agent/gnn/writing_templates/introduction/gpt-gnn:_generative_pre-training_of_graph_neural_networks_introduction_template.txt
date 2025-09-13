@@ -9,7 +9,7 @@ Similar issues have also been experienced in [related field]. Recent advances in
 
 Inspired by these developments, we propose [module name] to address [challenge]. The goal of [module name] is to empower [model type] to capture [description of targeted properties], so that it can easily generalize to any downstream tasks with a few fine-tuning steps on [specific context]. To achieve this goal, we propose to [methodology/concept].
 
-To [achieve specific outcome], one straightforward option could be to directly adopt [existing techniques]. However, they are not suitable due to [discuss limitations of existing techniques]. 
+To [achieve specific outcome], one straightforward option could be to directly adopt [existing techniques]. However, they are not suitable due to [discuss limitations of existing techniques].
 
 \begin{figure}[ht]
     \centering

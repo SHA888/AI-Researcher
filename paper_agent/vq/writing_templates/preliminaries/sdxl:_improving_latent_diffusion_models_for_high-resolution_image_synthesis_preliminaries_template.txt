@@ -1,6 +1,6 @@
 \section{Preliminaries}
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
 To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
@@ -23,7 +23,7 @@ Formally, we define [concept] as follows:
 [Detailed explanation of each term in the equations]
 
 \section{Summary of Contributions}
-In summary, our contributions include: 
+In summary, our contributions include:
 \begin{itemize}
     \item [Contribution 1]
     \item [Contribution 2]

@@ -1,9 +1,12 @@
-from collections import defaultdict
-import networkx as nx
-import matplotlib.pyplot as plt
 import json
-from typing import Dict
+from collections import defaultdict
 from copy import deepcopy
+from typing import Dict
+
+import matplotlib.pyplot as plt
+import networkx as nx
+
+
 class Graph:
     def __init__(self):
         self.graph = defaultdict(list)  # use node_id as key
@@ -24,7 +27,7 @@ class Graph:
             node_id = self.node_id_counter
             self.node_name_to_id[node_name] = node_id
             # initialize node attributes dictionary
-            node_attrs = {'node_name': node_name, 'node_id': node_id}
+            node_attrs = {"node_name": node_name, "node_id": node_id}
             node_attrs.update(attributes)  # add other attributes
             self.nodes[node_id] = node_attrs
             self.node_id_counter += 1
@@ -33,9 +36,11 @@ class Graph:
             node_id = self.node_name_to_id[node_name]
             self.nodes[node_id].update(attributes)
         return self.node_name_to_id[node_name]
+
     def update_nodes(self, nodes):
         for node in nodes:
-            self.add_node(node['node_name'], **node.get('node_attrs', {}))
+            self.add_node(node["node_name"], **node.get("node_attrs", {}))
+
     def update_node(self, node_name, **attributes):
         assert node_name in self.node_name_to_id, f"Node {node_name} does not exist"
         node_id = self.node_name_to_id[node_name]
@@ -51,12 +56,12 @@ class Graph:
             **node_attributes: Optional node attributes, which will be applied to nodes u and v.
         """
         # Add or update node u's attributes
-        u_id = self.add_node(u, **node_attributes.get('u_attrs', {}))
+        u_id = self.add_node(u, **node_attributes.get("u_attrs", {}))
         # Add or update node v's attributes
-        v_id = self.add_node(v, **node_attributes.get('v_attrs', {}))
+        v_id = self.add_node(v, **node_attributes.get("v_attrs", {}))
         self.graph[u_id].append(v_id)
         # Store edge attributes
-        self.edge_attributes[(u_id, v_id)] = node_attributes.get('edge_attrs', {})
+        self.edge_attributes[(u_id, v_id)] = node_attributes.get("edge_attrs", {})
 
     def add_edges(self, edges):
         for edge in edges:
@@ -64,6 +69,7 @@ class Graph:
                 self.add_edge(edge[0], edge[1], **edge[2])
             else:
                 self.add_edge(edge[0], edge[1])
+
     def detect_cycle_util(self, v, visited, rec_stack):
         visited[v] = True
         rec_stack[v] = True
@@ -136,7 +142,7 @@ class Graph:
             while last_idx >= 0 and path[last_idx] != node:
                 last_idx -= 1
             # from the last occurrence to the end must form a complete cycle
-            cycle_nodes = set(path[last_idx:])
+            set(path[last_idx:])
             for i in range(last_idx, len(path) - 1):
                 if path[i + 1] not in self.graph[path[i]]:
                     return False
@@ -147,7 +153,7 @@ class Graph:
             n = len(path)
             for length in range(2, n // 2 + 1):
                 for i in range(n - 2 * length + 1):
-                    if path[i:i + length] == path[i + length:i + 2 * length]:
+                    if path[i : i + length] == path[i + length : i + 2 * length]:
                         return False
             return True
 
@@ -171,23 +177,23 @@ class Graph:
         # convert node_id to node_name
         all_paths_named = []
         for path in all_paths:
-            named_path = [self.nodes[node]['node_name'] for node in path]
+            named_path = [self.nodes[node]["node_name"] for node in path]
             all_paths_named.append(named_path)
 
         # filter paths
         filtered_paths = self.filter_paths(all_paths_named)
 
         return filtered_paths
-    
+
     def set_start(self, start):
         self.start = start
-        self.nodes[self.add_node(start)]['color'] = 'red'
-        self.nodes[self.add_node(start)]['shape'] = 's'
+        self.nodes[self.add_node(start)]["color"] = "red"
+        self.nodes[self.add_node(start)]["shape"] = "s"
+
     def set_end(self, end):
         self.end = end
-        self.nodes[self.add_node(end)]['color'] = 'green'
-        self.nodes[self.add_node(end)]['shape'] = '^'
-
+        self.nodes[self.add_node(end)]["color"] = "green"
+        self.nodes[self.add_node(end)]["shape"] = "^"
 
     def filter_paths(self, all_paths):
         """
@@ -195,6 +201,7 @@ class Graph:
         For example, if there is a path S -> A -> B -> C -> D -> C -> D -> F -> Z,
         then remove the path S -> A -> B -> C -> D -> F -> Z
         """
+
         def is_subpath(short, long):
             # 检查 short 是否是 long 的子序列
             it = iter(long)
@@ -217,10 +224,10 @@ class Graph:
         node_colors = []
         node_shapes = defaultdict(list)
         for node_id, attrs in self.nodes.items():
-            label = attrs.get('node_name', f"Node{node_id}")
-            shape = attrs.get('shape', 'o')  # 默认形状为圆形
+            label = attrs.get("node_name", f"Node{node_id}")
+            shape = attrs.get("shape", "o")  # 默认形状为圆形
             node_shapes[shape].append(node_id)
-            color = attrs.get('color', 'lightblue')
+            color = attrs.get("color", "lightblue")
             node_colors.append(color)
             G.add_node(node_id, label=label)
 
@@ -231,13 +238,15 @@ class Graph:
                 G.add_edge(u, v, **edge_attr)
 
         # get node labels
-        labels = {node: attrs['node_name'] for node, attrs in self.nodes.items()}
+        labels = {node: attrs["node_name"] for node, attrs in self.nodes.items()}
 
         # get node colors
-        node_color_map = [attrs.get('color', 'lightblue') for node, attrs in self.nodes.items()]
+        [
+            attrs.get("color", "lightblue") for node, attrs in self.nodes.items()
+        ]
 
         # get node shapes
-        shapes = set(attrs.get('shape', 'o') for attrs in self.nodes.values())
+        shapes = set(attrs.get("shape", "o") for attrs in self.nodes.values())
 
         # set plot layout
         pos = nx.spring_layout(G, seed=42)  # fixed layout for reproducibility
@@ -246,25 +255,31 @@ class Graph:
 
         # draw nodes with different shapes
         for shape in shapes:
-            shaped_nodes = [node for node in self.nodes if self.nodes[node].get('shape', 'o') == shape]
+            shaped_nodes = [
+                node
+                for node in self.nodes
+                if self.nodes[node].get("shape", "o") == shape
+            ]
             nx.draw_networkx_nodes(
                 G,
                 pos,
                 nodelist=shaped_nodes,
                 node_shape=shape,
-                node_color=[self.nodes[node].get('color', 'lightblue') for node in shaped_nodes],
+                node_color=[
+                    self.nodes[node].get("color", "lightblue") for node in shaped_nodes
+                ],
                 node_size=1500,
-                alpha=0.9
+                alpha=0.9,
             )
 
         # draw node labels
-        nx.draw_networkx_labels(G, pos, labels, font_size=12, font_color='black')
+        nx.draw_networkx_labels(G, pos, labels, font_size=12, font_color="black")
 
         # adjust edge colors or styles based on edge attributes
         edge_colors = []
         for u, v in G.edges():
             edge_attr = self.edge_attributes.get((u, v), {})
-            edge_colors.append(edge_attr.get('color', 'black'))
+            edge_colors.append(edge_attr.get("color", "black"))
 
         # draw edges, ensure arrows are displayed
         nx.draw_networkx_edges(
@@ -272,14 +287,14 @@ class Graph:
             pos,
             edge_color=edge_colors,
             arrows=True,
-            arrowstyle='->',
+            arrowstyle="->",
             arrowsize=20,
-            connectionstyle='arc3,rad=0.1',  # increase arc3 rad to avoid arrow overlap
-            width=2
+            connectionstyle="arc3,rad=0.1",  # increase arc3 rad to avoid arrow overlap
+            width=2,
         )
 
         plt.title("Visualization", fontsize=16)
-        plt.axis('off')
+        plt.axis("off")
         plt.tight_layout()
         plt.show()
 
@@ -287,10 +302,10 @@ class Graph:
         """
         Merge shorter paths into longer paths while keeping the longer paths unchanged.
         Remove the longest common substring at the beginning and end, then insert the middle part.
-        
+
         Parameters:
             paths (list of list): Multiple paths, each path is a list of node names.
-        
+
         Returns:
             list: The merged paths.
         """
@@ -309,7 +324,7 @@ class Graph:
 
         # create node order mapping (using the longest path as the baseline order)
         node_order = {node: idx for idx, node in enumerate(merged_path)}
-        
+
         for short_path in paths_sorted[1:]:
             # find the longest common substring at the beginning
             start_idx = 0
@@ -318,9 +333,11 @@ class Graph:
                     # check if it is the start of the common sequence
                     merged_idx = merged_path.index(short_path[start_idx])
                     j = 1
-                    while (start_idx + j < len(short_path) and 
-                        merged_idx + j < len(merged_path) and 
-                        short_path[start_idx + j] == merged_path[merged_idx + j]):
+                    while (
+                        start_idx + j < len(short_path)
+                        and merged_idx + j < len(merged_path)
+                        and short_path[start_idx + j] == merged_path[merged_idx + j]
+                    ):
                         j += 1
                     start_idx = start_idx + j - 1
                     break
@@ -333,27 +350,29 @@ class Graph:
                     # check if it is the end of the common sequence
                     merged_idx = merged_path.index(short_path[end_idx])
                     j = 1
-                    while (end_idx - j > start_idx and 
-                        merged_idx - j >= 0 and 
-                        short_path[end_idx - j] == merged_path[merged_idx - j]):
+                    while (
+                        end_idx - j > start_idx
+                        and merged_idx - j >= 0
+                        and short_path[end_idx - j] == merged_path[merged_idx - j]
+                    ):
                         j += 1
                     end_idx = end_idx - j + 1
                     break
                 end_idx -= 1
 
             # get the sequence to be inserted (after removing the overlapping sequence at the beginning and end)
-            insert_sequence = short_path[start_idx+1:end_idx]
+            insert_sequence = short_path[start_idx + 1 : end_idx]
 
             if insert_sequence:
                 # find a suitable insertion position in merged_path
                 insert_pos = merged_path.index(short_path[start_idx]) + 1
-                
+
                 # assign a base order to the entire sequence
                 sequence_base_order = -1
                 for node in insert_sequence:
                     if node in node_order:
                         sequence_base_order = max(sequence_base_order, node_order[node])
-                
+
                 if sequence_base_order == -1:
                     # If the sequence does not contain known nodes, determine the position based on the topological order
                     pred_pos = node_order[short_path[start_idx]]
@@ -363,7 +382,7 @@ class Graph:
                 # Check if the sequence already exists
                 sequence_exists = False
                 for i in range(len(merged_path) - len(insert_sequence) + 1):
-                    if merged_path[i:i+len(insert_sequence)] == insert_sequence:
+                    if merged_path[i : i + len(insert_sequence)] == insert_sequence:
                         sequence_exists = True
                         break
 
@@ -379,46 +398,43 @@ class Graph:
     def get_node_predecessors_successors(self):
         """
         Get the direct predecessors and successors of each node.
-        
+
         Returns:
             dict: {node_name: {'predecessors': set(), 'successors': set()}}
         """
         result = {}
-        
+
         # initialize the result dictionary
         for node_id in self.nodes:
-            node_name = self.nodes[node_id]['node_name']
-            result[node_name] = {
-                'predecessors': set(),
-                'successors': set()
-            }
-        
+            node_name = self.nodes[node_id]["node_name"]
+            result[node_name] = {"predecessors": set(), "successors": set()}
+
         # build direct predecessor and successor relationships
         for u_id, neighbors in self.graph.items():
-            u_name = self.nodes[u_id]['node_name']
+            u_name = self.nodes[u_id]["node_name"]
             for v_id in neighbors:
-                v_name = self.nodes[v_id]['node_name']
+                v_name = self.nodes[v_id]["node_name"]
                 # add direct relationships
-                result[v_name]['predecessors'].add(u_name)
-                result[u_name]['successors'].add(v_name)
+                result[v_name]["predecessors"].add(u_name)
+                result[u_name]["successors"].add(v_name)
         self.node_predecessors_successors = result
-        
+
         return result
-    
+
     def path2workflow(self, path):
         workflow_steps = []
-        if hasattr(self, 'node_predecessors_successors') is False:
+        if hasattr(self, "node_predecessors_successors") is False:
             self.get_node_predecessors_successors()
-        
+
         for node in path:
             if node == self.end or node == self.start:
                 continue
             output_flag = False
-            n_predecessors = self.node_predecessors_successors[node]['predecessors']
-            n_successors = self.node_predecessors_successors[node]['successors']
+            n_predecessors = self.node_predecessors_successors[node]["predecessors"]
+            n_successors = self.node_predecessors_successors[node]["successors"]
             node_id = self.node_name_to_id[node]
-            agent_tools = deepcopy(self.nodes[node_id].get('agent_tools', []))
-            ops_agent_tools = deepcopy(self.nodes[node_id].get('ops_agent_tools', []))
+            agent_tools = deepcopy(self.nodes[node_id].get("agent_tools", []))
+            ops_agent_tools = deepcopy(self.nodes[node_id].get("ops_agent_tools", []))
             for successor in n_successors:
                 if successor == self.end:
                     output_flag = True
@@ -427,20 +443,36 @@ class Graph:
             input_text = []
             for predecessor in n_predecessors:
                 if predecessor == self.start:
-                    input_text.append(f'Input {predecessor}')
-                else: 
-                    input_text.append(f'The output of {predecessor} agent')
-            input_text = ','.join(input_text)
+                    input_text.append(f"Input {predecessor}")
+                else:
+                    input_text.append(f"The output of {predecessor} agent")
+            input_text = ",".join(input_text)
 
-            output_text = self.nodes[node_id].get('output', '')
-
+            output_text = self.nodes[node_id].get("output", "")
 
             if output_flag:
-                workflow_steps.append({"agent_name": node, "agent_tools": agent_tools, "input": input_text, "output": f"Output {self.end}", "ops_agent_tools": ops_agent_tools})
+                workflow_steps.append(
+                    {
+                        "agent_name": node,
+                        "agent_tools": agent_tools,
+                        "input": input_text,
+                        "output": f"Output {self.end}",
+                        "ops_agent_tools": ops_agent_tools,
+                    }
+                )
             else:
-                workflow_steps.append({"agent_name": node, "agent_tools": agent_tools, "input": input_text, "output": output_text, "ops_agent_tools": ops_agent_tools})
-        
+                workflow_steps.append(
+                    {
+                        "agent_name": node,
+                        "agent_tools": agent_tools,
+                        "input": input_text,
+                        "output": output_text,
+                        "ops_agent_tools": ops_agent_tools,
+                    }
+                )
+
         return workflow_steps
+
     def get_workflow_steps(self):
         paths = self.find_all_paths(self.start, self.end, max_cycle_repeat=3)
         # merge paths
@@ -448,68 +480,107 @@ class Graph:
         workflow = self.path2workflow(merged_path)
         workflow = self.refine_workflow(workflow)
         return workflow
-    def refine_workflow(self, workflow): 
+
+    def refine_workflow(self, workflow):
         agent_dict = {}
         work_lens = len(workflow)
-        for step in workflow: 
-            agent_dict[step['agent_name']] = set()
-        for i in range(work_lens - 1): 
+        for step in workflow:
+            agent_dict[step["agent_name"]] = set()
+        for i in range(work_lens - 1):
             step_front = workflow[i]
             step_back = workflow[i + 1]
-            for tool in step_front['agent_tools']: 
-                agent_dict[step_front['agent_name']].add(tool)
-            for tool in step_back['agent_tools']: 
-                agent_dict[step_back['agent_name']].add(tool)
-            agent_dict[step_front['agent_name']].add('transfer_to_' + '_'.join(step_back['agent_name'].lower().split(' ')))
-        for i in range(work_lens): 
-            agent_name = workflow[i]['agent_name']
-            workflow[i]['agent_tools'] = list(agent_dict[agent_name])
-            self.nodes[self.node_name_to_id[agent_name]]['agent_tools'] = list(agent_dict[agent_name])
+            for tool in step_front["agent_tools"]:
+                agent_dict[step_front["agent_name"]].add(tool)
+            for tool in step_back["agent_tools"]:
+                agent_dict[step_back["agent_name"]].add(tool)
+            agent_dict[step_front["agent_name"]].add(
+                "transfer_to_" + "_".join(step_back["agent_name"].lower().split(" "))
+            )
+        for i in range(work_lens):
+            agent_name = workflow[i]["agent_name"]
+            workflow[i]["agent_tools"] = list(agent_dict[agent_name])
+            self.nodes[self.node_name_to_id[agent_name]]["agent_tools"] = list(
+                agent_dict[agent_name]
+            )
         return workflow
+
     @classmethod
     def from_json_file(cls, json_file):
-        with open(json_file, 'r') as f:
+        with open(json_file, "r") as f:
             data = json.load(f)
         graph = cls()
-        edges = [(edge['start'], edge['end']) for edge in data['edges']]
-        for node in data['nodes']:
-            if node['is_start']:
-                start = node['agent_name']
+        edges = [(edge["start"], edge["end"]) for edge in data["edges"]]
+        for node in data["nodes"]:
+            if node["is_start"]:
+                start = node["agent_name"]
                 # data['nodes'].remove(node)
-            if node['is_end']:
-                end = node['agent_name']
+            if node["is_end"]:
+                end = node["agent_name"]
                 # data['nodes'].remove(node)
         graph.set_start(start)
         graph.set_end(end)
         graph.add_edges(edges)
-        node_attrs = [{'node_name': node['agent_name'], 'node_attrs': {'agent_tools': node['agent_tools'], 'output': node['output']}} for node in data['nodes']]
+        node_attrs = [
+            {
+                "node_name": node["agent_name"],
+                "node_attrs": {
+                    "agent_tools": node["agent_tools"],
+                    "output": node["output"],
+                },
+            }
+            for node in data["nodes"]
+        ]
         graph.update_nodes(node_attrs)
         return graph
+
     @classmethod
     def from_dict(cls, data: Dict):
         graph = cls()
-        edges = [(edge['start'], edge['end']) for edge in data['edges']]
-        for node in data['nodes']:
-            if node['is_start']:
-                start = node['agent_name']
+        edges = [(edge["start"], edge["end"]) for edge in data["edges"]]
+        for node in data["nodes"]:
+            if node["is_start"]:
+                start = node["agent_name"]
                 # data['nodes'].remove(node)
-            if node['is_end']:
-                end = node['agent_name']
+            if node["is_end"]:
+                end = node["agent_name"]
                 # data['nodes'].remove(node)
         graph.set_start(start)
         graph.set_end(end)
         graph.add_edges(edges)
-        node_attrs = [{'node_name': node['agent_name'], 'node_attrs': {'agent_tools': node['agent_tools'], 'output': node['output']}} for node in data['nodes']]
+        node_attrs = [
+            {
+                "node_name": node["agent_name"],
+                "node_attrs": {
+                    "agent_tools": node["agent_tools"],
+                    "output": node["output"],
+                },
+            }
+            for node in data["nodes"]
+        ]
         graph.update_nodes(node_attrs)
         return graph
+
     def to_dict(self):
         graph_dict = {}
-        graph_dict['nodes'] = []
-        graph_dict['edges'] = []
+        graph_dict["nodes"] = []
+        graph_dict["edges"] = []
         for node_id, node in self.nodes.items():
-            graph_dict['nodes'].append({'agent_name': node['node_name'], 'agent_tools': node['agent_tools'], 'output': node['output'], 'is_start': self.start == node['node_name'], 'is_end': self.end == node['node_name']})
-        
+            graph_dict["nodes"].append(
+                {
+                    "agent_name": node["node_name"],
+                    "agent_tools": node["agent_tools"],
+                    "output": node["output"],
+                    "is_start": self.start == node["node_name"],
+                    "is_end": self.end == node["node_name"],
+                }
+            )
+
         for u, v in self.graph.items():
             for v_id in v:
-                graph_dict['edges'].append({'start': self.nodes[u]['node_name'], 'end': self.nodes[v_id]['node_name']})
+                graph_dict["edges"].append(
+                    {
+                        "start": self.nodes[u]["node_name"],
+                        "end": self.nodes[v_id]["node_name"],
+                    }
+                )
         return graph_dict

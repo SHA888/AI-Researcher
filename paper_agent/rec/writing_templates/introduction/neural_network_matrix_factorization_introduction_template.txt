@@ -6,9 +6,9 @@ One of the most popular approaches to modeling [data/context] is based on [exist
 
 [State additional methods if applicable and their definitions, keeping formal structure]. [Provide motivation or context around these methods and their applications].
 
-Furthermore, [explain limitations or challenges of existing methods]. One way to improve upon [existing method] is to [introduce your enhancement or alternative]. In this approach, [describe how your model differs and any additional component definitions]. 
+Furthermore, [explain limitations or challenges of existing methods]. One way to improve upon [existing method] is to [introduce your enhancement or alternative]. In this approach, [describe how your model differs and any additional component definitions].
 
-In this work, we propose [new method name] to address [specific challenge or limitation]. Our method consists of three main components: [component 1], [component 2], and [component 3]. 
+In this work, we propose [new method name] to address [specific challenge or limitation]. Our method consists of three main components: [component 1], [component 2], and [component 3].
 
 Specifically, we define [key concept] as follows:
 

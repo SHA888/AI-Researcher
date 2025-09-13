@@ -27,7 +27,7 @@ The [additional dataset name] requires the model to [describe task]. Although [p
 
 In this section, we measure [Model Name]’s ability to handle a variety of [specific tasks]. First, we look at datasets involving [describe the nature of the data]. We evaluate in the [specific setting] setting as suggested by [reference]. On [specific dataset], [Model Name]’s performance [compare to prior benchmarks with evidence].
 
-We also [explain comparison or performance for additional datasets]. 
+We also [explain comparison or performance for additional datasets].
 
 \begin{table}[htb]
     \caption{[Another Table Description]}
@@ -48,7 +48,7 @@ We also [explain comparison or performance for additional datasets].
 
 In collecting training data for [Model Name], we used [methodology description]. As a result, although [Model Name]’s training data primarily consists of [main language proportion], it also includes [non-primary language proportion]. Existing [related methodologies] often combine [method] to [explain goal]. By contrast, [Model Name] learns from [describe training data strategy].
 
-We find that zero-shot [Model Name] underperforms [reference works or benchmarks]. However, the [one-shot/few-shot] setting exhibits [describe improvement]. 
+We find that zero-shot [Model Name] underperforms [reference works or benchmarks]. However, the [one-shot/few-shot] setting exhibits [describe improvement].
 
 \begin{table}[htb]
     \caption{[Translation Results]}
@@ -67,7 +67,7 @@ We find that zero-shot [Model Name] underperforms [reference works or benchmarks
 
 \subsection{[Final Task Name, e.g., SuperGLUE]}
 
-The [Benchmark Name] is a standardized collection of datasets [reference]. In the few-shot setting, we used [number of examples] examples for all tasks, sampled randomly from the training set. 
+The [Benchmark Name] is a standardized collection of datasets [reference]. In the few-shot setting, we used [number of examples] examples for all tasks, sampled randomly from the training set.
 
 \begin{table}[htb]
     \caption{[SuperGLUE Performance]}

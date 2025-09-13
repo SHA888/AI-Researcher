@@ -5,7 +5,7 @@ According to [context or classification basis], [area of study/method] can be na
 
 \subsection{[Subcategory 1]}
 
-[Multiple sentences explaining the motivation and intuition behind the proposed method based on prior work in this subcategory.] 
+[Multiple sentences explaining the motivation and intuition behind the proposed method based on prior work in this subcategory.]
 
 \subsubsection{[Component/Aspect 1]}
 [Several sentences detailing specific techniques or approaches related to Component 1 that are important in this subcategory, including relevant citations or references.]

@@ -25,7 +25,7 @@ Proof.
 [Detailed explanation of each term in the equations followed by mathematical steps proving each property if applicable].
 
 \subsection{Discussion}
-Let us consider [specific case or scenario]. In this case, we observe that [analysis of the results]. 
+Let us consider [specific case or scenario]. In this case, we observe that [analysis of the results].
 
 Concerns regarding [issue/topic] include [discussion of potential challenges]. To address this, we propose [solution or adjustment mechanism].
 

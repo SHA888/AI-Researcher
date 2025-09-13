@@ -2,7 +2,7 @@
 
 In this study, we found that [key finding related to the field]. Specifically, [a brief explanation of the significance of this finding]. To address [challenge identified in the research], we propose [module name] inspired by [previous work/technique]. Our method aims to [objective of the proposed method].
 
-To tackle [specific challenge], our method consists of three main components: 
+To tackle [specific challenge], our method consists of three main components:
 \begin{itemize}
     \item [component 1: description]
     \item [component 2: description]

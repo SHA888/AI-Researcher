@@ -11,7 +11,7 @@ To tackle [challenge], our method consists of three main components: [Component 
     [Mathematical formulation of the key components]
 \end{equation}
 
-\noindent Where [detailed explanation of each term in the equations]. 
+\noindent Where [detailed explanation of each term in the equations].
 
 Accordingly, we demonstrate that [key result or finding related to proposed method]. We validate the effectiveness of [Module Name] on [examples or types of models], and the experimental results show that with [specific condition], [Module Name] can achieve [performance results or comparisons].
 ```

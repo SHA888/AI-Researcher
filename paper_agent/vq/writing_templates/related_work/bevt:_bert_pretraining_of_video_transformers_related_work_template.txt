@@ -11,7 +11,7 @@ Motivated by [describe motivation or performance of a previous approach], there 
 At the core of many [domain] tasks is [describe fundamental concept]. Since [explain limitations of conventional methods], there is an ever-increasing trend in [approach] [citations]. The main idea is [describe core idea behind the approach]. [Introduce additional methods or paradigms relevant to the subtopic, along with their contributions and limitations].
 
 \subsection{[Subtopic 3]}
-In contrast to [previous approaches], [name specific method or framework] is extremely popular and extensively studied in [relevant domain]. As an effort that [describe how it relates or unifies different areas], [contributions or key findings of the specific work]. [Mention concurrent works and their contributions]. 
+In contrast to [previous approaches], [name specific method or framework] is extremely popular and extensively studied in [relevant domain]. As an effort that [describe how it relates or unifies different areas], [contributions or key findings of the specific work]. [Mention concurrent works and their contributions].
 
 \subsection{Summary}
 In this paper, we [state the focus or contribution of your work]. Different from [previous works], we [describe your unique approach or perspective], which allows [explain the potential advantages or outcomes of your approach].

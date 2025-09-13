@@ -11,13 +11,13 @@ Our method consists of the following key components:
 \end{itemize}
 
 Formally, we define [insert key concept to clarify] as follows:
-\begin{equation} 
+\begin{equation}
     [insert equation]
 \end{equation}
 
-To prevent [insert specific issue like overfitting], we [insert strategy or approach taken, e.g., utilize the same parameters across datasets]. 
+To prevent [insert specific issue like overfitting], we [insert strategy or approach taken, e.g., utilize the same parameters across datasets].
 
-Specifically, to ensure the statistical robustness of our experimental setup, we [insert method used for statistical evaluation, e.g., calculate confidence intervals via bootstrapping]. We also report [insert description of statistical tests performed, e.g., p-values of a paired t-test for main claims]. 
+Specifically, to ensure the statistical robustness of our experimental setup, we [insert method used for statistical evaluation, e.g., calculate confidence intervals via bootstrapping]. We also report [insert description of statistical tests performed, e.g., p-values of a paired t-test for main claims].
 
 Details of our experimental setup can be found in [insert reference to an appendix or supplementary material].
 
@@ -48,7 +48,7 @@ To maintain comparability across models, we adopted a [insert type of model] tha
 
 \section{Results}
 
-The results for [insert performance metric, e.g., accuracy, F1-score] are summarized in Table [insert table number]. 
+The results for [insert performance metric, e.g., accuracy, F1-score] are summarized in Table [insert table number].
 Notably, [insert key findings regarding model performance compared to baselines]. This thorough setup further reveals that [insert significant observations about previous claims or assumptions].
 
 Concluding this section, we argue that [insert final explanation or summary of findings in relation to the experimental setup].

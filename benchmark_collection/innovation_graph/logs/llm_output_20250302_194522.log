@@ -3837,7 +3837,7 @@ Analyze the given research paper and write a detailed technical instruction para
 
 (If the examples above do not apply to the input paper, ignore the examples)
 
-Focus only on the technical methodology and implementation aspects. Exclude background information, literature review, and experimental results. Write in a clear, sequential format that a technical researcher could follow to reproduce the core method. 
+Focus only on the technical methodology and implementation aspects. Exclude background information, literature review, and experimental results. Write in a clear, sequential format that a technical researcher could follow to reproduce the core method.
 
 Directly write the instruction without any other words.
 
@@ -4211,7 +4211,7 @@ To implement the Heterogeneous Graph Contrastive Learning (HGCL) methodology for
    - **Contrastive Loss Function**: Regulates the learning of representations across different views by maximizing similarity for positive pairs and minimizing it for negative pairs.
 
 4. **Implementation Details**:
-   - **Input/Output Specifications**: 
+   - **Input/Output Specifications**:
      - **Inputs**: Three adjacency matrices for user-item, user-user, and item-item graphs.
      - **Outputs**: denser, representation embeddings for users and items used for prediction.
    - **Key Parameters**:
@@ -4252,7 +4252,7 @@ Write research instructions that captures the research foundations of the given 
 4. Key objectives and intended contributions
 
 Focus solely on the motivations and goals while avoiding:
-- Specific technical implementation details 
+- Specific technical implementation details
 - Names of proposed models or novel components
 - Experimental details or results
 - Detailed architectural design choices

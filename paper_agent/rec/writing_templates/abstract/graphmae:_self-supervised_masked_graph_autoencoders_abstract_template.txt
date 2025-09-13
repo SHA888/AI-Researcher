@@ -7,7 +7,7 @@
 
 In this paper, we \textbf{[State the main objective of the research]} and \textbf{[Introduce the proposed solution or model name]} to address \textbf{[Identify the specific challenges]}.
 
-To tackle \textbf{[Challenge]}, our method consists of three main components: 
+To tackle \textbf{[Challenge]}, our method consists of three main components:
 \begin{enumerate}
     \item \textbf{[Component 1: Describe the first major component or feature of your method]}
     \item \textbf{[Component 2: Describe the second major component or feature]}

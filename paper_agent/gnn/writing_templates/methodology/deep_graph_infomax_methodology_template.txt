@@ -12,13 +12,13 @@ Here we will focus on [specific encoding/architecture type], which generates [re
 
 \subsection{[Key Concept/Technique]}
 
-Our approach to learning the [component] relies on [descriptive strategy/goal] - that is, we seek to [explain purpose of method]. 
+Our approach to learning the [component] relies on [descriptive strategy/goal] - that is, we seek to [explain purpose of method].
 
 In order to obtain [specific representations], we leverage a [function/type] and use it to summarize [previous outputs] into a [desired output]; i.e., [Summarization Equation].
 
 As a means of [objective purpose], we employ a [function/strategy] such that [Description of Functionality].
 
-Negative samples for [function] are provided by [description of sampling method]. In a [context setting], such samples may be obtained as [explanation of dataset]. 
+Negative samples for [function] are provided by [description of sampling method]. In a [context setting], such samples may be obtained as [explanation of dataset].
 
 For the objective, we follow the intuitions from [Previous Work] and use a [type of objective] with a [loss type] loss between the samples from [positive set] and [negative set]. Following their work, we use the following objective:
 
@@ -26,7 +26,7 @@ For the objective, we follow the intuitions from [Previous Work] and use a [type
 L = [Equation of Objective]
 \end{equation}
 
-This approach effectively [describe what is achieved through the objective]. 
+This approach effectively [describe what is achieved through the objective].
 
 \subsection{Theoretical Motivation}
 

@@ -2,7 +2,7 @@
 
 Data is often represented in the form of [data representation, e.g., "an array or matrix"]. [Previous work/technique] has attempted to [address a challenge] by [description of the previous technique]. In particular, [motivation for the proposed method]. To improve upon [existing challenge], we propose [module name] which aims to [solving challenge].
 
-To tackle [specific challenge], our method consists of three main components: 
+To tackle [specific challenge], our method consists of three main components:
 1. [Component 1 description]
 2. [Component 2 description]
 3. [Component 3 description]

@@ -4,7 +4,7 @@ In recent years, [field or application area] has seen significant advancements i
 
 Although some recent studies have [summarize related approaches or methods], they primarily [describe the limitation or gap in these approaches]. When it comes to [describe key factor or component relevant to the problem], they still [explain the shortcomings of existing techniques].
 
-To tackle [specific challenge], we propose [module name or method], which [briefly describe the purpose or function of the method]. [Multiple sentences explaining the motivation and intuition behind the proposed method]. To further enhance [describe what aspect of the method is enhanced or improved], we [describe the additional technique or method proposed]. 
+To tackle [specific challenge], we propose [module name or method], which [briefly describe the purpose or function of the method]. [Multiple sentences explaining the motivation and intuition behind the proposed method]. To further enhance [describe what aspect of the method is enhanced or improved], we [describe the additional technique or method proposed].
 
 Formally, we define [concept] as follows:
 \begin{equation}
@@ -12,6 +12,6 @@ Formally, we define [concept] as follows:
 \end{equation}
 where [detailed explanation of each term in the equations].
 
-Extensive experiments on [specific datasets or scenarios] demonstrate [summarize the findings or results]. In comparison to [existing methods or approaches], our proposed [module name or method] shows [specific results or improvements]. Empirical evidence indicates that [describe any additional findings or implications]. 
+Extensive experiments on [specific datasets or scenarios] demonstrate [summarize the findings or results]. In comparison to [existing methods or approaches], our proposed [module name or method] shows [specific results or improvements]. Empirical evidence indicates that [describe any additional findings or implications].
 
 Specifically, [transition phrase, if needed, to elaborate on results or implications].

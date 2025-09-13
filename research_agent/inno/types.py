@@ -1,5 +1,4 @@
-from litellm.types.utils import ChatCompletionMessageToolCall, Function, Message
-from typing import List, Callable, Union, Optional, Tuple
+from typing import Callable, List, Optional, Tuple, Union
 
 # Third-party imports
 from pydantic import BaseModel
@@ -37,4 +36,4 @@ class Result(BaseModel):
     value: str = ""
     agent: Optional[Agent] = None
     context_variables: dict = {}
-    image: Optional[str] = None # base64 encoded image
+    image: Optional[str] = None  # base64 encoded image

@@ -1,5 +1,5 @@
 2025-01-23 10:02:51,832 - INFO - Starting final experiments with optimized configuration
-2025-01-23 10:02:51,832 - INFO - 
+2025-01-23 10:02:51,832 - INFO -
 Starting experiments on yelp dataset
 2025-01-23 10:02:51,914 - INFO - yelp dataset loaded: 29601 users, 24734 items
 2025-01-23 10:03:30,199 - INFO - Epoch 1/35 - Loss: 5.0036
@@ -51,17 +51,17 @@ Starting experiments on yelp dataset
 2025-01-23 10:19:59,184 - INFO - Epoch 35/35 - Loss: 4.3710
 2025-01-23 10:20:07,600 - INFO - Epoch 35 Eval - Recall@20: 0.0577, NDCG@20: 0.0469
 2025-01-23 10:20:07,600 - INFO - New best performance - Recall@20: 0.0577, NDCG@20: 0.0469
-2025-01-23 10:20:16,014 - INFO - 
+2025-01-23 10:20:16,014 - INFO -
 Final Results for yelp:
 2025-01-23 10:20:16,014 - INFO - Best - Recall@20: 0.0577, NDCG@20: 0.0469
 2025-01-23 10:20:16,014 - INFO - Final - Recall@20: 0.0577, NDCG@20: 0.0469
-2025-01-23 10:20:16,030 - INFO - 
+2025-01-23 10:20:16,030 - INFO -
 Starting experiments on gowalla dataset
 2025-01-23 10:20:16,227 - INFO - gowalla dataset loaded: 5000 users, 5000 items
 2025-01-23 10:20:16,227 - ERROR - Error during experiment on gowalla: 'Tensor' object has no attribute 'tocoo'
-2025-01-23 10:20:16,227 - INFO - 
+2025-01-23 10:20:16,227 - INFO -
 Comparative Results Across Datasets:
-2025-01-23 10:20:16,227 - INFO - 
+2025-01-23 10:20:16,227 - INFO -
 yelp:
 2025-01-23 10:20:16,227 - INFO - Best Performance - Recall@20: 0.0577, NDCG@20: 0.0469
 2025-01-23 10:20:16,227 - INFO - Final Performance - Recall@20: 0.0577, NDCG@20: 0.0469

@@ -22,4 +22,3 @@ CiteSeer:
   Mean Test Accuracy: 0.1810 ± 0.0000
 PubMed:
   Mean Test Accuracy: 0.4072 ± 0.0004
-

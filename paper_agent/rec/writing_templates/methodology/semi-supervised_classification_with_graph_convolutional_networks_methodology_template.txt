@@ -7,7 +7,7 @@ Having introduced a [general technique/model] for [specific purpose], we can ret
 In the following, we consider a [description of the specific model], for [specific application] on a graph with [description of graph properties]. We first [brief description of the pre-processing step]. Our forward model then takes the simple form:
 
 \begin{equation}
-Z = f(X, A) = [function/formulation] 
+Z = f(X, A) = [function/formulation]
 \end{equation}
 
 Here, [explanation of the terms involved in the equation]. For [specific purpose], we then evaluate [evaluation method] over all labeled examples:

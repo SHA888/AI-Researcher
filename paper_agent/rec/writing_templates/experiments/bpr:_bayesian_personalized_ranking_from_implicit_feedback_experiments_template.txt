@@ -27,7 +27,7 @@ We repeated all experiments [number] times by drawing new train/test splits in e
 
 \subsection{Results and Discussion}
 
-Figure [number] shows the [metric quality] of all models on the [number] datasets. First of all, you can see that [comparison of results]. Comparing the same models among each other one can see [observations about model comparisons]. For example, [detailed explanation of comparison]. [Further observations about optimization or performance]. 
+Figure [number] shows the [metric quality] of all models on the [number] datasets. First of all, you can see that [comparison of results]. Comparing the same models among each other one can see [observations about model comparisons]. For example, [detailed explanation of comparison]. [Further observations about optimization or performance].
 
 To summarize, our results show [main findings]. The empirical results indicate that [conclusion based on findings]. The results are justified by [supporting argument or analysis].
 

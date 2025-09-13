@@ -1,5 +1,5 @@
 2025-01-23 09:40:09,043 - INFO - Starting final experiments with optimized configuration
-2025-01-23 09:40:09,043 - INFO - 
+2025-01-23 09:40:09,043 - INFO -
 Starting experiments on yelp dataset
 2025-01-23 09:40:09,125 - INFO - yelp dataset loaded: 29601 users, 24734 items
 2025-01-23 09:40:47,437 - INFO - Epoch 1/35 - Loss: 5.0209
@@ -51,16 +51,16 @@ Starting experiments on yelp dataset
 2025-01-23 09:57:15,420 - INFO - Epoch 35/35 - Loss: 4.3649
 2025-01-23 09:57:23,763 - INFO - Epoch 35 Eval - Recall@20: 0.0579, NDCG@20: 0.0469
 2025-01-23 09:57:23,763 - INFO - New best performance - Recall@20: 0.0579, NDCG@20: 0.0469
-2025-01-23 09:57:32,117 - INFO - 
+2025-01-23 09:57:32,117 - INFO -
 Final Results for yelp:
 2025-01-23 09:57:32,117 - INFO - Best - Recall@20: 0.0579, NDCG@20: 0.0469
 2025-01-23 09:57:32,117 - INFO - Final - Recall@20: 0.0579, NDCG@20: 0.0469
-2025-01-23 09:57:32,133 - INFO - 
+2025-01-23 09:57:32,133 - INFO -
 Starting experiments on gowalla dataset
 2025-01-23 09:57:32,133 - ERROR - Error during experiment on gowalla: [Errno 2] No such file or directory: 'data/gowalla/trnMat.pkl'
-2025-01-23 09:57:32,133 - INFO - 
+2025-01-23 09:57:32,133 - INFO -
 Comparative Results Across Datasets:
-2025-01-23 09:57:32,133 - INFO - 
+2025-01-23 09:57:32,133 - INFO -
 yelp:
 2025-01-23 09:57:32,133 - INFO - Best Performance - Recall@20: 0.0579, NDCG@20: 0.0469
 2025-01-23 09:57:32,133 - INFO - Final Performance - Recall@20: 0.0579, NDCG@20: 0.0469

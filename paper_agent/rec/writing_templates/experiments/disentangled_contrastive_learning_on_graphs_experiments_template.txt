@@ -31,7 +31,7 @@ Besides the quantitative evaluation, we also provide a qualitative evaluation by
 
 We perform ablation studies over the key components of our method to understand their functionalities more deeply. We compare [proposed method] with the following variants: (1) Variant 1: [description of first variant]. (2) Variant 2: [description of second variant].
 
-The results of [proposed method] and its variants are shown in Table [number]. We observe [key findings]. The results indicate [implications for future research]. 
+The results of [proposed method] and its variants are shown in Table [number]. We observe [key findings]. The results indicate [implications for future research].
 
 [Additional figures, such as correlations or qualitative analyses, can be mentioned here.]
 ```

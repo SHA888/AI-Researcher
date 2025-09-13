@@ -13,7 +13,7 @@ There are [number] strategies to define [concept/approach]; either from a [first
 
 [Operation Definition]. As we cannot express [specific operation] in the original domain, the operation is defined in [alternate domain] such that [operation definition]. It follows that [filtered output description].
 
-A [type of filter] is defined as [filter basic form], where [parameters and their implications]. [Explanation of localization and computational complexity]. 
+A [type of filter] is defined as [filter basic form], where [parameters and their implications]. [Explanation of localization and computational complexity].
 
 [Recursive or Efficient Computation Technique]. While we have shown [previous result], the computation still requires [complexity description]. A solution to this is [new method or approach] which simplifies the computation.
 
@@ -27,13 +27,13 @@ where [explanation of variables in the equation]. Each computation boils down to
 
 \subsection{[Next Subsection Title]}
 
-The [operation type] requires [contextual description relating to the operation]. [Challenges or complexities associated with this operation]. While many [techniques or approaches] exist, we focus on [specific techniques or methods relevant for the discussion]. 
+The [operation type] requires [contextual description relating to the operation]. [Challenges or complexities associated with this operation]. While many [techniques or approaches] exist, we focus on [specific techniques or methods relevant for the discussion].
 
 [Specific method explanation]. [Additional details about the method's working or advantages]. This method offers [outcome or benefit of the method].
 
 \subsection{[Another Subsection Title]}
 
-[Next significant operation discussion]. [Rationale for the need for efficiency]. The following steps entail [successive actions to achieve the operation]. 
+[Next significant operation discussion]. [Rationale for the need for efficiency]. The following steps entail [successive actions to achieve the operation].
 
 We proceed in two steps: (i) [step one description] and (ii) [step two description]. [Detailed process description]. The arrangement allows [benefit or simplification] which facilitates [performance aspect].
 

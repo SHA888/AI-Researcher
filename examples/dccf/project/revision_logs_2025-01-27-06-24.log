@@ -1,4 +1,4 @@
-2025-01-27 06:24:40,781 [INFO] 
+2025-01-27 06:24:40,781 [INFO]
 ==================================================
 Starting experiment set: refined_base
 ==================================================
@@ -9,7 +9,7 @@ CUDA kernel errors might be asynchronously reported at some other API call, so t
 For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
 Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
 
-2025-01-27 06:24:42,717 [INFO] 
+2025-01-27 06:24:42,717 [INFO]
 ==================================================
 Starting experiment set: hierarchical_intent
 ==================================================
@@ -20,7 +20,7 @@ CUDA kernel errors might be asynchronously reported at some other API call, so t
 For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
 Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
 
-2025-01-27 06:24:44,541 [INFO] 
+2025-01-27 06:24:44,541 [INFO]
 ==================================================
 Starting experiment set: deep_gnn
 ==================================================
@@ -31,5 +31,5 @@ CUDA kernel errors might be asynchronously reported at some other API call, so t
 For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
 Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
 
-2025-01-27 06:24:46,300 [INFO] 
+2025-01-27 06:24:46,300 [INFO]
 Revision experiments completed. Results saved.

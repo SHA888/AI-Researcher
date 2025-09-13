@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
+
 
 class MetaNetwork(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim, rank=10):
@@ -14,7 +14,7 @@ class MetaNetwork(nn.Module):
         self.fc1_u = nn.Linear(input_dim, rank)
         self.fc1_v = nn.Linear(rank, hidden_dim * input_dim)
         self.prelu1 = nn.PReLU()
-        
+
         self.fc2_u = nn.Linear(hidden_dim, rank)
         self.fc2_v = nn.Linear(rank, output_dim * hidden_dim)
         self.prelu2 = nn.PReLU()
@@ -40,7 +40,11 @@ class MetaNetwork(nn.Module):
         item_trans = self.get_transformation_matrix(item_embeddings)
 
         # Apply transformations
-        user_transformed = torch.bmm(user_embeddings.unsqueeze(1), user_trans).squeeze(1)
-        item_transformed = torch.bmm(item_embeddings.unsqueeze(1), item_trans).squeeze(1)
+        user_transformed = torch.bmm(user_embeddings.unsqueeze(1), user_trans).squeeze(
+            1
+        )
+        item_transformed = torch.bmm(item_embeddings.unsqueeze(1), item_trans).squeeze(
+            1
+        )
 
         return user_transformed, item_transformed

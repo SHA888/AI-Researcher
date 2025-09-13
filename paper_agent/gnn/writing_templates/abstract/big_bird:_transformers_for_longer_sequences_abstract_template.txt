@@ -15,7 +15,7 @@ where [detailed explanation of each term in the equation].
 
 Our method consists of three main components: [component 1], [component 2], and [component 3]. [Multiple sentences explaining the motivation and intuition behind the proposed method]. Furthermore, [A paragraph describing the detailed workflow of the module].
 
-We also conduct a comparative analysis between [module name] and existing approaches. This comparison reveals [several sentences comparing the proposed method with existing approaches]. 
+We also conduct a comparative analysis between [module name] and existing approaches. This comparison reveals [several sentences comparing the proposed method with existing approaches].
 
 Through our experiments, we show that [summary of experimental results and their implications]. As a result, [highlight the broader impacts of the proposed method, including potential applications beyond the primary focus].
 

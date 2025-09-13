@@ -19,7 +19,7 @@ Formally, we define [concept] as follows:
 \text{[Mathematical formulation of the key components]}
 \end{equation}
 
-In our approach, [detailed explanation of each term in the equations]. 
+In our approach, [detailed explanation of each term in the equations].
 
 The objective is to [describe the goal or metric to be minimized/maximized]:
 
@@ -27,7 +27,7 @@ The objective is to [describe the goal or metric to be minimized/maximized]:
 L = [mathematical expression]
 \end{equation}
 
-Concretely, we [explain the input/output of the process], highlighting the key difference between our approach and [reference to existing methods]. 
+Concretely, we [explain the input/output of the process], highlighting the key difference between our approach and [reference to existing methods].
 
 \subsubsection{[Second Component Title]}
 

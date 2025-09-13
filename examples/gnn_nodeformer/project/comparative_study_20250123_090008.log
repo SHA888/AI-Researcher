@@ -1,4 +1,4 @@
-2025-01-23 09:00:08,001 - 
+2025-01-23 09:00:08,001 -
 Running experiments on Cora
 2025-01-23 09:00:08,001 - Run 1/5
 2025-01-23 09:00:09,177 - Cora - Epoch 10: Loss=2.8918, Val Acc=0.1560, Test Acc=0.1440
@@ -108,7 +108,7 @@ Running experiments on Cora
 2025-01-23 09:00:17,234 - Cora Results:
 2025-01-23 09:00:17,234 - Validation: 0.3152 ± 0.0030
 2025-01-23 09:00:17,234 - Test: 0.3172 ± 0.0040
-2025-01-23 09:00:17,234 - 
+2025-01-23 09:00:17,234 -
 Running experiments on CiteSeer
 2025-01-23 09:00:17,234 - Run 1/5
 2025-01-23 09:00:25,085 - CiteSeer - Epoch 10: Loss=2.7358, Val Acc=0.0580, Test Acc=0.0770
@@ -218,7 +218,7 @@ Running experiments on CiteSeer
 2025-01-23 09:00:41,212 - CiteSeer Results:
 2025-01-23 09:00:41,212 - Validation: 0.2332 ± 0.0027
 2025-01-23 09:00:41,212 - Test: 0.1810 ± 0.0000
-2025-01-23 09:00:41,212 - 
+2025-01-23 09:00:41,212 -
 Running experiments on PubMed
 2025-01-23 09:00:41,212 - Run 1/5
 2025-01-23 09:00:53,062 - PubMed - Epoch 10: Loss=1.9438, Val Acc=0.4160, Test Acc=0.4070

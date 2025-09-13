@@ -6,7 +6,7 @@ For [specific tasks or applications], [our approach] can [describe advantages, s
 
 We are excited about the future of [research area or technique] and plan to [describe future research directions]. We aim to [list specific goals or extensions of the work, such as applying to new problems or improving existing methods].
 
-The code we used to [describe functionality] is available at [link to code repository]. 
+The code we used to [describe functionality] is available at [link to code repository].
 
 \begin{itemize}
     \item Inspiration: Inspired by [previous work/technique], we propose [module name] to address [challenge].

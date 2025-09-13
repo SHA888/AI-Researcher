@@ -6,7 +6,7 @@ To each row, \( n \in N \), we associate a latent feature vector \( U_n \in \mat
 
 Let \( f_{\theta} \) represent a model (e.g., neural network, regression model) with parameters \( \theta \). \textbf{[Describe the general use of parameters in relation to the random variables being modeled.]}
 
-Viewing \( \theta \) and the latent features \( (U, V) \) as unknown parameters, we assume the entries \( X_{n,m} \) are independent random variables with means 
+Viewing \( \theta \) and the latent features \( (U, V) \) as unknown parameters, we assume the entries \( X_{n,m} \) are independent random variables with means
 
 \[
 \hat{X}_{n,m} := \hat{X}(U_n, V_m, U'_n, V'_m).

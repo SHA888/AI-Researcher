@@ -20,7 +20,7 @@ Next, we will provide a description of [existing relation, method or technique r
 
 Learning [describe the nature of a method or representation] provides an effective way to [explain the importance of the method in the context of your research focus]. [Reference notable existing method] is commonly used due to its [mention advantages and effectiveness].
 
-However, [discuss potential limitations or challenges with this method]. Therefore, [Name or describe the technique being discussed] [explain how it improves upon the mentioned method]. 
+However, [discuss potential limitations or challenges with this method]. Therefore, [Name or describe the technique being discussed] [explain how it improves upon the mentioned method].
 
 It defines [describe metrics or scoring functions relevant to the method] as follows:
 
@@ -28,7 +28,7 @@ It defines [describe metrics or scoring functions relevant to the method] as fol
 f( \text{parameters} ) = [Mathematical formulation]
 \end{equation}
 
-where a lower score indicates [explain the significance of the score in context]. 
+where a lower score indicates [explain the significance of the score in context].
 
 In addition, the training procedure [describe the training objective, goal or method].
 
@@ -36,8 +36,8 @@ In addition, the training procedure [describe the training objective, goal or me
 L_k = [Mathematical formulation]
 \end{equation}
 
-where [provide explanations for terms, components, hyperparameters, etc.]. 
+where [provide explanations for terms, components, hyperparameters, etc.].
 
-The objective of [method/technique] is to [reiterate main purpose or desired outcome of the training]. 
+The objective of [method/technique] is to [reiterate main purpose or desired outcome of the training].
 
 This structure creates a logical flow from problem definition to methodology description, facilitating a clear understanding of [summarize the expected goals of the study].

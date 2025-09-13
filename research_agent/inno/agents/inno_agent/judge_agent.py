@@ -1,25 +1,18 @@
-from research_agent.inno.types import Agent
-from research_agent.inno.tools import gen_code_tree_structure, read_file, terminal_page_down, terminal_page_up, terminal_page_to
-from research_agent.inno.tools.inno_tools.code_search import search_github_repos
-from research_agent.inno.tools.inno_tools.web_tools import with_env as with_env_web
-from research_agent.inno.util import make_message, make_tool_message
-from research_agent.inno.registry import register_agent
+import json
+from inspect import signature
+from typing import Dict
+
 from research_agent.inno.environment.docker_env import DockerEnv
 from research_agent.inno.environment.docker_env import with_env as with_env_docker
-from research_agent.inno.environment.browser_env import BrowserEnv
-from research_agent.inno.tools.terminal_tools import execute_command
-from research_agent.inno.tools.file_surfer_tool import with_env as with_env_file
-from research_agent.inno.tools.file_surfer_tool import (
-    open_local_file,
-    page_up_markdown,
-    find_on_page_ctrl_f,
-    find_next,
-    visualizer,
+from research_agent.inno.registry import register_agent
+from research_agent.inno.tools import (
+    gen_code_tree_structure,
+    read_file,
+    terminal_page_down,
+    terminal_page_to,
+    terminal_page_up,
 )
-from research_agent.inno.environment.markdown_browser import RequestsMarkdownBrowser
-from inspect import signature
-from typing import Dict, Any
-import json
+from research_agent.inno.types import Agent
 
 
 def case_resolved(
@@ -43,7 +36,6 @@ The suggestion about the implementation:
     return ret_val
 
 
-
 def get_code_review_agent(model: str, **kwargs):
     code_env: DockerEnv = kwargs.get("code_env", None)
 
@@ -61,7 +53,13 @@ def get_code_review_agent(model: str, **kwargs):
       After reviewing the code, you should use the function `transfer_to_judge_agent` to transfer the conversation to the `Judge Agent`, and give a code review report.
       """
 
-    tools = [read_file, gen_code_tree_structure, terminal_page_down, terminal_page_up, terminal_page_to]
+    tools = [
+        read_file,
+        gen_code_tree_structure,
+        terminal_page_down,
+        terminal_page_up,
+        terminal_page_to,
+    ]
     tools = [
         with_env_docker(code_env)(tool) if "env" in signature(tool).parameters else tool
         for tool in tools
@@ -77,8 +75,8 @@ def get_code_review_agent(model: str, **kwargs):
 
 @register_agent("get_judge_agent")
 def get_judge_agent(model: str, **kwargs):
-    file_env: RequestsMarkdownBrowser = kwargs.get("file_env", None)
-    web_env: BrowserEnv = kwargs.get("web_env", None)
+    kwargs.get("file_env", None)
+    kwargs.get("web_env", None)
     code_env: DockerEnv = kwargs.get("code_env", None)
     # academic_search_agent = get_academic_search_agent(
     #     model, web_env=web_env, code_env=code_env
@@ -92,7 +90,7 @@ def get_judge_agent(model: str, **kwargs):
 
       A `Machine Learning Agent` has implemented the code in the directory `/{working_dir}/project` with the innovative ideas, but I am not sure if the implementation is correct and meets the requirements of the innovative ideas, especially some specific academic definitions.
 
-      Your job is to go through the implementation, go through the reference codebases in the directory `/{working_dir}`, and make sure the implementation is correct and meets the requirements of the innovative ideas, especially some specific academic definitions. 
+      Your job is to go through the implementation, go through the reference codebases in the directory `/{working_dir}`, and make sure the implementation is correct and meets the requirements of the innovative ideas, especially some specific academic definitions.
 
       [IMPORTANT] You should carefully check whether the `Machine Learning Agent` has implemented the specific atomic idea correctly one by one based on the survey notes and the innovative idea.
 

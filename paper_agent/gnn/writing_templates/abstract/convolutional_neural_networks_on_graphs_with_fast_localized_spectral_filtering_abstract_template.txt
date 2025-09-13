@@ -18,6 +18,6 @@ To tackle [restate the challenge], our method consists of three main components:
 
 Furthermore, [transition statement discussing any relevant experiments or evaluations]. Our experiments on [insert datasets or scenarios] demonstrate [summarize outcomes or findings of the experiments], which showcase the ability of this [novel method/system] to [state capabilities or features learned].
 
-[Several sentences comparing the proposed method with existing approaches]. We highlight that [emphasize any significant advantages or unique aspects in comparison to previous work]. 
+[Several sentences comparing the proposed method with existing approaches]. We highlight that [emphasize any significant advantages or unique aspects in comparison to previous work].
 
 In conclusion, this work presents [summarize overall significance and future directions].

@@ -8,7 +8,7 @@ Self-supervised learning (SSL) has become an essential approach in the fields of
 In the realm of [specific application], [type of SSL method] has emerged as the preferred technique, especially for [specific tasks]. Its effectiveness stems from [explanation of training strategies or objectives], such as [specific example]. However, [challenges] have become apparent, including [issue 1], [issue 2], and [issue 3].
 
 \subsection{Limitations of Existing Approaches}
-Despite its advantages, [specific approach] has not fully addressed [specific challenges or gaps in research]. Previous methods like [list of existing methods] have made attempts to [specific attempts], but they often [specific shortcomings]. Thus, it is crucial to address the following concerns: 
+Despite its advantages, [specific approach] has not fully addressed [specific challenges or gaps in research]. Previous methods like [list of existing methods] have made attempts to [specific attempts], but they often [specific shortcomings]. Thus, it is crucial to address the following concerns:
 
 \begin{enumerate}
     \item [Description of first major challenge]

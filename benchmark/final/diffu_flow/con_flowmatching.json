@@ -75,7 +75,7 @@
         ],
         "justification": "This work focuses on training methods for score-based models which align with the mathematical underpinnings necessary for the velocity consistency approach taken in the proposed model. It serves as a methodological basis that parallels the improvements in model efficiency.",
         "usage": "The training principles were integrated to establish the theoretical performance enhancements seen with the proposed model."
-      }, 
+      },
       {
         "reference": "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow",
         "rank": 7,

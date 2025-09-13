@@ -2,7 +2,7 @@
 
 \subsection{Overview of the Method}
 
-At the core of our approach is the idea of [explain the foundational concept]. This concept, while not novel, has seen varied terminology and motivations across different works. [Cite relevant works] illustrate methods that [describe various approaches]. 
+At the core of our approach is the idea of [explain the foundational concept]. This concept, while not novel, has seen varied terminology and motivations across different works. [Cite relevant works] illustrate methods that [describe various approaches].
 
 We emphasize that what is common across these methodologies is [explain the key unifying theme]. Recent advancements in [related field or technique] suggest we now have the opportunity to [explain the potential advances or improvements].
 
@@ -18,7 +18,7 @@ Our newly constructed dataset enables [discuss the potential outcomes and advant
 
 \subsection{Pre-Training Method Selection}
 
-Current state-of-the-art systems often require [discuss computational demands]. In our investigation, we found [discuss key findings that inform method selection]. 
+Current state-of-the-art systems often require [discuss computational demands]. In our investigation, we found [discuss key findings that inform method selection].
 
 We initially employed [describe initial approach] but encountered challenges in [discuss challenges faced]. However, through [explain adjustments], we were able to significantly improve [describe outcomes].
 

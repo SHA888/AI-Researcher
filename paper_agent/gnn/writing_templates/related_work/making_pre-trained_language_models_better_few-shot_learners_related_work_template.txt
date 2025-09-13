@@ -10,13 +10,13 @@ Our approach is also connected to [another relevant area of research], including
 [Optional: Discuss any additional relevant topics or areas that may be applicable]. Our methodology considers [detail any special conditions or assumptions you are making]. Specifically, we [describe what you're exploring or pushing the boundaries of].
 
 \subsection{Conclusion of Related Work}
-Overall, these findings provide a foundation for [summarize the importance of related work to your research]. To this end, we introduce [your method/module] to address [specific challenge]. 
+Overall, these findings provide a foundation for [summarize the importance of related work to your research]. To this end, we introduce [your method/module] to address [specific challenge].
 
 \subsection{Formal Definitions and Mathematical Background}
 Formally, we define [concept] as follows:
 \begin{equation}
     [Mathematical formulation of the key components]
 \end{equation}
-where [Detailed explanation of each term in the equations]. 
+where [Detailed explanation of each term in the equations].
 
 This comprehensive overview of related work contextualizes our contributions and highlights the relevance of our approach in the ongoing discourse of [domain].

@@ -16,9 +16,9 @@ The [structure of objects, e.g., two-dimensional structure of images] suggests t
 [Discuss the performance of convolutional architectures in relation to the proposed method, comparing them]. [Explain how the new approach addresses limitations or adds advantages over existing methods].
 
 \subsection{Two-Stage Approaches}
-Closest to our approach are [type of approaches]. [List examples and discuss their contributions]. [Explain the advantages of learning representations in two stages]. 
+Closest to our approach are [type of approaches]. [List examples and discuss their contributions]. [Explain the advantages of learning representations in two stages].
 
-[Discuss subsequent methods that expand on these ideas and their implications]. Our approach demonstrates [key advantage] while overcoming [limitations of previous methods not capturing a certain property]. 
+[Discuss subsequent methods that expand on these ideas and their implications]. Our approach demonstrates [key advantage] while overcoming [limitations of previous methods not capturing a certain property].
 
 [Conclude the section with a summarizing statement about how the proposed method fits within the existing research landscape, emphasizing its novel aspects].
 ```

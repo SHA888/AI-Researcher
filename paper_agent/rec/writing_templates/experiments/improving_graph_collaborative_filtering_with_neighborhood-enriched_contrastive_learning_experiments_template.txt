@@ -16,7 +16,7 @@ To verify the effectiveness of the proposed [Method Name], we conduct extensive 
     \item [Baseline Model 5] [brief description of the model and its approach]
     \item [Baseline Model 6] [brief description of the model and its approach]
 \end{itemize}
-  
+
 \subsubsection{Evaluation Metrics.} To evaluate the performance of top-$N$ recommendation, we adopt two widely used metrics [Metric 1] and [Metric 2], where $N$ is set to [value 1], [value 2], and [value 3] for consistency. Following [reference], we adopt the [ranking strategy type] strategy, which ranks all the candidate items that the user has not interacted with.
 
 \subsubsection{Implementation Details.} We implement the proposed model and all the baselines with [Framework Name], which is a [description of the framework]. To ensure a fair comparison, we optimize all the methods with [optimizer type] and carefully search the hyper-parameters of all the baselines. The batch size is set to [number] and all parameters are initialized using [initialization method]. We adopt early stopping with the patience of [number] epochs to prevent overfitting, and [metric] is set as the indicator. We tune the hyper-parameters [Hyperparameter 1] and [Hyperparameter 2] in [range 1] and [Hyperparameter 3] in [range 2].

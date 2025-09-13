@@ -6,7 +6,7 @@ Write research instructions that captures the research foundations of the given 
 4. Key objectives and intended contributions
 
 Focus solely on the motivations and goals while avoiding:
-- Specific technical implementation details 
+- Specific technical implementation details
 - Names of proposed models or novel components
 - Experimental details or results
 - Detailed architectural design choices

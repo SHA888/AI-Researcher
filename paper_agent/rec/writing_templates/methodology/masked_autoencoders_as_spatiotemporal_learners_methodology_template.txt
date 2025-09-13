@@ -33,5 +33,5 @@ The proposed method shows [summary of findings/implications]. Furthermore, [disc
 
 To this end, we plan to [outlines future research directions or improvements].
 
-\subsection{References}  
+\subsection{References}
 [Provide citations here in appropriate format]

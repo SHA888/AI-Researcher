@@ -20,7 +20,7 @@ In future work, we wish to extend this [module] to [new area or type of data], s
     \item [Component 3 description]
 \end{itemize}
 
-\textbf{To this end}, we compare the proposed method with existing approaches by discussing [comparison points]. 
+\textbf{To this end}, we compare the proposed method with existing approaches by discussing [comparison points].
 
 \textbf{Finally}, we provide a detailed explanation of each term in the equations:
 

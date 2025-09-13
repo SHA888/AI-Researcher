@@ -30,7 +30,7 @@ These datasets include [mention any specific side information or graph structure
 \end{table}
 
 \subsection{[Cold-start Analysis or Other Analysis Title]}
-To gain insight into how [method name] performs in specific scenarios, we study [describe the analysis performed]. We adapt the [dataset name] benchmark dataset by [describe modifications made]. 
+To gain insight into how [method name] performs in specific scenarios, we study [describe the analysis performed]. We adapt the [dataset name] benchmark dataset by [describe modifications made].
 
 \begin{table}[ht]
     \centering
@@ -46,7 +46,7 @@ To gain insight into how [method name] performs in specific scenarios, we study 
 \end{table}
 
 \section{Discussion}
-On the [specific task description], our method outperforms [mention comparison methods] by [describe results]. Remarkably, this is true even in the absence of [specific feature or approach]. Our results demonstrate that [summarize key findings and implications]. 
+On the [specific task description], our method outperforms [mention comparison methods] by [describe results]. Remarkably, this is true even in the absence of [specific feature or approach]. Our results demonstrate that [summarize key findings and implications].
 
 Our results on [other datasets] show that it is possible to [describe the effectiveness or advantage of the method]. It is noteworthy that [mention other techniques that could work in conjunction with your method].
 

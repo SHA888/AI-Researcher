@@ -11,7 +11,7 @@ BASELINE = r"""
 • Consistency models: CD (LPIPS) [10], CT (LPIPS) [10], iCT [9] , iCT-deep [9], CTM [5] and CTM [5] + GAN.
 • Rectified flows: 1,2,3-rectified flow(+distill) [6].
 
-References: 
+References:
 [1] David Berthelot, Arnaud Autef, Jierui Lin, Dian Ang Yap, Shuangfei Zhai, Siyuan Hu, Daniel Zheng, Walter Talbott, and Eric Gu. Tract: Denoising diffusion models with transitive closure time-distillation. arXiv preprint arXiv:2303.04248, 2023.
 [2] Chen-Hao Chao, Wei-Fang Sun, Bo-Wun Cheng, Yi-Chen Lo, Chia-Che Chang, Yu-Lun Liu, Yu- Lin Chang, Chia-Ping Chen, and Chun-Yi Lee. Denoising likelihood score matching for conditional score-based data generation. In ICLR. OpenReview.net, 2022.
 [3] Jonathan Ho, Ajay Jain, and Pieter Abbeel. Denoising diffusion probabilistic models. Advances in Neural Information Processing Systems, 33:6840–6851, 2020.
@@ -44,7 +44,7 @@ COMPARISON = r"""
         Score SDE & 2000 & 2.38 \\
         DDPM & 1000 & 3.17 \\
         LSGM  & 147 & 2.10 \\
-        EDM 
+        EDM
          & 35 & 1.97   \\
         \multicolumn{3}{@{}l}{\textbf{Distilled diffusion models}}\\\Xhline{3\arrayrulewidth}
         Knowledge Distillation & 1 & 9.36 \\
@@ -65,20 +65,20 @@ COMPARISON = r"""
         CTM  & 1 & 5.19 \\
         CTM  + GAN & 1 & \textcolor{red}{\textbf{1.98}}  \\
         \multicolumn{3}{@{}l}{\textbf{Rectified flows}}\\\Xhline{3\arrayrulewidth}
-        1-rectified flow (+distill) 
+        1-rectified flow (+distill)
          & 1 & 6.18 \\
-        2-rectified flow  
+        2-rectified flow
          & 1 & 12.21 \\
          & 110 & 3.36  \\
-        +distill 
+        +distill
          & 1 & 4.85 \\
-        3-rectified flow    
+        3-rectified flow
          & 1 & 8.15 \\
          & 104 & 3.96  \\
-        +Distill  
+        +Distill
          & 1 & 5.21  \\
-          
-        
+
+
 	\end{tabular}
     \end{adjustbox}
 	}
@@ -95,10 +95,10 @@ COMPARISON = r"""
         METHOD & NFE ($\downarrow$) & FID ($\downarrow$) \\
         \\[-2ex]
         \multicolumn{1}{@{}l}{\textbf{Diffusion models}}\\\Xhline{3\arrayrulewidth}
-        NCSN++-G & 2000 & 2.25 \\ 
+        NCSN++-G & 2000 & 2.25 \\
         EDM
         & 35  & 1.79 \\
-       
+
     \end{tabular}
     \end{adjustbox}
     }

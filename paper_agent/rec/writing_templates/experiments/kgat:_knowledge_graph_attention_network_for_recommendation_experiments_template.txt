@@ -36,7 +36,7 @@ To demonstrate the effectiveness, we compare our proposed [method] with [number]
 \end{itemize}
 
 \subsubsection{Parameter Settings}
-We implement our [method] in [framework/language]. The [parameter] is fixed to [value] for all models, except [any exceptions]. We optimize all models with [optimization method], where [additional parameter settings and search strategies]. 
+We implement our [method] in [framework/language]. The [parameter] is fixed to [value] for all models, except [any exceptions]. We optimize all models with [optimization method], where [additional parameter settings and search strategies].
 
 \subsection{Performance Comparison (RQ1)}
 We first report the performance of all the methods and then investigate [specific focus of the analysis].

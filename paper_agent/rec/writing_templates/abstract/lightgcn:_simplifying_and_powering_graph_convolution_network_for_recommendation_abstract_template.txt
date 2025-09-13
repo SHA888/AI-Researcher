@@ -16,7 +16,7 @@
 
 \textbf{Implementations:} Our implementations are available in [mention available platforms/libraries, e.g., TensorFlow, PyTorch].
 
-\textbf{Key Terms:} Formally, we define [concept] as follows: 
+\textbf{Key Terms:} Formally, we define [concept] as follows:
 
 \begin{equation}
     [Mathematical formulation of the key components]

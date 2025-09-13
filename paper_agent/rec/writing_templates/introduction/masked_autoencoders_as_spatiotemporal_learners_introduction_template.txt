@@ -15,9 +15,9 @@ We posit that [hypothesis or assumption related to the challenge] is crucial to 
 
 Figure~\ref{fig:example} illustrates [briefly describe what the figure represents]. It is noteworthy that [highlight any significant conclusions drawn from the figure or diagrams].
 
-Moreover, the implications of [main finding] indicate that [insight or conclusion]. In fact, [describe an important consequence or derived result from the proposed method]. 
+Moreover, the implications of [main finding] indicate that [insight or conclusion]. In fact, [describe an important consequence or derived result from the proposed method].
 
-In summary, our method [name of method] yields [brief conclusion about benefits] across [list relevant datasets or applications]. Specifically, it [insert improvement or performance metrics], suggesting that [closing statement about the broader implications on the research field]. 
+In summary, our method [name of method] yields [brief conclusion about benefits] across [list relevant datasets or applications]. Specifically, it [insert improvement or performance metrics], suggesting that [closing statement about the broader implications on the research field].
 
 \begin{figure}[ht]
     \centering

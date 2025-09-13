@@ -3,9 +3,9 @@
 
 \subsection{[Dataset Name]}
 
-[Dataset Name] is a [description of dataset type], based on the [source dataset] where each node corresponds to [describe node representation]. The original dataset is available under [license information]. 
+[Dataset Name] is a [description of dataset type], based on the [source dataset] where each node corresponds to [describe node representation]. The original dataset is available under [license information].
 
-Similar to [recent similar datasets], we [describe data extraction method or process] and construct a [describe graph type] that [describe graph properties]. Unlike [comparison datasets], we [explain differences or improvements] to satisfy the required characteristics for [benchmarking or evaluation purpose]. 
+Similar to [recent similar datasets], we [describe data extraction method or process] and construct a [describe graph type] that [describe graph properties]. Unlike [comparison datasets], we [explain differences or improvements] to satisfy the required characteristics for [benchmarking or evaluation purpose].
 
 We argue that [summarize why this dataset is suitable or significant in the context of the research]. Additionally, we prepare other variants of [Dataset Name] with [describe variations], which are included in [appendix reference].
 
@@ -31,7 +31,7 @@ The performance metric is [describe the evaluation metric and rationale].
 
 \subsection{[Next Dataset Name]}
 
-[Follow the same structure as above, replacing placeholders with relevant content]. 
+[Follow the same structure as above, replacing placeholders with relevant content].
 
 \subsection{[Next Dataset Name]}
 

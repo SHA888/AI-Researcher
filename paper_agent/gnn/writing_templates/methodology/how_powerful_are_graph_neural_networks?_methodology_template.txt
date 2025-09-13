@@ -11,7 +11,7 @@ Proofs of all Lemmas and Theorems can be found in the Appendix. Hence, [explanat
 \textbf{Theorem [Number].} Let [Definition of model]. With a sufficient [context], [describe what model will do and under what conditions].
 
 - a) [Condition/assumption related to the model].
-  
+
 - b) [Another condition/assumption related to the model].
 
 We prove Theorem [Number] in the appendix. [Further explanation or conditions relating to the theorem]. In addition, it would be interesting to [discuss future work or unexplored aspects], and focus on the case where [describe a specific condition and its implications].
@@ -50,7 +50,7 @@ To consider [discuss all relevant aspects/events], we use [mechanism or approach
 h_{G} = [mathematical expression].
 \end{equation}
 
-By Theorem [Number], [conclusion about the impact of changes made]. 
+By Theorem [Number], [conclusion about the impact of changes made].
 
 \section{[Next Section Title]}
 

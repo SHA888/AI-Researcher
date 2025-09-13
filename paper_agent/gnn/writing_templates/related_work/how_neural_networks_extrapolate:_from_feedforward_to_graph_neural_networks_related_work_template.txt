@@ -5,7 +5,7 @@ Early works demonstrate [specific previous findings/limitations], e.g. [example 
 
 Prior works examine [another domain or application] by [describe the methodology or findings of previous research] (Author13 et al., Year; Author14 et al., Year; Author15 et al., Year). We are the first to [state your unique contribution or perspective] and [elaborate on the broader implications or extensions of your findings].
 
-We organize this section as follows: 
+We organize this section as follows:
 
 \begin{itemize}
     \item \textbf{Section 1:} [Brief overview of the first area of related work]

@@ -15,21 +15,21 @@ In this experiment, we show that [description of what is being modeled and compr
 
 Figure [figure number]: [caption describing the figure content].
 
-\[ 
+\[
 \text{[Mathematical formulation of the key components]}
 \]
 
 [Several sentences comparing the proposed method with existing approaches.] Even considering the reduction, [describe the outcome of the experiment]. [Discuss any further improvements or future work.]
 
-Next, we [description of the next steps or experiment]. [Explain the setup, limitations, or observations of the experiment, method, or model.] 
+Next, we [description of the next steps or experiment]. [Explain the setup, limitations, or observations of the experiment, method, or model.]
 
 Figure [figure number]: [caption describing the figure content].
 
 \subsection{[Another Focus of the Experiment]}
 
-In this set of experiments, we evaluate [context or behavior of the method]. 
+In this set of experiments, we evaluate [context or behavior of the method].
 
-We first consider [description of the dataset or experimental setup]. We train [method] where the encoder consists of [details on architecture]. 
+We first consider [description of the dataset or experimental setup]. We train [method] where the encoder consists of [details on architecture].
 
 [Address findings, results, or performance related to the audio context.]
 
@@ -41,7 +41,7 @@ Figure [figure number]: [caption describing the figure content].
 
 \subsection{[Final Focus of the Experiment]}
 
-For our final experiment, we use [description or name of environment]. In Figure [figure number], we show [description of the inputs and outputs]. 
+For our final experiment, we use [description or name of environment]. In Figure [figure number], we show [description of the inputs and outputs].
 
 Generation of [output type] is done purely in [context of latent space or model type]. [Describe how the model operates without needing certain inputs.]
 

@@ -8,7 +8,7 @@ Take [specific example] for instance: First, [explain the varied characteristics
 
 In light of these limitations and challenges, we propose to [state the overall goal of this work]. In this work, we present [proposed method or architecture name] to address [specific issues].
 
-To handle [specific challenge], we introduce [name the key mechanism or strategy]. Instead of [describe traditional approach], [briefly explain your novel approach]. In specific, [describe how the approach works, including any necessary visuals or figures]. As a result, [summarize the advantages of this new approach]. 
+To handle [specific challenge], we introduce [name the key mechanism or strategy]. Instead of [describe traditional approach], [briefly explain your novel approach]. In specific, [describe how the approach works, including any necessary visuals or figures]. As a result, [summarize the advantages of this new approach].
 
 To handle [another specific challenge], we enhance [proposed method name] by proposing [new strategy or technique]. Instead of [describe traditional method], we propose [explain your new approach]. By [describe the method or process], we enable [summarize key benefits of the strategy].
 

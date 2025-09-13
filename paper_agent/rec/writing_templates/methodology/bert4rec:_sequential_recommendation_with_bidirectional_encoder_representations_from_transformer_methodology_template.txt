@@ -53,7 +53,7 @@ In this section, we discuss the relationship of our model with previous work in 
 
 \subsubsection{Comparison with Related Work}
 
-[Related work 1] is notably different since [description of differences]. 
+[Related work 1] is notably different since [description of differences].
 
 [Related work 2] shares similarities with our approach, particularly in [commonality] but diverges in [key differences].
 

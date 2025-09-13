@@ -2,7 +2,7 @@
 
 The concept of [general concept or technique] has a long history, with notable contributions such as [citation] that introduced [specific technique or model]. Another significant advancement in [related field or application] was made by [Author's(s') Name(s) (Year)], where they [brief description of the proposed method]. This work inspired our approach, as it [describe influence, motivation, or rationale].
 
-To address [specific challenge or gap], we propose [Module Name], which consists of three main components: 
+To address [specific challenge or gap], we propose [Module Name], which consists of three main components:
 
 \begin{itemize}
     \item [Component 1: brief description]
@@ -34,6 +34,6 @@ The mathematical formulation of the key components is summarized in the followin
 [E \text{ (mathematical formulation of the key components)}]
 \]
 
-Where [Detailed explanation of each term in the equations]. 
+Where [Detailed explanation of each term in the equations].
 
 In summary, the proposed approach addresses [reiterate the challenge], offering advantages over existing methods by [key benefits or innovations].

@@ -1,14 +1,14 @@
 \section{Abstract}
 
-Recent advancements in [field/technique] have demonstrated [specific achievements] in [application/task]. Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Recent advancements in [field/technique] have demonstrated [specific achievements] in [application/task]. Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
-Specifically, we provide [multiple sentences explaining the motivation and intuition behind the proposed method]. 
+Specifically, we provide [multiple sentences explaining the motivation and intuition behind the proposed method].
 
-Furthermore, [a paragraph describing the detailed workflow of the module]. 
+Furthermore, [a paragraph describing the detailed workflow of the module].
 
-We conduct experiments to compare our proposed method with existing approaches, [several sentences comparing the proposed method with existing approaches]. 
+We conduct experiments to compare our proposed method with existing approaches, [several sentences comparing the proposed method with existing approaches].
 
 Formally, we define [concept] as follows:
 \begin{equation}

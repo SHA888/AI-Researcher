@@ -27,7 +27,7 @@ Building on [describe how this component follows logically from the first], we f
 
 To address these limitations, we propose [describe the proposed method], which consists of [three main components: describe component A, B, and C briefly]. Specifically, our approach uses [explanation of the novelty or technical innovation of this component].
 
-We further implement [explain how you implement this component with relevant examples and equations]. 
+We further implement [explain how you implement this component with relevant examples and equations].
 In detail, the representation learning process involves:
 \begin{equation}
     e^{(l)}_u = [Mathematical representation of user aggregation process]

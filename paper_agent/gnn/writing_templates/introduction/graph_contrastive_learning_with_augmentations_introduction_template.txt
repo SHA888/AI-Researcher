@@ -3,7 +3,7 @@
 
 [Begin with a general statement about the research area and its significance. Mention foundational techniques or concepts that guide the current work.]
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
 [Provide multiple sentences explaining the motivation and intuition behind the proposed method. Discuss the limitations of existing approaches and the gaps in current research.]
 
@@ -22,7 +22,7 @@ Furthermore, [Several sentences comparing the proposed method with existing appr
 
 [Discuss potential challenges or unique considerations related to the implementation or theoretical understanding of your method.]
 
-Contributions. In this paper, we present [briefly summarize the main contributions of the paper, using structured bullet points if necessary]. 
+Contributions. In this paper, we present [briefly summarize the main contributions of the paper, using structured bullet points if necessary].
 (i) [Contribution 1: Describe the first major contribution or finding.]
 (ii) [Contribution 2: Describe the second major contribution or finding.]
 (iii) [Contribution 3: Describe the third major contribution or finding.]

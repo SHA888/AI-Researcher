@@ -1,6 +1,6 @@
 \section{Related Work}
 
-[Start with an overview of the relevant literature in the field. Mention key techniques or models, cite appropriate references, and highlight the state-of-the-art.] 
+[Start with an overview of the relevant literature in the field. Mention key techniques or models, cite appropriate references, and highlight the state-of-the-art.]
 
 [Describe the evolution of these techniques, emphasizing main contributions and existing challenges that remain unaddressed.]
 

@@ -14,13 +14,13 @@ The appendix includes [brief description of additional materials included]. We h
 
 \subsection{Model and Architectures}
 
-We utilize the same model and architecture as [\textit{Cite previous work}], including [list any modifications]. To study the dependence of [concept] on [factor], we [explain experimental design]. This allows us to [describe experimental focus]. 
+We utilize the same model and architecture as [\textit{Cite previous work}], including [list any modifications]. To study the dependence of [concept] on [factor], we [explain experimental design]. This allows us to [describe experimental focus].
 
 More details on [explanation of models/architecture] can be found in the appendix. We [explain how models are partitioned and the reasoning behind it].
 
 \subsection{Training Dataset}
 
-To create our training data, we [describe the process in steps, including any filtering or deduplication methods used]. These include [list of additional data sources or details concerning the dataset used]. 
+To create our training data, we [describe the process in steps, including any filtering or deduplication methods used]. These include [list of additional data sources or details concerning the dataset used].
 
 \begin{table}[ht]
     \centering

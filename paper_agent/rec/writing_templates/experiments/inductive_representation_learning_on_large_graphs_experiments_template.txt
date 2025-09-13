@@ -29,7 +29,7 @@ We now consider the task of [describe the second subtask]. We classify [describe
 The final [number] columns of Table [number] summarize [findings and comparison results]. We observe that [summarize results and insights].
 
 \subsection{[Additional Experiment name]}
-Figure [number] summarizes [describe what is summarized]. For [specific methods], we found that [summarize observations about performance and efficiency]. 
+Figure [number] summarizes [describe what is summarized]. For [specific methods], we found that [summarize observations about performance and efficiency].
 
 \subsection{[Comparison of methods]}
 We summarize that [general conclusions about the methods]. To quantify these observations, we use [statistical analysis method] to analyze the performance differences, reporting [T-statistics and p-values if relevant]. We conclude that [define any significant differences or insights].

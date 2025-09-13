@@ -1,4 +1,4 @@
-2025-01-27 06:35:31,196 [INFO] 
+2025-01-27 06:35:31,196 [INFO]
 ==================================================
 Starting experiment set: refined_base
 ==================================================
@@ -18,7 +18,7 @@ Starting experiment set: refined_base
     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
 RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor []], which is output 0 of LinalgVectorNormBackward0, is at version 9; expected version 0 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).
 
-2025-01-27 06:35:37,965 [INFO] 
+2025-01-27 06:35:37,965 [INFO]
 ==================================================
 Starting experiment set: hierarchical_intent
 ==================================================
@@ -38,7 +38,7 @@ Starting experiment set: hierarchical_intent
     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
 RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor []], which is output 0 of LinalgVectorNormBackward0, is at version 9; expected version 0 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).
 
-2025-01-27 06:35:43,245 [INFO] 
+2025-01-27 06:35:43,245 [INFO]
 ==================================================
 Starting experiment set: deep_gnn
 ==================================================
@@ -58,5 +58,5 @@ Starting experiment set: deep_gnn
     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
 RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor []], which is output 0 of LinalgVectorNormBackward0, is at version 9; expected version 0 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).
 
-2025-01-27 06:35:48,560 [INFO] 
+2025-01-27 06:35:48,560 [INFO]
 Revision experiments completed. Results saved.

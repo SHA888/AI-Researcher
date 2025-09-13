@@ -33,7 +33,7 @@ Next, we evaluate [insert method] on [insert datasets used]. [Insert comparison 
 
 Finally, we show that [insert key conclusions from experiments conducted on challenging datasets]. In this experiment, we model [insert latent variation description and parameters].
 
-Furthermore, we illustrate that [insert key insights gained from visualizing the results]. 
+Furthermore, we illustrate that [insert key insights gained from visualizing the results].
 
 \begin{figure}[h]
     \centering

@@ -1,4 +1,4 @@
-2025-01-27 06:31:49,948 [INFO] 
+2025-01-27 06:31:49,948 [INFO]
 ==================================================
 Starting experiment set: refined_base
 ==================================================
@@ -34,7 +34,7 @@ Starting experiment set: refined_base
     return F.linear(input, self.weight, self.bias)
 RuntimeError: mat1 and mat2 shapes cannot be multiplied (50821x512 and 64x64)
 
-2025-01-27 06:31:56,488 [INFO] 
+2025-01-27 06:31:56,488 [INFO]
 ==================================================
 Starting experiment set: hierarchical_intent
 ==================================================
@@ -70,7 +70,7 @@ Starting experiment set: hierarchical_intent
     return F.linear(input, self.weight, self.bias)
 RuntimeError: mat1 and mat2 shapes cannot be multiplied (50821x1024 and 64x64)
 
-2025-01-27 06:32:01,690 [INFO] 
+2025-01-27 06:32:01,690 [INFO]
 ==================================================
 Starting experiment set: deep_gnn
 ==================================================
@@ -106,5 +106,5 @@ Starting experiment set: deep_gnn
     return F.linear(input, self.weight, self.bias)
 RuntimeError: mat1 and mat2 shapes cannot be multiplied (50821x512 and 64x64)
 
-2025-01-27 06:32:06,884 [INFO] 
+2025-01-27 06:32:06,884 [INFO]
 Revision experiments completed. Results saved.

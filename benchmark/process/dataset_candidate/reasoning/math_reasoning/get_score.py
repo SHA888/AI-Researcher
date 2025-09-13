@@ -1,18 +1,16 @@
-from pathlib import Path
-from tqdm import tqdm
-import multiprocessing
-from copy import deepcopy
+import argparse
 import re
-from lm_eval.tasks.minerva_math.utils import (
-    last_boxed_only_string,
-    normalize_final_answer,
-    get_unnormalized_answer,
-    remove_boxed,
-    is_equiv,
-)
+from copy import deepcopy
+from pathlib import Path
 
 import yaml
-import argparse
+from lm_eval.tasks.minerva_math.utils import (
+    get_unnormalized_answer,
+    is_equiv,
+    normalize_final_answer,
+)
+from tqdm import tqdm
+
 
 def load_yaml(path: Path):
     with open(path, "r") as f:
@@ -57,17 +55,21 @@ def is_correct_gsm8k(model_completion, gt_example):
     model_answer = extract_answer_gsm8k(model_completion)
     return model_answer == gt_answer or is_equiv(model_answer, gt_answer)
 
+
 def my_get_unnormalized_answer(og_pred):
     og_pred = get_unnormalized_answer(og_pred)
     # print(og_pred)
     og_pred = re.sub(r"\\+[\(\[](.+?)\\+[\)\]]", "\\1", og_pred)
     return og_pred
+
+
 def clean_latex_string(text):
     # 替换双斜杠为单斜杠
-    text = text.replace('\\\\', '\\')
+    text = text.replace("\\\\", "\\")
     # 处理其他常见的转义字符
-    text = text.replace('\\n', '\n')
+    text = text.replace("\\n", "\n")
     return text
+
 
 def is_correct_minerva(og_pred, gt):
     og_pred = clean_latex_string(og_pred)
@@ -79,8 +81,6 @@ def is_correct_minerva(og_pred, gt):
     return pred == gt or is_equiv(pred, gt)
 
 
-
-
 def is_correct(sample: str, gt_answer: str, dset: str):
     if dset == "gsm8k":
         return is_correct_gsm8k(sample, gt_answer)
@@ -88,8 +88,6 @@ def is_correct(sample: str, gt_answer: str, dset: str):
         return is_correct_minerva(sample, gt_answer)
     else:
         raise ValueError(f"Dataset {dset} not supported")
-
-
 
 
 def get_tasks(config):
@@ -110,13 +108,13 @@ def get_tasks(config):
 
 def main(args):
     save_dir = Path(args.save_dir).absolute()
-    
+
     tasks = list(save_dir.glob("*.yaml"))
     corrects = []
 
     for task in tqdm(tasks, desc="Evaluating"):
         result = load_yaml(task)
-    
+
         correct = is_correct(result["answer"], result["gt_answer"], "math")
         corrects.append(correct)
         # break
@@ -126,6 +124,10 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--save_dir", type=str, default="evaluation_results/math500/math500_deepseek-chat") # 0.756
+    parser.add_argument(
+        "--save_dir",
+        type=str,
+        default="evaluation_results/math500/math500_deepseek-chat",
+    )  # 0.756
     args = parser.parse_args()
     main(args)

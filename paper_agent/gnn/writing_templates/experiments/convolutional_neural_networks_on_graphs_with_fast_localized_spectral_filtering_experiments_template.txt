@@ -18,11 +18,11 @@ The [architecture used] and the following hyper-parameters are chosen from [prov
     \caption{[Title of the table]}
     \begin{tabular}{|c|c|c|}
         \hline
-        [Column Header 1] & [Column Header 2] & [Column Header 3] \\ 
+        [Column Header 1] & [Column Header 2] & [Column Header 3] \\
         \hline
-        [Row 1 Entry 1]   & [Row 1 Entry 2]   & [Row 1 Entry 3]   \\ 
+        [Row 1 Entry 1]   & [Row 1 Entry 2]   & [Row 1 Entry 3]   \\
         \hline
-        [Row 2 Entry 1]   & [Row 2 Entry 2]   & [Row 2 Entry 3]   \\ 
+        [Row 2 Entry 1]   & [Row 2 Entry 2]   & [Row 2 Entry 3]   \\
         \hline
     \end{tabular}
 \end{table}

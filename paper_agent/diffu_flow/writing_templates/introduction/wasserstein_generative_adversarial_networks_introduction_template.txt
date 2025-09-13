@@ -12,7 +12,7 @@ If the real data distribution [insert notation] admits a [describe the concept, 
 \text{minimize} [insert divergence notation]
 \end{equation}
 
-However, this requires that [insert conditions or limitations that impact the method's applicability]. This limitation is particularly evident in situations where [describe common misconception or issue]. 
+However, this requires that [insert conditions or limitations that impact the method's applicability]. This limitation is particularly evident in situations where [describe common misconception or issue].
 
 To enhance the traditional framework, one typical approach is to [insert method or adjustment suggested to remedy the issues]. For instance, [provide a specific yet generalized example or scenario that demonstrates the issue]. It is known that [insert supporting evidence, findings, or references, while generalizing the context].
 
@@ -22,12 +22,12 @@ Examples of previous works that follow this approach include [insert broad types
 
 In this paper, we focus on [insert primary aim of the study]. The vital distinction between such measures is [insert key theoretical aspect that underpins the research]. In this context, [insert brief explanation of how the current study fits into the theoretical framework, potentially referring to other sections].
 
-In order to optimize [insert parameters or function], we aim to define the model distribution [insert notation] under the condition that [insert desired properties or characteristics]. Achieving continuity in the mapping [insert notation] is crucial, as it implies that [insert necessary implications of continuity]. 
+In order to optimize [insert parameters or function], we aim to define the model distribution [insert notation] under the condition that [insert desired properties or characteristics]. Achieving continuity in the mapping [insert notation] is crucial, as it implies that [insert necessary implications of continuity].
 
 The contributions of this paper are as follows:
 
 - In Section 2, we [insert description of what Section 2 covers or analysis conducted].
 - In Section 3, we [insert the main focus or discovery of Section 3].
-- In Section 4, we [insert empirical findings or practical implications discussed]. 
+- In Section 4, we [insert empirical findings or practical implications discussed].
 
 Overall, our findings present a significant advancement in [insert broad field or application area], providing [insert summary of the benefits of the proposed method or framework].

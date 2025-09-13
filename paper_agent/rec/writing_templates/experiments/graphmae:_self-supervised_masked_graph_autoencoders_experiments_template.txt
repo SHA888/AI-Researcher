@@ -41,7 +41,7 @@ To verify the effects of the main components in [Module Name], we conduct severa
 
 \textbf{Effect of [Component 2].} [Description of the component and its role in the experiment]. [Results overview and performance implications].
 
-\textbf{Effect of [Component 3].} [General overview of the studies and findings related to the effect of the mentioned component]. 
+\textbf{Effect of [Component 3].} [General overview of the studies and findings related to the effect of the mentioned component].
 
 \textbf{Summary.} To summarize, the [description of the Module Name, e.g., "self-supervised approach"] achieves competitive performance across [tasks/benchmarks], indicating that [Module Name] is an effective and universal [framework type] for various applications.
 ```

@@ -5,7 +5,7 @@ Our goal is to exploit the promising capabilities of [model/type] and introduce 
 
 [Multiple sentences explaining the motivation and intuition behind the proposed method]
 
-To tackle [challenge], our method consists of three main components: 
+To tackle [challenge], our method consists of three main components:
 \begin{itemize}
     \item [Component 1]
     \item [Component 2]
@@ -44,7 +44,7 @@ With [previous components or models], we can now [new task or method implication
 
 Thus, [description of new approach or technique for further manipulation of data].
 
-Given [conditions or information], the task is to [explain new synthesis scenario]. 
+Given [conditions or information], the task is to [explain new synthesis scenario].
 
 In practice, we apply [method/technique] to [solve problem or optimize performance], ensuring [expected outcome].
 

@@ -137,7 +137,7 @@ To set up the agent-interactive environment, we use Docker for containerization.
 docker pull tjbtech1/airesearcher:v1
 ```
 
-or you can build the docker image from our provided [Dockerfile](./docker/Dockerfile). 
+or you can build the docker image from our provided [Dockerfile](./docker/Dockerfile).
 
 ```bash
 cd ./docker && docker build -t tjbtech1/airesearcher:v1 .
@@ -147,7 +147,7 @@ cd ./docker && docker build -t tjbtech1/airesearcher:v1 .
 
 ### API Keys Setup
 
-Create an environment variable file based on the provided '.env.template' file. In this file, you should set the configuration including api key, instance id of the test case. 
+Create an environment variable file based on the provided '.env.template' file. In this file, you should set the configuration including api key, instance id of the test case.
 
 ```bash
 
@@ -160,7 +160,7 @@ BASE_IMAGES=tjbtech1/airesearcher:v1
 COMPLETION_MODEL=openrouter/google/gemini-2.5-pro-preview-05-20
 # cheep model name, configuration details see: https://docs.litellm.ai/docs/
 CHEEP_MODEL=openrouter/google/gemini-2.5-pro-preview-05-20
-# specific gpu of the research agent, can be: 
+# specific gpu of the research agent, can be:
 # '"device=0"' using the first gpu
 # '"device=0,1"' using the first and second gpu
 # '"all"' using all gpus
@@ -186,7 +186,7 @@ OPENROUTER_API_KEY=your_openrouter_api_key
 OPENROUTER_API_BASE=https://openrouter.ai/api/v1
 
 # ================ task configuration ================
-# category of the research agent, based on: ./benchmark/final. Can be: 
+# category of the research agent, based on: ./benchmark/final. Can be:
 # diffu_flow
 # gnn
 # reasoning
@@ -196,7 +196,7 @@ OPENROUTER_API_BASE=https://openrouter.ai/api/v1
 CATEGORY=vq
 # instance id of the research agent, example: ./benchmark/final/vq/one_layer_vq.json
 INSTANCE_ID=one_layer_vq
-# task level of the research agent, can be: 
+# task level of the research agent, can be:
 # task1
 # task2
 TASK_LEVEL=task1
@@ -206,7 +206,7 @@ MAX_ITER_TIMES=0
 
 ### 🔥 Web GUI
 
-We add a webgui based on gradio. Just run the following command: 
+We add a webgui based on gradio. Just run the following command:
 
 ```bash
 python web_ai_researcher.py
@@ -214,11 +214,11 @@ python web_ai_researcher.py
 
 ![image-20250606135137558](./assets/webgui/image-20250606135137558.png)
 
-You can configure the environment variables in the following tab: 
+You can configure the environment variables in the following tab:
 
 ![image-20250606135325373](./assets/webgui/image-20250606135325373.png)
 
-Select the following example to run our AI-Researcher: 
+Select the following example to run our AI-Researcher:
 
 <img src="./assets/webgui/image-20250606135507970.png" alt="image-20250606135507970" style="zoom:67%;" />
 
@@ -254,19 +254,19 @@ Select the following example to run our AI-Researcher:
     </li>
     <li>Implementation details for each component:
       <ul>
-        <li><strong>Key Parameters</strong>: 
+        <li><strong>Key Parameters</strong>:
           <ul>
             <li>Codebook size should be configured based on the complexity of the dataset (e.g., 1024 or 8192).</li>
             <li>Commitment loss coefficient (β) is typically set within [0.25, 2].</li>
           </ul>
         </li>
-        <li><strong>Input/Output Specifications</strong>: 
+        <li><strong>Input/Output Specifications</strong>:
           <ul>
             <li>Input to the encoder is a continuous high-dimensional vector, while the output is a corresponding quantized vector from the codebook.</li>
             <li>The output for reconstruction is generated using the decoder applied to the transformed codebook vectors.</li>
           </ul>
         </li>
-        <li><strong>Important Constraints</strong>: 
+        <li><strong>Important Constraints</strong>:
           <ul>
             <li>Ensure that the codebook is updated correctly with an exponential moving average procedure, and treat both rotation and rescaling during the forward pass as constants with respect to the gradient.</li>
           </ul>
@@ -357,17 +357,17 @@ Select the following example to run our AI-Researcher:
     </li>
     <li>Implementation Details:
       <ul>
-        <li><strong>Key Parameters</strong>: 
+        <li><strong>Key Parameters</strong>:
           <ul>
             <li>Number of dimensions \(d\) and levels \(L\) per dimension should be defined based on the codebook size you aim to replicate (e.g., set \(L_i \geq 5\) for all \(i\)).</li>
           </ul>
         </li>
-        <li><strong>Input/Output Specifications</strong>: 
+        <li><strong>Input/Output Specifications</strong>:
           <ul>
             <li>The input to the bounding function will be the output from the final encoder layer; the output after quantization will be in the format \(\hat{z}\), with shape matching the original \(z\).</li>
           </ul>
         </li>
-        <li><strong>Constraints</strong>: 
+        <li><strong>Constraints</strong>:
           <ul>
             <li>Ensure all inputs are preprocessed adequately to be within the functioning range of the bounding function.</li>
           </ul>
@@ -454,21 +454,21 @@ Select the following example to run our AI-Researcher:
     </li>
     <li>Implementation Details:
       <ul>
-        <li><strong>Heterogeneous GNN</strong>: 
+        <li><strong>Heterogeneous GNN</strong>:
           <ul>
             <li><strong>Key Parameters</strong>: Use Xavier initializer for embedding initialization; set the hidden dimensionality <code>d</code>.</li>
             <li><strong>Input/Output</strong>: Take adjacency matrices for user-item, user-user, and item-item graphs as input; output relation-aware embeddings.</li>
             <li><strong>Constraints</strong>: Ensure that the GNN can handle varying types of nodes and relations.</li>
           </ul>
         </li>
-        <li><strong>Contrastive Learning</strong>: 
+        <li><strong>Contrastive Learning</strong>:
           <ul>
             <li><strong>Key Parameters</strong>: Use cosine similarity as the similarity function; define a temperature coefficient for handling negative samples.</li>
             <li><strong>Input/Output</strong>: Input embeddings from the meta network and user/item views; output contrastive loss values.</li>
             <li><strong>Constraints</strong>: Maintain diverse representations to avoid overfitting.</li>
           </ul>
         </li>
-        <li><strong>Meta Network</strong>: 
+        <li><strong>Meta Network</strong>:
           <ul>
             <li><strong>Key Parameters</strong>: Set up fully connected layers with PReLU activation to generate personalized transformation matrices.</li>
             <li><strong>Input/Output</strong>: Input user and item embeddings; output transformed embeddings for personalized knowledge transfer.</li>
@@ -556,25 +556,25 @@ Select the following example to run our AI-Researcher:
     </li>
     <li>Implementation Details:
       <ul>
-        <li><strong>Graph Construction</strong>: 
+        <li><strong>Graph Construction</strong>:
           <ul>
             <li><strong>Input</strong>: User-item interaction matrix \( A \) of size \( I \times J \) (where \( I \) is the number of users and \( J \) is the number of items).</li>
             <li><strong>Output</strong>: Normalized adjacency matrix \( \bar{A} \).</li>
           </ul>
         </li>
-        <li><strong>GNN Configuration</strong>: 
+        <li><strong>GNN Configuration</strong>:
           <ul>
             <li>Number of layers \( L \): Choose based on your dataset, typically 2 or 3 layers.</li>
             <li>Dimensionality \( d \) of embeddings: Start with \( d = 32 \).</li>
           </ul>
         </li>
-        <li><strong>Intent Prototypes</strong>: 
+        <li><strong>Intent Prototypes</strong>:
           <ul>
             <li>Number of intents \( K \): Experiment with values from {32, 64, 128, 256}, starting with \( K = 128 \).</li>
           </ul>
         </li>
         <li><strong>Learning Rate</strong>: Use Adam optimizer with a learning rate around \( 1e-3 \).</li>
-        <li><strong>Loss Functions</strong>: 
+        <li><strong>Loss Functions</strong>:
           <ul>
             <li>Use Bayesian Personalized Ranking (BPR) loss for the recommendation task.</li>
             <li>Implement InfoNCE loss for contrastive learning, incorporating both local and global augmented views.</li>
@@ -678,7 +678,7 @@ Select the following example to run our AI-Researcher:
     </li>
     <li>Sampling Process:
       <ul>
-        <li>For single-step or multi-step generation, heuristically sample from the noise distribution and use the learned velocity field as follows: 
+        <li>For single-step or multi-step generation, heuristically sample from the noise distribution and use the learned velocity field as follows:
           \[
           x_{i/k} = x_{(i-1)/k} + \frac{1}{k} v_{i\theta}((i-1)/k, x_{(i-1)/k})
           \]
@@ -929,21 +929,21 @@ Select the following example to run our AI-Researcher:
   <br>Our **AI-Researcher** provides comprehensive automation for the complete scientific research lifecycle through an integrated pipeline. The system orchestrates research activities across three strategic phases:
   1. **Literature Review & Idea Generation** 📚💡
      * 🔍 **Resource Collector**: Systematically gathers comprehensive research materials across multiple scientific domains through automated collection from major academic databases (e.g., arXiv, IEEE Xplore, ACM Digital Library, and Google Scholar), code platforms (e.g., GitHub, Hugging Face), and open datasets across scientific domains.
-       
+
      * 🧠 **Resource Filter**: Evaluates and selects high-impact papers, well-maintained code implementations, and benchmark datasets through quality metrics (e.g., citation count, code maintenance, data completeness) and relevance assessment.
-     
+
      * 💭 **Idea Generator**: Leveraging the identified research resources, including high-impact papers and code repositories, the Idea Generator systematically formulates novel research directions through comprehensive analysis. It automatedly evaluates current methodological limitations, map emerging technological trends, and explore uncharted research territories.
-  
+
   2. **New Algorithm Design, Implementation & Validation** 🧪💻
      <br>**Design → Implementation → Validation → Refinement**
      * 📝**Design Phase**: The initial phase focuses on conceptual development, where novel algorithmic ideas are formulated and theoretical foundations are established. During this stage, we carefully plan the implementation strategy, ensuring the proposed solution advances beyond existing approaches while maintaining practical feasibility.
-     
+
      * ⚙️**Implementation Phase**: proceed to transform abstract concepts into concrete code implementations. This phase involves developing functional modules, establishing a robust testing environment, and creating necessary infrastructure for experimental validation.
-  
+
      * 🔬**Validation Phase**: Systematic experimentation forms the core of our validation process. We execute comprehensive tests to evaluate algorithm performance, collect metrics, and document all findings. This phase ensures rigorous implementation verification with practical requirements.
-       
+
      * 🔧**Refinement Phase** 🔬: Based on validation results, we enter an iterative refinement cycle. This phase involves identifying areas for improvement, optimizing code efficiency, and implementing necessary enhancements. We carefully analyze performance bottlenecks and plan strategic improvements for the next development iteration.
-  
+
   3. **Paper Writing** ✍️📝
      * **Writer Agent** 📄: Automatically generates full-length academic papers by integrating research ideas, motivations, newly designed algorithm frameworks, and algorithm validation performance. Leveraging a hierarchical writing approach, it creates polished manuscripts with precision and clarity.
 
@@ -959,7 +959,7 @@ Select the following example to run our AI-Researcher:
   2. 🌈 **Multi-Domain Coverage**: Our benchmark is designed to comprehensively span 4 major research domains, ensuring broad applicability: Computer Vision (CV), Nature Language Processing (NLP), Data Mining (DM), and Information Retrieval (IR).
 
   3. 🌐 **Fully Open-Source Benchmark Construction**: We have fully open-sourced the methodology and process for building the benchmark, including complete access to processed datasets, data collection pipelines, and processing code. This ensures **Transparency in Evaluation** while empowering the community to customize and construct benchmarks tailored to their specific domains for testing AI researchers.
-    
+
   4. 📊 **Comprehensive Evaluation Metrics**: Our evaluation framework adopts a hierarchical and systematic approach, where tasks are organized into two levels based on the extent of idea provision. Leveraging specialized **Evaluator Agents**, the framework conducts thorough assessments across multiple dimensions, ensuring a robust and comprehensive evaluation. Key evaluation metrics include: 1) **Novelty**: Assessing the innovation and uniqueness of the research work. 2) **Experimental Comprehensiveness**: Evaluating the design, execution, and rigor of the experiments. 3) **Theoretical Foundation**: Measuring the strength of the theoretical background and foundations. 4) **Result Analysis**: Analyzing the depth and accuracy of result interpretation. 5) **Writing Quality**: Reviewing the clarity, coherence, and structure of the written report.
 
 🚀 **Advancing Research Automation**. This benchmark suite provides an objective framework for assessing research automation capabilities. It is designed to evolve continuously, incorporating new advancements and expanding its scope to meet the growing demands of the research community.
@@ -968,13 +968,13 @@ Select the following example to run our AI-Researcher:
 
 * 🌟 **Easy-to-Use AI Research Assistant**
   <br>**AI-Researcher**E delivers a truly seamless and accessible experience for research automation, empowering users to focus on innovation without technical barriers. Key features include:
-  
+
   1. 🌐 **Multi-LLM Provider Support**: Effortlessly integrates with leading language model providers such as Claude, OpenAI, Deepseek, and more. Researchers can select the most suitable AI capabilities for their specific needs.
-  
+
   2. 📚 **Effortless Research Kickoff**: Kickstart your research journey with unparalleled ease! Simply provide a list of relevant papers, and **AI-Researcher** takes care of the rest—no need to upload files, contribute initial ideas, or navigate complex configurations. It's the ultimate tool to help you jumpstart your research process efficiently and effectively.
-  
+
   3. 🧠 **Minimal Domain Expertise Needed**: AI-Researcher simplifies the research process by autonomously identifying critical research gaps, proposing innovative approaches, and executing the entire research pipeline. While some domain understanding can enhance results, the tool is designed to empower users of all expertise levels to achieve impactful outcomes with ease.
-  
+
   4. 📦 **Out-of-the-Box Functionality**: Experience seamless research automation right from the start. AI-Researcher is ready to use with minimal setup, giving you instant access to advanced capabilities. Skip the hassle of complex configurations and dive straight into accelerating your research process with ease and efficiency.
 
 <span id='how-to-use'/>
@@ -1041,7 +1041,7 @@ python path/to/AI-Researcher/paper_agent/writing.py --research_field ${research_
 
 ### 3. Benchmark Data and Collection
 
-Our benchmark is also fully-open-sourced: 
+Our benchmark is also fully-open-sourced:
 
 * Detailed benchmark data is available in the [`benchmark`](./benchmark) folder.
 * Detailed benchmark collection process is available in the [`benchmark_collection`](./benchmark_collection) folder.
@@ -1059,7 +1059,7 @@ Comprehensive documentation is on its way 🚀! Stay tuned for updates on our [D
 We aim to build a vibrant community around AI-Researcher and warmly invite everyone to join us. Here's how you can become part of our community:
 
 - [Join our Slack workspace](https://join.slack.com/t/ai-researchergroup/shared_invite/zt-30y5a070k-C0ajQt1zmVczFnfGkIicvA) - Here we talk about research, architecture, and future development.
-- [Join our Discord server](https://discord.gg/ghSnKGkq) - This is a community-run server for general discussion, questions, and feedback. 
+- [Join our Discord server](https://discord.gg/ghSnKGkq) - This is a community-run server for general discussion, questions, and feedback.
 - [Read or post Github Issues](https://github.com/HKUDS/AI-Researcher/issues) - Check out the issues we're working on, or add your own ideas.
 
 

@@ -1,6 +1,6 @@
 \section{Preliminaries}
 
-Let $G = (V, E) \in \mathcal{G}$ represent a graph, where $V = \{ v_{1}, v_{2}, \ldots, v_{N} \}$ and $E \subseteq V \times V$ denote the node set and edge set respectively. The node features can be denoted as a matrix $X = \{ x_{1}, x_{2}, \ldots, x_{N} \} \in \mathbb{R}^{N \times F}$, where $x_{i} \in \mathbb{R}^{F}$ is the feature of the node $v_{i}$, and $F$ is the dimensionality of node features. The adjacency matrix $A \in \{0, 1\}^{N \times N}$ describes the structural relationship between nodes, where $A_{ij} = 1$ if $(v_{i}, v_{j}) \in E$. 
+Let $G = (V, E) \in \mathcal{G}$ represent a graph, where $V = \{ v_{1}, v_{2}, \ldots, v_{N} \}$ and $E \subseteq V \times V$ denote the node set and edge set respectively. The node features can be denoted as a matrix $X = \{ x_{1}, x_{2}, \ldots, x_{N} \} \in \mathbb{R}^{N \times F}$, where $x_{i} \in \mathbb{R}^{F}$ is the feature of the node $v_{i}$, and $F$ is the dimensionality of node features. The adjacency matrix $A \in \{0, 1\}^{N \times N}$ describes the structural relationship between nodes, where $A_{ij} = 1$ if $(v_{i}, v_{j}) \in E$.
 
 \textbf{[Multiple sentences explaining the motivation and intuition behind the research focus.]}
 

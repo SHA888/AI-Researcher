@@ -4,7 +4,7 @@
 Inspired by [previous work/technique], we propose [module name] to address [challenge]. [Multiple sentences explaining the motivation and intuition behind the proposed method].
 
 \subsection{Method Overview}
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 Specifically, [A paragraph describing the detailed workflow of the module].
 

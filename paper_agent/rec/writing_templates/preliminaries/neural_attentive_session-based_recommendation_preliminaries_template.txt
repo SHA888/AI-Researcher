@@ -16,7 +16,7 @@ Formally, we define [concept] as follows:
 
 Inspired by [previous work/technique], we propose [module name] to address [challenge]. The basic idea of [module name] is to [explain the core concept]. As shown in Figure [number], [description of the workflow with involved components].
 
-Specifically, we [explain the primary function or operation of key components]. Furthermore, the role of [specific element] is to [describe its function and its importance in the context]. It should be noted that [any additional nuanced detail about the component, if necessary]. 
+Specifically, we [explain the primary function or operation of key components]. Furthermore, the role of [specific element] is to [describe its function and its importance in the context]. It should be noted that [any additional nuanced detail about the component, if necessary].
 
 The basic idea of our work is to [summarize the central goal of the work]. In the following parts of this section, we first describe [sub-component 1] in [module name] which is used to [explain its purpose]. Then we introduce [sub-component 2] which is used to [explain its purpose]. Finally, we show our [module name] which combines both and computes [describe the output].
 
@@ -38,7 +38,7 @@ This approach allows [describe the advantages and importance of this sub-compone
 
 \subsection{[Overall Module Name]}
 
-For the task of [task name], [sub-component 1] provides [describe functionality], while [sub-component 2] [describe its functionality]. We conjecture that [explain the relationship between components and how they enhance the process]. 
+For the task of [task name], [sub-component 1] provides [describe functionality], while [sub-component 2] [describe its functionality]. We conjecture that [explain the relationship between components and how they enhance the process].
 
 As shown in Figure [number], the representations are combined to form [describe the resulting structure]. It should be noticed that [explain how components work together and their individual roles].
 

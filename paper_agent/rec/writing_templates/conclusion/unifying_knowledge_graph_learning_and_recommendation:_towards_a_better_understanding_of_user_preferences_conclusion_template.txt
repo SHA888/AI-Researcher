@@ -8,7 +8,7 @@ To this end, we are interested in [future directions or additional research unde
 
 \subsection{Key Components}
 
-Our method consists of three main components: 
+Our method consists of three main components:
 1. [Component 1 description]
 2. [Component 2 description]
 3. [Component 3 description]
@@ -22,6 +22,6 @@ Formally, we define [concept or term] as follows:
 
 \subsection{Comparison with Existing Approaches}
 
-[Several sentences comparing the proposed method with existing approaches, highlighting advantages, limitations, or unique aspects]. 
+[Several sentences comparing the proposed method with existing approaches, highlighting advantages, limitations, or unique aspects].
 
 In summary, [reiterate the main contributions and significance of the work]. This research [concludes with a final statement about the impact or future significance].

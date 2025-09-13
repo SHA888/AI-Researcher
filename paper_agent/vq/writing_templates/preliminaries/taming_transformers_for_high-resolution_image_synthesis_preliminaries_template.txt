@@ -1,12 +1,12 @@
 \section{Preliminaries}
 
 \subsection{Motivation}
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
 [Multiple sentences explaining the motivation and intuition behind the proposed method.]
 
 \subsection{Overview of the Proposed Method}
-To tackle [challenge], our method consists of three main components: 
+To tackle [challenge], our method consists of three main components:
 \begin{itemize}
     \item [component 1]
     \item [component 2]

@@ -20,9 +20,9 @@ where there are three basic operators: [Operator 1], [Operator 2], and [Operator
 
 For example, [describe a related technique briefly]. Formally, [related technique notation].
 
-Though [related technique limitation], it assumes that [incorrect assumption]. 
+Though [related technique limitation], it assumes that [incorrect assumption].
 
-In view of this limitation, we design the [New Component 1] mechanism. Given a target node $t$, and all its neighbors $s \in N(t)$, we want to calculate [description of calculation based on new mechanism]. 
+In view of this limitation, we design the [New Component 1] mechanism. Given a target node $t$, and all its neighbors $s \in N(t)$, we want to calculate [description of calculation based on new mechanism].
 
 Inspired by [inspiration source], we [describe the process]. We propose to [describe the parameterization]. Specifically, we calculate [output calculation] by:
 
@@ -46,7 +46,7 @@ Parallel to the calculation of [description], we pass information from [source n
 \text{Message}_{[Module Name]}(s, e, t) = \parallel i \in [1, h] \text{MSG-head}^{i}(s, e, t)
 \]
 
-To get the $i$-th message head $ \text{MSG-head}^{i}(s, e, t)$, we first [describe projection], followed by [describe incorporation of edge dependency]. 
+To get the $i$-th message head $ \text{MSG-head}^{i}(s, e, t)$, we first [describe projection], followed by [describe incorporation of edge dependency].
 
 The final step is to [describe how the messages are combined].
 
@@ -72,6 +72,6 @@ In light of this, we propose [describe new mechanism]. [New Mechanism] is inspir
 
 Specifically, given [description of parameters], we denote [description of variables]. Therefore, [description of relationship between variables].
 
-Finally, [describe what happens with this mechanism]. 
+Finally, [describe what happens with this mechanism].
 
 This provides a comprehensive overview of [Module Name] for [application area].

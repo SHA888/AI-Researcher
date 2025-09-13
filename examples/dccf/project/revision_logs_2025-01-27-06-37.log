@@ -1,4 +1,4 @@
-2025-01-27 06:37:17,342 [INFO] 
+2025-01-27 06:37:17,342 [INFO]
 ==================================================
 Starting experiment set: refined_base
 ==================================================
@@ -26,7 +26,7 @@ Recall@20=0.0000, NDCG@20=0.0000, Recall@40=0.0000, NDCG@40=0.0000, MAD=1.9483, 
 Recall@20=0.0000, NDCG@20=0.0000, Recall@40=0.0000, NDCG@40=0.0000, MAD=1.9544, LR=0.000500
 2025-01-27 06:53:09,441 [INFO] Early stopping triggered at epoch 10
 2025-01-27 06:53:09,527 [INFO] Best model at epoch 1 with Recall@20=0.0000
-2025-01-27 06:53:09,668 [INFO] 
+2025-01-27 06:53:09,668 [INFO]
 ==================================================
 Starting experiment set: hierarchical_intent
 ==================================================
@@ -54,7 +54,7 @@ Recall@20=0.0000, NDCG@20=0.0000, Recall@40=0.0000, NDCG@40=0.0000, MAD=1.9843, 
 Recall@20=0.0000, NDCG@20=0.0000, Recall@40=0.0000, NDCG@40=0.0000, MAD=1.9793, LR=0.000500
 2025-01-27 07:08:33,302 [INFO] Early stopping triggered at epoch 10
 2025-01-27 07:08:33,305 [INFO] Best model at epoch 1 with Recall@20=0.0000
-2025-01-27 07:08:33,440 [INFO] 
+2025-01-27 07:08:33,440 [INFO]
 ==================================================
 Starting experiment set: deep_gnn
 ==================================================
@@ -82,5 +82,5 @@ Recall@20=0.0000, NDCG@20=0.0000, Recall@40=0.0000, NDCG@40=0.0000, MAD=1.8312, 
 Recall@20=0.0000, NDCG@20=0.0000, Recall@40=0.0000, NDCG@40=0.0000, MAD=1.8276, LR=0.000500
 2025-01-27 07:24:21,949 [INFO] Early stopping triggered at epoch 10
 2025-01-27 07:24:21,954 [INFO] Best model at epoch 1 with Recall@20=0.0000
-2025-01-27 07:24:22,153 [INFO] 
+2025-01-27 07:24:22,153 [INFO]
 Revision experiments completed. Results saved.

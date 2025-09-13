@@ -1,6 +1,6 @@
 \section{Conditional Computation Experiments}
 
-We investigate the application of [concept or technique] in the context of [specific problem or challenge], where [description of how the technique contributes to solving the problem]. The specific architecture employed in our experiments is [architecture description], where [key components and their roles]. 
+We investigate the application of [concept or technique] in the context of [specific problem or challenge], where [description of how the technique contributes to solving the problem]. The specific architecture employed in our experiments is [architecture description], where [key components and their roles].
 
 For our approach to be effective in the setting of [specific scenario], we aim for [specific requirement or behavior], while ensuring that [computational efficiency or resource condition]. In this manner, we can [explanation of operational process or advantage], thereby optimizing [aspect of performance]. To facilitate this, we [description of design or architecture constraints]. Thus, if [input size or structure], and given that [parameters that influence computational complexity], we find that the overall computation complexity is [mathematical expression], allowing us to [describe lowering of computational effort].
 

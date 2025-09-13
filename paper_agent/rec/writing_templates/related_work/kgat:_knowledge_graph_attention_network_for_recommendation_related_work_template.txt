@@ -16,9 +16,9 @@ Several recent efforts have attempted to leverage [specific structure/technique]
     \item [Introduce the second prominent method in this category, discussing how it functions and its limitations.]
 \end{itemize}
 
-Considering the limitations of existing solutions, we believe it is of critical importance to develop a model that can [describe the intended improvements or innovations]. Towards this end, we take inspiration from [previous work/technique related to the improvement], which offers the potential to achieve [specific goal] but has not been sufficiently explored in [context/application]. Specifically, we propose a new method named [Module Name], which is equipped with [describe the innovations/techniques that address the challenges]. 
+Considering the limitations of existing solutions, we believe it is of critical importance to develop a model that can [describe the intended improvements or innovations]. Towards this end, we take inspiration from [previous work/technique related to the improvement], which offers the potential to achieve [specific goal] but has not been sufficiently explored in [context/application]. Specifically, we propose a new method named [Module Name], which is equipped with [describe the innovations/techniques that address the challenges].
 
-Our [Module Name] is conceptually advantageous compared with existing methods in that: 
+Our [Module Name] is conceptually advantageous compared with existing methods in that:
 \begin{itemize}
     \item [First comparative advantage over Category 1 methods.]
     \item [Second comparative advantage over Category 2 methods.]

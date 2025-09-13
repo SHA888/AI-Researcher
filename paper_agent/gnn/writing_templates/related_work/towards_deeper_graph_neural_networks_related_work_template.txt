@@ -1,6 +1,6 @@
 \section{Related Works}
 
-Recent advancements in [research field] have highlighted several challenges, particularly [specific challenge]. Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Recent advancements in [research field] have highlighted several challenges, particularly [specific challenge]. Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
 To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. Specifically, [multiple sentences explaining the motivation and intuition behind the proposed method].
 
@@ -12,7 +12,7 @@ Formally, we define [concept] as follows:
 where [detailed explanation of each term in the equations].
 
 \subsection{Comparison with Existing Approaches}
-Several works have investigated [related problem or technique]. For example, [work reference] first proposed [method/approach], demonstrating that [key finding]. Furthermore, [additional work] analyzed [aspect of the problem], noting that [important observation]. 
+Several works have investigated [related problem or technique]. For example, [work reference] first proposed [method/approach], demonstrating that [key finding]. Furthermore, [additional work] analyzed [aspect of the problem], noting that [important observation].
 
 Moreover, [comparison phrase: e.g., “In contrast,” or “Conversely,”] our method [briefly describe how your method addresses limitations of existing approaches]. [Several sentences comparing the proposed method with existing approaches].
 

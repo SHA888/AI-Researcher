@@ -10,13 +10,13 @@ The [second dataset name] requires the model to [describe task]. Although [previ
 \begin{table}[ht]
     \centering
     \caption{Results on [task name]. [Model Name] is shown in the [settings], as compared to prior SOTA results for [conditions].}
-    \begin{tabular}{|c|c|c|c|} 
+    \begin{tabular}{|c|c|c|c|}
     \hline
-    Setting & Task 1 Metric & Task 2 Metric & Task 3 Metric  \\ 
+    Setting & Task 1 Metric & Task 2 Metric & Task 3 Metric  \\
     \hline
-    [Baselines/Models] & [Results] & [Results] & [Results] \\ 
+    [Baselines/Models] & [Results] & [Results] & [Results] \\
     \hline
-    [Model] & [Results] & [Results] & [Results] \\ 
+    [Model] & [Results] & [Results] & [Results] \\
     \hline
     \end{tabular}
 \end{table}
@@ -34,18 +34,18 @@ In this section, we measure [Model Name]'s ability to handle a variety of [descr
 \begin{table}[ht]
     \centering
     \caption{Performance of [Model Name] on [Task Name].}
-    \begin{tabular}{|c|c|c|c|} 
+    \begin{tabular}{|c|c|c|c|}
     \hline
-    Setting & Metric 1 & Metric 2 & Metric 3 \\ 
+    Setting & Metric 1 & Metric 2 & Metric 3 \\
     \hline
-    [Baselines] & [Results] & [Results] & [Results] \\ 
+    [Baselines] & [Results] & [Results] & [Results] \\
     \hline
-    [Model] & [Results] & [Results] & [Results] \\ 
+    [Model] & [Results] & [Results] & [Results] \\
     \hline
     \end{tabular}
 \end{table}
 
-Finally, we evaluate [Model Name] on [describe tasks]. [Model's performance summary]. 
+Finally, we evaluate [Model Name] on [describe tasks]. [Model's performance summary].
 
 \subsection{Task Name 3}
 
@@ -53,7 +53,7 @@ In collecting training data for [Model Name], we used [description of data colle
 
 [Model's performance summary compared to existing methods]
 
-For the [specific languages/conditions], [Model Name] significantly outperforms [previous model type]. Performance on [specific language pair] is [summary of result]. 
+For the [specific languages/conditions], [Model Name] significantly outperforms [previous model type]. Performance on [specific language pair] is [summary of result].
 
 \subsection{Task Name 4}
 
@@ -62,13 +62,13 @@ The [specific benchmark] is a standardized collection of datasets as described i
 \begin{table}[ht]
     \centering
     \caption{Performance of [Model Name] on [Benchmark Name].}
-    \begin{tabular}{|c|c|c|c|} 
+    \begin{tabular}{|c|c|c|c|}
     \hline
-    Task & Metric 1 & Metric 2 & Metric 3 \\ 
+    Task & Metric 1 & Metric 2 & Metric 3 \\
     \hline
-    Fine-tuned SOTA & [Results] & [Results] & [Results] \\ 
+    Fine-tuned SOTA & [Results] & [Results] & [Results] \\
     \hline
-    [Model Name] & [Results] & [Results] & [Results] \\ 
+    [Model Name] & [Results] & [Results] & [Results] \\
     \hline
     \end{tabular}
 \end{table}

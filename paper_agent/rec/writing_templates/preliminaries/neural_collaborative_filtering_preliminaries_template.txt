@@ -7,9 +7,9 @@ In this section, we first formalize the problem and discuss existing solutions f
 Let $M$ and $N$ denote the [relevant entities, e.g., number of users and items]. We define the [data structure] $Y \in \mathbb{R}^{M \times N}$ from [description of the data source] as follows:
 
 $$
-y_{ui} = 
-\begin{cases} 
-1 & \text{if } [condition for interaction] \\ 
+y_{ui} =
+\begin{cases}
+1 & \text{if } [condition for interaction] \\
 0 & \text{otherwise}
 \end{cases}
 $$

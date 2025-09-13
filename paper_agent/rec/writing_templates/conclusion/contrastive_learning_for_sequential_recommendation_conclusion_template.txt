@@ -1,6 +1,6 @@
 \section{Conclusion and Future Work}
 
-In this paper, we propose a novel model called [Model Name] to address [Research Challenge]. Inspired by [Previous Work/Technique], our approach [Brief Overview of the Approach]. Specifically, our method consists of [number of components] main components: [Component 1], [Component 2], and [Component 3]. 
+In this paper, we propose a novel model called [Model Name] to address [Research Challenge]. Inspired by [Previous Work/Technique], our approach [Brief Overview of the Approach]. Specifically, our method consists of [number of components] main components: [Component 1], [Component 2], and [Component 3].
 
 \subsection{Motivation and Intuition}
 [Multiple sentences explaining the motivation and intuition behind the proposed method]

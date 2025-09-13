@@ -4,28 +4,28 @@ Generalizing [field/algorithm] requires three fundamental steps: (i) the design 
 
 \subsection{[Subsection Title: Component 1 Description]}
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. There are [number] strategies to define [concept]; either from a [approach 1] or from a [approach 2]. [Multiple sentences explaining the motivation and intuition behind the proposed method]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge]. There are [number] strategies to define [concept]; either from a [approach 1] or from a [approach 2]. [Multiple sentences explaining the motivation and intuition behind the proposed method].
 
 \par Specifically, we define [concept] as follows:
 \begin{equation}
 [Mathematical formulation of the key components]
 \end{equation}
 
-[A detailed explanation of each term in the equations]. 
+[A detailed explanation of each term in the equations].
 
 \par Further, [Several sentences comparing the proposed method with existing approaches].
 
 \subsection{[Subsection Title: Component 2 Description]}
 
-To tackle [challenge], our method consists of [component details about local structure, etc.]. [A paragraph describing the detailed workflow of the module]. 
+To tackle [challenge], our method consists of [component details about local structure, etc.]. [A paragraph describing the detailed workflow of the module].
 
 \subsection{[Subsection Title: Component 3 Description]}
 
-The pooling operation requires [describe requirements]. [Several sentences elaborating on the challenges faced and the solutions proposed]. 
+The pooling operation requires [describe requirements]. [Several sentences elaborating on the challenges faced and the solutions proposed].
 
-\par Furthermore, we introduce [technique/algorithm] which [describe advantages]. 
+\par Furthermore, we introduce [technique/algorithm] which [describe advantages].
 
-\par To this end, we leverage [specific methods or algorithms] to ensure [outcome sought]. 
+\par To this end, we leverage [specific methods or algorithms] to ensure [outcome sought].
 
 \par The following provides a detailed overview of the algorithm's operation:
 \begin{equation}
@@ -34,9 +34,9 @@ The pooling operation requires [describe requirements]. [Several sentences elabo
 
 \section{Experiments}
 
-In this section, we evaluate [method] against [baseline methods] using [datasets/metrics]. [A paragraph discussing the experimental setup]. 
+In this section, we evaluate [method] against [baseline methods] using [datasets/metrics]. [A paragraph discussing the experimental setup].
 
-\par The results show that [summarize findings], indicating [conclusions about effectiveness]. 
+\par The results show that [summarize findings], indicating [conclusions about effectiveness].
 
 \section{Conclusion}
 

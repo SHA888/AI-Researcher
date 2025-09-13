@@ -1,7 +1,7 @@
 ```latex
 \section{[Main Topic Name]}
 
-In this section, we derive a generic method for addressing the [specific task]. Inspired by [previous work/technique], we propose [module name] to address [challenge]. Our approach consists of the general optimization criterion for [task], denoted as $\mathcal{OPT}$, which will be derived through [methodological approach, e.g., Bayesian analysis]. We demonstrate the analogies to [relevant concepts or metrics]. 
+In this section, we derive a generic method for addressing the [specific task]. Inspired by [previous work/technique], we propose [module name] to address [challenge]. Our approach consists of the general optimization criterion for [task], denoted as $\mathcal{OPT}$, which will be derived through [methodological approach, e.g., Bayesian analysis]. We demonstrate the analogies to [relevant concepts or metrics].
 
 For learning models with respect to $\mathcal{OPT}$, we propose the algorithm $\mathcal{Learn}$, which [brief description of the learning algorithm]. We will further illustrate how $\mathcal{OPT}$ and $\mathcal{Learn}$ can be applied to [describe applications to state-of-the-art methods].
 
@@ -21,7 +21,7 @@ Next, we set $\Sigma_\Theta = \lambda_\Theta I$ to reduce the number of unknown 
 
 \subsubsection{[Analogies to Relevant Concepts]}
 
-With this formulation of the [Main Topic], the analogy between [Concept 1] and [Concept 2] becomes clear. For instance, [provide definition or formulation for Concept 1]. 
+With this formulation of the [Main Topic], the analogy between [Concept 1] and [Concept 2] becomes clear. For instance, [provide definition or formulation for Concept 1].
 
 The average [relevant measure] can be stated as:
 \begin{equation}
@@ -53,7 +53,7 @@ Return $\hat{\Theta}$\\
 
 \subsection{[Application to Specific Models]}
 
-We describe how our proposed BPR methods can be used to learn two state-of-the-art model classes for [specific application area]. We have chosen [specific model type 1] and [specific model type 2], both striving to [describe the task of these models]. 
+We describe how our proposed BPR methods can be used to learn two state-of-the-art model classes for [specific application area]. We have chosen [specific model type 1] and [specific model type 2], both striving to [describe the task of these models].
 
 We first define [discuss one model's prediction]. Our optimization seeks to [objective of the optimization]. Hence, we decompose [related mathematical definition].
 

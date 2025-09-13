@@ -3,7 +3,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import math
+
 
 class KernelizedGumbelSoftmax(nn.Module):
     """Kernelized Gumbel-Softmax operator for differentiable graph structure learning."""
@@ -30,24 +30,23 @@ class KernelizedGumbelSoftmax(nn.Module):
         Returns:
             torch.Tensor: Differentiable graph structure [N, N]
         """
-        device = logits.device
-        batch_size = logits.size(0)
+        logits.size(0)
 
         if logits.is_cuda:
             gumbel = torch.distributions.Gumbel(
-                torch.zeros_like(logits),
-                torch.ones_like(logits)
+                torch.zeros_like(logits), torch.ones_like(logits)
             )
         else:
             gumbel = torch.distributions.Gumbel(
-                torch.zeros_like(logits),
-                torch.ones_like(logits)
+                torch.zeros_like(logits), torch.ones_like(logits)
             )
 
         # Apply relational bias if specified and adjacency matrix is provided
         if relational_bias and adjacency_matrix is not None:
             if adjacency_matrix.size() != logits.size():
-                raise ValueError(f"Adjacency matrix size {adjacency_matrix.size()} does not match logits size {logits.size()}")
+                raise ValueError(
+                    f"Adjacency matrix size {adjacency_matrix.size()} does not match logits size {logits.size()}"
+                )
             edge_weights = F.sigmoid(adjacency_matrix)
             logits = logits * edge_weights
 
@@ -60,7 +59,9 @@ class KernelizedGumbelSoftmax(nn.Module):
             y = y_hard - logits.detach() + logits
         else:
             # Soft sampling
-            gumbel_softmax_sample = F.softmax((logits + gumbel.sample()) / self.temperature, dim=-1)
+            gumbel_softmax_sample = F.softmax(
+                (logits + gumbel.sample()) / self.temperature, dim=-1
+            )
             y = gumbel_softmax_sample
 
         return y

@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-import numpy as np
+
 
 class HeterogeneousGNN(nn.Module):
     def __init__(self, user_num, item_num, embed_dim, n_layers=2):
@@ -28,33 +27,35 @@ class HeterogeneousGNN(nn.Module):
         ego_embeddings = self.get_ego_embeddings()
         all_embeddings = [ego_embeddings]
 
-        user_embeddings = ego_embeddings[:self.user_num]
-        item_embeddings = ego_embeddings[self.user_num:]
+        user_embeddings = ego_embeddings[: self.user_num]
+        item_embeddings = ego_embeddings[self.user_num :]
 
         for layer in range(self.n_layers):
             # User-Item interaction embeddings
-            user_item_embeddings_user = torch.sparse.mm(user_item_graph, item_embeddings)
-            user_item_embeddings_item = torch.sparse.mm(user_item_graph.t(), user_embeddings)
-            
-            # User-User interaction embeddings 
+            user_item_embeddings_user = torch.sparse.mm(
+                user_item_graph, item_embeddings
+            )
+            user_item_embeddings_item = torch.sparse.mm(
+                user_item_graph.t(), user_embeddings
+            )
+
+            # User-User interaction embeddings
             user_user_embeddings = torch.sparse.mm(user_graph, user_embeddings)
             # Item-Item interaction embeddings
             item_item_embeddings = torch.sparse.mm(item_graph, item_embeddings)
-            
+
             # Combine embeddings for users
-            user_combined = torch.stack([
-                user_user_embeddings,
-                user_item_embeddings_user
-            ], dim=1)
+            user_combined = torch.stack(
+                [user_user_embeddings, user_item_embeddings_user], dim=1
+            )
             user_embeddings = torch.mean(user_combined, dim=1)
-            
+
             # Combine embeddings for items
-            item_combined = torch.stack([
-                item_item_embeddings,
-                user_item_embeddings_item
-            ], dim=1)
+            item_combined = torch.stack(
+                [item_item_embeddings, user_item_embeddings_item], dim=1
+            )
             item_embeddings = torch.mean(item_combined, dim=1)
-            
+
             # Combine all
             cur_embeddings = torch.cat([user_embeddings, item_embeddings], dim=0)
             all_embeddings.append(cur_embeddings)
@@ -63,7 +64,7 @@ class HeterogeneousGNN(nn.Module):
         all_embeddings = torch.stack(all_embeddings, dim=1)
         all_embeddings = torch.mean(all_embeddings, dim=1)
 
-        user_all_embeddings = all_embeddings[:self.user_num]
-        item_all_embeddings = all_embeddings[self.user_num:]
+        user_all_embeddings = all_embeddings[: self.user_num]
+        item_all_embeddings = all_embeddings[self.user_num :]
 
         return user_all_embeddings, item_all_embeddings

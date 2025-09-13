@@ -5,7 +5,7 @@ In this section, we present our [framework/approach name] for [application/task]
 \subsection{Notations and Problem Statement}
 \label{sec:notations}
 
-In this paper, we represent [type of data] by [notation style]. Let [symbol] denote [definition], where [symbol] and [symbol] denote [relevant dimensions or characteristics]. 
+In this paper, we represent [type of data] by [notation style]. Let [symbol] denote [definition], where [symbol] and [symbol] denote [relevant dimensions or characteristics].
 
 Based on the above notations, we now define the task for [task name]. It focuses on [brief description of the target of the task]. It can be formulated as follows:
 

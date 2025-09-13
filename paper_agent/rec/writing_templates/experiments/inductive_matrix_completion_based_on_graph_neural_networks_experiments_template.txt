@@ -26,7 +26,7 @@ We [describe training details and model evaluation]. Our model achieves [summary
 
 \subsection{[Dataset 4 and Dataset 5]}
 
-We further conduct experiments on [describe the datasets]. We [describe additional data or features present]. For [Dataset 4], we compare against [list of methods]. We train [your method] for [number of epochs] and report [evaluation metrics]. 
+We further conduct experiments on [describe the datasets]. We [describe additional data or features present]. For [Dataset 4], we compare against [list of methods]. We train [your method] for [number of epochs] and report [evaluation metrics].
 
 \begin{table}[h]
 \centering
@@ -46,7 +46,7 @@ We analyze [discuss individual or comparative performance]. Our findings suggest
 
 \subsection{[Other Analysis Sections]}
 
-We investigate [Explain the particular aspect or comparison, e.g., transfer learning, sparsity, etc.]. We [details on what was analyzed, compared, or tested]. 
+We investigate [Explain the particular aspect or comparison, e.g., transfer learning, sparsity, etc.]. We [details on what was analyzed, compared, or tested].
 
 \begin{figure}[h]
 \centering

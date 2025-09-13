@@ -2,7 +2,7 @@
 
 In this paper, we propose a novel approach inspired by [previous work/technique], which we call [module name] to address [challenge]. Our method leverages [brief explanation of underlying model/architecture], demonstrating its effectiveness through [summary of key findings/results].
 
-To tackle [challenge], our method consists of three main components: 
+To tackle [challenge], our method consists of three main components:
 \begin{itemize}
     \item [Component 1 description]
     \item [Component 2 description]

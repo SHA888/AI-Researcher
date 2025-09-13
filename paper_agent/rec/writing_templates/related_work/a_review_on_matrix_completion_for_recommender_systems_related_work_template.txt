@@ -1,19 +1,19 @@
 \section{Related Work}
 
-Research in this domain has significantly evolved over the years. Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Research in this domain has significantly evolved over the years. Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
-To tackle [challenge], our method consists of three main components: 
+To tackle [challenge], our method consists of three main components:
 \begin{itemize}
     \item [Component 1]
     \item [Component 2]
     \item [Component 3]
 \end{itemize}
 
-Specifically, [multiple sentences explaining the motivation and intuition behind the proposed method]. 
+Specifically, [multiple sentences explaining the motivation and intuition behind the proposed method].
 
-Furthermore, [a paragraph describing the detailed workflow of the module]. 
+Furthermore, [a paragraph describing the detailed workflow of the module].
 
-To this end, we compare our approach with existing methods. [Several sentences comparing the proposed method with existing approaches]. 
+To this end, we compare our approach with existing methods. [Several sentences comparing the proposed method with existing approaches].
 
 Formally, we define [concept] as follows:
 \begin{equation}

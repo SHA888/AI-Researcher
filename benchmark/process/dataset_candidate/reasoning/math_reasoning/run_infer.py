@@ -1,32 +1,31 @@
-import torch
-from datasets import load_dataset
-from tqdm import tqdm
-import multiprocessing
-import random
-import requests
-from functools import partial
 import argparse
-from pathlib import Path    
-import yaml
-import importlib
-import os
 import asyncio
-from prompts import MATH_COT_PROMPT
-from constant import *
+import os
+import random
+from pathlib import Path
 
 import openai
+import yaml
+from constant import *
+from datasets import load_dataset
+from prompts import MATH_COT_PROMPT
+from tqdm import tqdm
+
 
 def save_yaml(path: Path, data, sort_keys=True):
     with open(path, "w") as f:
         yaml.dump(data, f, sort_keys=sort_keys)
 
-async def run_inference(item, save_dir, model, base_url):
 
+async def run_inference(item, save_dir, model, base_url):
     outpath = save_dir / f"{item['id']}.yaml"
     if outpath.exists():
         return
 
-    prompt = MATH_COT_PROMPT + f"\n\nPlease answer the following math question. You should think step by step to solve it.\n\nProblem:\n{item['problem']}\n\n"
+    prompt = (
+        MATH_COT_PROMPT
+        + f"\n\nPlease answer the following math question. You should think step by step to solve it.\n\nProblem:\n{item['problem']}\n\n"
+    )
     prompt += "Please given your final answer (answer ONLY) within the format of `Final Answer: The final answer is <answer>. I hope it is correct.` after your reasoning \n"
     prompt += "For example: According to ...\nFinal Answer: The final answer is $24$. I hope it is correct.\n"
 
@@ -52,7 +51,6 @@ async def run_inference(item, save_dir, model, base_url):
 
 
 async def main(args):
-
     test_dataset = list(
         load_dataset(
             "HuggingFaceH4/MATH-500", "default", split="test", trust_remote_code=True
@@ -62,7 +60,6 @@ async def main(args):
     print(f"Number of test items: {len(test_dataset)}")
 
     random.seed(12345)
-
 
     for i, data in enumerate(test_dataset):
         data["id"] = i
@@ -94,7 +91,10 @@ async def main(args):
 
     predictions = []
     for item in tqdm(test_dataset):
-        predictions.append(await run_inference(item, save_dir, args.model, args.base_url))
+        predictions.append(
+            await run_inference(item, save_dir, args.model, args.base_url)
+        )
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

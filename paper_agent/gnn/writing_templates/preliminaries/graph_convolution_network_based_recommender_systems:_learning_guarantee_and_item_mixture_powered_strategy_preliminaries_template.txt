@@ -42,17 +42,17 @@ In this paper, we focus on the more complex operation defined in Eq. (3) since [
 
 (2) Final node representation. The [type of models] require the representation of users and items for the final prediction task. The mainstream approaches include [describe standard approaches], respectively defined as,
 
-Linear combination: 
+Linear combination:
 \[
 e_{[symbol for user]} = \sum_{l=0}^L \alpha^l h^l_{[symbol for user]}
 \]
 
-Concatenation: 
+Concatenation:
 \[
 e_{[symbol for user]} = h^0_{[symbol for user]} \oplus h^1_{[symbol for user]} \oplus \cdots \oplus h^L_{[symbol for user]}.
 \]
 
-where $\alpha^l$ is a learnable parameter or hyper-parameter, and $L$ is the network depth. In this paper, for convenience, we only consider the embeddings of the last layer as the final representation, i.e., 
+where $\alpha^l$ is a learnable parameter or hyper-parameter, and $L$ is the network depth. In this paper, for convenience, we only consider the embeddings of the last layer as the final representation, i.e.,
 
 \[
 e_{[symbol for user]} = h^L_{[symbol for user]}.

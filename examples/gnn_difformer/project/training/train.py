@@ -1,7 +1,6 @@
 import torch
 import torch.nn.functional as F
-from torch import optim
-import logging
+
 
 def accuracy(y_pred, y_true):
     """
@@ -19,6 +18,7 @@ def accuracy(y_pred, y_true):
     correct = preds.eq(y_true).double()
     correct = correct.sum().item()
     return correct / len(y_true)
+
 
 def train_epoch(model, data, optimizer, device, epoch=None):
     """
@@ -58,6 +58,7 @@ def train_epoch(model, data, optimizer, device, epoch=None):
     acc = accuracy(logits[train_mask], y[train_mask])
 
     return total_loss.item(), acc
+
 
 @torch.no_grad()
 def evaluate(model, data, mask, device):

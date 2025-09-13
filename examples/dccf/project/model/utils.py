@@ -2,6 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
+
 def metrics(uids, predictions, topk, test_labels):
     user_num = 0
     all_recall = 0
@@ -12,7 +13,12 @@ def metrics(uids, predictions, topk, test_labels):
         label = test_labels[uid]
         if len(label) > 0:
             hit = 0
-            idcg = np.sum([np.reciprocal(np.log2(loc + 2)) for loc in range(min(topk, len(label)))])
+            idcg = np.sum(
+                [
+                    np.reciprocal(np.log2(loc + 2))
+                    for loc in range(min(topk, len(label)))
+                ]
+            )
             dcg = 0
             for item in label:
                 if item in prediction:
@@ -24,6 +30,7 @@ def metrics(uids, predictions, topk, test_labels):
             user_num += 1
     return all_recall / user_num, all_ndcg / user_num
 
+
 def sparse_dropout(mat, dropout):
     if dropout == 0.0:
         return mat
@@ -31,6 +38,7 @@ def sparse_dropout(mat, dropout):
     values = nn.functional.dropout(mat.values(), p=dropout)
     size = mat.size()
     return torch.sparse_coo_tensor(indices, values, size)
+
 
 def spmm(sp, emb, device):
     sp = sp.coalesce()
@@ -41,9 +49,12 @@ def spmm(sp, emb, device):
     result.index_add_(0, rows, col_segs)
     return result
 
+
 def scipy_sparse_mat_to_torch_sparse_tensor(sparse_mx):
     sparse_mx = sparse_mx.tocoo().astype(np.float32)
-    indices = torch.from_numpy(np.vstack((sparse_mx.row, sparse_mx.col)).astype(np.int64))
+    indices = torch.from_numpy(
+        np.vstack((sparse_mx.row, sparse_mx.col)).astype(np.int64)
+    )
     values = torch.from_numpy(sparse_mx.data)
     shape = torch.Size(sparse_mx.shape)
     return torch.sparse_coo_tensor(indices, values, shape)

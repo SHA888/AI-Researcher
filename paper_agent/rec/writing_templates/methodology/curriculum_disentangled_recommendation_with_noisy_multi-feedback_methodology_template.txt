@@ -58,7 +58,7 @@ Based on the learned [Concepts/Features] from the previous components, we can pr
 L = [Loss Function Formulation]
 \]
 
-In summary, our proposed methodology addresses [Summarize Main Contributions and Innovations]. Further evaluations show [Brief Outcome/Results Description]. 
+In summary, our proposed methodology addresses [Summarize Main Contributions and Innovations]. Further evaluations show [Brief Outcome/Results Description].
 
 \section{Discussion}
 

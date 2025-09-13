@@ -1,8 +1,8 @@
-\section{Experiments} 
+\section{Experiments}
 \label{sec:experiments}
 
 \subsection{Motivation}
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge].
 [Multiple sentences explaining the motivation and intuition behind the proposed method]
 
 \subsection{Methodology}
@@ -21,6 +21,6 @@ Formally, we define [concept] as follows:
 [Detailed explanation of each term in the equations]
 
 \subsection{Results and Discussion}
-To this end, we conducted experiments to validate our approach. 
+To this end, we conducted experiments to validate our approach.
 [Description of experimental setup, dataset, and metrics used]
 Furthermore, [summary of the results and implications of these findings]

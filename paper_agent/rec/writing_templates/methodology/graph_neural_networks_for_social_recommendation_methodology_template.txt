@@ -46,7 +46,7 @@ where [Explain the variables and functions involved].
 
 \subsection{[Component 3 Name]}
 
-In this component, we focus on [Explain the focus area]. The approach for this section can be summarized as follows: 
+In this component, we focus on [Explain the focus area]. The approach for this section can be summarized as follows:
 
 \begin{equation}
 [Insert equation here]

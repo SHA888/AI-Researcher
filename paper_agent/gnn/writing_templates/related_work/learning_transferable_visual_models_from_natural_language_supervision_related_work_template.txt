@@ -4,7 +4,7 @@
 Natural language supervision has become a pivotal element in various research domains. This section provides an overview of the relevant literature, specifically focusing on [brief overview of the general area of related work].
 
 \subsection{Natural Language as Supervision}
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. Any model that leverages [forms of language] as part of its training signal is considered to be utilizing natural language supervision. This is an expansive area that encompasses significant contributions in [related fields or techniques]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge]. Any model that leverages [forms of language] as part of its training signal is considered to be utilizing natural language supervision. This is an expansive area that encompasses significant contributions in [related fields or techniques].
 
 \subsection{Creative Uses of Natural Language in [Field/Domain]}
 To tackle [specific challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. Work exploring the use of natural language supervision includes [briefly describe relevant studies or methodologies]. Specifically, [elaborate on key studies or methodologies, providing citation].

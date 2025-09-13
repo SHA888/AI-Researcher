@@ -62,7 +62,7 @@ where [explain what variables represent]. [Explain any important training strate
 
 \subsection{[Implementation Details Title]}
 
-In practice, we implement [technical specifications] to achieve [desired outcome or efficiency]: 
+In practice, we implement [technical specifications] to achieve [desired outcome or efficiency]:
 
 \begin{equation}
     [Vectorized or efficient implementation scheme]
@@ -78,8 +78,8 @@ Features containing [description of features used] can be incorporated into the 
 
 To enhance generalizability, we adopt [method or strategy for regularization]:
 
-\[ 
-[description of the method] 
+\[
+[description of the method]
 \]
 
 This method is effective because [reasons supporting the effectiveness of the approach].

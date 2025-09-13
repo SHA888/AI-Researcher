@@ -1,4 +1,4 @@
-2025-01-22 15:34:09,552 - INFO - 
+2025-01-22 15:34:09,552 - INFO -
 Testing temperature: 0.05
 2025-01-22 15:34:09,552 - INFO - Starting experiment with config: {'batch_size': 2048, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.05, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-22 15:34:09,629 - INFO - Using device: cuda
@@ -70,7 +70,7 @@ Testing temperature: 0.05
 2025-01-22 15:49:51,562 - INFO - Epoch 50 Eval - Recall@20: 0.0549, NDCG@20: 0.0419
 2025-01-22 15:50:00,983 - INFO - Final Test Results - Recall@20: 0.0549, NDCG@20: 0.0419
 2025-01-22 15:50:00,983 - INFO - Best Results - Recall@20: 0.0586, NDCG@20: 0.0458
-2025-01-22 15:50:01,020 - INFO - 
+2025-01-22 15:50:01,020 - INFO -
 Testing temperature: 0.1
 2025-01-22 15:50:01,020 - INFO - Starting experiment with config: {'batch_size': 2048, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-22 15:50:01,020 - INFO - Using device: cuda
@@ -144,7 +144,7 @@ Testing temperature: 0.1
 2025-01-22 16:05:38,083 - INFO - Epoch 50 Eval - Recall@20: 0.0510, NDCG@20: 0.0395
 2025-01-22 16:05:47,203 - INFO - Final Test Results - Recall@20: 0.0510, NDCG@20: 0.0395
 2025-01-22 16:05:47,203 - INFO - Best Results - Recall@20: 0.0541, NDCG@20: 0.0419
-2025-01-22 16:05:47,232 - INFO - 
+2025-01-22 16:05:47,232 - INFO -
 Testing temperature: 0.2
 2025-01-22 16:05:47,232 - INFO - Starting experiment with config: {'batch_size': 2048, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.2, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-22 16:05:47,233 - INFO - Using device: cuda
@@ -214,7 +214,7 @@ Testing temperature: 0.2
 2025-01-22 16:21:24,608 - INFO - Epoch 50 Eval - Recall@20: 0.0573, NDCG@20: 0.0440
 2025-01-22 16:21:33,963 - INFO - Final Test Results - Recall@20: 0.0573, NDCG@20: 0.0440
 2025-01-22 16:21:33,963 - INFO - Best Results - Recall@20: 0.0594, NDCG@20: 0.0475
-2025-01-22 16:21:33,991 - INFO - 
+2025-01-22 16:21:33,991 - INFO -
 Testing temperature: 0.5
 2025-01-22 16:21:33,991 - INFO - Starting experiment with config: {'batch_size': 2048, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.5, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-22 16:21:33,991 - INFO - Using device: cuda
@@ -286,7 +286,7 @@ Testing temperature: 0.5
 2025-01-22 16:37:13,393 - INFO - Epoch 50 Eval - Recall@20: 0.0572, NDCG@20: 0.0451
 2025-01-22 16:37:22,965 - INFO - Final Test Results - Recall@20: 0.0572, NDCG@20: 0.0451
 2025-01-22 16:37:22,965 - INFO - Best Results - Recall@20: 0.0586, NDCG@20: 0.0468
-2025-01-22 16:37:22,994 - INFO - 
+2025-01-22 16:37:22,994 - INFO -
 Testing embedding dimension: 32
 2025-01-22 16:37:22,995 - INFO - Starting experiment with config: {'batch_size': 2048, 'embed_dim': 32, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-22 16:37:22,995 - INFO - Using device: cuda
@@ -354,7 +354,7 @@ Testing embedding dimension: 32
 2025-01-22 16:50:48,947 - INFO - Epoch 50 Eval - Recall@20: 0.0476, NDCG@20: 0.0371
 2025-01-22 16:50:57,684 - INFO - Final Test Results - Recall@20: 0.0476, NDCG@20: 0.0371
 2025-01-22 16:50:57,684 - INFO - Best Results - Recall@20: 0.0535, NDCG@20: 0.0435
-2025-01-22 16:50:57,712 - INFO - 
+2025-01-22 16:50:57,712 - INFO -
 Testing embedding dimension: 64
 2025-01-22 16:50:57,712 - INFO - Starting experiment with config: {'batch_size': 2048, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-22 16:50:57,712 - INFO - Using device: cuda
@@ -423,7 +423,7 @@ Testing embedding dimension: 64
 2025-01-22 17:06:34,112 - INFO - Epoch 50 Eval - Recall@20: 0.0503, NDCG@20: 0.0389
 2025-01-22 17:06:43,227 - INFO - Final Test Results - Recall@20: 0.0503, NDCG@20: 0.0389
 2025-01-22 17:06:43,227 - INFO - Best Results - Recall@20: 0.0546, NDCG@20: 0.0440
-2025-01-22 17:06:43,256 - INFO - 
+2025-01-22 17:06:43,256 - INFO -
 Testing embedding dimension: 128
 2025-01-22 17:06:43,256 - INFO - Starting experiment with config: {'batch_size': 2048, 'embed_dim': 128, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-22 17:06:43,256 - INFO - Using device: cuda

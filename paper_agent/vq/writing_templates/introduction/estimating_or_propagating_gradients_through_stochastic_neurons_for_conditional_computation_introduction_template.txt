@@ -2,7 +2,7 @@
 
 Many learning algorithms, particularly those based on [specific technique/approach], rely on [main principle or method]. To achieve [specific outcome], it is essential that [related requirement or condition]. This consideration motivated [description of the transition from previous methods to the current method].
 
-We define the [generic term for framework or concept] as follows: 
+We define the [generic term for framework or concept] as follows:
 \begin{equation}
     [Formal equation or definition]
 \end{equation}

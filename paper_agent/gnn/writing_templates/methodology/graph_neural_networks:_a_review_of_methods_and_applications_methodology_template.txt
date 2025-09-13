@@ -9,7 +9,7 @@ At first, [provide an introductory statement about the importance of this step].
 
 \subsection{Step 2: [Title]}
 
-After completing [Step 1], we then need to [introduce the necessity of this step]. 
+After completing [Step 1], we then need to [introduce the necessity of this step].
 
 [Describe various categories/types related to this step, e.g., "Graphs can be categorized as:"]
 
@@ -23,7 +23,7 @@ As for [another aspect, e.g., scale], [description of the criteria used]. In thi
 
 \subsection{Step 3: [Title]}
 
-In this step, we should [introduce the focus of this step]. 
+In this step, we should [introduce the focus of this step].
 
 For [specific task type], there are usually [number] - [list types or tasks related to the step]:
 

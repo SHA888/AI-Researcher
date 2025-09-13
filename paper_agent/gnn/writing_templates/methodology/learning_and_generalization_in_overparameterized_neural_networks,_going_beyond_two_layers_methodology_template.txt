@@ -2,16 +2,16 @@
 \section{Methodology}
 
 \subsection{Introduction}
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. [Multiple sentences explaining the motivation and intuition behind the proposed method]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge]. [Multiple sentences explaining the motivation and intuition behind the proposed method].
 
 \subsection{Components}
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 \subsection{Workflow}
-Specifically, the detailed workflow of the module is as follows: [A paragraph describing the detailed workflow of the module]. 
+Specifically, the detailed workflow of the module is as follows: [A paragraph describing the detailed workflow of the module].
 
 \subsection{Comparison with Existing Approaches}
-Furthermore, we compare the proposed method with existing approaches: [Several sentences comparing the proposed method with existing approaches]. 
+Furthermore, we compare the proposed method with existing approaches: [Several sentences comparing the proposed method with existing approaches].
 
 \subsection{Mathematical Formulation}
 Formally, we define [concept] as follows:

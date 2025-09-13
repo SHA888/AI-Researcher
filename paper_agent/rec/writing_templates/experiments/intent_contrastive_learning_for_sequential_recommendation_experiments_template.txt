@@ -26,17 +26,17 @@ Our method is implemented using [software/library]. [Parameters] are tuned from 
 \subsection{Performance Comparison}
 Table [number] shows the results of different methods on all datasets. We have the following observations. First, [Discussion of results]. As for [specific model group], [Model X] [description of performance]. This demonstrates [effectiveness or conclusions drawn].
 
-Moreover, though [Model Y] and [Model Z] adopt [approaches], [observations about performance]. 
+Moreover, though [Model Y] and [Model Z] adopt [approaches], [observations about performance].
 
 Finally, [Model A] consistently outperforms existing methods on all datasets. The average improvements compared to the best baseline range from [value] to [value] in [metrics].
 
 \subsection{Robustness Analysis}
-Robustness w.r.t. [specific factor]. To check whether [model] improves the robustness, we split [description of methodology]. 
+Robustness w.r.t. [specific factor]. To check whether [model] improves the robustness, we split [description of methodology].
 
 Further, we analyze [add analysis on another aspect].
 
 \subsection{Ablation Study}
-Our proposed [model name] contains [components]. To verify the effectiveness of each component, we conduct an ablation study on [number] datasets and report results in Table [number]. 
+Our proposed [model name] contains [components]. To verify the effectiveness of each component, we conduct an ablation study on [number] datasets and report results in Table [number].
 
 From the results, we observe that [discussion of findings].
 

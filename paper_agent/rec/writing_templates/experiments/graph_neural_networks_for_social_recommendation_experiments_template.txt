@@ -96,6 +96,6 @@ The results of different [components/aspects] on [Proposed Method] are shown in 
 To sum up, [summary of the findings related to the last analysis].
 
 \subsubsection{Effect of [Another Parameter/Aspect]}
-In this subsection, we analyze the effect of [Parameter/Aspect] on the performance of our model. Figure [number] presents the performance comparison w.r.t. [parameter or aspect] on [Dataset 1] and [Dataset 2]. In general, [summary of overall trend and findings]. 
+In this subsection, we analyze the effect of [Parameter/Aspect] on the performance of our model. Figure [number] presents the performance comparison w.r.t. [parameter or aspect] on [Dataset 1] and [Dataset 2]. In general, [summary of overall trend and findings].
 
 Furthermore, we need to [additional analysis or conclusions regarding aspect].

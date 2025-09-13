@@ -1,7 +1,8 @@
-import numpy as np
-import torch
 import pickle
+
+import numpy as np
 import torch.utils.data as data
+
 
 class TrnData(data.Dataset):
     def __init__(self, coomat):
@@ -25,21 +26,24 @@ class TrnData(data.Dataset):
     def __getitem__(self, idx):
         return self.rows[idx], self.cols[idx], self.negs[idx]
 
+
 def load_data(path):
     # Load training data
-    with open(path + 'trnMat.pkl', 'rb') as f:
+    with open(path + "trnMat.pkl", "rb") as f:
         train = pickle.load(f)
     train_csr = (train != 0).astype(np.float32)
-    
+
     # Load test data
-    with open(path + 'tstMat.pkl', 'rb') as f:
+    with open(path + "tstMat.pkl", "rb") as f:
         test = pickle.load(f)
 
     # Normalize adjacency matrix
     rowD = np.array(train.sum(1)).squeeze()
     colD = np.array(train.sum(0)).squeeze()
     for i in range(len(train.data)):
-        train.data[i] = train.data[i] / pow(rowD[train.row[i]] * colD[train.col[i]], 0.5)
+        train.data[i] = train.data[i] / pow(
+            rowD[train.row[i]] * colD[train.col[i]], 0.5
+        )
 
     # Process test set
     test_labels = [[] for _ in range(test.shape[0])]

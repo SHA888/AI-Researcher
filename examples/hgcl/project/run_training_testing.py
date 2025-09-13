@@ -1,8 +1,8 @@
-import os
 import torch
-from data_processing.dataset import load_data, create_adj_matrices, RecommenderDataset
+from data_processing.dataset import RecommenderDataset, create_adj_matrices, load_data
 from model.contrastive_model import HeteroContrastiveModel
 from training.trainer import Trainer
+
 
 def main():
     # Configuration
@@ -44,21 +44,32 @@ def main():
 
         # Evaluate every 5 epochs
         if (epoch + 1) % 5 == 0:
-            recall, ndcg = trainer.evaluate(user_graph, user_item_graph, item_graph,
-                                         test_mat, k=evaluation_k)
-            print(f"Epoch {epoch+1} Evaluation - Recall@{evaluation_k}: {recall:.4f}, NDCG@{evaluation_k}: {ndcg:.4f}")
-            
+            recall, ndcg = trainer.evaluate(
+                user_graph, user_item_graph, item_graph, test_mat, k=evaluation_k
+            )
+            print(
+                f"Epoch {epoch+1} Evaluation - Recall@{evaluation_k}: {recall:.4f}, NDCG@{evaluation_k}: {ndcg:.4f}"
+            )
+
             if recall > best_recall:
                 best_recall = recall
                 best_ndcg = ndcg
-                print(f"New best performance - Recall@{evaluation_k}: {recall:.4f}, NDCG@{evaluation_k}: {ndcg:.4f}")
+                print(
+                    f"New best performance - Recall@{evaluation_k}: {recall:.4f}, NDCG@{evaluation_k}: {ndcg:.4f}"
+                )
 
     # Final evaluation
     print("\nFinal evaluation...")
-    recall, ndcg = trainer.evaluate(user_graph, user_item_graph, item_graph,
-                                  test_mat, k=evaluation_k)
-    print(f"Test Results - Recall@{evaluation_k}: {recall:.4f}, NDCG@{evaluation_k}: {ndcg:.4f}")
-    print(f"Best Results - Recall@{evaluation_k}: {best_recall:.4f}, NDCG@{evaluation_k}: {best_ndcg:.4f}")
+    recall, ndcg = trainer.evaluate(
+        user_graph, user_item_graph, item_graph, test_mat, k=evaluation_k
+    )
+    print(
+        f"Test Results - Recall@{evaluation_k}: {recall:.4f}, NDCG@{evaluation_k}: {ndcg:.4f}"
+    )
+    print(
+        f"Best Results - Recall@{evaluation_k}: {best_recall:.4f}, NDCG@{evaluation_k}: {best_ndcg:.4f}"
+    )
+
 
 if __name__ == "__main__":
     main()

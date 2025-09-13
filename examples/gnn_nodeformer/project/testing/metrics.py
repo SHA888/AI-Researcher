@@ -1,14 +1,13 @@
 """Evaluation metrics for graph neural networks."""
 
-import torch
 
 def accuracy(y_pred, y_true):
     """Compute accuracy for node classification.
-    
+
     Args:
         y_pred (torch.Tensor): Model predictions
         y_true (torch.Tensor): Ground truth labels
-    
+
     Returns:
         float: Accuracy score
     """

@@ -17,7 +17,7 @@ Formally, we define [concept] as follows:
 \end{equation}
 [Detailed explanation of each term in the equations.]
 
-Furthermore, [a paragraph describing the detailed workflow of the module]. 
+Furthermore, [a paragraph describing the detailed workflow of the module].
 
 \subsection{Comparative Analysis}
 [Several sentences comparing the proposed method with existing approaches, highlighting key differences and advantages.]

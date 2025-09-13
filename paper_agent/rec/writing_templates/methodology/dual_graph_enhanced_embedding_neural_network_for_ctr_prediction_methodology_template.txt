@@ -58,6 +58,6 @@ To evaluate the efficiency of our method, we analyze the [specify aspects like t
 [Insert complexity formulation]
 \end{equation}
 
-With this analysis, we can showcase the scalability of our proposed method when applied to [context or application domain]. 
+With this analysis, we can showcase the scalability of our proposed method when applied to [context or application domain].
 
 [Conclude this section by summarizing the importance of adopting the proposed approach and its implications in the research field.]

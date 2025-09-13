@@ -3,7 +3,7 @@
 
 We present the proposed [Method Name], which enhances the main supervised task with [Additional Technique]. Figure [X] illustrates the working flow of [Method Name]. Specifically, the [self-supervised/auxiliary] task is to [describe the task].
 
-To tackle [challenge], our method consists of three main components: 
+To tackle [challenge], our method consists of three main components:
 \begin{itemize}
     \item [Component 1]
     \item [Component 2]
@@ -14,7 +14,7 @@ To tackle [challenge], our method consists of three main components:
 
 [Multiple sentences explaining the motivation and intuition behind the proposed method].
 
-The [graph structure/module] is built upon [describe relevant data or interactions], thus containing the [signal/insight]. Specifically, [describe the context and features involved]. Furthermore, [additional explanation or contextualization]. 
+The [graph structure/module] is built upon [describe relevant data or interactions], thus containing the [signal/insight]. Specifically, [describe the context and features involved]. Furthermore, [additional explanation or contextualization].
 
 We devise [number] operators on the [structure/context] to create different views of [subject]. The operators can be uniformly expressed as follows:
 \begin{equation}
@@ -33,7 +33,7 @@ We apply these augmentations on [context] per [frequency], [additional procedure
 
 \subsection{[Next Subsection Title]}
 
-Having established the augmented views of [subject], we treat the views of the same [entity] as the positive pairs (i.e., $\{ ( [view1], [view2] ) | [condition] \}$), and the views of any different [entities] as the negative pairs (i.e., $\{ ( [view1], [view2] ) | [condition] \}$). The auxiliary supervision of positive pairs encourages the consistency between different views for prediction, while the supervision of negative pairs enforces the divergence among [entities]. 
+Having established the augmented views of [subject], we treat the views of the same [entity] as the positive pairs (i.e., $\{ ( [view1], [view2] ) | [condition] \}$), and the views of any different [entities] as the negative pairs (i.e., $\{ ( [view1], [view2] ) | [condition] \}$). The auxiliary supervision of positive pairs encourages the consistency between different views for prediction, while the supervision of negative pairs enforces the divergence among [entities].
 
 Formally, we follow [prior work] and adopt the [specific loss function] to [maximize/minimize] the agreement of positive pairs and minimize that of negative pairs:
 
@@ -51,11 +51,11 @@ To improve [task/performance], we leverage a multi-task training strategy to joi
     L = [Main Loss] + \lambda_{1}[Self-Supervised Loss] + \lambda_{2} \| \Theta \|^2
 \end{equation}
 
-Where [description of terms and parameters]. 
+Where [description of terms and parameters].
 
 \subsection{Theoretical Analyses of [Method Name]}
 
-In this section, we offer in-depth analyses of [Method Name], aiming to answer the question: [Analytical focus/question]. To this end, we probe the [specific loss] and find that [findings/insights]. 
+In this section, we offer in-depth analyses of [Method Name], aiming to answer the question: [Analytical focus/question]. To this end, we probe the [specific loss] and find that [findings/insights].
 
 Formally, for [specific entity], the gradient of the loss with respect to the representation is as follows:
 
@@ -76,6 +76,6 @@ In this subsection, we analyze the complexity of [Method Name] based on [specifi
     \item \textbf{[Part 2 Title]}: [Another complexity explanation and relevant equations].
 \end{itemize}
 
-We summarize the time complexity in training between [Prior Model] and [Current Model] in Table [X]. 
+We summarize the time complexity in training between [Prior Model] and [Current Model] in Table [X].
 
 ```

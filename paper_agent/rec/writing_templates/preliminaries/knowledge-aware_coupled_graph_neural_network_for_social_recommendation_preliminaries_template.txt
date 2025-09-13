@@ -8,7 +8,7 @@ We first introduce key definitions related to [research topic] and [relevant com
 
 \textbf{Definition 3: [Definition Title]}. We further define [Symbol] = \{ [Elements], [Edges] \} to represent the [description of relationships]. In particular, we characterize the [component relations] with a triple \{ [element], [edge], [related element] | [conditions] \}, where edge [Edge Symbol] describes the relationship between [elements], [explanation].
 
-\textbf{Task Formulation}. We formulate the studied task in this paper as follows: 
+\textbf{Task Formulation}. We formulate the studied task in this paper as follows:
 \begin{itemize}
     \item \textbf{Input:} [description of input structures and their roles].
     \item \textbf{Output:} A predictive function that effectively [description of the function's purpose].

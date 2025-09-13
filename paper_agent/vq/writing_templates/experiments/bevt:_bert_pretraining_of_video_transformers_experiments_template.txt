@@ -9,7 +9,7 @@
 
 \subsection{Main Results}
 
-\textbf{Effectiveness of [Method Name].} To demonstrate the effectiveness of [Method Name], we compare it with [number] baselines: (1) [Baseline 1 description]; (2) [Baseline 2 description]; (3) [Baseline 3 description]; (4) [Baseline 4 description]. The comparison results are summarized in Table \ref{tab:comparison}. We observe that: 
+\textbf{Effectiveness of [Method Name].} To demonstrate the effectiveness of [Method Name], we compare it with [number] baselines: (1) [Baseline 1 description]; (2) [Baseline 2 description]; (3) [Baseline 3 description]; (4) [Baseline 4 description]. The comparison results are summarized in Table \ref{tab:comparison}. We observe that:
 \begin{itemize}
     \item [Observation 1]
     \item [Observation 2]
@@ -17,7 +17,7 @@
     \item [Observation 4]
 \end{itemize}
 
-\textbf{Deeper Dataset Analysis.} To further understand the performance variations of [Method Name] among [list datasets], we perform a [description of analysis]. Specifically, we use the following strategies: (1) [Strategy 1 description]; (2) [Strategy 2 description]. The results are summarized in Table \ref{tab:temporal}. We conclude that: 
+\textbf{Deeper Dataset Analysis.} To further understand the performance variations of [Method Name] among [list datasets], we perform a [description of analysis]. Specifically, we use the following strategies: (1) [Strategy 1 description]; (2) [Strategy 2 description]. The results are summarized in Table \ref{tab:temporal}. We conclude that:
 \begin{itemize}
     \item [Conclusion 1]
     \item [Conclusion 2]

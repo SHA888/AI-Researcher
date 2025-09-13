@@ -1,58 +1,61 @@
-import torch
+import json
 import logging
 import os
-import json
-from model.improved_diffusion import ImprovedDiffusionModel
-from data_processing.dataset import load_dataset, get_train_val_test_split
-from training.train import train_epoch, evaluate
-from torch import optim
 from itertools import product
+
+import torch
+from data_processing.dataset import get_train_val_test_split, load_dataset
+from model.improved_diffusion import ImprovedDiffusionModel
+from torch import optim
+from training.train import evaluate, train_epoch
+
 
 def setup_logging(log_dir):
     os.makedirs(log_dir, exist_ok=True)
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s - %(message)s',
+        format="%(asctime)s - %(message)s",
         handlers=[
-            logging.FileHandler(f'{log_dir}/hyperparameter_search.log'),
-            logging.StreamHandler()
-        ]
+            logging.FileHandler(f"{log_dir}/hyperparameter_search.log"),
+            logging.StreamHandler(),
+        ],
     )
     return logging.getLogger()
 
-def train_model_with_config(config, data, train_mask, val_mask, test_mask, device, logger):
+
+def train_model_with_config(
+    config, data, train_mask, val_mask, test_mask, device, logger
+):
     """Train a model with given hyperparameter configuration"""
     num_features = data.x.size(1)
     num_classes = data.y.max().item() + 1
 
     model = ImprovedDiffusionModel(
         input_dim=num_features,
-        hidden_dim=config['hidden_dim'],
+        hidden_dim=config["hidden_dim"],
         num_classes=num_classes,
-        num_layers=config['num_layers'],
-        tau=config['tau'],
-        lambda_reg=config['lambda_reg'],
-        dropout=config['dropout']
+        num_layers=config["num_layers"],
+        tau=config["tau"],
+        lambda_reg=config["lambda_reg"],
+        dropout=config["dropout"],
     ).to(device)
 
     optimizer = optim.AdamW(
         model.parameters(),
-        lr=config['learning_rate'],
-        weight_decay=config['weight_decay']
+        lr=config["learning_rate"],
+        weight_decay=config["weight_decay"],
     )
 
     scheduler = optim.lr_scheduler.CosineAnnealingLR(
-        optimizer,
-        T_max=config['epochs'],
-        eta_min=1e-6
+        optimizer, T_max=config["epochs"], eta_min=1e-6
     )
 
     # Training with early stopping
     best_val_acc = 0
-    patience = config['patience']
+    patience = config["patience"]
     patience_counter = 0
 
-    for epoch in range(config['epochs']):
+    for epoch in range(config["epochs"]):
         train_loss, train_acc = train_epoch(model, data, optimizer, device, epoch=epoch)
         val_loss, val_acc = evaluate(model, data, val_mask, device)
         scheduler.step()
@@ -70,17 +73,14 @@ def train_model_with_config(config, data, train_mask, val_mask, test_mask, devic
     model.load_state_dict(best_model_state)
     test_loss, test_acc = evaluate(model, data, test_mask, device)
 
-    return {
-        'val_acc': best_val_acc,
-        'test_acc': test_acc,
-        'epochs_trained': epoch + 1
-    }
+    return {"val_acc": best_val_acc, "test_acc": test_acc, "epochs_trained": epoch + 1}
+
 
 def main():
     # Setup
-    log_dir = './logs/hyperparameter_search'
+    log_dir = "./logs/hyperparameter_search"
     logger = setup_logging(log_dir)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     logger.info(f"Using device: {device}")
 
     # Load data
@@ -89,15 +89,15 @@ def main():
 
     # Define hyperparameter search space
     param_grid = {
-        'hidden_dim': [64, 128, 256],
-        'num_layers': [2, 3, 4],
-        'tau': [0.05, 0.1, 0.2],
-        'lambda_reg': [0.5, 1.0, 2.0],
-        'dropout': [0.1, 0.3, 0.5],
-        'learning_rate': [0.001, 0.003],
-        'weight_decay': [1e-5, 1e-4],
-        'epochs': [200],
-        'patience': [20]
+        "hidden_dim": [64, 128, 256],
+        "num_layers": [2, 3, 4],
+        "tau": [0.05, 0.1, 0.2],
+        "lambda_reg": [0.5, 1.0, 2.0],
+        "dropout": [0.1, 0.3, 0.5],
+        "learning_rate": [0.001, 0.003],
+        "weight_decay": [1e-5, 1e-4],
+        "epochs": [200],
+        "patience": [20],
     }
 
     # Generate all possible combinations
@@ -116,11 +116,8 @@ def main():
             metrics = train_model_with_config(
                 config, data, train_mask, val_mask, test_mask, device, logger
             )
-            
-            result = {
-                'config': config,
-                'metrics': metrics
-            }
+
+            result = {"config": config, "metrics": metrics}
             results.append(result)
 
             logger.info(f"Results for config {i+1}:")
@@ -129,7 +126,7 @@ def main():
             logger.info(f"Epochs trained: {metrics['epochs_trained']}")
 
             # Save intermediate results
-            with open(f'{log_dir}/results.json', 'w') as f:
+            with open(f"{log_dir}/results.json", "w") as f:
                 json.dump(results, f, indent=2)
 
         except Exception as e:
@@ -137,15 +134,16 @@ def main():
             continue
 
     # Find best configuration
-    best_result = max(results, key=lambda x: x['metrics']['val_acc'])
+    best_result = max(results, key=lambda x: x["metrics"]["val_acc"])
     logger.info("\nBest configuration found:")
     logger.info(f"Config: {best_result['config']}")
     logger.info(f"Validation accuracy: {best_result['metrics']['val_acc']:.4f}")
     logger.info(f"Test accuracy: {best_result['metrics']['test_acc']:.4f}")
 
     # Save final results
-    with open(f'{log_dir}/best_config.json', 'w') as f:
+    with open(f"{log_dir}/best_config.json", "w") as f:
         json.dump(best_result, f, indent=2)
+
 
 if __name__ == "__main__":
     main()

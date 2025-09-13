@@ -54,7 +54,7 @@ Where [define important terms and matrices used].
 
 \subsection{Model Analysis}
 
-We conduct model analysis to demonstrate the rationale behind the design of [module name]. First, we discuss [relation with existing models or theories]. This analysis shows that [summarize findings]. 
+We conduct model analysis to demonstrate the rationale behind the design of [module name]. First, we discuss [relation with existing models or theories]. This analysis shows that [summarize findings].
 
 Next, we analyze [describe further relations with other models]. This highlights the connection between [discuss key elements].
 

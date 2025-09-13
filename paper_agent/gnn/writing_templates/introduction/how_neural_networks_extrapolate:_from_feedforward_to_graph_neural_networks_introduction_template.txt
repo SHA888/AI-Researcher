@@ -5,7 +5,7 @@ Humans excel in various tasks, such as [describe human capability related to the
 
 To address this question, we [state the aim of your study or research]. Specifically, we study [clarify what aspect is being analyzed], particularly concerning [define key concepts related to your study context]. It may seem that [discuss common perception or assumption related to the topic], but [provide a counterpoint or caveat related to the assumption].
 
-Our analysis focuses on [define what specific scenario, method, or aspect your study investigates] through [provide a brief overview of your approach]. Formally, we define [specific concept or notation] as follows: 
+Our analysis focuses on [define what specific scenario, method, or aspect your study investigates] through [provide a brief overview of your approach]. Formally, we define [specific concept or notation] as follows:
 \begin{equation}
     [Mathematical definition or relevant equation].
 \end{equation}

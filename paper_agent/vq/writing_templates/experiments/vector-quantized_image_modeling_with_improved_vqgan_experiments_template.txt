@@ -69,4 +69,4 @@ Table \ref{table_label} summarizes [overview of results from this experiment], d
     \label{table_label}
 \end{table}
 
-In the following section, we will demonstrate [set up the next segment] by discussing [what the reader can expect]. Specifically, we will investigate [details of what will be examined next]. 
+In the following section, we will demonstrate [set up the next segment] by discussing [what the reader can expect]. Specifically, we will investigate [details of what will be examined next].

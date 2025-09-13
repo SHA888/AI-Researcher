@@ -14,7 +14,7 @@
 
 \textbf{[Core Insight]}: [Share the main insight or innovative idea behind the proposed method, explaining how it contributes to solving the identified challenges.]
 
-\textbf{[Method Specification]}: Formally, we define [concept] as follows: 
+\textbf{[Method Specification]}: Formally, we define [concept] as follows:
 \begin{equation}
     [Insert mathematical formulation here]
 \end{equation}

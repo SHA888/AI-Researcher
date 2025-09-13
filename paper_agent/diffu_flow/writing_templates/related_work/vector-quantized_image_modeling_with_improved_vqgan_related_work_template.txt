@@ -5,9 +5,9 @@
 [Multiple sentences introducing the main topic and its significance in the field.]
 
 \subsubsection{[Subtopic 1]}
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. Specifically, [Multiple sentences explaining the motivation and intuition behind the proposed method]. To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge]. Specifically, [Multiple sentences explaining the motivation and intuition behind the proposed method]. To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
-To this end, we define [concept] as follows: 
+To this end, we define [concept] as follows:
 \begin{equation}
     [Mathematical formulation of the key components]
 \end{equation}

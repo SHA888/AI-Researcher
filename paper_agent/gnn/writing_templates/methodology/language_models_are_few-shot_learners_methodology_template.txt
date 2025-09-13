@@ -35,7 +35,7 @@ To construct our training dataset, we [explain the process of data collection an
 According to [reference], it has been established that [provide insight into training considerations]. Hence, we [describe the training process and hyperparameter settings], as outlined in Table [label]. Additional training details can be found in the appendix.
 
 \subsection{Evaluation}
-For evaluation, we [explain the evaluation process, including any adaptations made]. On tasks requiring [specific requirement], we employ [describe technique used for evaluation]. 
+For evaluation, we [explain the evaluation process, including any adaptations made]. On tasks requiring [specific requirement], we employ [describe technique used for evaluation].
 
 Final results are reported on [indicate source of results] for each [model size/learning setting] when available, and we clarify how we handle [any particular evaluation challenges].
 ```

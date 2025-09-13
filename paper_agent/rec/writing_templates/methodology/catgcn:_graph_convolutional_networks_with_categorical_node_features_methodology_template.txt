@@ -27,7 +27,7 @@ In particular, we first [description of the initial process], which is formulate
     [Equation for initial process]
 \end{equation}
 
-where [explanation of variables]. [Additional details about the implementation and any assumptions]. 
+where [explanation of variables]. [Additional details about the implementation and any assumptions].
 
 Similar to [related methods], [Method Name] is learned in an end-to-end manner by optimizing an objective function:
 
@@ -39,7 +39,7 @@ where [explanation of components within the expression]. In the following, we in
 
 \subsection{[Submodule Title]}
 
-Inspired by [previous work], [Method Name] focuses on [specific goal]. To thoroughly capture [specific aspect], our first belief is that [underlying principle]. Here, we consider [list of factors or components]. 
+Inspired by [previous work], [Method Name] focuses on [specific goal]. To thoroughly capture [specific aspect], our first belief is that [underlying principle]. Here, we consider [list of factors or components].
 
 To bridge this gap, [Method Name] integrates [components] into [specific process]. Specifically, as shown in Figure \ref{fig:framework}, [Method Name] consists of three main modules:
 

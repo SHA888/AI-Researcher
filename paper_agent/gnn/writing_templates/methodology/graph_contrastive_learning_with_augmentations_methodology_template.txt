@@ -52,7 +52,7 @@ The framework consists of the following [number] major components:
 
 [Description of the processing, workflow, or logic between the components, including any interim results.]
 
-Denote [relevant notation] as $sim(z_{n,i}, z_{n,j}) = \frac{z^{T}_{n,i} z_{n,j}}{\| z_{n,i} \| \| z_{n,j} \|}$, so that [mathematical formulation or necessary equations]. 
+Denote [relevant notation] as $sim(z_{n,i}, z_{n,j}) = \frac{z^{T}_{n,i} z_{n,j}}{\| z_{n,i} \| \| z_{n,j} \|}$, so that [mathematical formulation or necessary equations].
 
 The final [objective or result] is defined across all [context]. The proposed [method or framework] is summarized in [appendix, section, or reference].
 

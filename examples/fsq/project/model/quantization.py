@@ -1,7 +1,8 @@
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import numpy as np
+
 
 class FiniteScalarQuantization(nn.Module):
     def __init__(self, num_levels=10, embedding_dim=64):
@@ -24,15 +25,15 @@ class FiniteScalarQuantization(nn.Module):
         self.bound_levels = int(num_levels / 2)
 
         # Initialize EMA registers
-        self.register_buffer('N', torch.zeros(num_levels))
-        self.register_buffer('m', torch.zeros(num_levels, embedding_dim))
+        self.register_buffer("N", torch.zeros(num_levels))
+        self.register_buffer("m", torch.zeros(num_levels, embedding_dim))
         self.gamma = 0.99  # EMA decay rate
-        
+
         # Temperature parameter for annealing
-        self.register_buffer('temperature', torch.tensor(1.0))
+        self.register_buffer("temperature", torch.tensor(1.0))
 
         # Track utilization
-        self.register_buffer('usage_count', torch.zeros(num_levels))
+        self.register_buffer("usage_count", torch.zeros(num_levels))
 
     def bounding_function(self, z):
         """Project encoder output to bounded range using temperature-scaled tanh.
@@ -43,7 +44,7 @@ class FiniteScalarQuantization(nn.Module):
             torch.Tensor: Bounded representation
         """
         return self.bound_levels * torch.tanh(z / self.temperature)
-        
+
     def set_temperature(self, temp):
         """Set temperature value for annealing.
 
@@ -90,16 +91,20 @@ class FiniteScalarQuantization(nn.Module):
         if self.training:
             with torch.no_grad():
                 for k in range(self.num_levels):
-                    mask = (assignments == k)
+                    mask = assignments == k
                     cluster_size = mask.sum().item()
 
                     if cluster_size > 0:
                         # Update cluster size
-                        self.N[k] = self.gamma * self.N[k] + (1 - self.gamma) * cluster_size
+                        self.N[k] = (
+                            self.gamma * self.N[k] + (1 - self.gamma) * cluster_size
+                        )
 
                         # Update cluster mean
                         cluster_sum = z[mask].sum(dim=0)
-                        self.m[k] = self.gamma * self.m[k] + (1 - self.gamma) * cluster_sum
+                        self.m[k] = (
+                            self.gamma * self.m[k] + (1 - self.gamma) * cluster_sum
+                        )
 
                         # Update codebook with scaled updates
                         self.codebook[k] = self.m[k] / (self.N[k].clamp(min=1e-6))
@@ -157,10 +162,10 @@ class FiniteScalarQuantization(nn.Module):
         # Calculate losses with temperature scaling
         commitment_loss = F.mse_loss(z, quantized_z.detach()) / self.temperature
         codebook_loss = F.mse_loss(quantized_z, z.detach()) / self.temperature
-        
+
         # Add entropy regularization
         entropy_loss = -self.compute_entropy_rate() * 0.1
-        
+
         total_loss = commitment_loss + codebook_loss + entropy_loss
 
         return quantized_z, total_loss

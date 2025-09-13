@@ -17,7 +17,7 @@ Formally, we define [concept] as follows:
 
 To tackle [challenge], [multiple sentences explaining the motivation and intuition behind the proposed method].
 
-Furthermore, [a paragraph describing the detailed workflow of the module]. 
+Furthermore, [a paragraph describing the detailed workflow of the module].
 
 To compare our method with existing approaches, we [several sentences comparing the proposed method with existing approaches].
 

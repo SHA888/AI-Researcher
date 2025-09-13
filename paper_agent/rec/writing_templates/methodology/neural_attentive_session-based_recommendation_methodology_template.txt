@@ -41,7 +41,7 @@ As shown in Figure [X], [describe how components work together]. It should be no
 
 We propose a [describe any new techniques or methods applied] which not only [describe benefits] but also [additional benefits]. Specifically, we compute [describe mathematical formulation or model].
 
-To learn the parameters of the model, we [explain training methodology or process]. 
+To learn the parameters of the model, we [explain training methodology or process].
 
 We employ [methodology] as the training criterion using [describe the loss function]. Finally, [explain any additional training techniques or processes].
 ```

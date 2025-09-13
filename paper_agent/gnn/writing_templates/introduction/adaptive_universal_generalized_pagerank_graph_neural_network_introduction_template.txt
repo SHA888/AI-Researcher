@@ -12,8 +12,8 @@ However, [Introduce key challenges associated with existing approaches and elabo
 [For each challenge, provide one or two sentences detailing why these challenges exist and their impact on performance.]
 
 \subsection{Proposed Solution}
-Inspired by [previous work/technique], we propose [module name] to address [the specified challenges]. 
-To tackle [the specified challenges], our method consists of three main components: 
+Inspired by [previous work/technique], we propose [module name] to address [the specified challenges].
+To tackle [the specified challenges], our method consists of three main components:
 1. [Component 1]
 2. [Component 2]
 3. [Component 3]
@@ -33,7 +33,7 @@ Formally, we define [concept] as follows:
 [Few sentences comparing the proposed method with existing approaches, highlighting improvements and advantages.]
 
 \subsection{Empirical Validation}
-The performance of [module name] is demonstrated empirically on [datasets or application areas], and further supported through [brief description of theoretical or experimental findings that validate the approach.]  
+The performance of [module name] is demonstrated empirically on [datasets or application areas], and further supported through [brief description of theoretical or experimental findings that validate the approach.]
 
 To assess the impact of [the proposed method], we will [Brief overview of planned experiments or methodologies to evaluate the effectiveness of the proposed solution.]
 

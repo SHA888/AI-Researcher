@@ -1,4 +1,4 @@
-2025-01-27 06:29:38,093 [INFO] 
+2025-01-27 06:29:38,093 [INFO]
 ==================================================
 Starting experiment set: refined_base
 ==================================================
@@ -12,7 +12,7 @@ Starting experiment set: refined_base
     scheduler = torch.optim.ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=5, verbose=True)
 AttributeError: module 'torch.optim' has no attribute 'ReduceLROnPlateau'
 
-2025-01-27 06:29:41,350 [INFO] 
+2025-01-27 06:29:41,350 [INFO]
 ==================================================
 Starting experiment set: hierarchical_intent
 ==================================================
@@ -26,7 +26,7 @@ Starting experiment set: hierarchical_intent
     scheduler = torch.optim.ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=5, verbose=True)
 AttributeError: module 'torch.optim' has no attribute 'ReduceLROnPlateau'
 
-2025-01-27 06:29:43,307 [INFO] 
+2025-01-27 06:29:43,307 [INFO]
 ==================================================
 Starting experiment set: deep_gnn
 ==================================================
@@ -40,5 +40,5 @@ Starting experiment set: deep_gnn
     scheduler = torch.optim.ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=5, verbose=True)
 AttributeError: module 'torch.optim' has no attribute 'ReduceLROnPlateau'
 
-2025-01-27 06:29:45,331 [INFO] 
+2025-01-27 06:29:45,331 [INFO]
 Revision experiments completed. Results saved.

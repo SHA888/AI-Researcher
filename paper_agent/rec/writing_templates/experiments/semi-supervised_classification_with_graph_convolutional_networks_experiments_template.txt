@@ -1,6 +1,6 @@
 \section{Experiments}
 
-We test our model in a number of experiments: [Briefly state the different experiments conducted]. 
+We test our model in a number of experiments: [Briefly state the different experiments conducted].
 
 \subsection{Datasets}
 
@@ -29,7 +29,7 @@ We closely follow the experimental setup in [Reference previous work]. Dataset s
 
 \subsection{Experimental Set-Up}
 
-Unless otherwise noted, we train [Model details] as described in [Section/Reference]. We evaluate prediction accuracy on [Describe the evaluation process]. Additional experiments using [Describe any additional configurations] are provided in [Reference/Appendix]. 
+Unless otherwise noted, we train [Model details] as described in [Section/Reference]. We evaluate prediction accuracy on [Describe the evaluation process]. Additional experiments using [Describe any additional configurations] are provided in [Reference/Appendix].
 
 For [Describe datasets], we optimize hyperparameters on [Specific dataset] only and use the same set of parameters for [Other datasets]. We train all models for a maximum of [Number] [Type of iterations] using [Optimizer] with a learning rate of [Value] and early stopping with a window size of [Value]. We initialize weights using [Initialization method] and normalize input features according to [Normalization technique].
 

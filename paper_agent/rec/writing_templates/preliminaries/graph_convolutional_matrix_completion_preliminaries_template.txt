@@ -1,7 +1,7 @@
 ```latex
 \section{Preliminaries}
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
 To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 

@@ -1,4 +1,4 @@
-2025-01-23 08:58:41,481 - 
+2025-01-23 08:58:41,481 -
 Running ablation study: baseline
 2025-01-23 08:58:42,670 - Epoch 10: Loss=2.8883, Val Acc=0.0720, Test Acc=0.0910
 2025-01-23 08:58:42,750 - Epoch 20: Loss=2.8949, Val Acc=0.1560, Test Acc=0.1440
@@ -23,7 +23,7 @@ Running ablation study: baseline
 2025-01-23 08:58:44,200 - Configuration: baseline
 2025-01-23 08:58:44,200 - Best validation accuracy: 0.3220
 2025-01-23 08:58:44,200 - Best test accuracy: 0.3170
-2025-01-23 08:58:44,200 - 
+2025-01-23 08:58:44,200 -
 Running ablation study: no_edge_reg
 2025-01-23 08:58:44,296 - Epoch 10: Loss=1.9534, Val Acc=0.1480, Test Acc=0.1390
 2025-01-23 08:58:44,377 - Epoch 20: Loss=1.9495, Val Acc=0.0740, Test Acc=0.0960
@@ -48,7 +48,7 @@ Running ablation study: no_edge_reg
 2025-01-23 08:58:45,825 - Configuration: no_edge_reg
 2025-01-23 08:58:45,826 - Best validation accuracy: 0.3160
 2025-01-23 08:58:45,826 - Best test accuracy: 0.3160
-2025-01-23 08:58:45,826 - 
+2025-01-23 08:58:45,826 -
 Running ablation study: high_temp
 2025-01-23 08:58:45,922 - Epoch 10: Loss=2.1266, Val Acc=0.1140, Test Acc=0.1030
 2025-01-23 08:58:46,005 - Epoch 20: Loss=2.1244, Val Acc=0.0580, Test Acc=0.0640
@@ -73,7 +73,7 @@ Running ablation study: high_temp
 2025-01-23 08:58:47,452 - Configuration: high_temp
 2025-01-23 08:58:47,452 - Best validation accuracy: 0.3160
 2025-01-23 08:58:47,452 - Best test accuracy: 0.3190
-2025-01-23 08:58:47,452 - 
+2025-01-23 08:58:47,452 -
 Running ablation study: low_temp
 2025-01-23 08:58:47,553 - Epoch 10: Loss=2.9961, Val Acc=0.0580, Test Acc=0.0640
 2025-01-23 08:58:47,633 - Epoch 20: Loss=3.0007, Val Acc=0.0580, Test Acc=0.0640
@@ -98,7 +98,7 @@ Running ablation study: low_temp
 2025-01-23 08:58:49,087 - Configuration: low_temp
 2025-01-23 08:58:49,087 - Best validation accuracy: 0.3160
 2025-01-23 08:58:49,087 - Best test accuracy: 0.3130
-2025-01-23 08:58:49,087 - 
+2025-01-23 08:58:49,087 -
 Running ablation study: deep_model
 2025-01-23 08:58:49,196 - Epoch 10: Loss=2.8903, Val Acc=0.0720, Test Acc=0.0910
 2025-01-23 08:58:49,288 - Epoch 20: Loss=2.8906, Val Acc=0.0720, Test Acc=0.0910
@@ -123,7 +123,7 @@ Running ablation study: deep_model
 2025-01-23 08:58:50,945 - Configuration: deep_model
 2025-01-23 08:58:50,945 - Best validation accuracy: 0.3160
 2025-01-23 08:58:50,945 - Best test accuracy: 0.3190
-2025-01-23 08:58:50,945 - 
+2025-01-23 08:58:50,945 -
 Running ablation study: high_dropout
 2025-01-23 08:58:51,045 - Epoch 10: Loss=2.8968, Val Acc=0.3140, Test Acc=0.3200
 2025-01-23 08:58:51,126 - Epoch 20: Loss=2.9103, Val Acc=0.0780, Test Acc=0.1000

@@ -4,7 +4,7 @@ Here we provide a formal definition of [main topic]. Assume we have a set of [en
 
 \textbf{Input:} The [describe input type] for each [subject type] $\{ [element notation]_1, [element notation]_2, \ldots, [element notation]_{n} \} $.
 
-\textbf{Output:} A [type of model] that [describe output type and its estimation goal]. 
+\textbf{Output:} A [type of model] that [describe output type and its estimation goal].
 
 % The following sections provide further details on the [specific aspects of the model].
 

@@ -42,6 +42,6 @@ In summary, [Proposed Method Name] is a [describe characteristics, e.g., scalabl
 
 \subsection{Training and Inference}
 
-The overall training flow of [Proposed Method Name] is summarized in Figure [X]. First, [describe the initial training setup]. We feed [context of input] into the [component] to generate [describe generated outputs]. During [specific stage of training], we [describe mechanism or technique used]. 
+The overall training flow of [Proposed Method Name] is summarized in Figure [X]. First, [describe the initial training setup]. We feed [context of input] into the [component] to generate [describe generated outputs]. During [specific stage of training], we [describe mechanism or technique used].
 
 For downstream applications, the [component] is applied to [describe inference setup]. The [output from process] can be used for [list potential applications]. [Discuss any additional techniques or frameworks utilized for performance]. In the experiments, we show that [summarize key performance outcomes].

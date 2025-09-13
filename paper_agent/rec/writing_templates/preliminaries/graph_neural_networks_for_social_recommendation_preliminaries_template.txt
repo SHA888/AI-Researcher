@@ -23,7 +23,7 @@ The architecture of the proposed model is shown in Figure 1. The model consists 
 
 \subsection{[Component 1]}
 
-[Component 1] aims to [Objective of Component 1]. The challenge is how to [Description of Challenge]. To address this challenge, we [Description of Approach]. [Explanation of the Aggregation Methods used]. 
+[Component 1] aims to [Objective of Component 1]. The challenge is how to [Description of Challenge]. To address this challenge, we [Description of Approach]. [Explanation of the Aggregation Methods used].
 
 \subsubsection{[Subcomponent 1.1]}
 
@@ -45,12 +45,12 @@ The architecture of the proposed model is shown in Figure 1. The model consists 
 
 \subsection{[Component 2]}
 
-[Description of Component 2 and its relevance]. 
+[Description of Component 2 and its relevance].
 
 \subsection{[Component 3]}
 
 The goal of this component is to [Objective of Component 3]. This will be implemented by [Description of how it integrates with the previous components].
-  
+
 \subsection{Learning Model Parameters}
 
 To learn better [Description of Parameters], we consider [Explanation of the approach taken]. We propose to combine [Details about Combination Methods Used].

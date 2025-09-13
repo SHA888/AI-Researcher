@@ -4,7 +4,7 @@ In this paper, we have proposed [Module Name]. Instead of [describe the traditio
 
 Furthermore, [describe an additional important property or feature of the proposed method that is beneficial in specific contexts]. This property is particularly valuable in [mention circumstances or scenarios relevant to the field].
 
-We hope [Module Name] can provide [explain the broader implications or potential applications of the proposed method in the field of study]. 
+We hope [Module Name] can provide [explain the broader implications or potential applications of the proposed method in the field of study].
 
 \subsection{Future Work}
 

@@ -13,7 +13,7 @@ However, [briefly critique the existing methods and highlight their limitations]
 
 Our work also extends [mention an area of previous research], where [explain connection to prior work]. This has been accomplished through [describe how the current approach builds on past methodologies].
 
-Additionally, our approach relates to [another relevant area or application], as evidenced by [reference work] which [provide relevant details]. 
+Additionally, our approach relates to [another relevant area or application], as evidenced by [reference work] which [provide relevant details].
 
 Moreover, [mention another comparison to existing approaches or techniques]. In their experiments, [briefly describe the findings related to the past work]. However, [discuss any challenges or issues encountered when applying these methods].
 

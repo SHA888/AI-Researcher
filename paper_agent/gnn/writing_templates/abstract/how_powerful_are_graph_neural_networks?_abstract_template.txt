@@ -14,7 +14,7 @@
 
 [To tackle [specific challenge or problem], our method consists of three main components: [component 1], [component 2], and [component 3].]
 
-[Formally, we define [concept] as follows:] 
+[Formally, we define [concept] as follows:]
 
 \begin{equation}
 [Insert mathematical formulation of the key components]

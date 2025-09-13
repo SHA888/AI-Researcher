@@ -4,7 +4,7 @@ Train a GNN model for node classification on the given dataset.
 
 
 DATASET = r"""
-The dataset for node classification is Cora, Citeseer, PubMed. 
+The dataset for node classification is Cora, Citeseer, PubMed.
 
 You should the following code to load the dataset (detailed in the repository of GraphMAE in the directory `/workplace/dataset_candidate/GraphMAE`):
 
@@ -86,17 +86,17 @@ COMPARISON = r"""
         % \multirow{3}{*}{Statistics}
 
          \midrule
-        \multirow{2}{*}{Supervised} 
+        \multirow{2}{*}{Supervised}
         & GCN     &  81.5          & 70.3          & 79.0                              \\
         & GAT     &  83.0$\pm$0.7  & 72.5$\pm$0.7  & 79.0$\pm$0.3                     \\
         \midrule
-        \multirow{10}{*}{Self-supervised} 
+        \multirow{10}{*}{Self-supervised}
         & GAE     &  71.5$\pm$0.4  & 65.8$\pm$0.4  & 72.1$\pm$0.5     \\
         & GPT-GNN &  80.1$\pm$1.0  & 68.4$\pm$1.6  & 76.3$\pm$0.8 \\
-        & GATE    &  83.2$\pm$0.6  & 71.8$\pm$0.8  & 80.9$\pm$0.3            \\ 
+        & GATE    &  83.2$\pm$0.6  & 71.8$\pm$0.8  & 80.9$\pm$0.3            \\
         & DGI     &  82.3$\pm$0.6  & 71.8$\pm$0.7  & 76.8$\pm$0.6         \\
         & MVGRL   & 83.5$\pm$0.4   & 73.3$\pm$0.5  & 80.1$\pm$0.7        \\
-        & GRACE$^{1}$   & 81.9$\pm$0.4   & 71.2$\pm$0.5  & 80.6$\pm$0.4           \\  
+        & GRACE$^{1}$   & 81.9$\pm$0.4   & 71.2$\pm$0.5  & 80.6$\pm$0.4           \\
         & BGRL$^{1}$    & 82.7$\pm$0.6   & 71.1$\pm$0.8  & 79.6$\pm$0.5         \\
         & InfoGCL  & 83.5$\pm$0.3   & \bf 73.5$\pm$0.4  & 79.1$\pm$0.2  \\
         & CCA-SSG$^{1}$ & \underline{84.0$\pm$0.4}   & 73.1$\pm$0.3  & \underline{81.0$\pm$0.4}  \\
@@ -120,10 +120,10 @@ COMPARISON = r"""
 EVALUATION = r"""
 For supervised settings, you should train the model with supervision on the training set and evaluate the trained mosdel on the test set.
 
-For self-supervised settings, you should first train a GNN encoder by the model without supervision, and then freeze the parameters of the encoder and generate all the nodes' embeddings. 
-For evaluation, you should train a linear classifier and report the mean accuracy on the test nodes through 20 random initializations. 
+For self-supervised settings, you should first train a GNN encoder by the model without supervision, and then freeze the parameters of the encoder and generate all the nodes' embeddings.
+For evaluation, you should train a linear classifier and report the mean accuracy on the test nodes through 20 random initializations.
 
-You should use the accuracy (\%) as metrics for all datasets.  
+You should use the accuracy (\%) as metrics for all datasets.
 \begin{verbatim}
 def accuracy(y_pred, y_true):
     y_true = y_true.squeeze().long()

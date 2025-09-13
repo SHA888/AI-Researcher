@@ -1,7 +1,7 @@
 ```latex
 \section{Introduction}
 
-\textbf{Motivation:} [Multiple sentences explaining the motivation and intuition behind the proposed method] 
+\textbf{Motivation:} [Multiple sentences explaining the motivation and intuition behind the proposed method]
 
 \textbf{Background:} Inspire by [previous work/technique], we propose [module name] to address [challenge]. Initially, [briefly describe previous works and their limitations]. Recently, [another study] [cite references], which also demonstrates [related techniques/effects]. However, [mention any unexplored areas or gaps in the existing research].
 
@@ -15,7 +15,7 @@
 
 \textbf{Evaluation and Results:} We conduct extensive experiments on [datasets or benchmarks]. Our main findings are summarized as follows: [List key results and comparisons with existing approaches, providing a brief analysis of performance differences].
 
-\textbf{Contributions:} Our main contributions are summarized as follows: 
+\textbf{Contributions:} Our main contributions are summarized as follows:
 \begin{itemize}
     \item (1) [First major contribution]
     \item (2) [Second major contribution]

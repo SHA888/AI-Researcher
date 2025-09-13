@@ -4,15 +4,15 @@ Inspired by [previous work/technique], we propose [module/name/approach] to addr
 
 \subsection{[Subtopic 1 Title]}
 
-To tackle [specific challenge], our method consists of [number] main components: [component 1], [component 2], and [component 3]. [Multiple sentences explaining the motivation and intuition behind the proposed method]. 
+To tackle [specific challenge], our method consists of [number] main components: [component 1], [component 2], and [component 3]. [Multiple sentences explaining the motivation and intuition behind the proposed method].
 
-Specifically, we introduce [brief overview of the technical solution or system], as illustrated in [Figure/Table reference]. Given [condition or data requirement], we find that [key advantages of the proposed method]. 
+Specifically, we introduce [brief overview of the technical solution or system], as illustrated in [Figure/Table reference]. Given [condition or data requirement], we find that [key advantages of the proposed method].
 
-The [key module] of [module name] first [brief description of the process], followed by [description of subsequent processing]. At the output of [specific layer/component], we apply [details of any additional processing or layers included]. 
+The [key module] of [module name] first [brief description of the process], followed by [description of subsequent processing]. At the output of [specific layer/component], we apply [details of any additional processing or layers included].
 
 \subsection{[Subtopic 2 Title]}
 
-[Discussion of the challenges faced in prior methods, including limitations]. [A paragraph describing the detailed workflow of the module]. 
+[Discussion of the challenges faced in prior methods, including limitations]. [A paragraph describing the detailed workflow of the module].
 
 Therefore, we propose [briefly outline the proposed enhancement or change]. The [specific objective] is defined as follows:
 
@@ -20,15 +20,15 @@ Therefore, we propose [briefly outline the proposed enhancement or change]. The 
 L = [Mathematical formulation of the key components].
 \end{equation}
 
-Here, [detailed explanation of each term in the equation]. 
+Here, [detailed explanation of each term in the equation].
 
 To encourage [specific enhancement], we introduce [another technical component or adjustment], which results in [summary of improvements]. Our experiments reveal [findings or evidence supporting claims].
 
 \subsection{[Subtopic 3 Title]}
 
-We utilize a combination of [list types of loss functions or training methods used], optimized through [description of hyperparameter tuning or selection]. 
+We utilize a combination of [list types of loss functions or training methods used], optimized through [description of hyperparameter tuning or selection].
 
-[Multiple sentences comparing the proposed method with existing approaches, highlighting differences and advantages]. 
+[Multiple sentences comparing the proposed method with existing approaches, highlighting differences and advantages].
 
 After thorough experimentation, we found that [conclusion on the efficacy of loss combination]. The final loss function can be expressed as:
 
@@ -38,7 +38,7 @@ L_{final} = L_{1} + [numerical weights] L_{2} + ... + [other components].
 
 One consideration regarding [specific component or method used] is that [brief discussion of limitations or caveats]. For the reported results, we [describe any adjustments made for specific experiments].
 
-This [approach/architecture/method] not only enhances [specific outcomes] but also aids in [further implications or potential applications]. 
+This [approach/architecture/method] not only enhances [specific outcomes] but also aids in [further implications or potential applications].
 
 \subsection{[Conclusion/Final Remarks]}
 

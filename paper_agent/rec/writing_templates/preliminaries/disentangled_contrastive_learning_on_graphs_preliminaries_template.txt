@@ -12,7 +12,7 @@ Unlike [comparison approach, e.g., generative models], [target approach] is an i
 p_{\theta}(y_{i} | x_{i}) = \frac{\exp( \phi(v_{i}, v'_{y_{i}}))}{\sum_{j=1}^{N} \exp( \phi(v_{i}, v'_{y_{j}})} \,,
 \end{equation}
 
-where $\theta$ denotes the parameters of the encoder. Both $v_{i}$ and $v'_{y_{i}}$ are the embeddings generated from $x_{i}$ [description of generation method] [relevant citation(s)]. Before being passed into the encoder, the input $x_{i}$ may undergo [description of preprocessing], which plays a critical role in defining effective predictive tasks for learning the encoder. The function $\phi$ serves as the [similarity function], often adopting [specific similarity measure] [relevant citation(s)], i.e., 
+where $\theta$ denotes the parameters of the encoder. Both $v_{i}$ and $v'_{y_{i}}$ are the embeddings generated from $x_{i}$ [description of generation method] [relevant citation(s)]. Before being passed into the encoder, the input $x_{i}$ may undergo [description of preprocessing], which plays a critical role in defining effective predictive tasks for learning the encoder. The function $\phi$ serves as the [similarity function], often adopting [specific similarity measure] [relevant citation(s)], i.e.,
 
 \begin{equation}
 \phi(v_{i}, v'_{y_{i}}) = \frac{v'_{y_{i}}^{\top} v_{i}}{\tau} \,,

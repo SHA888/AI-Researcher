@@ -33,7 +33,7 @@ In this section, we conduct experiments on different real-world datasets to eval
 
 [Dataset 3]. [A brief description of what the dataset includes and its importance.]
 
-\paragraph{Evaluation Protocols.} We adopt [Evaluation Metrics] for [Task]. We follow the evaluation settings in [Previous Work] and employ [Methodology] for generating training and test instances. 
+\paragraph{Evaluation Protocols.} We adopt [Evaluation Metrics] for [Task]. We follow the evaluation settings in [Previous Work] and employ [Methodology] for generating training and test instances.
 
 \paragraph{Baselines.} In our experiments, we perform the performance comparison by considering the following baselines:
 - [Baseline Method 1]: [Brief description of the baseline method].
@@ -49,21 +49,21 @@ Compared with traditional approaches, [Observations About Performance]. Differen
 \begin{table}[ht]
 \centering
 \caption{Performance comparison of all methods in [Task].}
-\begin{tabular}{|c|c|c|c|c|} 
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{Data} & \textbf{Metrics} & \textbf{Baseline 1} & \textbf{Baseline 2} & \textbf{[Module Name]} \\ 
+\textbf{Data} & \textbf{Metrics} & \textbf{Baseline 1} & \textbf{Baseline 2} & \textbf{[Module Name]} \\
 \hline
-[Dataset 1] & [Metric] & [Value] & [Value] & [Value] \\ 
+[Dataset 1] & [Metric] & [Value] & [Value] & [Value] \\
 \hline
-[Dataset 1] & [Metric] & [Value] & [Value] & [Value] \\ 
+[Dataset 1] & [Metric] & [Value] & [Value] & [Value] \\
 \hline
-[Dataset 2] & [Metric] & [Value] & [Value] & [Value] \\ 
+[Dataset 2] & [Metric] & [Value] & [Value] & [Value] \\
 \hline
-[Dataset 2] & [Metric] & [Value] & [Value] & [Value] \\ 
+[Dataset 2] & [Metric] & [Value] & [Value] & [Value] \\
 \hline
-[Dataset 3] & [Metric] & [Value] & [Value] & [Value] \\ 
+[Dataset 3] & [Metric] & [Value] & [Value] & [Value] \\
 \hline
-[Dataset 3] & [Metric] & [Value] & [Value] & [Value] \\ 
+[Dataset 3] & [Metric] & [Value] & [Value] & [Value] \\
 \hline
 \end{tabular}
 \end{table}
@@ -112,13 +112,13 @@ We finally investigate the computation cost of our [Module Name] against state-o
 \caption{Model computational cost with running time (s).}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{Data} & \textbf{Baseline 1} & \textbf{Baseline 2} & \textbf{[Module Name]} \\ 
+\textbf{Data} & \textbf{Baseline 1} & \textbf{Baseline 2} & \textbf{[Module Name]} \\
 \hline
-[Dataset 1] & [Value] & [Value] & [Value] \\ 
+[Dataset 1] & [Value] & [Value] & [Value] \\
 \hline
-[Dataset 2] & [Value] & [Value] & [Value] \\ 
+[Dataset 2] & [Value] & [Value] & [Value] \\
 \hline
-[Dataset 3] & [Value] & [Value] & [Value] \\ 
+[Dataset 3] & [Value] & [Value] & [Value] \\
 \hline
 \end{tabular}
 \end{table}

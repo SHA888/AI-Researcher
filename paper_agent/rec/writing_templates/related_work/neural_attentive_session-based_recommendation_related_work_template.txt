@@ -5,11 +5,11 @@ In the domain of [topic], numerous approaches have been developed to address [ch
 
 \subsection{[First Area]}
 
-Inspired by [previous work/technique], we outline [traditional methods or approaches]. 
+Inspired by [previous work/technique], we outline [traditional methods or approaches].
 
 Typically, [describe the overarching strategy or paradigm]. For example, [describe a specific method, including authors and outcome]. Furthermore, [discuss additional methods or comparisons, emphasizing their strengths and weaknesses].
 
-Although these approaches have shown [specific results or effectiveness], they tend to [mention limitations or gaps]. 
+Although these approaches have shown [specific results or effectiveness], they tend to [mention limitations or gaps].
 
 \subsection{[Second Area]}
 

@@ -48,6 +48,6 @@ Finally, we can commence building [the model/method] using the [required modules
 - [Module 2]: [Description]
 - [Module 3]: [Description]
 
-With these components, a typical [model/method] architecture is illustrated in [Figure/Table]. We will first introduce [related concept] in Section [3], then survey existing [variants or types] in Section [4]. Finally, we provide a concrete design example in Section [6]. 
+With these components, a typical [model/method] architecture is illustrated in [Figure/Table]. We will first introduce [related concept] in Section [3], then survey existing [variants or types] in Section [4]. Finally, we provide a concrete design example in Section [6].
 
 An illustration of the general design pipeline is shown in [Figure #].

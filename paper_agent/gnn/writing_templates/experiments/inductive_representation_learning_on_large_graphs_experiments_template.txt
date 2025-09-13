@@ -5,16 +5,16 @@ We evaluate the efficacy of [Proposed Method Name] on [number] benchmark tasks: 
 
 \subsection{Experimental Setup}
 
-To contextualize the empirical findings from our experiments, we compare against [number] baselines: [Baseline 1], [Baseline 2], [Baseline 3], and [Baseline 4]. Additionally, we assess variants of [Proposed Method Name] that utilize [description of components or functions]. Specifically, we label one of the variants as [Variant Name] due to its relation to [related work]. We test [description of additional variants] with respect to [specifics of training method] and [specifics of evaluation method]. 
+To contextualize the empirical findings from our experiments, we compare against [number] baselines: [Baseline 1], [Baseline 2], [Baseline 3], and [Baseline 4]. Additionally, we assess variants of [Proposed Method Name] that utilize [description of components or functions]. Specifically, we label one of the variants as [Variant Name] due to its relation to [related work]. We test [description of additional variants] with respect to [specifics of training method] and [specifics of evaluation method].
 
 For all experiments, we employ [description of the optimization framework] and ensure a consistent application of hyperparameters across variants. In order to mitigate [description of potential bias in comparisons], we design our experiments such that [explanation of fairness in comparison]. The appendix includes further implementation details regarding [specifics].
 
 \begin{table}[ht]
 \centering
 \caption{Results for [brief description of what is summarized].}
-\begin{tabular}{|c|c|c|c|c|c|} 
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-\textbf{Name} & \textbf{Metric 1} & \textbf{Metric 2} & \textbf{Metric 3} & \textbf{Metric 4} \\ 
+\textbf{Name} & \textbf{Metric 1} & \textbf{Metric 2} & \textbf{Metric 3} & \textbf{Metric 4} \\
 \hline
 [Baseline Name] & [Score] & [Score] & [Score] & [Score] \\
 [Proposed Variant 1] & [Score] & [Score] & [Score] & [Score] \\

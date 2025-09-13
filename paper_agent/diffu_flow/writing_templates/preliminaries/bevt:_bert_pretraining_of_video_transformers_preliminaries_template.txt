@@ -48,9 +48,9 @@ When jointly training the components, we implement a [describe the strategy]. Th
 
 \subsection{[Finetuning and Inference]}
 
-Once pretrained, [Module Name] provides [describe what developments are available for downstream tasks]. On targeted datasets, we [explain the finetuning strategy or additional layers used]. The resulting model can then be readily used for [specific applications]. 
+Once pretrained, [Module Name] provides [describe what developments are available for downstream tasks]. On targeted datasets, we [explain the finetuning strategy or additional layers used]. The resulting model can then be readily used for [specific applications].
 
-Figure \ref{fig:framework_components} illustrates [describe what the figure represents in terms of the module components]. 
+Figure \ref{fig:framework_components} illustrates [describe what the figure represents in terms of the module components].
 
 \begin{figure}[ht]
     \centering

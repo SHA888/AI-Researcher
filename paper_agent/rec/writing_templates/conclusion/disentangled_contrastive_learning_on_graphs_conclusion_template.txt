@@ -1,8 +1,8 @@
 \section{Conclusions}
 
-In this paper, we propose a [model name] to address the problem of [challenge] for the first time. Inspired by [previous work/technique], our method is designed to [key feature or capability]. 
+In this paper, we propose a [model name] to address the problem of [challenge] for the first time. Inspired by [previous work/technique], our method is designed to [key feature or capability].
 
-To tackle [challenge], our method consists of [number] main components: 
+To tackle [challenge], our method consists of [number] main components:
 \begin{itemize}
     \item [component 1]
     \item [component 2]

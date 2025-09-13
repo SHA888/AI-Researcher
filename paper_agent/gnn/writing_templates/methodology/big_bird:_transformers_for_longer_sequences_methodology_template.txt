@@ -17,7 +17,7 @@ The problem of [primary challenge being addressed] can be reformulated as [direc
 
 To capture [specific aspect of the data], we define [key component or structure] so that during [operation or process], [explain what happens]. As an initial sanity check, we performed [describe experiments conducted] to determine if [discuss findings related to performance].
 
-The final [component or mechanism name] incorporates [describe how various elements blend together]. More specifically, [provide specific details about how this final aspect was constructed]. 
+The final [component or mechanism name] incorporates [describe how various elements blend together]. More specifically, [provide specific details about how this final aspect was constructed].
 
 The final mechanism for [Module/Architecture Name] has [key properties of the final mechanism]. We provide [additional relevant information] in [mention where further details can be found].
 

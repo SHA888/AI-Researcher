@@ -14,6 +14,6 @@ Achieving [goal related to second aspect] poses a significant challenge due to [
 
 \subsection{Conclusion of Experiments}
 
-Overall, our experiments demonstrate that [summarize the key conclusions drawn from the experiment results]. Specifically, [reiterate the importance of findings for the proposed method in its application context]. 
+Overall, our experiments demonstrate that [summarize the key conclusions drawn from the experiment results]. Specifically, [reiterate the importance of findings for the proposed method in its application context].
 
 % Optional: Acknowledgments or further discussion of implications can follow here if necessary.

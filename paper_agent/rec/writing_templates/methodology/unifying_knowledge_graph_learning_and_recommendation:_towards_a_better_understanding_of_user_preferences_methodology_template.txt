@@ -11,7 +11,7 @@ Figure [number] presents the overall framework of [module name]. On the left sid
     [Mathematical formulation of the key components]
 \end{equation}
 
-where [explanation of variables in the equation]. 
+where [explanation of variables in the equation].
 
 [Additional equations if necessary]
 

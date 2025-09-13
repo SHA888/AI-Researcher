@@ -28,7 +28,7 @@ We compare the proposed [Proposed Method] with the following [comparison type] m
     \item [Continue as necessary with additional models.]
 \end{itemize}
 
-We discard potential baselines such as [Baseline 1], [Baseline 2], and [Baseline 3] since previous work [References] has validated their inferiority in this context. 
+We discard potential baselines such as [Baseline 1], [Baseline 2], and [Baseline 3] since previous work [References] has validated their inferiority in this context.
 
 \subsubsection{Hyper-parameter Settings}
 

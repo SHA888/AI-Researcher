@@ -27,7 +27,7 @@ Formally, it has the following form:
 
 \begin{definition}
     [Definition Number]. General [Framework/Architecture] Framework: Suppose [notation] represents [meaning], the update procedure is as follows:
-    
+
     \[
         [Mathematical formulation of the key components]
     \]

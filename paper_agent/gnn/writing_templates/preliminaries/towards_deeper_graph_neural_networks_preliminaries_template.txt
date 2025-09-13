@@ -1,7 +1,7 @@
 ```
 \section{Background and Related Works}
 
-First, we introduce our notations used throughout this paper. Generally, we let bold uppercase letters represent [type] and bold lowercase letters denote [type]. A formal definition of [concept] is defined as [definition]. 
+First, we introduce our notations used throughout this paper. Generally, we let bold uppercase letters represent [type] and bold lowercase letters denote [type]. A formal definition of [concept] is defined as [definition].
 
 \subsection{[Subsection Title]}
 
@@ -11,13 +11,13 @@ First, we introduce our notations used throughout this paper. Generally, we let 
 [Equation/Formula]
 \]
 
-Let \( [variable] \) represent [description]. Specifically, the representation of [concept] at layer \( \ell \) can be expressed as 
+Let \( [variable] \) represent [description]. Specifically, the representation of [concept] at layer \( \ell \) can be expressed as
 
 \[
 [Equation]
 \]
 
-where [explanation of variables involved]. 
+where [explanation of variables involved].
 
 [Several sentences comparing the proposed method with existing approaches, including references to previous work and their limitations.]
 

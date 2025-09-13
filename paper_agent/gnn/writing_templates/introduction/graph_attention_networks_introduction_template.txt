@@ -11,11 +11,11 @@
 [Paragraph summarizing the main existing approaches related to the challenge and any gaps they may have, including referencing key papers and techniques.]
 
 \subsection{Proposed Method}
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge].
 To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 \subsection{Definition}
-Formally, we define [concept] as follows: 
+Formally, we define [concept] as follows:
 \begin{equation}
 [Mathematical formulation of the key components]
 \end{equation}
@@ -27,7 +27,7 @@ Formally, we define [concept] as follows:
 [Several sentences comparing the proposed method with existing approaches, highlighting the advantages and potential improvements.]
 
 \subsection{Contributions}
-In summary, this paper makes the following contributions: 
+In summary, this paper makes the following contributions:
 \begin{itemize}
     \item [Contribution 1]
     \item [Contribution 2]

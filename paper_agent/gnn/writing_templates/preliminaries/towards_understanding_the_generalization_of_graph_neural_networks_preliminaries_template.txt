@@ -23,7 +23,7 @@ In this part, we present the assumptions used in this paper.
 
 \textbf{Remark 1.} [Explanation of Assumption 1].
 
-\textbf{Assumption 3.} Assume that the activation function $\sigma(\cdot)$ is [smoothness condition]. 
+\textbf{Assumption 3.} Assume that the activation function $\sigma(\cdot)$ is [smoothness condition].
 
 \textbf{Remark 2.} [Implications of Assumption 3].
 

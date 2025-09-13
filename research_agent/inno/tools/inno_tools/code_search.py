@@ -1,24 +1,26 @@
-import requests
-from typing import Optional, List, Dict
-from research_agent.inno.tools.github_client import GitHubSearcher
-from research_agent.inno.registry import register_tool
-from research_agent.constant import GITHUB_AI_TOKEN
 import json
+from typing import Dict, List, Optional
+from urllib.parse import quote
+
+import requests
 from tenacity import (
     retry,
+    retry_if_exception_type,
     stop_after_attempt,
     wait_exponential,
-    retry_if_exception_type
 )
-from urllib.parse import quote
+
+from research_agent.constant import GITHUB_AI_TOKEN
+from research_agent.inno.registry import register_tool
+from research_agent.inno.tools.github_client import GitHubSearcher
+
 
 @retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=4, max=60),
-    retry=retry_if_exception_type((
-        requests.exceptions.RequestException,
-        requests.exceptions.HTTPError
-    ))
+    retry=retry_if_exception_type(
+        (requests.exceptions.RequestException, requests.exceptions.HTTPError)
+    ),
 )
 @register_tool("search_github_repos")
 def search_github_repos(context_variables, query, limit=5):
@@ -35,7 +37,7 @@ def search_github_repos(context_variables, query, limit=5):
     exclude_users = ["lucidrains"]
     if exclude_users:
         # 将排除用户列表转换为GitHub搜索语法
-        exclude_query = ' '.join([f'-user:{user}' for user in exclude_users])
+        exclude_query = " ".join([f"-user:{user}" for user in exclude_users])
         query = f"{query} {exclude_query}"
 
     repos = []
@@ -44,26 +46,26 @@ def search_github_repos(context_variables, query, limit=5):
     while len(repos) < limit:
         date_query = f"{query} created:<{date_limit}"
         encoded_query = quote(date_query)
-        url = f'https://api.github.com/search/repositories?q={encoded_query}&per_page={per_page}&page={page}'
+        url = f"https://api.github.com/search/repositories?q={encoded_query}&per_page={per_page}&page={page}"
 
         headers = {
-            'Authorization': f'token {GITHUB_AI_TOKEN}',
-            'Accept': 'application/vnd.github.v3+json'
+            "Authorization": f"token {GITHUB_AI_TOKEN}",
+            "Accept": "application/vnd.github.v3+json",
         }
 
         response = requests.get(url, headers=headers)
 
         if response.status_code == 200:
-            items = response.json().get('items', [])
+            items = response.json().get("items", [])
             for item in items:
                 formatted_repo = {
                     "name": f"{item['owner']['login']}/{item['name']}",
-                    "author": item['owner']['login'],
-                    "description": item['description'],
-                    "link": item['html_url'], 
-                    "stars": item['stargazers_count'], 
-                    "created_at": item['created_at'], 
-                    "language": item['language']
+                    "author": item["owner"]["login"],
+                    "description": item["description"],
+                    "link": item["html_url"],
+                    "stars": item["stargazers_count"],
+                    "created_at": item["created_at"],
+                    "language": item["language"],
                 }
                 # print(item)
                 repos.append(formatted_repo)
@@ -74,7 +76,9 @@ def search_github_repos(context_variables, query, limit=5):
                 break
             page += 1
         else:
-            raise Exception(f"GitHub API request failed with status code {response.status_code}: {response.text}")
+            raise Exception(
+                f"GitHub API request failed with status code {response.status_code}: {response.text}"
+            )
 
     return_str = f"The results of searching {query} on GitHub: \n"
 
@@ -89,16 +93,20 @@ def search_github_repos(context_variables, query, limit=5):
         """
 
     return return_str
+
+
 @register_tool("search_github_code")
-def search_github_code(repo_owner: str, 
-                      repo_name: str, 
-                      query: str, 
-                      language: Optional[str] = None, 
-                      per_page: int = 5, 
-                      page: int = 1) -> List[Dict]:
+def search_github_code(
+    repo_owner: str,
+    repo_name: str,
+    query: str,
+    language: Optional[str] = None,
+    per_page: int = 5,
+    page: int = 1,
+) -> List[Dict]:
     """
     Search GitHub code based on a keyword.
-    
+
     Args:
         repo_owner: The owner of the repository
         repo_name: The name of the repository
@@ -106,22 +114,24 @@ def search_github_code(repo_owner: str,
         language: The programming language to filter by, optional
         per_page: The number of results per page, optional
         page: The page number, optional
-        
+
     Returns:
         List[Dict]: The search results list
     """
     searcher = GitHubSearcher(GITHUB_AI_TOKEN)
-    results = searcher.search_code(repo_owner, repo_name, query, language, per_page, page)
+    results = searcher.search_code(
+        repo_owner, repo_name, query, language, per_page, page
+    )
     # print(results)
-    if 'items' not in results:
+    if "items" not in results:
         return []
-        
+
     # Extract useful information
     formatted_results = []
-    for item in results['items']:
-        response = requests.get(item['url'])
+    for item in results["items"]:
+        response = requests.get(item["url"])
         if response.status_code == 200:
-            download_url = response.json()['download_url']
+            download_url = response.json()["download_url"]
             response = requests.get(download_url)
             if response.status_code == 200:
                 content = response.text
@@ -129,12 +139,14 @@ def search_github_code(repo_owner: str,
                 content = ""
         else:
             content = ""
-        formatted_results.append({
-            'name': item['name'],
-            'path': item['path'],
-            'url': item['html_url'],
-            'repository': item['repository']['full_name'],
-            'content_url': item['url'],
-            'content': content
-        })
+        formatted_results.append(
+            {
+                "name": item["name"],
+                "path": item["path"],
+                "url": item["html_url"],
+                "repository": item["repository"]["full_name"],
+                "content_url": item["url"],
+                "content": content,
+            }
+        )
     return json.dumps(formatted_results, indent=4)

@@ -3,7 +3,7 @@
 
 In recent years, there have been several notable attempts aimed at addressing [specific challenge or issue]. These can be broadly categorized into two main directions. The first line of work [briefly describe the first direction, including examples of prominent methods or studies]. Notably, these approaches often [mention key features, shortcomings, or requirements].
 
-The second line of work [describe the second direction, including major contributions, methods, and their implications]. Furthermore, [discuss any critical observations or gaps identified in this direction]. 
+The second line of work [describe the second direction, including major contributions, methods, and their implications]. Furthermore, [discuss any critical observations or gaps identified in this direction].
 
 Our work is closely related to [specific prior work or technique]. This work was designed to [briefly summarize its goals and methodology]. We believe that our approach can [articulate the expected contribution or improvement].
 
@@ -19,7 +19,7 @@ In this section, we describe the [Module or Method Name] model using [briefly in
 
 where [define any significant components of the equation]. To simplify our exposition, we will [mention any simplifications or assumptions made].
 
-Specifically, we [explain the operational mechanism in detail]. This allows us to [discuss the implications or advantages of this approach]. 
+Specifically, we [explain the operational mechanism in detail]. This allows us to [discuss the implications or advantages of this approach].
 
 To capture local structures in [specific application or context], we define [explain a specific operational detail regarding locality, context, or attentional mechanism]. Our initial experiments indicate that [briefly summarize preliminary findings or insights].
 

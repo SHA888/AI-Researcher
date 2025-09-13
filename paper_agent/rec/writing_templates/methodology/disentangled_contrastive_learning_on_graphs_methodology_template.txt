@@ -14,23 +14,23 @@ Generally, [describe how existing methods operate regarding your topic]. The pro
 
 where [explain each variable and their significance]. We use the term [term] to indicate the [specific process/expression].
 
-Let [Set] be the [context]. After applying [number] traditional layers, we propose a [new technique] to learn [new representation]. The goal is to [explain the purpose of the new technique]. Specifically, we adopt [number] separate channels to identify [specific factors/aspects]. For each channel, we [describe the operation of the channel]: 
+Let [Set] be the [context]. After applying [number] traditional layers, we propose a [new technique] to learn [new representation]. The goal is to [explain the purpose of the new technique]. Specifically, we adopt [number] separate channels to identify [specific factors/aspects]. For each channel, we [describe the operation of the channel]:
 \begin{equation}
    [Mathematical Expression]
 \end{equation}
 
-where [explain relevant terms]. Finally, each channel outputs the [output representation] with a separate [method]: 
+where [explain relevant terms]. Finally, each channel outputs the [output representation] with a separate [method]:
 \begin{equation}
    [Mathematical Expression]
 \end{equation}
 
-Compared with the existing [related models], our [sub-model] consists of [number of channels], allowing us to [specific benefit]. 
+Compared with the existing [related models], our [sub-model] consists of [number of channels], allowing us to [specific benefit].
 
 \subsection{[Next Subsection Title]}
 
 Unlike the existing [related methods], [Model Name] designs a novel [task] and learns to solve this task [condition]. This design not only [describe benefit] but also encourages [another benefit].
 
-Specifically, we assume that [describe underlying assumption]. Thus, the task can be represented as [concept expression]. 
+Specifically, we assume that [describe underlying assumption]. Thus, the task can be represented as [concept expression].
 
 Here, [describe relevant variables and terms].
 
@@ -40,7 +40,7 @@ Firstly, given the output [representation], we present a [method] to obtain [res
     [Mathematical Expression]
 \end{equation}
 
-where [explain the function of the equation]. 
+where [explain the function of the equation].
 
 Next, we define [additional concepts] as follows:
 
@@ -48,9 +48,9 @@ Next, we define [additional concepts] as follows:
     [Mathematical Expression]
 \end{equation}
 
-where [explain relevant terms]. 
+where [explain relevant terms].
 
-Next, we describe the process to obtain [new variable/representation]. First, the input [data type] undergoes [process] to obtain its [output]. More details of [processes] can be found in [reference material]. Then, the [new data] is also fed into [model] to produce [new output]. 
+Next, we describe the process to obtain [new variable/representation]. First, the input [data type] undergoes [process] to obtain its [output]. More details of [processes] can be found in [reference material]. Then, the [new data] is also fed into [model] to produce [new output].
 
 \subsection{[Objective Section Title]}
 
@@ -60,7 +60,7 @@ We present the objective of our method. Following existing methods, we aim to ma
     [Mathematical Expression]
 \end{equation}
 
-However, directly maximizing the [function] is difficult because of [challenge]. Therefore, we instead optimize the [concept] of the [function] as follows: 
+However, directly maximizing the [function] is difficult because of [challenge]. Therefore, we instead optimize the [concept] of the [function] as follows:
 
 \begin{theorem}
     [Theorem Statement]
@@ -87,4 +87,3 @@ Finally, we seek to learn the parameters of [Model Name]. More specifically, we 
 \end{equation}
 
 Encourage [concept]. Note that our objective and its optimization can inherently encourage [benefit] without adding [any additional techniques]. The reason is that [explanation of process]. Thus, the [model name] is forced to [explain benefit].
-

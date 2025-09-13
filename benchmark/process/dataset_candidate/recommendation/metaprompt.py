@@ -117,7 +117,7 @@ def metrics(uids, predictions, topk, test_labels):
 """
 
 REF = r"""
-All this information is from LightGCL paper, and the repository of LightGCL is in the directory `/workplace/dataset_candidate/LightGCL`, you can refer to it when you need to process the dataset or calculate the metrics. 
+All this information is from LightGCL paper, and the repository of LightGCL is in the directory `/workplace/dataset_candidate/LightGCL`, you can refer to it when you need to process the dataset or calculate the metrics.
 
 [IMPORTANT]
 1. You should train the model on the train set for several epochs, and then evaluate the model on the test set only once. DO NOT evaluate the model EVERY EPOCH.

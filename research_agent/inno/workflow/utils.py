@@ -1,7 +1,10 @@
-from typing import Dict
 import json
-from research_agent.inno.workflow import Graph
+from typing import Dict
+
 from litellm import completion
+
+from research_agent.inno.workflow import Graph
+
 
 def transfer_fschema_to_dict(fschema: Dict) -> Dict:
     """
@@ -11,36 +14,52 @@ def transfer_fschema_to_dict(fschema: Dict) -> Dict:
         A dictionary to input to workflow graph.
     """
     graph_dict = {}
-    graph_dict['nodes'] = []
-    graph_dict['edges'] = []
+    graph_dict["nodes"] = []
+    graph_dict["edges"] = []
     node_id_name_map = {}
-    fschema_data = fschema['data']
-    for node in fschema_data['nodes']:
-        graph_dict['nodes'].append({'agent_name': node['type'], "agent_tools": [], "input": "", "output": "", "is_start": node['type'] == 'start', "is_end": node['type'] == 'end'}.copy())
-        node_id_name_map[node['key']] = node['type']
-    for edge in fschema_data['connections']:
-        graph_dict['edges'].append({'start': node_id_name_map[edge['from']], 'end': node_id_name_map[edge['to']]}.copy())
+    fschema_data = fschema["data"]
+    for node in fschema_data["nodes"]:
+        graph_dict["nodes"].append(
+            {
+                "agent_name": node["type"],
+                "agent_tools": [],
+                "input": "",
+                "output": "",
+                "is_start": node["type"] == "start",
+                "is_end": node["type"] == "end",
+            }.copy()
+        )
+        node_id_name_map[node["key"]] = node["type"]
+    for edge in fschema_data["connections"]:
+        graph_dict["edges"].append(
+            {
+                "start": node_id_name_map[edge["from"]],
+                "end": node_id_name_map[edge["to"]],
+            }.copy()
+        )
     return graph_dict
+
 
 def complete_workflow(workflow: Dict, description: str) -> Dict:
     """
     Complete the workflow to a more detailed workflow graph.
     """
-    workflow_prompt = \
-f"""
+    workflow_prompt = """
 You are a workflow designer which can complete the workflow graph I give you to a more detailed workflow graph.
 """
-    user_prompt = \
-f"""
+    user_prompt = f"""
 I have a workflow: {json.dumps(workflow, indent=4)}
 The description of the workflow is: {description}
-You should complete the workflow graph in the following way: 
+You should complete the workflow graph in the following way:
 1. Add "agent_tools" in each node only based on the description.
 2. Add "input" and "output" in each node to make the workflow more clear.
 3. Make sure other fields of the workflow keep the same.
 """
-    messages=[{"role": "system", "content": workflow_prompt}, {"role": "user", "content": user_prompt}]
-    response_format={
+    messages = [
+        {"role": "system", "content": workflow_prompt},
+        {"role": "user", "content": user_prompt},
+    ]
+    response_format = {
         "type": "json_schema",
         "json_schema": {
             "name": "graph",
@@ -53,15 +72,25 @@ You should complete the workflow graph in the following way:
                             "type": "object",
                             "properties": {
                                 "agent_name": {"type": "string"},
-                                "agent_tools": {"type": "array", "items": {"type": "string"}}, 
+                                "agent_tools": {
+                                    "type": "array",
+                                    "items": {"type": "string"},
+                                },
                                 "input": {"type": "string"},
                                 "output": {"type": "string"},
                                 "is_start": {"type": "boolean"},
-                                "is_end": {"type": "boolean"}
+                                "is_end": {"type": "boolean"},
                             },
-                            "required": ["agent_name", "agent_tools", "input", "output", "is_start", "is_end"],
-                            "additionalProperties": False
-                        }
+                            "required": [
+                                "agent_name",
+                                "agent_tools",
+                                "input",
+                                "output",
+                                "is_start",
+                                "is_end",
+                            ],
+                            "additionalProperties": False,
+                        },
                     },
                     "edges": {
                         "type": "array",
@@ -70,25 +99,35 @@ You should complete the workflow graph in the following way:
                             "properties": {
                                 "start": {"type": "string"},
                                 "end": {"type": "string"},
-                                "description": {"type": "string"}
+                                "description": {"type": "string"},
                             },
                             "required": ["start", "end", "description"],
-                            "additionalProperties": False
-                        }
-                    }
+                            "additionalProperties": False,
+                        },
+                    },
                 },
                 "required": ["nodes", "edges"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     }
-    response = completion(model='gpt-4o-2024-08-06', messages=messages, response_format=response_format)
+    response = completion(
+        model="gpt-4o-2024-08-06", messages=messages, response_format=response_format
+    )
     return json.loads(response.choices[0].message.content)
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     import os
-    os.environ['OPENAI_API_KEY'] = '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'
-    with open('/Users/tangjiabin/Documents/reasoning/metachain/chaingraph/common_ragflow-2024.json', 'r') as f:
+
+    os.environ["OPENAI_API_KEY"] = (
+        "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"
+    )
+    with open(
+        "/Users/tangjiabin/Documents/reasoning/metachain/chaingraph/common_ragflow-2024.json",
+        "r",
+    ) as f:
         fschema = json.load(f)
     graph_dict = transfer_fschema_to_dict(fschema)
     g = Graph.from_dict(graph_dict)

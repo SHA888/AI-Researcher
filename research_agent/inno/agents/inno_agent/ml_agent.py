@@ -1,35 +1,50 @@
-from research_agent.inno.types import Agent
-from research_agent.inno.tools import (
-    gen_code_tree_structure, execute_command, read_file, create_file, write_file, list_files, create_directory, run_python, terminal_page_down, terminal_page_up, terminal_page_to
-)
-from research_agent.inno.util import make_message, make_tool_message
-from research_agent.inno.registry import register_agent
-from research_agent.inno.environment.docker_env import DockerEnv, with_env
 from inspect import signature
-def case_resolved(task_response):
-   """
-   The task response is the result of the task. Use this function only after you have successfully completed the task. 
 
-   Args:
-      task_response: The result of the task.
-   """
-   return task_response
+from research_agent.inno.environment.docker_env import DockerEnv, with_env
+from research_agent.inno.registry import register_agent
+from research_agent.inno.tools import (
+    create_directory,
+    create_file,
+    execute_command,
+    gen_code_tree_structure,
+    list_files,
+    read_file,
+    run_python,
+    terminal_page_down,
+    terminal_page_to,
+    terminal_page_up,
+    write_file,
+)
+from research_agent.inno.types import Agent
+
+
+def case_resolved(task_response):
+    """
+    The task response is the result of the task. Use this function only after you have successfully completed the task.
+
+    Args:
+       task_response: The result of the task.
+    """
+    return task_response
+
 
 def case_not_resolved(failure_reason):
-   """
-   The failure reason is the reason why you cannot find a solution to the task. You can use this function only after you have tried multiple times and still cannot find a solution.
+    """
+    The failure reason is the reason why you cannot find a solution to the task. You can use this function only after you have tried multiple times and still cannot find a solution.
 
-   Args:
-      failure_reason: The reason why you cannot find a solution to the task.
-   """
-   return failure_reason
-   
+    Args:
+       failure_reason: The reason why you cannot find a solution to the task.
+    """
+    return failure_reason
+
+
 @register_agent("get_ml_agent")
 def get_ml_agent(model: str, **kwargs):
     code_env: DockerEnv = kwargs.get("code_env", None)
+
     def instructions(context_variables):
-      working_dir = context_variables.get("working_dir", None)
-      return f"""\
+        working_dir = context_variables.get("working_dir", None)
+        return f"""\
 You are a machine learning engineer tasked with implementing innovative ML projects. Your workspace is: `/{working_dir}`.
 
 OBJECTIVE:
@@ -88,15 +103,32 @@ Remember: Your goal is to create a well-organized, self-contained project that:
 4. Maintains its own coherent structure
 5. You should intergrate ALL acacdemic definition and their code implementation into the project.
 """
-    tools = [gen_code_tree_structure, execute_command, read_file, create_file, write_file, list_files, create_directory, run_python, case_resolved, case_not_resolved, terminal_page_down, terminal_page_up, terminal_page_to]
-    tools = [with_env(code_env)(tool) if 'env' in signature(tool).parameters else tool for tool in tools]
-    
-    return Agent(
-    name="Machine Learning Agent",
-    model=model,
-    instructions=instructions,
-    functions=tools,
-    tool_choice = "required", 
-    parallel_tool_calls = False
-    )
 
+    tools = [
+        gen_code_tree_structure,
+        execute_command,
+        read_file,
+        create_file,
+        write_file,
+        list_files,
+        create_directory,
+        run_python,
+        case_resolved,
+        case_not_resolved,
+        terminal_page_down,
+        terminal_page_up,
+        terminal_page_to,
+    ]
+    tools = [
+        with_env(code_env)(tool) if "env" in signature(tool).parameters else tool
+        for tool in tools
+    ]
+
+    return Agent(
+        name="Machine Learning Agent",
+        model=model,
+        instructions=instructions,
+        functions=tools,
+        tool_choice="required",
+        parallel_tool_calls=False,
+    )

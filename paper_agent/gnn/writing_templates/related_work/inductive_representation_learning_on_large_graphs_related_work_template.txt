@@ -1,6 +1,6 @@
 \section{Related Work}
 
-Our algorithm is conceptually related to [general category of previous work, e.g., node embedding approaches, supervised learning methods, etc.].  
+Our algorithm is conceptually related to [general category of previous work, e.g., node embedding approaches, supervised learning methods, etc.].
 
 \subsection{[Specific Previous Approach 1]}
 There are a number of recent [specific techniques] that [describe what these techniques achieve or how they function] [CITATIONS]. These methods also bear close relationships to [related classic approaches or algorithms, citations]. Since these [techniques] [discuss major limitations or challenges], they are inherently [transductive/inductive, etc.] and [describe additional challenges or requirements]. One notable exception to this trend is [exceptional approach, citation], which [describe what this approach does differently]. Unlike these previous approaches, we [briefly describe your method and its key innovation].

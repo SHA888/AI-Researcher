@@ -64,10 +64,10 @@ q(\tilde{y} | x; \phi) = [mathematical representation]
 
 where [explain meaning of components]. With this, [explanation of resulting implications]. Note that if [mention any additional conditions required], then [explain the outcome and significance].
 
-Despite the similarity between [two frameworks or approaches], there are several [key differences]. First, [describe the first difference]. [Further details on the implications of this difference]. 
+Despite the similarity between [two frameworks or approaches], there are several [key differences]. First, [describe the first difference]. [Further details on the implications of this difference].
 
-Second, [describe the second difference]. [Explain how this difference alters implications]. 
+Second, [describe the second difference]. [Explain how this difference alters implications].
 
-Finally, [describe any last key difference], considering [underscore the significance of this in the context of the discussion]. 
+Finally, [describe any last key difference], considering [underscore the significance of this in the context of the discussion].
 
 We assess the quality of [related topic] empirically in [where results or comparisons will be discussed].

@@ -13,7 +13,7 @@ Recent years have witnessed the success of [specific models/techniques] for [spe
 
 where [explanation of notation].
 
-There are [number] basic operators for [specific technique], which are [operator 1] and [operator 2]. Among them, [operator 1] represents [brief description]. [Operator 2] serves as [description of its purpose]. [Description of additional relevant techniques or components, if any]. 
+There are [number] basic operators for [specific technique], which are [operator 1] and [operator 2]. Among them, [operator 1] represents [brief description]. [Operator 2] serves as [description of its purpose]. [Description of additional relevant techniques or components, if any].
 
 Furthermore, various [specific models/techniques] have been proposed. For example, [model 1] [brief description and citation]. [Model 2] proposes [description]. Additionally, [any other noteworthy models/techniques] [description].
 
@@ -21,7 +21,7 @@ Furthermore, various [specific models/techniques] have been proposed. For exampl
 
 Previous studies have proposed to utilize [specific technique] to [goal], which largely belong to [categories]. The first category is [category name], characterized by [description]. Conversely, we consider [another category] that aims to [goal].
 
-[Transition phrase], researchers have explored [specific area of research]. [Cite works] that propose [description of methodology]. [Highlight differences or advancements in performance here]. 
+[Transition phrase], researchers have explored [specific area of research]. [Cite works] that propose [description of methodology]. [Highlight differences or advancements in performance here].
 
 In addition, there are attempts to [goal or objective related to another area]. [Cite works and describe different strategies, highlighting their significance]. Our work differs by [explain how your approach or focus is distinct].
 

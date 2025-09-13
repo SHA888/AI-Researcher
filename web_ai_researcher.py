@@ -1,19 +1,17 @@
-from main_ai_researcher import main_ai_researcher
-import os
-import gradio as gr
-import time
-import json
-import logging
-import datetime
-from typing import Tuple
-import importlib
-from dotenv import load_dotenv, set_key, find_dotenv, unset_key
-import threading
-import queue
-import re  # For regular expression operations
-import random
-import global_state
 import base64
+import datetime
+import logging
+import os
+import queue
+import threading
+import time
+from typing import Tuple
+
+import gradio as gr
+from dotenv import find_dotenv, load_dotenv, set_key, unset_key
+
+import global_state
+from main_ai_researcher import main_ai_researcher
 
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
@@ -26,13 +24,14 @@ Configuration is controlled via environment variables (e.g., from .env):
 We do NOT hardcode any proxy by default. If USE_PROXY is set to a truthy value,
 we apply the given proxy variables to the current process environment.
 """
-from dotenv import find_dotenv
 load_dotenv(find_dotenv(), override=True)
+
 
 def _strtobool(v: str | None) -> bool:
     if v is None:
         return False
     return str(v).strip().lower() in {"1", "true", "t", "yes", "y", "on"}
+
 
 if _strtobool(os.getenv("USE_PROXY", "false")):
     http_proxy = os.getenv("HTTP_PROXY") or os.getenv("http_proxy")
@@ -111,6 +110,7 @@ table, th, td {
 """
 
 CUSTOM_CSS = _BASE_CONTRAST_CSS if _HIGH_CONTRAST else ""
+
 
 # Runtime theme generator using [data-theme] attribute on <html> (documentElement)
 def generate_theme_css(theme: str = "System", high_contrast: bool = True) -> str:
@@ -215,6 +215,7 @@ def generate_theme_css(theme: str = "System", high_contrast: bool = True) -> str
 
     return f"<script>{boot}{set_attr}</script><style>{base_css}</style>"
 
+
 # Simpler, reliable style-vars updater not relying on JS execution
 def theme_style_vars(theme: str, high_contrast: bool) -> str:
     """Return a <style> tag that sets :root CSS variables for the selected theme."""
@@ -302,9 +303,10 @@ def theme_style_vars(theme: str, high_contrast: bool) -> str:
         """
     return f"<style>{vars_css}</style>"
 
+
 def setup_path():
     # logs_dir = os.path.join("casestudy_results", f'agent_{container_name}', 'logs')
-    logs_dir = os.path.join("casestudy_results", f'agent', 'logs')
+    logs_dir = os.path.join("casestudy_results", "agent", "logs")
     os.makedirs(logs_dir, exist_ok=True)
 
     # 生成日志文件名（使用当前日期）
@@ -335,9 +337,7 @@ def setup_logging():
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
 
-    formatter = logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    )
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     file_handler.setFormatter(formatter)
     console_handler.setFormatter(formatter)
 
@@ -353,15 +353,18 @@ def setup_logging():
 def return_log_file():
     return LOG_FILE
 
+
 def return_paper_file():
     category = os.getenv("CATEGORY")
     instance_id = os.getenv("INSTANCE_ID")
     global PAPER_FILE
-    PAPER_FILE = f'{category}/target_sections/{instance_id}/iclr2025_conference.pdf'
+    PAPER_FILE = f"{category}/target_sections/{instance_id}/iclr2025_conference.pdf"
     return PAPER_FILE
+
 
 def return_paper_log_file():
     return PAPER_LOG
+
 
 def return_paper_log():
     logs_dir = os.path.join(os.path.dirname(__file__), "paper_agent", "paper_logs")
@@ -395,9 +398,7 @@ def return_paper_log():
     console_handler.setLevel(logging.INFO)
 
     # 创建格式化器
-    formatter = logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    )
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     file_handler.setFormatter(formatter)
     console_handler.setFormatter(formatter)
 
@@ -441,15 +442,13 @@ PAPER_LOG = None
 category = os.getenv("CATEGORY")
 instance_id = os.getenv("INSTANCE_ID")
 
-PAPER_FILE = f'{category}/target_sections/{instance_id}/iclr2025_conference.pdf'
+PAPER_FILE = f"{category}/target_sections/{instance_id}/iclr2025_conference.pdf"
 # PAPER_FILE = './vq/target_sections/rotated_vq/iclr2025_conference.pdf'
 # PAPER_LOG = './paper_agent/paper_logs/rotated_vq.log'
 LOG_QUEUE: queue.Queue = queue.Queue()
 STOP_LOG_THREAD = threading.Event()
 CURRENT_PROCESS = None
 STOP_REQUESTED = threading.Event()
-
-
 
 
 # 日志读取和更新函数
@@ -468,6 +467,7 @@ def log_reader_thread(log_file):
     except Exception as e:
         logging.error(f"Exception occurred in background log reader thread: {str(e)}")
 
+
 def parse_logs_incrementally(logs, state_list, last_index):
     existing_inputs = set()
     existing_pairs = set()
@@ -484,38 +484,42 @@ def parse_logs_incrementally(logs, state_list, last_index):
 
     # 定义需要显示的工具列表
     allowed_tools = {
-        "execute_command", "run_python", "create_file", 
-        "write_file", "list_files", "gen_code_tree_structure"
+        "execute_command",
+        "run_python",
+        "create_file",
+        "write_file",
+        "list_files",
+        "gen_code_tree_structure",
     }
 
     def adjust_markdown_headers(content):
         """调整markdown标题级别，确保不与主标题冲突"""
-        lines = content.split('\n')
+        lines = content.split("\n")
         adjusted_lines = []
-        
+
         for line in lines:
             # 检查是否是markdown标题
-            if line.strip().startswith('#'):
+            if line.strip().startswith("#"):
                 # 计算当前标题级别
                 header_level = 0
                 for char in line:
-                    if char == '#':
+                    if char == "#":
                         header_level += 1
                     else:
                         break
-                
+
                 # 如果是1-3级标题，调整为4-6级
                 if header_level <= 3:
                     # 添加额外的#使其成为更低级别的标题
-                    adjusted_line = '#' * (header_level + 3) + line[header_level:]
+                    adjusted_line = "#" * (header_level + 3) + line[header_level:]
                     adjusted_lines.append(adjusted_line)
                 else:
                     # 保持原样（4级及以上标题不变）
                     adjusted_lines.append(line)
             else:
                 adjusted_lines.append(line)
-        
-        return '\n'.join(adjusted_lines)
+
+        return "\n".join(adjusted_lines)
 
     for line in new_logs:
         line = line.strip()
@@ -533,7 +537,7 @@ def parse_logs_incrementally(logs, state_list, last_index):
                 "tool_calls_content": "",
                 "tool_execution_time": None,
                 "tool_execution_content": "",
-                "current_tool_name": None  # 添加当前工具名称跟踪
+                "current_tool_name": None,  # 添加当前工具名称跟踪
             }
             if "Receive Task" in line:
                 state = "await_user_time"
@@ -638,7 +642,7 @@ def parse_logs_incrementally(logs, state_list, last_index):
             assistant_content = convo["assistant_content"].strip()
             if assistant_content.lower() == "none":
                 assistant_content = ""
-            
+
             # 始终显示Assistant块，即使内容为空
             output_parts.append(
                 f"### 🤖 {convo['assistant_role']} ({convo['assistant_time']})\n{adjust_markdown_headers(assistant_content)}"
@@ -647,19 +651,19 @@ def parse_logs_incrementally(logs, state_list, last_index):
             output_parts.append(
                 f"### 🛠️ Tool Calls\n```python\n{convo['tool_calls_content'].strip()}\n```"
             )
-        
+
         # 处理 Tool Execution 内容（只显示允许的工具，并放在markdown代码块中）
         if convo["tool_execution_content"].strip():
             # 检查是否是允许显示的工具
             tool_name = convo.get("current_tool_name", "")
-            
+
             # 如果没有从tool_calls_content中提取到工具名，尝试从tool_execution_content中提取
             if not tool_name:
-                for line in convo["tool_execution_content"].split('\n'):
+                for line in convo["tool_execution_content"].split("\n"):
                     if "tool execution:" in line.lower():
                         tool_name = line.split(":")[-1].strip()
                         break
-            
+
             # 只显示允许的工具执行结果
             if tool_name in allowed_tools:
                 tool_execution_content = convo["tool_execution_content"].strip()
@@ -681,14 +685,11 @@ def parse_logs_incrementally(logs, state_list, last_index):
     return state_list, new_last_index
 
 
-
 def get_latest_logs(max_lines=500, state=None, queue_source=None, last_index=0):
-
     logs = []
     log_queue = queue_source if queue_source else LOG_QUEUE
     temp_queue = queue.Queue()
     temp_logs = []
-
 
     try:
         while not log_queue.empty():
@@ -714,7 +715,6 @@ def get_latest_logs(max_lines=500, state=None, queue_source=None, last_index=0):
     if not logs:
         return state, 0
 
-
     filtered_logs = []
     for log in logs:
         if "- INFO -" not in log:
@@ -728,18 +728,19 @@ def get_latest_logs(max_lines=500, state=None, queue_source=None, last_index=0):
     return final_contents, updated_index
 
 
-
 # Dictionary containing module descriptions
 MODULE_DESCRIPTIONS = {
     "Detailed Idea Description": "At this level, users provide comprehensive descriptions of their specific research ideas. The system processes these detailed inputs to develop implementation strategies based on the user's explicit requirements. Examples 1-2 are the templates of this mode.",
-    "Reference-Based Ideation": "This simpler level involves users submitting reference papers without a specific idea in mind. The user query typically follows the format: "'"I have some reference papers, please come up with an innovative idea and implement it with these papers."'" The system then analyzes the provided references to generate and develop novel research concepts. Examples 3-4 are the templates of this mode.",
+    "Reference-Based Ideation": "This simpler level involves users submitting reference papers without a specific idea in mind. The user query typically follows the format: "
+    '"I have some reference papers, please come up with an innovative idea and implement it with these papers."'
+    " The system then analyzes the provided references to generate and develop novel research concepts. Examples 3-4 are the templates of this mode.",
     "Paper Generation Agent": "Once all research and experimental work is finished, employ this agent for paper generation",
     # "exit": "exit mode"
 }
 
 # 默认环境变量模板
 DEFAULT_ENV_TEMPLATE = """#===========================================
-# MODEL & API 
+# MODEL & API
 # (See https://docs.camel-ai.org/key_modules/models.html#)
 #===========================================
 
@@ -798,7 +799,11 @@ def run_ai_researcher(question: str, reference: str, example_module: str) -> Tup
     # 验证输入
     if not validate_input(question):
         logging.warning("User submitted invalid input")
-        return ("Please enter a valid question", "0", "❌ Error: Invalid input question")
+        return (
+            "Please enter a valid question",
+            "0",
+            "❌ Error: Invalid input question",
+        )
 
     try:
         # 确保环境变量已加载
@@ -814,7 +819,6 @@ def run_ai_researcher(question: str, reference: str, example_module: str) -> Tup
                 "❌ Error: Unsupported module",
             )
 
- 
         # 运行
         try:
             # logging.info("Runing AI Researcher...")
@@ -848,9 +852,7 @@ def run_ai_researcher(question: str, reference: str, example_module: str) -> Tup
         )
 
     except Exception as e:
-        logging.error(
-            f"Uncaught error occurred while processing the question: {str(e)}"
-        )
+        logging.error(f"Uncaught error occurred while processing the question: {str(e)}")
         return (f"Error occurred: {str(e)}", "0", f"❌ Error: {str(e)}")
 
 
@@ -1037,7 +1039,7 @@ def is_api_related(key: str) -> bool:
         "workplace_name",
         "cache_path",
         "port",
-        "max_iter_times"
+        "max_iter_times",
     ]
 
     # 检查是否包含API相关关键词（不区分大小写）
@@ -1084,9 +1086,7 @@ def update_env_table():
         guide = get_api_guide(k)
         # 如果有指南链接，创建一个可点击的链接
         guide_link = (
-            f"<a href='{guide}' target='_blank' class='guide-link'>🔗 获取</a>"
-            if guide
-            else ""
+            f"<a href='{guide}' target='_blank' class='guide-link'>🔗 获取</a>" if guide else ""
         )
         result.append([k, v[0], guide_link])
     return result
@@ -1102,9 +1102,7 @@ def save_env_table_changes(data):
         str: 操作状态信息，包含HTML格式的状态消息
     """
     try:
-        logging.info(
-            f"Starting to process environment variable table data, type: {type(data)}"
-        )
+        logging.info(f"Starting to process environment variable table data, type: {type(data)}")
 
         # 获取当前所有环境变量
         current_env_vars = load_env_vars()
@@ -1199,7 +1197,6 @@ def get_env_var_value(key):
 
 
 def create_ui():
-
     def clear_log_file():
         """清空日志文件内容"""
         try:
@@ -1232,9 +1229,7 @@ def create_ui():
                 result = run_ai_researcher(question, reference, module_name)
                 result_queue.put(result)
             except Exception as e:
-                result_queue.put(
-                    (f"Error occurred: {str(e)}", "0", f"❌ Error: {str(e)}")
-                )
+                result_queue.put((f"Error occurred: {str(e)}", "0", f"❌ Error: {str(e)}"))
 
         # 过滤空内容的对话记录
         def filter_empty_conversations(conversations):
@@ -1244,15 +1239,15 @@ def create_ui():
                 # 检查是否两者都为空
                 user_empty = not user_msg.strip()
                 bot_empty = not bot_msg.strip()
-                
+
                 # 如果两者都为空，则跳过这个对话记录
                 if user_empty and bot_empty:
                     continue
-                
+
                 # 如果只有一个为空，保留非空的那个，空的用None替代
                 processed_user = user_msg if not user_empty else None
                 processed_bot = bot_msg if not bot_empty else None
-                
+
                 filtered.append((processed_user, processed_bot))
             return filtered
 
@@ -1264,8 +1259,6 @@ def create_ui():
         # scroll_script = "<script>document.getElementById('top')?.scrollIntoView();</script>"
         # scroll_script = "<script>document.getElementById('down').scrollTop = document.getElementById('chat-log').scrollHeight;</script>"
         scroll_script = None
-
-
 
         # 在等待处理完成的同时，每秒更新一次日志
         while bg_thread.is_alive():
@@ -1279,8 +1272,8 @@ def create_ui():
                 state,
                 "<span class='status-indicator status-running'></span> Processing...",
                 filtered_logs,
-                scroll_script, 
-                updated_index
+                scroll_script,
+                updated_index,
             )
 
             time.sleep(1)
@@ -1305,7 +1298,13 @@ def create_ui():
                     f"<span class='status-indicator status-success'></span> {status}"
                 )
 
-            yield token_count, status_with_indicator, filtered_logs, scroll_script, updated_index
+            yield (
+                token_count,
+                status_with_indicator,
+                filtered_logs,
+                scroll_script,
+                updated_index,
+            )
             # yield token_count, status_with_indicator, logs2
         else:
             logs2, updated_index = get_latest_logs(500, state, LOG_QUEUE, last_index)
@@ -1315,15 +1314,15 @@ def create_ui():
                 state,
                 "<span class='status-indicator status-error'></span> Terminated",
                 filtered_logs,
-                None, 
-                updated_index
+                None,
+                updated_index,
             )
 
     with gr.Blocks(theme=gr.themes.Soft(primary_hue="amber"), css=CUSTOM_CSS) as app:
         # Inject both Light/Dark CSS and set theme attribute on startup
         css_both = """
         <style id="ai-theme-base">
-        html[data-theme='light'] *, html[data-theme='light'] body { 
+        html[data-theme='light'] *, html[data-theme='light'] body {
           background-color: #ffffff !important; color: #1a1c1e !important; border-color: #d0d7de !important;
         }
         html[data-theme='light'] thead th { background-color: #f5f6f8 !important; color: #ffb703 !important; }
@@ -1331,7 +1330,7 @@ def create_ui():
         html[data-theme='light'] .gr-button, html[data-theme='light'] button { background-color: #ffb703 !important; color: #101010 !important; border: 1px solid #ffb703 !important; }
         html[data-theme='light'] .gr-button:hover, html[data-theme='light'] button:hover { background-color: #ffd166 !important; border-color: #ffd166 !important; }
 
-        html[data-theme='dark'] *, html[data-theme='dark'] body { 
+        html[data-theme='dark'] *, html[data-theme='dark'] body {
           background-color: #121212 !important; color: #e8e8e8 !important; border-color: #3a3f44 !important;
         }
         html[data-theme='dark'] thead th { background-color: #1a1c1e !important; color: #ffb703 !important; }
@@ -1360,6 +1359,7 @@ def create_ui():
         </script>
         """
         gr.HTML(value=css_both, visible=True)
+
         # Runtime theme controls
         def theme_style_update(theme_choice, high_contrast):
             return generate_theme_css(theme_choice, bool(high_contrast))
@@ -1368,7 +1368,7 @@ def create_ui():
         default_hc = _HIGH_CONTRAST
 
         with gr.Row():
-            theme_dd = gr.Dropdown(
+            gr.Dropdown(
                 label="Theme",
                 choices=["System", "Light", "Dark"],
                 value=default_theme,
@@ -1386,10 +1386,12 @@ def create_ui():
             btn_light = gr.Button("Light", variant="secondary", elem_id="btn-light")
             btn_dark = gr.Button("Dark", variant="secondary", elem_id="btn-dark")
         # Hidden style injector not used for base; keep for potential future tweaks
-        style_html = gr.HTML(value="", visible=False)
+        gr.HTML(value="", visible=False)
 
         # JS: reliable setter of theme variables
-        theme_js_boot = gr.HTML(value=("""
+        gr.HTML(
+            value=(
+                """
         <script>
         (function(){{
           const VARS_LIGHT = {{
@@ -1484,13 +1486,17 @@ def create_ui():
           }} catch(e) {{}}
         })();
         </script>
-        """).replace("__HC__", ("true" if default_hc else "false")), visible=False)
+        """
+            ).replace("__HC__", ("true" if default_hc else "false")),
+            visible=False,
+        )
 
         # Bind client-side events to ensure switching even without server callbacks
-        gr.HTML(value="""
+        gr.HTML(
+            value="""
         <script>
         (function(){
-          function getVal(id){const el=document.getElementById(id);return el && (el.value||el.checked);} 
+          function getVal(id){const el=document.getElementById(id);return el && (el.value||el.checked);}
           function applyFromControls(){
             const dd=document.getElementById('theme-dd');
             const hc=document.getElementById('theme-hc');
@@ -1508,10 +1514,16 @@ def create_ui():
           if(bd){ bd.addEventListener('click', ()=>window.applyTheme('Dark', (hc&&hc.checked))); }
         })();
         </script>
-        """)
+        """
+        )
 
         # High Contrast live toggle (no reload)
-        hc_cb.change(None, inputs=[hc_cb], outputs=[], js="(h)=>{ if(h){document.documentElement.setAttribute('data-contrast','high');} else {document.documentElement.removeAttribute('data-contrast');}}")
+        hc_cb.change(
+            None,
+            inputs=[hc_cb],
+            outputs=[],
+            js="(h)=>{ if(h){document.documentElement.setAttribute('data-contrast','high');} else {document.documentElement.removeAttribute('data-contrast');}}",
+        )
 
         # Button helpers to set dropdown and style together
         def on_button_system(high_contrast: bool):
@@ -1527,20 +1539,25 @@ def create_ui():
             return gr.update(value=theme_choice), theme_style_vars(theme_choice, high_contrast)
 
         # Apply buttons: save to localStorage and reload (most robust)
-        btn_system.click(js="()=>{ try{ localStorage.removeItem('ai_researcher_theme'); }catch(e){} window.location.reload(); }")
-        btn_light.click(js="()=>{ try{ localStorage.setItem('ai_researcher_theme','light'); }catch(e){} window.location.reload(); }")
-        btn_dark.click(js="()=>{ try{ localStorage.setItem('ai_researcher_theme','dark'); }catch(e){} window.location.reload(); }")
-    #     gr.HTML("""
-    #             <script>
-    #             function scrollToBottom() {
-    #                 const chatLog = document.getElementById('chat-log');
-    #                 if (chatLog) {
-    #                     chatLog.scrollTop = chatLog.scrollHeight;
-    #                 }
-    #             }
-    #             </script>
-    #             """)
-
+        btn_system.click(
+            js="()=>{ try{ localStorage.removeItem('ai_researcher_theme'); }catch(e){} window.location.reload(); }"
+        )
+        btn_light.click(
+            js="()=>{ try{ localStorage.setItem('ai_researcher_theme','light'); }catch(e){} window.location.reload(); }"
+        )
+        btn_dark.click(
+            js="()=>{ try{ localStorage.setItem('ai_researcher_theme','dark'); }catch(e){} window.location.reload(); }"
+        )
+        #     gr.HTML("""
+        #             <script>
+        #             function scrollToBottom() {
+        #                 const chatLog = document.getElementById('chat-log');
+        #                 if (chatLog) {
+        #                     chatLog.scrollTop = chatLog.scrollHeight;
+        #                 }
+        #             }
+        #             </script>
+        #             """)
 
         image_base64 = get_base64_image("assets/logo.png")
 
@@ -1558,8 +1575,6 @@ def create_ui():
             """
         )
 
-
-
         # 添加自定义CSS
         gr.HTML("""
             <style>
@@ -1568,7 +1583,7 @@ def create_ui():
             body, html, * {
                 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             }
-                
+
             .chat-container .chatbot {
                 height: 500px;
                 overflow-y: auto;
@@ -1685,13 +1700,13 @@ def create_ui():
                 background-color: #FFA500;
                 color: white;
             }
-            
+
             /* input 范围限定 */
             .scrolling-textbox textarea {
                 max-height: 300px !important;  /* 设置最大高度 */
                 overflow-y: auto !important;  /* 垂直滚动 */
             }
-            
+
             /* example 范围限定 */
             .scrolling-example {
                 max-width: 100%;
@@ -1870,7 +1885,7 @@ def create_ui():
                 border-radius: 6px;
                 overflow: hidden;
             }
-         
+
             .custom-file .gr-file-box {
                 height: 4px !important;
                 max-height: 4px !important;
@@ -1934,9 +1949,7 @@ def create_ui():
                 )
 
                 with gr.Row():
-                    run_button = gr.Button(
-                        "Run", variant="primary", elem_classes="primary"
-                    )
+                    run_button = gr.Button("Run", variant="primary", elem_classes="primary")
 
                 status_output = gr.HTML(
                     value="<span class='status-indicator status-success'></span> Ready",
@@ -1950,27 +1963,20 @@ def create_ui():
                 examples = [
                     # [
                     #     "1. **Task**: The proposed model is designed to address representation collapse in Vector Quantized (VQ) models, specifically in unsupervised representation learning and latent generative models applicable to modalities like image and audio data.\n\n2. **Core Techniques/Algorithms**: The methodology introduces a linear transformation layer applied to the code vectors in a reparameterization strategy that leverages a learnable latent basis, enhancing the optimization of the entire codebook rather than individual code vectors.\n\n3. **Purpose and Function of Major Technical Components**:\n   - **Encoder (f_θ)**: Maps input data (images or audio) into a continuous latent representation (z_e).\n   - **Codebook (C)**: A collection of discrete code vectors used for quantizing the latent representations.\n   - **Linear Transformation Layer (W)**: A learnable matrix that transforms the codebook vectors, optimizing the entire latent space jointly to improve codebook utilization during training.\n   - **Decoder (g_ϕ)**: Reconstructs the input data from the quantized representations.\n\n4. **Implementation Details**:\n   - **Key Parameters**:\n     - Learning rate (η): Commonly set to 1e-4.\n     - Commitment weight (β): Adjust according to data modality, e.g., set to 1.0 for images and 1000.0 for audio.\n   - **Input/Output Specifications**:\n     - **Input**: Raw data instances, such as images of size 128x128 or audio frames. \n     - **Output**: Reconstructed data (images or audio).\n   - **Important Constraints**: The codebook size should be large enough to capture the data complexity; experiments indicate sizes like 65,536 or larger are beneficial.\n\n5. **Step-by-Step Description of Component Interaction**:\n   - **Step 1**: Initialize the codebook (C) using a distribution (e.g., Gaussian) and freeze its parameters for initial training iterations.\n   - **Step 2**: For each data instance (x), compute the latent representation (z_e) using the encoder (f_θ).\n   - **Step 3**: Perform nearest code search to find the closest codebook vector to z_e using the distance metric. Use the selected code vector for reconstruction.\n   - **Step 4**: Reparameterize the selected code vector using the performed linear transformation (C * W), effectively treating both C and W in the optimization process.\n   - **Step 5**: Calculate the loss, which combines reconstruction loss (MSE between original and decoded output) and commitment loss to ensure effective use of the codebook.\n   - **Step 6**: Update only the linear layer (W) through gradient backpropagation, keeping C static throughout this phase to facilitate the joint training procedure.\n\n6. **Critical Implementation Details**:\n   - To prevent representation collapse, it is crucial to carefully set the learning rate so that the transformation matrix W can adapt without compromising the usefulness of the latent space.\n   - Keeping the codebook static during the initial phase speeds up the convergence while ensuring that the linear transformation can stretch and rotate the latent space effectively.\n   - Regularly evaluate the utilization percentage of the codebook during training iterations, aiming for near-complete usage (ideally 100%) to combat representation collapse actively.",
-
                     #     "Title: Neural discrete representation learning; You can use this paper in the following way: The core VQ method proposed in this study is directly utilized in the proposed model, providing the essential framework for vector quantization.\nTitle: Vector-quantized image modeling with improved VQGAN; You can use this paper in the following way: The improved VQGAN methodology is built upon to develop the proposed model, particularly in optimizing codebook utilization without sacrificing model capacity.\nTitle: Taming transformers for high-resolution image synthesis; You can use this paper in the following way: VQGAN serves as a foundational model that the proposed model builds upon, especially in terms of integrating adversarial techniques to improve latent space optimization.\nTitle: Estimating or propagating gradients through stochastic neurons for conditional computation; You can use this paper in the following way: STE is employed in this study to facilitate gradient descent updates for the codebook vectors, ensuring effective training of the proposed model despite the discrete quantization step.\nTitle: Learning transferable visual models from natural language supervision.; You can use this paper in the following way: VQGAN-LC, as proposed in this study, is used as a comparative baseline to highlight the limitations of relying on pre-trained models for codebook initialization.\nTitle: Finite scalar quantization: VQ-VAE made simple.; You can use this paper in the following way: FSQ is evaluated as an existing method for mitigating representation collapse. The proposed model is proposed as a superior alternative that avoids the dimensionality reduction inherent in FSQ.\nTitle: Auto-encoding variational bayes.; You can use this paper in the following way: Conceptual insights from VAEs are used to theoretically analyze the representation collapse problem in VQ models, highlighting the differences in optimization strategies between VAEs and the proposed approach.\nTitle: Categorical reparameterization with gumbel-softmax.; You can use this paper in the following way: The Gumbel-Softmax technique is discussed as part of alternative quantization strategies, informing the development of the proposed model's approach to optimizing the latent space."
                     # ],
-
                     [
                         "1. The proposed model designed in this paper is designed to improve the performance of Vector Quantized Variational AutoEncoders (VQ-VAEs) by addressing issues with gradient propagation through the non-differentiable vector quantization layer.\n\n2. The core methodologies utilized include:\n   - **Rotation and Rescaling Transformation**: A linear transformation that alters the encoder output to align it with the nearest codebook vector without changing the forward pass output.\n   - **Gradient Propagation Method**: The proposed model ensures that gradients flow from the decoder to the encoder while preserving the angle between the gradient and codebook vector.\n   - **Codebook Management**: Utilizes the connection between the encoder output and the corresponding codebook vectors to mitigate codebook collapse and improve utilization.\n\n3. The primary functions of these components are:\n   - The rotation and rescaling transformation modifies how the encoder output is quantized and how information is retained during backpropagation, enabling gradients to reflect the true positioning of the encoder output relative to the codebook vectors.\n   - The gradient propagation method redefines how gradients are transported back to the encoder, allowing for an enhanced and nuanced movement through the quantization layer, which leads to a better performance during training.\n   - Codebook management practices help in maintaining a diverse set of codebook vectors throughout training, avoiding scenarios where multiple vectors become redundant or unused.\n\n4. Implementation details for each component:\n   - **Key Parameters**: \n     - Codebook size should be configured based on the complexity of the dataset (e.g., 1024 or 8192).\n     - Commitment loss coefficient (\u03b2) is typically set within [0.25, 2].\n   - **Input/Output Specifications**: \n     - Input to the encoder is a continuous high-dimensional vector, while the output is a corresponding quantized vector from the codebook.\n     - The output for reconstruction is generated using the decoder applied to the transformed codebook vectors.\n   - **Important Constraints**: \n     - Ensure that the codebook is updated correctly with an exponential moving average procedure, and treat both rotation and rescaling during the forward pass as constants with respect to the gradient.\n\n5. Step-by-Step Integration of Components:\n   - **Step 1**: Input the data vector into the encoder to obtain the continuous representation.\n   - **Step 2**: Identify the nearest codebook vector to the encoder output.\n   - **Step 3**: Compute the rotation matrix that aligns the encoder output to the codebook vector.\n   - **Step 4**: Apply the rotation and rescaling transformation to obtain the modified output for the decoder (i.e., `\u02dc q`).\n   - **Step 5**: Feed `\u02dc q` into the decoder to produce the reconstructed output.\n   - **Step 6**: Compute the loss using the reconstruction and apply backpropagation.\n   - **Step 7**: During backpropagation, modify the gradient transfer process to maintain the angle using the proposed model, replacing traditional shortcuts in gradient computation.\n\n6. Critical implementation details affecting performance:\n   - The choice of rotation matrix calculation should ensure computational efficiency\u2014using Householder transformations to minimize resource demands.\n   - The deployment of the stop-gradient technique effectively turns off the back-propagation through the quantization layer, which is essential to reflect the intended change without inducing undesired noise in the gradient updates.\n   - Monitor the codebook usage regularly during training to detect any potential collapse early and adjust the training dynamics (e.g., learning rate) accordingly to maintain effective utilization throughout the training period.",
-
-                        "1. Title: Neural discrete representation learning; The proposed model proposed in this paper restructures the gradient propagation through the vector quantization layer of VQ-VAEs, directly building upon the foundational methods established in this study.\n\n2. Title: Straightening out the straight-through estimator: Overcoming optimization challenges in vector quantized networks; The proposed model is proposed as an improvement over the STE, aiming to preserve more gradient information and enhance codebook utilization, thereby overcoming the optimization challenges highlighted in this paper.\n\n3. Title: Estimating or propagating gradients through stochastic neurons for conditional computation; The STE method introduced in this paper serves as the baseline approach that the proposed model aims to improve upon, offering a more nuanced gradient propagation mechanism.\n\n4. Title: High-resolution image synthesis with latent diffusion models; The proposed model is evaluated on VQGANs as utilized in latent diffusion models presented in this study, showcasing significant improvements in reconstruction metrics and codebook utilization.\n\n5. Title: Finite scalar quantization: Vq-vae made simple; By introducing the proposed approach, this study provides an alternative to the methods discussed in this paper, further enhancing training stability and performance in VQ-VAEs.\n\n6. Title: Elements of information theory; The current paper references information theory concepts from this study to explain the importance of low quantization error and high codebook utilization in vector quantization.\n\n7. Title: Vector-quantized image modeling with improved vqgan; The proposed approach is applied to VQGANs as discussed in this study, resulting in improved reconstruction metrics and more efficient codebook usage.\n\n8. Title: Uvim: A unified modeling approach for vision with learned guiding codes; The proposed approach builds upon the vector quantization methodologies discussed in this study, aiming to enhance codebook utilization and gradient efficiency.\n\n9. Title: Auto-encoding variational bayes; The loss function for VQ-VAEs used in the proposed approach follows the ELBO conventions set forth in this study.\n\n10. Title: Categorical reparameterization with gumbel-softmax; The Gumbel-Softmax trick is discussed as one of the methods to sidestep the STE in vector quantization, providing context for the advantages offered by the proposed model."
+                        "1. Title: Neural discrete representation learning; The proposed model proposed in this paper restructures the gradient propagation through the vector quantization layer of VQ-VAEs, directly building upon the foundational methods established in this study.\n\n2. Title: Straightening out the straight-through estimator: Overcoming optimization challenges in vector quantized networks; The proposed model is proposed as an improvement over the STE, aiming to preserve more gradient information and enhance codebook utilization, thereby overcoming the optimization challenges highlighted in this paper.\n\n3. Title: Estimating or propagating gradients through stochastic neurons for conditional computation; The STE method introduced in this paper serves as the baseline approach that the proposed model aims to improve upon, offering a more nuanced gradient propagation mechanism.\n\n4. Title: High-resolution image synthesis with latent diffusion models; The proposed model is evaluated on VQGANs as utilized in latent diffusion models presented in this study, showcasing significant improvements in reconstruction metrics and codebook utilization.\n\n5. Title: Finite scalar quantization: Vq-vae made simple; By introducing the proposed approach, this study provides an alternative to the methods discussed in this paper, further enhancing training stability and performance in VQ-VAEs.\n\n6. Title: Elements of information theory; The current paper references information theory concepts from this study to explain the importance of low quantization error and high codebook utilization in vector quantization.\n\n7. Title: Vector-quantized image modeling with improved vqgan; The proposed approach is applied to VQGANs as discussed in this study, resulting in improved reconstruction metrics and more efficient codebook usage.\n\n8. Title: Uvim: A unified modeling approach for vision with learned guiding codes; The proposed approach builds upon the vector quantization methodologies discussed in this study, aiming to enhance codebook utilization and gradient efficiency.\n\n9. Title: Auto-encoding variational bayes; The loss function for VQ-VAEs used in the proposed approach follows the ELBO conventions set forth in this study.\n\n10. Title: Categorical reparameterization with gumbel-softmax; The Gumbel-Softmax trick is discussed as one of the methods to sidestep the STE in vector quantization, providing context for the advantages offered by the proposed model.",
                     ],
-
                     [
                         "gnn",
-
-                        "Title: Graph Neural Networks: A Review of Methods and Applications; You can use this paper in the following way: Core methodologies of GNNs were integrated into the proposed model framework to enhance understanding of graph data.\nTitle: Deep Graph Infomax; You can use this paper in the following way: The DGI approach was used to enhance self-supervision in the instruction tuning of the proposed model.\nTitle: Semi-Supervised Classification with Graph Convolutional Networks; You can use this paper in the following way: The concepts from GCNs were adapted for improving generalization in zero-shot learning scenarios.\nTitle: Attention is All You Need; You can use this paper in the following way: Self-attention principles were utilized in the proposed model to effectively manage graph structural information.\nTitle: Graph Attention Networks; You can use this paper in the following way: Attention mechanisms from GATs were integrated to enhance the proposed model's performance on graph tasks.\nTitle: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding; You can use this paper in the following way: BERT's architecture was adapted for encoding text in relation to graph data.\nTitle: Learning Transferable Visual Models From Natural Language Supervision; You can use this paper in the following way: The design of self-supervised instruction tuning in the proposed model was influenced by the methodologies proposed in this paper.\nTitle: Gpt-gnn: Generative pre-training of graph neural networks; You can use this paper in the following way: The generative pre-training concepts informed the development of the proposed model's learning strategies."
+                        "Title: Graph Neural Networks: A Review of Methods and Applications; You can use this paper in the following way: Core methodologies of GNNs were integrated into the proposed model framework to enhance understanding of graph data.\nTitle: Deep Graph Infomax; You can use this paper in the following way: The DGI approach was used to enhance self-supervision in the instruction tuning of the proposed model.\nTitle: Semi-Supervised Classification with Graph Convolutional Networks; You can use this paper in the following way: The concepts from GCNs were adapted for improving generalization in zero-shot learning scenarios.\nTitle: Attention is All You Need; You can use this paper in the following way: Self-attention principles were utilized in the proposed model to effectively manage graph structural information.\nTitle: Graph Attention Networks; You can use this paper in the following way: Attention mechanisms from GATs were integrated to enhance the proposed model's performance on graph tasks.\nTitle: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding; You can use this paper in the following way: BERT's architecture was adapted for encoding text in relation to graph data.\nTitle: Learning Transferable Visual Models From Natural Language Supervision; You can use this paper in the following way: The design of self-supervised instruction tuning in the proposed model was influenced by the methodologies proposed in this paper.\nTitle: Gpt-gnn: Generative pre-training of graph neural networks; You can use this paper in the following way: The generative pre-training concepts informed the development of the proposed model's learning strategies.",
                     ],
-
                     [
                         "diffu_flow",
-
-                        "Title: Denoising diffusion probabilistic models; You can use this paper in the following way: Used as a foundational reference for the denoising processes and model architecture.\nTitle: Generative adversarial nets; You can use this paper in the following way: Referenced for underlying generative capabilities which influenced our proposed model design.\nTitle: Image-noise Optimal Transport in Generative Models; You can use this paper in the following way: Served as a framework for understanding and applying transport concepts to the proposed model.\nTitle: Improving consistency models with generator-induced coupling; You can use this paper in the following way: Detailed analysis of generator behaviors informed our component enhancements.\nTitle: Conditional wasser- stein distances with applications in bayesian ot flow matching; You can use this paper in the following way: Informed the adjustments made in our distance evaluation framework.\nTitle: Imagenet: A large-scale hierarchical image database; You can use this paper in the following way: Utilized CIFAR-10 as a benchmark derived from this foundational work."
-                    ]
+                        "Title: Denoising diffusion probabilistic models; You can use this paper in the following way: Used as a foundational reference for the denoising processes and model architecture.\nTitle: Generative adversarial nets; You can use this paper in the following way: Referenced for underlying generative capabilities which influenced our proposed model design.\nTitle: Image-noise Optimal Transport in Generative Models; You can use this paper in the following way: Served as a framework for understanding and applying transport concepts to the proposed model.\nTitle: Improving consistency models with generator-induced coupling; You can use this paper in the following way: Detailed analysis of generator behaviors informed our component enhancements.\nTitle: Conditional wasser- stein distances with applications in bayesian ot flow matching; You can use this paper in the following way: Informed the adjustments made in our distance evaluation framework.\nTitle: Imagenet: A large-scale hierarchical image database; You can use this paper in the following way: Utilized CIFAR-10 as a benchmark derived from this foundational work.",
+                    ],
                 ]
 
                 with gr.Row(elem_classes="scrolling-example"):
@@ -1999,7 +2005,7 @@ def create_ui():
                         log_display2 = gr.Chatbot(
                             # value="No conversation records yet.",
                             elem_id="chat-log",  # 添加 ID，供 JS 使用
-                            elem_classes="log-display"
+                            elem_classes="log-display",
                         )
 
                         state = gr.State([])
@@ -2095,10 +2101,15 @@ def create_ui():
 
                     refresh_button.click(fn=update_env_table, outputs=[env_table])
 
-
         run_button.click(
             fn=process_with_live_logs,
-            inputs=[question_input, reference_input, module_dropdown, state, last_index],
+            inputs=[
+                question_input,
+                reference_input,
+                module_dropdown,
+                state,
+                last_index,
+            ],
             # outputs=[token_count_output, status_output, log_display2, scroll_trigger],
             outputs=[state, status_output, log_display2, scroll_trigger, last_index],
         )
@@ -2133,9 +2144,7 @@ def main():
         LOG_READ_FILE = setup_path()
         # logging.info("AutoAgent Web application is running")
 
-        log_thread = threading.Thread(
-            target=log_reader_thread, args=(LOG_FILE,), daemon=True
-        )
+        log_thread = threading.Thread(target=log_reader_thread, args=(LOG_FILE,), daemon=True)
         log_thread.start()
         logging.info("Log reading thread started")
 
@@ -2145,13 +2154,13 @@ def main():
         app.queue()
         allowed_paths = [os.path.dirname(LOG_FILE)]
         app.launch(
-            share=False, 
+            share=False,
             server_port=7039,
             server_name="127.0.0.1",
             allowed_paths=allowed_paths,
             show_error=True,
             quiet=False,
-            favicon_path="assets/logo.png"
+            favicon_path="assets/logo.png",
         )
 
     except Exception as e:

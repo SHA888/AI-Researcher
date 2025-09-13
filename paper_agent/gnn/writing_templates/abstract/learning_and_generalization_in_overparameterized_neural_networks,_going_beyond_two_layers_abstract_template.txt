@@ -11,7 +11,7 @@ In this work, we [state the main contribution of the paper, e.g., prove/show/exp
 
 On the technique side, our analysis [describe the approach taken in the work]. Specifically, we [introduce any new concepts or methods established in the research] and connect it to [explain the relationship with existing theories or techniques].
 
-\end{document} 
+\end{document}
 
 \begin{align}
     \text{[Mathematical formulation of the key components]}

@@ -26,7 +26,7 @@ where [description of terms]. We stack [number] layers with [activation function
 [Insert explanation of further processing]
 \end{equation}
 
-Next, we pool the [description of outputs] into a [description of the final output structure]. There are many choices such as [other techniques], however, we use a [description of chosen technique] because [reasoning]. 
+Next, we pool the [description of outputs] into a [description of the final output structure]. There are many choices such as [other techniques], however, we use a [description of chosen technique] because [reasoning].
 
 After obtaining the final [output], we use a [type of model] to output [final result]:
 
@@ -44,7 +44,7 @@ where [description of terms].
 L = [mathematical formula for loss]
 \end{equation}
 
-where [description of symbols]. 
+where [description of symbols].
 
 [Additional regularization description]. [Regularization term explanation]:
 

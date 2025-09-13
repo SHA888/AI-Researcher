@@ -6,7 +6,7 @@ In this paper, we [brief statement of the main contribution]. Distinct from [pre
 
 Technically, we contribute a [briefly describe the proposed model or methodology], which [explain key features and innovations of the model/method]. We then [describe how the model/method will be trained or evaluated, mentioning key components or processes involved]. Extensive experiments on [mention type of datasets or scenarios] show that our method [state the performance or advantage over existing methods]. Further analysis verifies [summarize findings related to the effectiveness or benefits of the method]. We publish our project at [link to the resources, if applicable].
 
-% Placeholders for specific parts 
+% Placeholders for specific parts
 % [concept/technique]: General concept or technique being discussed
 % [application domain]: The specific field or area of study
 % [specific outcomes]: Measurable or notable benefits achieved

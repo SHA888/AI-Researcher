@@ -6,7 +6,7 @@
 
 \textbf{Research Question:} Consequently, we propose to [state the primary research question]. Our hypothesis is that [explain the relationship between the two tasks].
 
-\textbf{Proposed Solution:} To tackle [state the challenge], our method consists of three main components: 
+\textbf{Proposed Solution:} To tackle [state the challenge], our method consists of three main components:
 1. [component 1: brief description]
 2. [component 2: brief description]
 3. [component 3: brief description]

@@ -3,7 +3,7 @@
 \subsection{Key Concept 1}
 \label{sec:key_concept_1}
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
 \begin{equation}
 \text{Wasserstein distance} \ W_2(A, B) = \sqrt{ \inf_{(X, Y) \text{s.t.} X \sim A, Y \sim B} \mathbb{E} \left[ | X - Y |^2 \right] }
@@ -34,7 +34,7 @@ Where [detailed explanation of each term in the equations].
 
 \subsection{Comparison with Existing Approaches}
 
-Furthermore, we compare our proposed method with existing approaches. 
+Furthermore, we compare our proposed method with existing approaches.
 
 \text{[Several sentences comparing the proposed method with existing approaches]}
 
@@ -50,6 +50,6 @@ Furthermore, we compare our proposed method with existing approaches.
 
 \subsection{Conclusion of Preliminaries}
 
-In summary, our proposed methodology leverages [core summary of the foundations discussed] to provide [main result or contribution]. 
+In summary, our proposed methodology leverages [core summary of the foundations discussed] to provide [main result or contribution].
 
 \text{ [Linking this preliminary information to the next section of the paper] }

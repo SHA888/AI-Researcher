@@ -24,7 +24,7 @@ The final [output type] is expressed as:
 
 \subsection{[Subsection Title 2]}
 
-To empower [task/application] with [specific aspect], we equip our [Module Name] with [Technique or Approach]. Specifically, we first [describe the action taken], leading to [outcome].  
+To empower [task/application] with [specific aspect], we equip our [Module Name] with [Technique or Approach]. Specifically, we first [describe the action taken], leading to [outcome].
 
 \begin{equation}
 [Mathematical Expression]
@@ -33,7 +33,7 @@ To empower [task/application] with [specific aspect], we equip our [Module Name]
 The [advantage] of [Technique/Approach] is as follows:
 
 1. [First advantage description]
-2. [Second advantage description]  
+2. [Second advantage description]
 
 Given the [output], we perform [process] in each layer:
 
@@ -41,7 +41,7 @@ Given the [output], we perform [process] in each layer:
 [Mathematical Expression]
 \end{equation}
 
-However, [discuss the limitations or challenges in the current approach]. Therefore, we adopt [New Technique/Method], whose key idea is [describe key idea or method]. 
+However, [discuss the limitations or challenges in the current approach]. Therefore, we adopt [New Technique/Method], whose key idea is [describe key idea or method].
 
 \begin{equation}
 [Mathematical Expression]

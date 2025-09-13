@@ -6,7 +6,7 @@ We present [method name], a novel [type of model/architecture] that operates on 
 Inspired by [previous work/technique], we propose [module name] to address [challenge]. Specifically, [multiple sentences explaining the motivation and intuition behind the proposed method].
 
 \section{Methodology}
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 \subsection{Overview of the Workflow}
 [A paragraph describing the detailed workflow of the module].

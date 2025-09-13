@@ -13,7 +13,7 @@ Specifically, we propose to [desired approach]. In particular, we [explain key c
 
 \subsection{[Next Improvement Topic]}
 
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. A notorious shortcoming of [prior models] is [describe challenge]. We visualize such effects in Figure~\ref{figure:example}. 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. A notorious shortcoming of [prior models] is [describe challenge]. We visualize such effects in Figure~\ref{figure:example}.
 
 We propose to condition the model on [describe resolution/parameters], which is readily accessible during training. In particular, we provide [explain conditioning parameter] as an additional input to the model. Each component is independently embedded using [explain technique], and these encodings are concatenated into a single vector that is fed into the model.
 
@@ -21,13 +21,13 @@ We propose to condition the model on [describe resolution/parameters], which is 
 
 \subsection{[Next Improvement Topic]}
 
-We argue that [statement about current practices]. Motivated by this, we [describe your approach]. In practice, [detail the practical implementation]. 
+We argue that [statement about current practices]. Motivated by this, we [describe your approach]. In practice, [detail the practical implementation].
 
 We quantitatively assess the effects of [describe conditioning technique] by [briefly outline evaluation strategy]. Table~\ref{table:results} summarizes the results and verifies that [summarize findings].
 
 \subsection{[Next Improvement Topic]}
 
-[Describe another improvement or feature]. We [explain the methods used and their benefits]. To this end, we utilize [describe process or algorithm]. 
+[Describe another improvement or feature]. We [explain the methods used and their benefits]. To this end, we utilize [describe process or algorithm].
 
 [Detailed explanation of key findings and metrics]. The performance metrics are summarized in Table~\ref{table:performance}.
 

@@ -40,6 +40,6 @@ The complete model can be represented as follows:
 P(Y = 1 | x) = [function representation]
 \end{equation}
 
-where [explanation of the components in the equation]. In this formulation, [description of important variables and their roles]. 
+where [explanation of the components in the equation]. In this formulation, [description of important variables and their roles].
 
 [Additional remarks about implications, performance, or relevance of the method].

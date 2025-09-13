@@ -28,7 +28,7 @@ In the initial step, [describe the basic structure or input of the model/techniq
     [Mathematical formulation of the key components]
 \end{equation}
 
-where [explanation of each term in the equations]. By [describe the process, e.g., propagating layers], [model/technique] obtains [description of embeddings and outputs]. 
+where [explanation of each term in the equations]. By [describe the process, e.g., propagating layers], [model/technique] obtains [description of embeddings and outputs].
 
 [Multiple sentences explaining the motivation and intuition behind the proposed method.]
 

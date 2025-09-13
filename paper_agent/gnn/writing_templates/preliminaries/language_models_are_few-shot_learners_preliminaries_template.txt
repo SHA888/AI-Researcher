@@ -1,9 +1,9 @@
 ```latex
 \section{Approach}
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. Our basic approach consists of [brief overview of the approach, highlighting key components and innovations]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge]. Our basic approach consists of [brief overview of the approach, highlighting key components and innovations].
 
-To tackle [specific challenge], our method consists of three main components: 
+To tackle [specific challenge], our method consists of three main components:
 \begin{itemize}
     \item \textbf{Component 1:} [description of component 1 and its function]
     \item \textbf{Component 2:} [description of component 2 and its function]

@@ -5,7 +5,7 @@ The growing complexity of [research domain/field] has led to significant advance
 
 A recent trend in [related research/technique] has revealed that [insert key finding or phenomenon]. In particular, [describe implications and significance of the observation], suggesting that [explain potential influence on the field]. Despite this, [mention existing gaps or uncertainties], prompting a deeper exploration of [related concept or theme].
 
-In this paper, we investigate [specific aspect or feature] within the context of [explain broader context or framework]. Specifically, we propose [module name] to address [challenge or issue]. Our method consists of [briefly outline components]: 
+In this paper, we investigate [specific aspect or feature] within the context of [explain broader context or framework]. Specifically, we propose [module name] to address [challenge or issue]. Our method consists of [briefly outline components]:
 \begin{itemize}
     \item [component 1]
     \item [component 2]

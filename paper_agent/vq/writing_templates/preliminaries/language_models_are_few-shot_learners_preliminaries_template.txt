@@ -5,11 +5,11 @@ Our basic pre-training approach, including model, data, and training, is similar
 
 \begin{itemize}
     \item \textbf{Component 1} - [Detailed explanation of this component, including advantages and disadvantages]. We focus on [mention the focus area], leaving [other components] for future work.
-    
+
     \item \textbf{Component 2} - [Description of this component]. [Detailed explanation, including advantages, disadvantages, and settings].
-    
+
     \item \textbf{Component 3} - [Description of this component].
-    
+
     \item \textbf{Component 4} - [Description of this component].
 \end{itemize}
 
@@ -39,7 +39,7 @@ Proposed Method 1 & [value]  & [value]  & [value]  & [value]  \\ \hline
 
 \subsection{Training Process}
 
-As found in [reference], [contextual information about training]. We measure [specific metric during training] to guide our choice of [model hyperparameter]. 
+As found in [reference], [contextual information about training]. We measure [specific metric during training] to guide our choice of [model hyperparameter].
 
 \begin{table}[h]
 \centering
@@ -56,7 +56,7 @@ To train the larger models without running out of memory, we use [techniques for
 
 \subsection{Evaluation}
 
-For [specific technique], we evaluate [description of evaluation method]. For tasks without a specific training set, we [explain approach taken]. 
+For [specific technique], we evaluate [description of evaluation method]. For tasks without a specific training set, we [explain approach taken].
 
 For some tasks, we use [additional methods or prompts]. We also use [specify any techniques used]. See the appendix for [mention any relevant examples or details].
 

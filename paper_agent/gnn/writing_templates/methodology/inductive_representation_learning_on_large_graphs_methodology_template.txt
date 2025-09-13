@@ -1,12 +1,12 @@
 \section{Proposed Method: [Module Name]}
 
-The key idea behind our approach is that we [explain the core motivation behind the proposed method]. Inspired by [previous work/technique], we propose [module name] to address [specific challenge]. 
+The key idea behind our approach is that we [explain the core motivation behind the proposed method]. Inspired by [previous work/technique], we propose [module name] to address [specific challenge].
 
 To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 \subsection{[Subsection Title: Component 1]}
 
-In this section, we describe [component name], which [explain the purpose and functionality of the component]. In particular, we assume that we have [describe necessary conditions or assumptions]. We provide a detailed workflow of the [component name] as follows: 
+In this section, we describe [component name], which [explain the purpose and functionality of the component]. In particular, we assume that we have [describe necessary conditions or assumptions]. We provide a detailed workflow of the [component name] as follows:
 
 \begin{algorithm}[ht]
 \caption{[Title of Algorithm 1]}
@@ -15,7 +15,7 @@ In this section, we describe [component name], which [explain the purpose and fu
 [Algorithm Steps]
 \end{algorithm}
 
-The intuition behind the [component name] is that [explain the underlying intuition behind the algorithm]. Each step in the algorithm proceeds as follows: [describe the detailed procedure of the algorithm]. 
+The intuition behind the [component name] is that [explain the underlying intuition behind the algorithm]. Each step in the algorithm proceeds as follows: [describe the detailed procedure of the algorithm].
 
 To generalize this algorithm, we [discuss adaptations or extensions to be made for different scenarios or datasets].
 
@@ -27,7 +27,7 @@ To learn the parameters of [module name], we apply [specific method or technique
     J = [mathematical formulation]
 \end{equation}
 
-where [explain each variable and parameter in the equation]. 
+where [explain each variable and parameter in the equation].
 
 This approach allows [describe any additional benefits or implications of this methodology].
 
@@ -41,6 +41,6 @@ Unlike [comparison to existing approaches], our method focuses on [specific char
     \item [Third option]: [Description of third option]
 \end{itemize}
 
-Each aggregator function [explain the purpose and the properties]. We found that [summarize key findings or conclusions drawn from your experiments or comparisons]. 
+Each aggregator function [explain the purpose and the properties]. We found that [summarize key findings or conclusions drawn from your experiments or comparisons].
 
 In conclusion, the proposed [module name] provides a novel approach to [describe what challenges it addresses and its broader impact].

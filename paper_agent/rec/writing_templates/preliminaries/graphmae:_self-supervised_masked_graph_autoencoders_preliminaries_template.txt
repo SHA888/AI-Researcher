@@ -24,7 +24,7 @@ Generative self-supervised learning aims to [goal]. It can be further classified
 [General discussion about the approaches in this subclass]. [Cite relevant research] has proposed [specific methodologies]. Nevertheless, [follow-up statement addressing inherent limitations of the approach].
 
 \subsubsection{[Subclass 2]}
-[Discussion of the design principles behind the methods]. The earliest works trace back to [key early works]. [Current trends or adaptations] have been made, leading to [specific outcomes or objectives]. 
+[Discussion of the design principles behind the methods]. The earliest works trace back to [key early works]. [Current trends or adaptations] have been made, leading to [specific outcomes or objectives].
 
 Regardless of [application context], the existing methods often [discuss limitations]. Therefore, our goal in this work is to [goal of the research], specifically addressing the shortcomings of [existing approaches].
 

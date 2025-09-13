@@ -5,7 +5,7 @@ In Sec. \ref{sec:performance} and Sec. \ref{sec:ablation}, we perform [type of e
 
 \subsection{Performance}
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. [Multiple sentences explaining the motivation and intuition behind the proposed method]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge]. [Multiple sentences explaining the motivation and intuition behind the proposed method].
 
 To tackle [specific challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
@@ -26,7 +26,7 @@ Figure \ref{fig:comparison} compares [method 1] vs. [method 2]. The [method 1 de
 
 \subsection{Ablation Experiments}
 
-We study [aspect of experiments]. Figure \ref{fig:ablation} shows the influence of [factor] on [performance metric]. [Description of results]. 
+We study [aspect of experiments]. Figure \ref{fig:ablation} shows the influence of [factor] on [performance metric]. [Description of results].
 
 \begin{table}[ht]
 \caption{[Ablation table title]}
@@ -41,13 +41,13 @@ We study [aspect of experiments]. Figure \ref{fig:ablation} shows the influence 
 \end{tabular}
 \end{table}
 
-Specifically, we analyze [specific parameter or method]. Our method follows [related method/structure]. Table \ref{tab:statistical} reports [specific results and metrics]. 
+Specifically, we analyze [specific parameter or method]. Our method follows [related method/structure]. Table \ref{tab:statistical} reports [specific results and metrics].
 
 \subsection{Influence of Data}
 
 We perform transfer learning ablation on [datasets] with downstream tasks [task names]. We do not perform [specific process], allowing us to focus on [data characteristics].
 
-First, we compare [different methods or datasets]. We observe [results/insights]. 
+First, we compare [different methods or datasets]. We observe [results/insights].
 
 \subsection{System-level Comparisons}
 

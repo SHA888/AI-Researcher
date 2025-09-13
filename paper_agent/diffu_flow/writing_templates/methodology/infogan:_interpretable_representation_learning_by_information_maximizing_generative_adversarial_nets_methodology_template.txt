@@ -2,71 +2,71 @@
 
 \subsection{Introduction}
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 [Multiple sentences explaining the motivation and intuition behind the proposed method].
 
 \subsection{Methodology}
 
-Formally, we define [concept] as follows: 
+Formally, we define [concept] as follows:
 
 [A paragraph describing the detailed workflow of the module].
 
-Mathematically, we denote [definition of key components]. 
+Mathematically, we denote [definition of key components].
 
-We propose a method for [task] in an [approach type]: [description of the methodology]. 
+We propose a method for [task] in an [approach type]: [description of the methodology].
 
-To cope with the problem of [challenge], we introduce [additional concept or technique]. 
+To cope with the problem of [challenge], we introduce [additional concept or technique].
 
-Furthermore, [explanation of key theoretical framework]. 
+Furthermore, [explanation of key theoretical framework].
 
-In information theory, [definition and interpretation of the key terms]. 
+In information theory, [definition and interpretation of the key terms].
 
-Based on this understanding, we establish the following [cost formulation or optimization goal]: 
+Based on this understanding, we establish the following [cost formulation or optimization goal]:
 \[
 \text{Equation or formula here}
 \]
 
 \subsection{Variational Approach}
 
-In practice, [discussion of practical challenges]. 
+In practice, [discussion of practical challenges].
 
-Fortunately, we can [address challenge] by defining [auxiliary concept or technique]. 
+Fortunately, we can [address challenge] by defining [auxiliary concept or technique].
 
-This allows us to [explenation of implication], leading to the following expression: 
+This allows us to [explenation of implication], leading to the following expression:
 \[
 \text{Equation or formula here}
 \]
 
-Lemma [lemma number]: [statement of lemma]. 
+Lemma [lemma number]: [statement of lemma].
 
-Using [lemma or theorem], we can express our approach as: 
+Using [lemma or theorem], we can express our approach as:
 \[
 \text{Lower bound or other relevant equation}
 \]
 
-We note that [key observation or important fact]. 
+We note that [key observation or important fact].
 
-Hence, we formulate our approach as the following optimization problem: 
+Hence, we formulate our approach as the following optimization problem:
 \[
 \text{Minimax game formulation equation}
 \]
 
 \subsection{Implementation}
 
-In practice, we [describe implementation details]. 
+In practice, we [describe implementation details].
 
-We [describe additional configurations or structures used]. 
+We [describe additional configurations or structures used].
 
-When [specific conditions or assumptions], we [optimize/configure additional parameters or models]. 
+When [specific conditions or assumptions], we [optimize/configure additional parameters or models].
 
-Despite [challenging aspects or requirements], we [conclude on efficiency or execution]. 
+Despite [challenging aspects or requirements], we [conclude on efficiency or execution].
 
-Finally, [or describe experimental setup or planned evaluations]. 
+Finally, [or describe experimental setup or planned evaluations].
 
-[Detailed experimental setup is described in Appendix]. 
+[Detailed experimental setup is described in Appendix].
 
 \section{Conclusion}
 

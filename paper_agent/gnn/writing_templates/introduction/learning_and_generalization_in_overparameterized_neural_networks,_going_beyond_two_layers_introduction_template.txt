@@ -25,11 +25,11 @@ On a separate note, if one [describe an alternative view or approach], then [des
 
 \textbf{Specifically,} suppose [describe assumptions about the best network]. We show that [describe what you are able to learn or achieve], using [describe the methods] of size greater than a fixed polynomial in [list parameters]. Furthermore, [describe additional findings related to complexity and sample size].
 
-We stress here that this is [describe the type of learning] because [explain]. 
+We stress here that this is [describe the type of learning] because [explain].
 
 \textbf{Our Contributions.} We believe our result gives further insights into [describe the relevance of your work].
 
-- \textbullet\ To the best of our knowledge, this is the first result showing that [describe unique contribution]. 
+- \textbullet\ To the best of our knowledge, this is the first result showing that [describe unique contribution].
 - \textbullet\ [Describe another significant contribution and its implications].
 - \textbullet\ [Describe how the techniques or results of this work have been applied or could be beneficial].
 - \textbullet\ [Explain the importance of findings related to optimization and accuracy].

@@ -34,7 +34,7 @@ To bridge [specific gap], [Module Name] integrates [list of interactions or modu
 
 \subsubsection{[Submodule Title]}
 
-For [specific concept], [describe the process or methodology]. For example, [provide an illustrative example]. The interactions are typically formulated as [mathematical representation or operation], which yields [outcome/impact]. 
+For [specific concept], [describe the process or methodology]. For example, [provide an illustrative example]. The interactions are typically formulated as [mathematical representation or operation], which yields [outcome/impact].
 
 \begin{equation}
 h_{\text{local}} = [mathematical representation],
@@ -52,7 +52,7 @@ We represent [concept or representation] as [mathematical or diagrammatic repres
 [mathematical representation],
 \end{equation}
 
-where [define terms involved]. 
+where [define terms involved].
 
 \subsubsection{[Final Submodule Title]}
 

@@ -14,11 +14,11 @@ Obs. 2. [Second observation summary]. [Comparison of different configurations]. 
 
 We note that the (most) beneficial combinations of [concepts] can be [context-specific], which matches our intuition as [general characteristic]. We summarize our observations and derive insights below. And we further analyze the impact of the [extent/strength] and/or the [pattern/formation] of given types of [concepts].
 
-Obs. 3. [Third observation summary]. [Detailed explanation of the observation and its implications in context]. 
+Obs. 3. [Third observation summary]. [Detailed explanation of the observation and its implications in context].
 
 Obs. 4. [Fourth observation summary]. [Impact of specific configurations/strengths on observed outcomes]. We further hypothesize that [additional explanatory insights on the impact of other factors].
 
-Obs. 5. [Fifth observation summary]. [General implications across studied domains]. 
+Obs. 5. [Fifth observation summary]. [General implications across studied domains].
 
 \subsection{Assessment of [Extension of Concept or Idea]}
 

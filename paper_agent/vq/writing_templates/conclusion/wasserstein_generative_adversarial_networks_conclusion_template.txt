@@ -1,6 +1,6 @@
 \section{Conclusion}
 
-In this paper, we introduced a novel algorithm, referred to as [Algorithm Name], inspired by [previous work/technique]. Our approach aims to address the challenge of [specific challenge]. 
+In this paper, we introduced a novel algorithm, referred to as [Algorithm Name], inspired by [previous work/technique]. Our approach aims to address the challenge of [specific challenge].
 
 To tackle this challenge, our method consists of three main components: [component 1], [component 2], and [component 3]. Specifically, we present [multiple sentences explaining the motivation and intuition behind the proposed method].
 

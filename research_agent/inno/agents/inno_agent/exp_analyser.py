@@ -1,25 +1,33 @@
-from research_agent.inno.types import Agent
-from research_agent.inno.types import Result
-
-from research_agent.inno.tools.terminal_tools import gen_code_tree_structure, read_file, terminal_page_down, terminal_page_up, terminal_page_to
-from research_agent.inno.tools.file_surfer_tool import with_env as with_env_file
-from research_agent.inno.tools.file_surfer_tool import (
-    open_local_file,
-    page_up_markdown,
-    page_down_markdown,
-    find_on_page_ctrl_f,
-    find_next,
-    visualizer,
-    question_answer_on_whole_page
-)
 from inspect import signature
-from research_agent.inno.environment.docker_env import with_env as with_env_docker
-from research_agent.inno.environment.docker_env import DockerEnv
-from research_agent.inno.environment.markdown_browser import RequestsMarkdownBrowser
 
-def case_resolved(context_variables: dict, analysis_report: str, further_plan: dict[str, str]):
+from research_agent.inno.environment.docker_env import DockerEnv
+from research_agent.inno.environment.docker_env import with_env as with_env_docker
+from research_agent.inno.environment.markdown_browser import RequestsMarkdownBrowser
+from research_agent.inno.tools.file_surfer_tool import (
+    find_next,
+    find_on_page_ctrl_f,
+    open_local_file,
+    page_down_markdown,
+    page_up_markdown,
+    question_answer_on_whole_page,
+    visualizer,
+)
+from research_agent.inno.tools.file_surfer_tool import with_env as with_env_file
+from research_agent.inno.tools.terminal_tools import (
+    gen_code_tree_structure,
+    read_file,
+    terminal_page_down,
+    terminal_page_to,
+    terminal_page_up,
+)
+from research_agent.inno.types import Agent, Result
+
+
+def case_resolved(
+    context_variables: dict, analysis_report: str, further_plan: dict[str, str]
+):
     """
-    Use this function to given the analysis report of exsiting experiments and the further plan to the `Machine Learning Agent` to do more experiments. Use this function only after you have carefully and comprehensively reviewed the existing resources and exsiting project as well as fully understand the innovative idea. 
+    Use this function to given the analysis report of exsiting experiments and the further plan to the `Machine Learning Agent` to do more experiments. Use this function only after you have carefully and comprehensively reviewed the existing resources and exsiting project as well as fully understand the innovative idea.
 
     Args:
         analysis_report (str): The analysis report of exsiting experiments.
@@ -27,10 +35,9 @@ def case_resolved(context_variables: dict, analysis_report: str, further_plan: d
     """
     if "experiment_report" not in context_variables:
         context_variables["experiment_report"] = []
-    context_variables["experiment_report"].append({
-        "analysis_report": analysis_report,
-        "further_plan": further_plan
-    })
+    context_variables["experiment_report"].append(
+        {"analysis_report": analysis_report, "further_plan": further_plan}
+    )
     ret_val = f"""\
 You have given the analysis report of exsiting experiments and the further plan to the `Machine Learning Agent` to do more experiments.
 The analysis report is: {analysis_report}
@@ -41,19 +48,21 @@ The further plan is: {further_plan}
         context_variables=context_variables,
     )
 
+
 def get_exp_analyser_agent(model: str = "gpt-4o", **kwargs):
     file_env: RequestsMarkdownBrowser = kwargs.get("file_env", None)
     assert file_env is not None, "file_env is required"
     code_env: DockerEnv = kwargs.get("code_env", None)
     assert code_env is not None, "code_env is required"
+
     def instructions(context_variables: dict):
         return """\
 You are given an innovative idea and some experimental results conducted by `Machine Learning Agent` in the directory `/workspace/projects/` to implement the idea. You also have some reference codebases and papers in the working directory `/workspace`.
-Your task is to: 
+Your task is to:
 1. Analyze the experimental results and give a detailed analysis report about the results.
 2. Analyze the reference codebases and papers, and give a further plan to let `Machine Learning Agent` to do more experiments based on the innovative idea. The further experiments could include but not limited to:
     - Modify the implementation to better fit the idea.
-    - Add more experiments to prove the effectiveness and superiority of the idea. 
+    - Add more experiments to prove the effectiveness and superiority of the idea.
     - Visualize the experimental results and give a detailed analysis report about the results.
     - ANY other experiments that exsiting concurrent reference papers and codebases have done.
 
@@ -70,6 +79,7 @@ AVAILABLE TOOLS:
 
 [IMPORTANT] You should carefully and comprehensively analyze the experimental results and the reference codebases and papers, and give a detailed analysis report about the results and the further plan by use the `case_resolved` function. DO NOT use this function before you have carefully and comprehensively analyzed the experimental results and the reference codebases and papers.
 """
+
     tool_files = [
         open_local_file,
         page_up_markdown,
@@ -89,7 +99,7 @@ AVAILABLE TOOLS:
         read_file,
         terminal_page_down,
         terminal_page_up,
-        terminal_page_to
+        terminal_page_to,
     ]
     tool_codes = [
         with_env_docker(code_env)(tool) if "env" in signature(tool).parameters else tool

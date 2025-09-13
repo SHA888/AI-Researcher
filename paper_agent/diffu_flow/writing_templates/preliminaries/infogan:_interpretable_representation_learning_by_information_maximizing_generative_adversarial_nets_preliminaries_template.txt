@@ -5,14 +5,14 @@
 
 Inspired by [previous work/technique], we propose [module name] to address [challenge]. [Multiple sentences explaining the motivation and intuition behind the proposed method].
 
-To tackle [challenge], our method consists of three main components: 
+To tackle [challenge], our method consists of three main components:
 \begin{itemize}
     \item [component 1: Brief description]
     \item [component 2: Brief description]
     \item [component 3: Brief description]
 \end{itemize}
 
-Specifically, [A paragraph describing the detailed workflow of the module]. 
+Specifically, [A paragraph describing the detailed workflow of the module].
 
 Formally, we define [concept] as follows:
 \begin{equation}
@@ -26,7 +26,7 @@ Furthermore, we analyze the properties of [concept] by explaining each term in t
     \item [Term 3: Explanation]
 \end{itemize}
 
-[Several sentences comparing the proposed method with existing approaches]. 
+[Several sentences comparing the proposed method with existing approaches].
 
 To this end, [concluding remarks that summarize the background and lead into the next section].
 ```

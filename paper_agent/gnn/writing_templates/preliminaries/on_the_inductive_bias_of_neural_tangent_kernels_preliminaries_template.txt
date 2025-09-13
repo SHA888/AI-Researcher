@@ -6,8 +6,8 @@ In this section, we provide background on [topic] and introduce the [methods/too
 
 Multiple recent works studying [related field/application] (e.g., [citation1, citation2, citation3]) show that when [specific conditions], [key observation]. The model can be approximated by its [mathematical/computational process], expressed as follows:
 
-\begin{equation} 
-f(x; \theta) \approx f(x; \theta_0) + \langle \theta - \theta_0, \nabla_\theta f(x; \theta_0) \rangle. 
+\begin{equation}
+f(x; \theta) \approx f(x; \theta_0) + \langle \theta - \theta_0, \nabla_\theta f(x; \theta_0) \rangle.
 \end{equation}
 
 This regime, where [describe regime], contrasts with [other method/approach], which operates under [explain conditions]. Yet, with sufficient [parameterization/conditions], the [features/methods] become expressive enough to [achieve goal or fit data].
@@ -28,11 +28,11 @@ The [key formulation] can be expressed as follows:
 K(x, x') = [mathematical expression for K],
 \end{equation}
 
-where [explain components of the equation]. 
+where [explain components of the equation].
 
 \subsection{Feature Maps Construction}
 
-We now provide a reformulation of the [concept] in terms of [explain reformulation], which provides [benefits or conveniences]. 
+We now provide a reformulation of the [concept] in terms of [explain reformulation], which provides [benefits or conveniences].
 
 \textbf{Lemma [Number]. (Feature Mapping for [specific model]):} The [key concept] can be defined as follows:
 

@@ -2,7 +2,7 @@
 
 In this paper, we have studied [general topic] by considering [specific aspects or methods used in analysis]. We find that [main findings or observations]. While these properties may [effect on performance or other implications], they can also lead to [potential drawbacks or alternative solutions].
 
-It should be noted that while our study of [specific concept] may determine [related outcomes], [caveat or limitation regarding the findings]. Additionally, [discussion of further implications or conditions]. Finally, we note that while [general observation about the current state of research], it does not explain [specific phenomenon or behavior], as pointed out in [relevant reference]. In particular, [elaboration on the importance of the phenomenon and any suggestions for further research]. 
+It should be noted that while our study of [specific concept] may determine [related outcomes], [caveat or limitation regarding the findings]. Additionally, [discussion of further implications or conditions]. Finally, we note that while [general observation about the current state of research], it does not explain [specific phenomenon or behavior], as pointed out in [relevant reference]. In particular, [elaboration on the importance of the phenomenon and any suggestions for further research].
 
 \subsection{Key Takeaways}
 - [First key takeaway or summary point]

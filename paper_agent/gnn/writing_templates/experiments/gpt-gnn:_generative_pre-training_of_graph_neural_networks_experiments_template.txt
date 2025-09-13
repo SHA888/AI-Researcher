@@ -69,6 +69,6 @@ Ablation studies on base models show [discuss findings related to base models].
 
 Ablation studies on [specific design choices] reveal [discuss effectiveness and results].
 
-\textbf{Training data size.} In [figure reference], we examine the performance with different training data sizes during fine-tuning, [discuss how performance varies]. 
+\textbf{Training data size.} In [figure reference], we examine the performance with different training data sizes during fine-tuning, [discuss how performance varies].
 
 \textbf{Results for [Additional Graphs].} In addition, we test whether the proposed [Proposed Method] can benefit downstream tasks on [describe additional graph scenarios]. We present results in [table/figure reference], showing that [key findings on performance gains].

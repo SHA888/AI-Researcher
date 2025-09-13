@@ -13,12 +13,12 @@ Recently, [new technique/approach] has been used to [describe the application or
 
 We propose a novel [method/module name], which is designed with [describe considerations or objectives] to address the above challenges in existing methods. Specifically, we construct [describe components, e.g., two kinds of graphs] from different perspectives to tackle the mentioned challenges. On the one hand, [describe component 1 and its function]. With such [benefit of component 1], [explain further benefits]. On the other hand, [describe component 2 and its function]. Exploiting the properties of this component, [describe expected outcomes].
 
-Yet, how to [describe the challenge in implementation] is still challenging due to the following reasons. First, [describe reason 1]. Second, [describe reason 2]. To handle such issues, [method/module name] learns [describe process] with [describe strategies or approaches]. 
+Yet, how to [describe the challenge in implementation] is still challenging due to the following reasons. First, [describe reason 1]. Second, [describe reason 2]. To handle such issues, [method/module name] learns [describe process] with [describe strategies or approaches].
 
 To sum up, our contributions in this paper can be summarized as follows:
 
 \begin{itemize}
-  \item \textbf{Contribution 1:} We propose [method/module name], which [describe key innovation]. 
+  \item \textbf{Contribution 1:} We propose [method/module name], which [describe key innovation].
   \item \textbf{Contribution 2:} More specifically, [describe specific elements or approaches] that aim to address [challenges].
   \item \textbf{Contribution 3:} We perform extensive experiments on [datasets or scenarios], demonstrating [main findings or contributions].
 \end{itemize}

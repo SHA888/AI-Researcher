@@ -62,7 +62,7 @@ The onward processing and [tasks] involve [explain what this part does]. We util
 
 \subsection{[Subsection Title for Prediction Layer]}
 
-3.4.1 [Describe the importance of considering [contextual factor]] in the prediction mechanism. 
+3.4.1 [Describe the importance of considering [contextual factor]] in the prediction mechanism.
 
 The final representation is achieved by [details about how the predictions are made]:
 \[

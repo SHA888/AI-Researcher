@@ -4,7 +4,7 @@ We have introduced a novel approach for [general domain or problem area]. Our [m
 
 Specifically, [multiple sentences explaining the motivation and intuition behind the proposed method].
 
-To tackle [related challenge or problem], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+To tackle [related challenge or problem], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 Formally, we define [concept] as follows:
 \begin{equation}

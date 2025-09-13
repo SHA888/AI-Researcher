@@ -9,7 +9,7 @@
 
 [To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].] [Include a brief description of each component, outlining their roles and importance.]
 
-\textbf{Formally, we define [concept] as follows:} 
+\textbf{Formally, we define [concept] as follows:}
 
 \begin{equation}
 [Mathematical formulation of the key components]

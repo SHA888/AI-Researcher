@@ -61,7 +61,7 @@ where [explain terms].
 
 \subsection{Overall Training Objective}
 
-In this section, we introduce the overall loss and the optimization of [name]. 
+In this section, we introduce the overall loss and the optimization of [name].
 
 Overall Training Objective. As the main target of [goal], we treat [describe how methods interact] and leverage a multi-task learning strategy to jointly train [loss functions or objectives].
 
@@ -73,7 +73,7 @@ where [explain parameters].
 
 \subsection{Discussion}
 
-Novelty and Differences. For [research area], [specific observations]. To our knowledge, it is the first attempt that [describe uniqueness]. Although [discuss limitations of previous work], our work differs from them in several aspects. 
+Novelty and Differences. For [research area], [specific observations]. To our knowledge, it is the first attempt that [describe uniqueness]. Although [discuss limitations of previous work], our work differs from them in several aspects.
 
 Furthermore, [expand on the discussion related to the research area]. In this work, we [describe contributions] which differs from previous works in [specific ways].
 ```

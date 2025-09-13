@@ -1,8 +1,8 @@
 \section{Introduction}
 
-We now present our [framework/method name]. Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+We now present our [framework/method name]. Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 Formally, we define [concept] as follows:
 
@@ -60,7 +60,7 @@ The final loss function can be expressed as:
     L_{final} = L + \lambda L_{[Regularization]}
 \end{equation}
 
-where $\lambda$ trades off the importance of the [first term] and the [second term]. 
+where $\lambda$ trades off the importance of the [first term] and the [second term].
 
 \section{Conclusion}
 

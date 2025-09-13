@@ -8,7 +8,7 @@ Inspired by [previous work/technique], we propose [module name] to address [chal
 
 \subsection{Methodology}
 
-To tackle [challenge], our method consists of three main components: 
+To tackle [challenge], our method consists of three main components:
 1. [Component 1]
 2. [Component 2]
 3. [Component 3]
@@ -23,7 +23,7 @@ Furthermore, [A paragraph describing the detailed workflow of the module].
 
 \subsection{Comparative Analysis}
 
-[Several sentences comparing the proposed method with existing approaches]. Specifically, [additional comparisons or contrasts]. 
+[Several sentences comparing the proposed method with existing approaches]. Specifically, [additional comparisons or contrasts].
 
 \subsection{Conclusion}
 

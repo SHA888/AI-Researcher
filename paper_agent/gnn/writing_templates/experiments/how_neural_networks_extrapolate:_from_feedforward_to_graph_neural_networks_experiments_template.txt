@@ -7,7 +7,7 @@ We classify our experiments into the following major categories, each of which i
 
 \begin{itemize}
     \item [1)] Learning tasks where the target functions are [description of target functions], with [model type] with a wide range of hyperparameters. This validates [theoretical claims or insights].
-    
+
     \item [2)] [Description of computation tasks or metrics] to validate [specific theorem or claim]. This shows [important findings].
 
     \item [3)] Learning tasks where the target functions are [description of linear functions]. These validate [theorems or lemmas], i.e., [specific findings related to the task]. This section includes [number] ablation studies:
@@ -18,11 +18,11 @@ We classify our experiments into the following major categories, each of which i
     \end{itemize}
 
     \item [4)] [Additional tasks or experiments with different models or architectures].
-    
+
     \item [5)] [Description of a different experiment related to a specific architecture or model].
-    
+
     \item [6)] [Another task with distinct objectives, providing specific details of the learning problem].
-    
+
     \item [7)] [Description of experiments addressing physical or real-world problems, detailing different extrapolation regimes].
 \end{itemize}
 
@@ -40,7 +40,7 @@ We search the following hyperparameters:
     \item [c)] [Third hyperparameter setting].
 \end{itemize}
 
-\paragraph{Test error and model selection.} For each dataset and architecture, we perform model selection via [validation method] and report the test error using [error metric or method]. 
+\paragraph{Test error and model selection.} For each dataset and architecture, we perform model selection via [validation method] and report the test error using [error metric or method].
 
 \subsection{R-Squared for [Task Description]}
 \paragraph{Definition.} [Provide a definition or brief explanation of the metric used, such as R-squared].
@@ -56,7 +56,7 @@ We search the following hyperparameters:
 
 \paragraph{Model and hyperparameter settings.} We perform the same set of hyperparameter searches as in [previous section]. We report the test error using [error measurement approach].
 
-\paragraph{Exact computation with [Specific Model].} Our experiments validate [specific theoretical claims] by employing [specific methodologies or models]. 
+\paragraph{Exact computation with [Specific Model].} Our experiments validate [specific theoretical claims] by employing [specific methodologies or models].
 
 \paragraph{Summary of findings.} [Summarize key outcomes from the experiments].
 
@@ -76,7 +76,7 @@ We configure the hyperparameters as follows:
     \item [b)] [Describe training methodology and optimization].
 \end{itemize}
 
-\paragraph{Model selection and reporting.} Similar to prior sections, we validate performance against [error metrics or evaluation criteria]. 
+\paragraph{Model selection and reporting.} Similar to prior sections, we validate performance against [error metrics or evaluation criteria].
 
 \subsection{Conclusion}
 In summary, our experiments provide [brief overview of findings and implications for future work].

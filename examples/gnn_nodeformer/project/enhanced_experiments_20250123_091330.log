@@ -1,4 +1,4 @@
-2025-01-23 09:13:31,017 - 
+2025-01-23 09:13:31,017 -
 Running enhanced experiments on Cora
 2025-01-23 09:13:31,017 - Run 1/5 on device 0
 2025-01-23 09:13:31,583 - Adjusted number of attention heads to 89 for 1433 features
@@ -21,7 +21,7 @@ Running enhanced experiments on Cora
 2025-01-23 09:13:36,586 - Error during training: The size of tensor a (1433) must match the size of tensor b (1424) at non-singleton dimension 2
 2025-01-23 09:13:36,586 - Error on device 0: The size of tensor a (1433) must match the size of tensor b (1424) at non-singleton dimension 2
 2025-01-23 09:13:36,587 - All runs failed for dataset Cora
-2025-01-23 09:13:36,587 - 
+2025-01-23 09:13:36,587 -
 Running enhanced experiments on CiteSeer
 2025-01-23 09:13:36,587 - Run 1/5 on device 0
 2025-01-23 09:13:36,658 - Adjusted number of attention heads to 231 for 3703 features
@@ -44,7 +44,7 @@ Running enhanced experiments on CiteSeer
 2025-01-23 09:13:39,868 - Error during training: The size of tensor a (3703) must match the size of tensor b (3696) at non-singleton dimension 2
 2025-01-23 09:13:39,868 - Error on device 0: The size of tensor a (3703) must match the size of tensor b (3696) at non-singleton dimension 2
 2025-01-23 09:13:39,868 - All runs failed for dataset CiteSeer
-2025-01-23 09:13:39,868 - 
+2025-01-23 09:13:39,868 -
 Running enhanced experiments on PubMed
 2025-01-23 09:13:39,868 - Run 1/5 on device 0
 2025-01-23 09:13:39,926 - Adjusted number of attention heads to 31 for 500 features

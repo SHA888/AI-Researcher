@@ -1,6 +1,6 @@
 \section{Introduction}
 
-We consider the problem of [specific problem description, e.g., classifying items in a network], where [contextual information regarding the availability of data]. This problem can be framed as [specific approach or method], where [explanation of the approach with references to previous works, e.g., "as shown in previous studies (Author et al., Year)"]. 
+We consider the problem of [specific problem description, e.g., classifying items in a network], where [contextual information regarding the availability of data]. This problem can be framed as [specific approach or method], where [explanation of the approach with references to previous works, e.g., "as shown in previous studies (Author et al., Year)"].
 
 To formalize this, we define [key concept] as follows:
 

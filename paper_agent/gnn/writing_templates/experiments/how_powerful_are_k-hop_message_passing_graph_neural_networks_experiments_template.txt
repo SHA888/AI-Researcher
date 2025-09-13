@@ -4,7 +4,7 @@
 In this section, we conduct extensive experiments to evaluate the performance of [module name]. Specifically, we [describe the objectives/evaluation metrics/goals].
 
 \subsection{Datasets}
-To evaluate [purpose of the evaluation], we choose the following datasets: 
+To evaluate [purpose of the evaluation], we choose the following datasets:
 1) [Dataset 1 description and purpose]
 2) [Dataset 2 description and purpose]
 3) [Dataset 3 description and purpose]
@@ -17,7 +17,7 @@ We conduct [type of evaluation, e.g., ablation study, comparative study] to asse
 To evaluate the effectiveness of [module name] on [task description], we compare our method with several existing models. For the baseline model, we utilize [baseline model description]. The results are displayed in Table~[Y]. We observe that [summarize findings].
 
 \subsection{Evaluation on [specific datasets or tasks]}
-For baseline models, we select: 
+For baseline models, we select:
 1) [Description of baseline model 1]
 2) [Description of baseline model 2]
 3) [Description of baseline model 3]

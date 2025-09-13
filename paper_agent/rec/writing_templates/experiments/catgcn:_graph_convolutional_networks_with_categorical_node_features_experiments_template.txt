@@ -64,7 +64,7 @@ Table~\ref{table:performance_comparison} shows the performance of all compared m
 
 \subsection{In-Depth Analysis (RQ3)}
 
-To further validate the design rationale of our model, we conduct several tests regarding [specific subsystem or feature of the model]. 
+To further validate the design rationale of our model, we conduct several tests regarding [specific subsystem or feature of the model].
 
 \subsubsection{[Component Feature Analysis]}
 
@@ -76,7 +76,7 @@ To further validate the design rationale of our model, we conduct several tests 
 
 \subsubsection{Comparative Analysis with [Other Method]}
 
-To justify the advantages of our design, we further compare [method] with [alternative method] regarding [specify criteria, e.g., performance, resource usage]. The results are shown in Table~\ref{table:comparison_results}. 
+To justify the advantages of our design, we further compare [method] with [alternative method] regarding [specify criteria, e.g., performance, resource usage]. The results are shown in Table~\ref{table:comparison_results}.
 
 [Discussion about the results comparing the different methods or approaches].
 

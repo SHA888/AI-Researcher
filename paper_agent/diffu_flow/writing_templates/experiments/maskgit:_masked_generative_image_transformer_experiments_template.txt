@@ -11,7 +11,7 @@ All models in this work have the same configuration: [provide general configurat
 
 \subsection{[Specific Task or Evaluation]}
 
-We evaluate the performance of our model on [Task Description]. Our main results are summarized in Table [X]. 
+We evaluate the performance of our model on [Task Description]. Our main results are summarized in Table [X].
 
 \textbf{Quality.} We find that [describe quality evaluation metrics]. We also report results with [any alternative method] in [appendix/section].
 
@@ -43,7 +43,7 @@ In this subsection, we present [describe the objectives and details of the tasks
 
 \textbf{[Task Name/Description].} We define [specific task] to showcase [Module Name]'s capabilities. [Describe methods used for the task].
 
-\textbf{[Another Task Name].} [Explain how model adapts to the task]. We evaluate against [Discuss baselines and methods for comparison]. 
+\textbf{[Another Task Name].} [Explain how model adapts to the task]. We evaluate against [Discuss baselines and methods for comparison].
 
 We compare [Module Name] against [list common baselines] on [describe specific task details]. [Discuss quantitative results in a table or figure].
 
@@ -55,9 +55,9 @@ We compare [Module Name] against [list common baselines] on [describe specific t
 
 \subsection{[Ablation Studies/Optimization Studies]}
 
-We conduct ablation experiments [describe the premise for these experiments and setups]. 
+We conduct ablation experiments [describe the premise for these experiments and setups].
 
-\textbf{[Key Feature/Design].} A key design of [Module Name] is [describe feature and its purpose]. We compare [mention any comparative studies]. 
+\textbf{[Key Feature/Design].} A key design of [Module Name] is [describe feature and its purpose]. We compare [mention any comparative studies].
 
 We observe that [discuss results and observations from ablation studies].
 

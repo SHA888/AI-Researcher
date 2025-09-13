@@ -2,7 +2,7 @@
 
 \subsection{[Module Name]}
 
-To address [specific challenge], we propose [module name], which leverages [previous work/technique]. Inspired by [specific techniques or approaches], our method aims to [key goal of the module]. 
+To address [specific challenge], we propose [module name], which leverages [previous work/technique]. Inspired by [specific techniques or approaches], our method aims to [key goal of the module].
 
 [Multiple sentences explaining the motivation and intuition behind the proposed method.]
 
@@ -16,7 +16,7 @@ Formally, we define [concept] as follows:
     [Mathematical formulation of the key components]
 \end{equation}
 
-Here, [detailed explanation of each term in the equations]. 
+Here, [detailed explanation of each term in the equations].
 
 The workflow of [component 1] involves [A paragraph describing the detailed workflow of the module].
 
@@ -28,7 +28,7 @@ The workflow of [component 1] involves [A paragraph describing the detailed work
     [Mathematical formulation]
 \end{equation}
 
-Again, [detailed explanation of each term in the equations]. 
+Again, [detailed explanation of each term in the equations].
 
 \subsubsection{[Component 3 Name]}
 

@@ -17,7 +17,7 @@ In our approach, [describe any mechanisms used, including specific types if appl
 
 To [improve/modify] the learning process, we have found [additional actions or methods] to be beneficial, similar to [reference to previous related work]. Specifically, [description of how these actions are carried out and their expected results].
 
-Furthermore, if we [perform specific action, relate it to overall process], [additional contextual information about this modification]. 
+Furthermore, if we [perform specific action, relate it to overall process], [additional contextual information about this modification].
 
 The aggregation process of [describe the entire component/module] is illustrated by [reference to a figure or diagram that demonstrates the process].
 ```

@@ -10,13 +10,13 @@ To establish the generalization guarantee, we propose some mild assumptions that
 In classical learning theory, the complexity of function class is closely related to the generalization ability, and the typical complexity measurements are [Measurement 1] and [Measurement 2]. In this paper, we adopt the [Complexity Measure] to investigate the model complexity of [Method/Model]. Based on the properties of [Relevant Properties/Structures], we study the complexity by combining the recommendations of [Method/Model] for [User-Item Interface].
 
 \begin{lemma}[Covering number bound]
-Under Assumptions, we further assume that [Conditions]. Given a sample set S with size n, the covering number of F over S with specific $\epsilon$ is bounded as 
+Under Assumptions, we further assume that [Conditions]. Given a sample set S with size n, the covering number of F over S with specific $\epsilon$ is bounded as
 
 \[
 \text{log } N^{(}F_{|S}, \epsilon, \| \cdot \|_{\infty}) \leq [Mathematical Expression].
 \]
 
-Moreover, when $\epsilon \leq [Condition]$, 
+Moreover, when $\epsilon \leq [Condition]$,
 
 \[
 \text{log } N^{(}F_{|S}, \epsilon, \| \cdot \|_{\infty}) \leq [Alternative Mathematical Expression],

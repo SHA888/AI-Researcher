@@ -3,15 +3,15 @@
 
 \subsection{Data Augmentation for Graphs}
 
-Data augmentation aims at creating novel and realistically rational data through applying certain transformations without affecting the semantic label. However, it remains under-explored for graphs, aside from a few methods that involve expensive computational costs (see Sec. \ref{previous_work_section}). In this research, we focus on graph-level augmentations. Given a graph $G \in \{G_m : m \in M\}$ in the dataset of $M$ graphs, we formulate the augmented graph $\hat{G}$ satisfying: 
+Data augmentation aims at creating novel and realistically rational data through applying certain transformations without affecting the semantic label. However, it remains under-explored for graphs, aside from a few methods that involve expensive computational costs (see Sec. \ref{previous_work_section}). In this research, we focus on graph-level augmentations. Given a graph $G \in \{G_m : m \in M\}$ in the dataset of $M$ graphs, we formulate the augmented graph $\hat{G}$ satisfying:
 
 \begin{equation}
 \hat{G} \sim q(\hat{G}|G),
 \end{equation}
 
-where $q(\cdot|G)$ represents the augmentation distribution conditioned on the original graph, which is pre-defined and reflects the human prior for data distribution. 
+where $q(\cdot|G)$ represents the augmentation distribution conditioned on the original graph, which is pre-defined and reflects the human prior for data distribution.
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. Specifically, our method consists of three main components: [component 1], [component 2], and [component 3]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge]. Specifically, our method consists of three main components: [component 1], [component 2], and [component 3].
 
 \subsubsection{Challenges and Considerations}
 

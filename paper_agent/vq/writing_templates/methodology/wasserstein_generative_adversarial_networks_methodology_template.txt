@@ -9,11 +9,11 @@ To tackle [challenge], our method consists of three main components: [component 
 [Mathematical formulation of the key components]
 \end{equation}
 
-where [detailed explanation of each term in the equations]. 
+where [detailed explanation of each term in the equations].
 
 Furthermore, we compare our proposed method with existing approaches. In particular, [Several sentences comparing the proposed method with existing approaches].
 
-The detailed workflow of the module is described as follows: [A paragraph describing the detailed workflow of the module]. 
+The detailed workflow of the module is described as follows: [A paragraph describing the detailed workflow of the module].
 
 We present Algorithm [Algorithm Number], our proposed algorithm. The key requirements are:
 
@@ -38,7 +38,7 @@ Let [theorem statement].
 
 The proof can be found in [reference to appendix/section].
 
-Now we delve into the question of [specific question or problem]. To approximate this, we suggest [brief description of method or solution]. The compactness of [parameter space] implies that [explanation of implications]. 
+Now we delve into the question of [specific question or problem]. To approximate this, we suggest [brief description of method or solution]. The compactness of [parameter space] implies that [explanation of implications].
 
 Moreover, we conclude that [justification of method or expected outcomes]. The practical benefits of our new algorithm are outlined in the following section, where we provide an in-depth comparison of its performance and that of [traditional methods/alternative approaches].
 

@@ -12,7 +12,7 @@ Analyze the given research paper and write a detailed technical instruction para
 
 (If the examples above do not apply to the input paper, ignore the examples)
 
-Focus only on the technical methodology and implementation aspects. Exclude background information, literature review, and experimental results. Write in a clear, sequential format that a technical researcher could follow to reproduce the core method. 
+Focus only on the technical methodology and implementation aspects. Exclude background information, literature review, and experimental results. Write in a clear, sequential format that a technical researcher could follow to reproduce the core method.
 
 Directly write the instruction without any other words.
 

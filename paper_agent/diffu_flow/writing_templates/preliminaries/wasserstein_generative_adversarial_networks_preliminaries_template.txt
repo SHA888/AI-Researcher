@@ -10,19 +10,19 @@ To tackle [specific challenge], we define several key distances and divergences 
     \[
     \delta (P_r, P_g) = \sup_{A \in \Sigma} |P_r(A) - P_g(A)|
     \]
-    
+
     \item \textbf{Kullback-Leibler (KL) divergence:}
     \[
     KL(P_r \| P_g) = \int \log\left(\frac{P_r(x)}{P_g(x)}\right) P_r(x) d\mu(x)
     \]
     where [description of the assumptions made on the distributions].
-    
+
     \item \textbf{Jensen-Shannon (JS) divergence:}
     \[
     JS(P_r, P_g) = KL(P_r \| P_m) + KL(P_g \| P_m)
     \]
     where $P_m$ is [definition of the mixture distribution].
-    
+
     \item \textbf{Earth-Mover (EM) distance or Wasserstein-1:}
     \[
     W(P_r, P_g) = \inf_{\gamma \in \Pi(P_r, P_g)} \mathbb{E}_{(x,y) \sim \gamma} [\|x - y\|]

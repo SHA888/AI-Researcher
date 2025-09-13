@@ -1,12 +1,11 @@
-import os
-import json
 import asyncio
 import logging
-from tqdm import tqdm
+import os
 import sys
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from benchmark_collection.utils.openai_utils import GPTClient
 from paper_agent.section_composer import SectionComposer, setup_logging
+
 
 class ConclusionComposer(SectionComposer):
     def __init__(self, research_field: str, structure_iterations: int = 2):
@@ -15,9 +14,11 @@ class ConclusionComposer(SectionComposer):
     def read_section_content(self, target_paper: str, section_name: str) -> str:
         """Read content from an existing section file"""
         normalized_title = self.normalize_title(target_paper)
-        section_path = f"{self.research_field}/target_sections/{normalized_title}/{section_name}.tex"
+        section_path = (
+            f"{self.research_field}/target_sections/{normalized_title}/{section_name}.tex"
+        )
         try:
-            with open(section_path, 'r', encoding='utf-8') as f:
+            with open(section_path, "r", encoding="utf-8") as f:
                 return f.read()
         except FileNotFoundError:
             logging.warning(f"Section file {section_path} not found")
@@ -36,12 +37,12 @@ Content to analyze:
 Guidelines for structure generation:
 1. STRUCTURE FORMAT:
    \section{{Conclusion}}
-   
+
    % [Summary of Work]
    % - Brief recap of problem and motivation
    % - Key technical innovations
    % - Main experimental findings
-   
+
    % [Future Work]
    % - Potential improvements
    % - New research directions
@@ -58,7 +59,7 @@ Output only the LaTeX structure with comments as specified above."""
         return await self.gpt_client.chat(prompt=prompt)
 
     async def detailize_subsection(self, structure, current_text, content):
-        writing_template = self.get_random_template()
+        self.get_random_template()
         prompt = f"""Write a comprehensive conclusion section based on the provided structure and content.
 
 CURRENT CONCLUSION VERSION (if any):
@@ -142,12 +143,12 @@ Output the revised conclusion section incorporating all these improvements. Repl
         introduction = self.read_section_content(target_paper, "introduction")
         methodology = self.read_section_content(target_paper, "methodology")
         experiments = self.read_section_content(target_paper, "experiments")
-        content_bundle = introduction + '\n\n' + methodology + '\n\n' + experiments
+        content_bundle = introduction + "\n\n" + methodology + "\n\n" + experiments
 
         # Step 1: Iterative structure generation
         structure = ""
         structure_checkpoint = self.load_checkpoint(target_paper, "structure")
-        
+
         if structure_checkpoint:
             structure = structure_checkpoint["final_structure"]
             logging.info("Loaded structure from checkpoint")
@@ -155,12 +156,11 @@ Output the revised conclusion section incorporating all these improvements. Repl
             for iteration in range(self.structure_iterations):
                 logging.info(f"Structure iteration {iteration + 1}/{self.structure_iterations}")
                 structure = await self.generate_or_revise_structure(
-                    content_bundle, structure, iteration + 1)
+                    content_bundle, structure, iteration + 1
+                )
                 self.write_temp_log(structure, f"iteration_{iteration+1}_final")
-            
-            self.save_checkpoint(target_paper, "structure", {
-                "final_structure": structure
-            })
+
+            self.save_checkpoint(target_paper, "structure", {"final_structure": structure})
 
         # Step 2: Write complete conclusion
         final_conclusion = await self.detailize_subsection(structure, "", content_bundle)
@@ -170,25 +170,27 @@ Output the revised conclusion section incorporating all these improvements. Repl
         output_dir = f"{self.research_field}/target_sections/{self.normalize_title(target_paper)}"
         os.makedirs(output_dir, exist_ok=True)
         output_path = os.path.join(output_dir, "conclusion.tex")
-        
-        with open(output_path, 'w', encoding='utf-8') as f:
+
+        with open(output_path, "w", encoding="utf-8") as f:
             f.write(final_conclusion)
         logging.info(f"Saved final conclusion to {output_path}")
 
         return final_conclusion
 
+
 async def conclusion_composing(research_field: str, instance_id: str):
     setup_logging(research_field)
-    
+
     composer = ConclusionComposer(research_field=research_field, structure_iterations=2)
     # target_paper = 'Heterogeneous Graph Contrastive Learning for Recommendation'
-    
+
     try:
-        conclusion = await composer.compose_section(instance_id)
+        await composer.compose_section(instance_id)
         logging.info("Conclusion composition completed")
     except Exception as e:
         logging.error(f"Error during conclusion composition: {str(e)}")
         raise
+
 
 if __name__ == "__main__":
     asyncio.run(conclusion_composing())

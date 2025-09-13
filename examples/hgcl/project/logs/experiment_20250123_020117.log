@@ -1,4 +1,4 @@
-2025-01-23 02:01:17,158 - INFO - 
+2025-01-23 02:01:17,158 - INFO -
 Testing temperature: 0.05
 2025-01-23 02:01:17,158 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.05, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 02:01:17,225 - INFO - Using device: cuda:1
@@ -69,7 +69,7 @@ Testing temperature: 0.05
 2025-01-23 02:52:30,425 - INFO - Epoch 50 Eval - Recall@20: 0.0506, NDCG@20: 0.0393
 2025-01-23 02:52:40,094 - INFO - Final Results - Recall@20: 0.0506, NDCG@20: 0.0393
 2025-01-23 02:52:40,094 - INFO - Best Results - Recall@20: 0.0513, NDCG@20: 0.0404
-2025-01-23 02:52:40,538 - INFO - 
+2025-01-23 02:52:40,538 - INFO -
 Testing temperature: 0.1
 2025-01-23 02:52:40,538 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 02:52:40,538 - INFO - Using device: cuda:1
@@ -137,7 +137,7 @@ Testing temperature: 0.1
 2025-01-23 03:43:56,909 - INFO - Epoch 50 Eval - Recall@20: 0.0445, NDCG@20: 0.0344
 2025-01-23 03:44:06,550 - INFO - Final Results - Recall@20: 0.0445, NDCG@20: 0.0344
 2025-01-23 03:44:06,550 - INFO - Best Results - Recall@20: 0.0474, NDCG@20: 0.0379
-2025-01-23 03:44:07,000 - INFO - 
+2025-01-23 03:44:07,000 - INFO -
 Testing temperature: 0.2
 2025-01-23 03:44:07,001 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.2, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 03:44:07,001 - INFO - Using device: cuda:1
@@ -209,7 +209,7 @@ Testing temperature: 0.2
 2025-01-23 04:35:22,970 - INFO - Epoch 50 Eval - Recall@20: 0.0551, NDCG@20: 0.0434
 2025-01-23 04:35:32,739 - INFO - Final Results - Recall@20: 0.0551, NDCG@20: 0.0434
 2025-01-23 04:35:32,739 - INFO - Best Results - Recall@20: 0.0557, NDCG@20: 0.0438
-2025-01-23 04:35:33,187 - INFO - 
+2025-01-23 04:35:33,187 - INFO -
 Testing temperature: 0.5
 2025-01-23 04:35:33,188 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.5, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 04:35:33,188 - INFO - Using device: cuda:1
@@ -282,7 +282,7 @@ Testing temperature: 0.5
 2025-01-23 05:26:48,452 - INFO - New best performance - Recall@20: 0.0578, NDCG@20: 0.0461
 2025-01-23 05:26:57,969 - INFO - Final Results - Recall@20: 0.0578, NDCG@20: 0.0461
 2025-01-23 05:26:57,970 - INFO - Best Results - Recall@20: 0.0578, NDCG@20: 0.0461
-2025-01-23 05:26:58,415 - INFO - 
+2025-01-23 05:26:58,415 - INFO -
 Testing embedding dimension: 32
 2025-01-23 05:26:58,416 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 32, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 05:26:58,416 - INFO - Using device: cuda:1
@@ -350,7 +350,7 @@ Testing embedding dimension: 32
 2025-01-23 06:10:05,212 - INFO - Epoch 50 Eval - Recall@20: 0.0355, NDCG@20: 0.0281
 2025-01-23 06:10:14,669 - INFO - Final Results - Recall@20: 0.0355, NDCG@20: 0.0281
 2025-01-23 06:10:14,669 - INFO - Best Results - Recall@20: 0.0462, NDCG@20: 0.0376
-2025-01-23 06:10:15,083 - INFO - 
+2025-01-23 06:10:15,083 - INFO -
 Testing embedding dimension: 64
 2025-01-23 06:10:15,084 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 06:10:15,084 - INFO - Using device: cuda:1
@@ -419,13 +419,13 @@ Testing embedding dimension: 64
 2025-01-23 07:01:39,997 - INFO - Epoch 50 Eval - Recall@20: 0.0445, NDCG@20: 0.0341
 2025-01-23 07:01:49,818 - INFO - Final Results - Recall@20: 0.0445, NDCG@20: 0.0341
 2025-01-23 07:01:49,818 - INFO - Best Results - Recall@20: 0.0461, NDCG@20: 0.0358
-2025-01-23 07:01:50,263 - INFO - 
+2025-01-23 07:01:50,263 - INFO -
 Testing embedding dimension: 128
 2025-01-23 07:01:50,264 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 128, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 07:01:50,264 - INFO - Using device: cuda:1
 2025-01-23 07:01:50,272 - INFO - Dataset loaded: 29601 users, 24734 items
 2025-01-23 07:02:00,442 - ERROR - Error during experiment: CUDA out of memory. Tried to allocate 3.02 GiB. GPU  has a total capacity of 23.69 GiB of which 1.79 GiB is free. Process 1047830 has 21.89 GiB memory in use. Of the allocated memory 21.46 GiB is allocated by PyTorch, and 124.41 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
-2025-01-23 07:02:01,057 - INFO - 
+2025-01-23 07:02:01,057 - INFO -
 Testing number of layers: 1
 2025-01-23 07:02:01,057 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 64, 'n_layers': 1, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 07:02:01,057 - INFO - Using device: cuda:1
@@ -501,7 +501,7 @@ Testing number of layers: 1
 2025-01-23 07:32:05,602 - INFO - Epoch 50 Eval - Recall@20: 0.0521, NDCG@20: 0.0415
 2025-01-23 07:32:14,718 - INFO - Final Results - Recall@20: 0.0521, NDCG@20: 0.0415
 2025-01-23 07:32:14,718 - INFO - Best Results - Recall@20: 0.0522, NDCG@20: 0.0418
-2025-01-23 07:32:15,271 - INFO - 
+2025-01-23 07:32:15,271 - INFO -
 Testing number of layers: 2
 2025-01-23 07:32:15,271 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 64, 'n_layers': 2, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 07:32:15,271 - INFO - Using device: cuda:1
@@ -573,7 +573,7 @@ Testing number of layers: 2
 2025-01-23 08:23:33,709 - INFO - Epoch 50 Eval - Recall@20: 0.0440, NDCG@20: 0.0336
 2025-01-23 08:23:43,520 - INFO - Final Results - Recall@20: 0.0440, NDCG@20: 0.0336
 2025-01-23 08:23:43,520 - INFO - Best Results - Recall@20: 0.0457, NDCG@20: 0.0352
-2025-01-23 08:23:43,981 - INFO - 
+2025-01-23 08:23:43,981 - INFO -
 Testing number of layers: 3
 2025-01-23 08:23:43,981 - INFO - Starting experiment with config: {'batch_size': 512, 'embed_dim': 64, 'n_layers': 3, 'learning_rate': 0.001, 'num_epochs': 50, 'temperature': 0.1, 'lambda_coef': 0.5, 'eval_frequency': 5, 'early_stop_patience': 10}
 2025-01-23 08:23:43,981 - INFO - Using device: cuda:1
@@ -643,19 +643,19 @@ Testing number of layers: 3
 2025-01-23 09:36:01,971 - INFO - Epoch 50 Eval - Recall@20: 0.0272, NDCG@20: 0.0230
 2025-01-23 09:36:10,632 - INFO - Final Results - Recall@20: 0.0272, NDCG@20: 0.0230
 2025-01-23 09:36:10,632 - INFO - Best Results - Recall@20: 0.0275, NDCG@20: 0.0231
-2025-01-23 09:36:11,421 - INFO - 
+2025-01-23 09:36:11,421 - INFO -
 Sensitivity Analysis Results Summary:
-2025-01-23 09:36:11,421 - INFO - 
+2025-01-23 09:36:11,421 - INFO -
 Temperature Sensitivity Results:
 2025-01-23 09:36:11,421 - INFO - Temperature 0.05: Recall@20=0.0513, NDCG@20=0.0404
 2025-01-23 09:36:11,421 - INFO - Temperature 0.1: Recall@20=0.0474, NDCG@20=0.0379
 2025-01-23 09:36:11,421 - INFO - Temperature 0.2: Recall@20=0.0557, NDCG@20=0.0438
 2025-01-23 09:36:11,421 - INFO - Temperature 0.5: Recall@20=0.0578, NDCG@20=0.0461
-2025-01-23 09:36:11,421 - INFO - 
+2025-01-23 09:36:11,421 - INFO -
 Embedding Dimension Sensitivity Results:
 2025-01-23 09:36:11,421 - INFO - Dimension 32: Recall@20=0.0462, NDCG@20=0.0376
 2025-01-23 09:36:11,421 - INFO - Dimension 64: Recall@20=0.0461, NDCG@20=0.0358
-2025-01-23 09:36:11,421 - INFO - 
+2025-01-23 09:36:11,421 - INFO -
 Layer Number Sensitivity Results:
 2025-01-23 09:36:11,421 - INFO - Layers 1: Recall@20=0.0522, NDCG@20=0.0418
 2025-01-23 09:36:11,421 - INFO - Layers 2: Recall@20=0.0457, NDCG@20=0.0352

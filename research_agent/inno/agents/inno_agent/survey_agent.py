@@ -1,26 +1,32 @@
-
-from research_agent.inno.tools.file_surfer_tool import with_env as with_env_file
-from research_agent.inno.tools.file_surfer_tool import (
-    open_local_file,
-    page_up_markdown,
-    page_down_markdown,
-    find_on_page_ctrl_f,
-    find_next,
-    visualizer,
-    question_answer_on_whole_page
-)
-from research_agent.inno.environment.markdown_browser import RequestsMarkdownBrowser
-from research_agent.inno.environment.docker_env import with_env as with_env_docker
-from research_agent.inno.environment.docker_env import DockerConfig, DockerEnv
-from research_agent.inno.types import Agent
 from inspect import signature
-from research_agent.inno.types import Result
-from research_agent.inno.tools.terminal_tools import gen_code_tree_structure, read_file, terminal_page_down, terminal_page_up, terminal_page_to
 from typing import List
+
+from research_agent.inno.environment.docker_env import DockerEnv
+from research_agent.inno.environment.docker_env import with_env as with_env_docker
+from research_agent.inno.environment.markdown_browser import RequestsMarkdownBrowser
+from research_agent.inno.tools.file_surfer_tool import (
+    find_next,
+    find_on_page_ctrl_f,
+    open_local_file,
+    page_down_markdown,
+    page_up_markdown,
+    question_answer_on_whole_page,
+)
+from research_agent.inno.tools.file_surfer_tool import with_env as with_env_file
+from research_agent.inno.tools.terminal_tools import (
+    gen_code_tree_structure,
+    read_file,
+    terminal_page_down,
+    terminal_page_to,
+    terminal_page_up,
+)
+from research_agent.inno.types import Agent, Result
+
 
 def get_paper_survey_agent(model: str, **kwargs):
     file_env: RequestsMarkdownBrowser = kwargs.get("file_env", None)
     assert file_env is not None, "file_env is required"
+
     def instructions(context_variables):
         return f"""\
 You are a `Paper Survey Agent` specialized in analyzing academic papers. Your task is to extract and analyze specific academic concepts from research papers located in `{file_env.docker_workplace}/papers/`.
@@ -57,6 +63,7 @@ REQUIREMENTS:
 
 Remember: Your analysis forms the theoretical foundation for the subsequent code implementation phase.
 """
+
     tool_list = [
         open_local_file,
         page_up_markdown,
@@ -82,6 +89,7 @@ Remember: Your analysis forms the theoretical foundation for the subsequent code
 def get_code_survey_agent(model: str, **kwargs):
     code_env: DockerEnv = kwargs.get("code_env", None)
     assert code_env is not None, "code_env is required"
+
     def instructions(context_variables):
         return f"""\
 You are a `Code Survey Agent` specialized in analyzing code implementations of academic concepts. Your task is to examine codebases and match theoretical concepts with their practical implementations.
@@ -120,12 +128,13 @@ REQUIREMENTS:
 
 Remember: Your analysis bridges the gap between theoretical concepts and practical implementation.
 """
+
     tool_list = [
         gen_code_tree_structure,
         read_file,
         terminal_page_down,
         terminal_page_up,
-        terminal_page_to
+        terminal_page_to,
     ]
     tool_list = [
         with_env_docker(code_env)(tool) if "env" in signature(tool).parameters else tool
@@ -145,7 +154,12 @@ def case_resolved(context_variables: dict):
     """
     After you have taken enough notes for the innovation, you should use this function to merge the notes for the further innovation.
     """
-    merge_notes = "\n".join([f"## {note['definition']}\n* The math formula is:\n{note['math_formula']}\n* * The code implementation is:\n{note['code_implementation']}\n* Reference papers are:\n{note['reference_papers']}\n* Reference codebases are:\n{note['reference_codebases']}" for note in context_variables["notes"]])
+    merge_notes = "\n".join(
+        [
+            f"## {note['definition']}\n* The math formula is:\n{note['math_formula']}\n* * The code implementation is:\n{note['code_implementation']}\n* Reference papers are:\n{note['reference_papers']}\n* Reference codebases are:\n{note['reference_codebases']}"
+            for note in context_variables["notes"]
+        ]
+    )
     ret_val = f"""\
 I have merged the notes for the innovation.
 The notes are as follows:
@@ -156,6 +170,7 @@ The notes are as follows:
         context_variables=context_variables,
     )
 
+
 def get_survey_agent(model: str = "gpt-4o", **kwargs):
     file_env: RequestsMarkdownBrowser = kwargs.get("file_env", None)
     assert file_env is not None, "file_env is required"
@@ -163,7 +178,7 @@ def get_survey_agent(model: str = "gpt-4o", **kwargs):
     assert code_env is not None, "code_env is required"
 
     def instructions(context_variables):
-        return f"""\
+        return """\
 1. INPUT ANALYSIS
 - You will receive a list of research papers and their corresponding codebases
 - You will also receive specific innovative ideas that need to be implemented
@@ -202,6 +217,7 @@ IMPORTANT NOTES:
 
 Your goal is to create a complete knowledge base that bridges theoretical concepts with practical implementations for the proposed innovation.
 """
+
     paper_survey_agent = get_paper_survey_agent(model, file_env=file_env)
     code_survey_agent = get_code_survey_agent(model, code_env=code_env)
     survey_agent = Agent(
@@ -212,12 +228,17 @@ Your goal is to create a complete knowledge base that bridges theoretical concep
         parallel_tool_calls=False,
     )
 
-    def transfer_back_to_survey_agent(academic_definition: str, code_implementation: str, reference_codebases: List[str], context_variables: dict):
+    def transfer_back_to_survey_agent(
+        academic_definition: str,
+        code_implementation: str,
+        reference_codebases: List[str],
+        context_variables: dict,
+    ):
         """
         After you have carefully read the related paper, understood the academic definition, especially the math formula, and reviewed the corresponding code implementation, you should take notes about the specific academic definition, math formula, and code implementation for the further innovation.
         Args:
             academic_definition: the academic definition to be explored. It should be a single, atomic academic concept with a few words.
-            code_implementation: the code implementation of the academic definition. [IMPORTANT] It should be as complete as possible and it should be the real code. 
+            code_implementation: the code implementation of the academic definition. [IMPORTANT] It should be as complete as possible and it should be the real code.
             reference_codebases: the list of reference codebases. If you don't have reference codebases, you can set it to `None`.
         """
         # context_variables["notes"] = {
@@ -249,9 +270,12 @@ Your goal is to create a complete knowledge base that bridges theoretical concep
             context_variables=context_variables,
             agent=survey_agent,
         )
-    def transfer_to_paper_survey_agent(academic_definition: str, context_variables: dict):
+
+    def transfer_to_paper_survey_agent(
+        academic_definition: str, context_variables: dict
+    ):
         """
-        You should pass a specific academic definition to the `Paper Survey Agent` and `Code Survey Agent` to let them find the corresponding math formula and code implementation. 
+        You should pass a specific academic definition to the `Paper Survey Agent` and `Code Survey Agent` to let them find the corresponding math formula and code implementation.
         [IMPORTANT] You can use this function only after you have use the provided tools to actually and carefully read and analyze the codebases. DONNOT use this function before you have read the codebases.
         Args:
             academic_definition: the academic definition to be explored. It should be a single, atomic academic concept with a few words.
@@ -265,13 +289,19 @@ You should explore the papers and extract the math formula for the academic defi
             agent=paper_survey_agent,
             context_variables=context_variables,
         )
-    def transfer_to_code_survey_agent(academic_definition: str, math_formula: str, reference_papers: List[str], context_variables: dict):
+
+    def transfer_to_code_survey_agent(
+        academic_definition: str,
+        math_formula: str,
+        reference_papers: List[str],
+        context_variables: dict,
+    ):
         """
-        You should pass a specific academic definition and math formula to the `Code Survey Agent` to let it find the corresponding code implementation. 
+        You should pass a specific academic definition and math formula to the `Code Survey Agent` to let it find the corresponding code implementation.
         [IMPORTANT] You can use this function only after you have use the provided tools to actually and carefully read and analyze the papers. DONNOT use this function before you have read the papers.
         Args:
             academic_definition: the academic definition to be implemented. It should be a single, atomic academic concept with a few words.
-            math_formula: the full math formula to be implemented. [IMPORTANT] It should be as complete as possible and it should be the real math formula. 
+            math_formula: the full math formula to be implemented. [IMPORTANT] It should be as complete as possible and it should be the real math formula.
             reference_papers: the list of reference papers. If you don't have reference papers, you can set it to `None`.
         """
         ret_val = f"""\
@@ -284,6 +314,7 @@ You should explore the codebases and extract the code implementation for the aca
             agent=code_survey_agent,
             context_variables=context_variables,
         )
+
     survey_agent.functions = [transfer_to_paper_survey_agent, case_resolved]
     paper_survey_agent.functions.append(transfer_to_code_survey_agent)
     code_survey_agent.functions.append(transfer_back_to_survey_agent)

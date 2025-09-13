@@ -11,10 +11,10 @@ These advancements suggest that [describe insights from prior research]. However
 Despite the progress, [identify key limitations of existing methods]. This is likely due to [explain the reasons for the limitations]. For instance, [give a comparative accuracy or performance metric]. [Mention any previous efforts that show improvements or alternatives] indicate that [summarize the importance of exploring a new approach].
 
 \subsection{Purpose and Contribution}
-In this work, we [state the main purpose of the research]. We propose [module name] to address [challenge]. 
+In this work, we [state the main purpose of the research]. We propose [module name] to address [challenge].
 
 \subsection{Method Overview}
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. Formally, we define [concept] as follows: 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. Formally, we define [concept] as follows:
 \begin{equation}
     [Mathematical formulation]
 \end{equation}

@@ -5,7 +5,7 @@
 Inspired by [previous work/technique], we propose [module name] to address [challenge]. In this section, we introduce the concept of [key concept] and highlight [key aspects].
 
 \subsection{[Relevant Graph Structure]}
-In a [context], we typically have [description of data]. Here we represent [data type] as a [graph name], which is defined as [formal definition]. 
+In a [context], we typically have [description of data]. Here we represent [data type] as a [graph name], which is defined as [formal definition].
 
 \subsubsection{[First Graph Component]}
 Formally, we define [first graph concept] as follows:
@@ -28,7 +28,7 @@ We now formulate the [specific task] to be addressed in this paper:
 \end{itemize}
 
 \subsection{[Key Concept of Connectivity]}
-Exploiting [key concept] is crucial to [ultimate goal]. Formally, we define [connectivity definition] as a [type of relation]. Specifically, [multiple sentences explaining the relevance of connectivity in context]. 
+Exploiting [key concept] is crucial to [ultimate goal]. Formally, we define [connectivity definition] as a [type of relation]. Specifically, [multiple sentences explaining the relevance of connectivity in context].
 
 \subsection{Comparison with Existing Approaches}
 Furthermore, [several sentences comparing the proposed method with existing approaches]. This highlights that [specific gaps or limitations of the existing methods]. We therefore argue that [proposition regarding the completeness of the proposed method].

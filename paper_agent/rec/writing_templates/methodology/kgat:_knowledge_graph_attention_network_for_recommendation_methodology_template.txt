@@ -21,7 +21,7 @@ Next, we [Introduce the next part of the method]. Specifically, we describe [Ove
 
 - **[Activity/Component 2]:** [Description of the second activity, including necessary equations or details].
 
-To facilitate [Objective], we apply [Method/Technique]. Furthermore, we implement [Further details on integration or methodological approaches]. 
+To facilitate [Objective], we apply [Method/Technique]. Furthermore, we implement [Further details on integration or methodological approaches].
 
 In conclusion, our approach [Brief summary of what has been accomplished in this subsection].
 
@@ -43,7 +43,7 @@ To optimize [Objective], we propose to use [Loss Function]. Specifically, we con
 \text{[Objective Function]}
 \end{equation}
 
-where [Explanation of parameters involved]. 
+where [Explanation of parameters involved].
 
 \subsubsection{Training}
 

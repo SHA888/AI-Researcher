@@ -25,7 +25,7 @@ We compare [Module Name] with the state-of-the-art methods, covering [method cat
 - 4. [Baseline method 4]
 
 \subsubsection{Parameter Settings}
-We implement our [Module Name] model in [framework], and have released our implementations ([code, datasets, parameter settings, and training logs]) to facilitate reproducibility. For a fair comparison, we fix [parameter settings]. A grid search is conducted to confirm the optimal settings for each method; specifically, [parameter tuning details]. 
+We implement our [Module Name] model in [framework], and have released our implementations ([code, datasets, parameter settings, and training logs]) to facilitate reproducibility. For a fair comparison, we fix [parameter settings]. A grid search is conducted to confirm the optimal settings for each method; specifically, [parameter tuning details].
 
 The detailed settings of [Module Name] are provided in Appendix [A.X]. We observe that using [equations] have similar trends and performance; hence, we report the results of [specific model]. Without specification, we fix [default parameters].
 

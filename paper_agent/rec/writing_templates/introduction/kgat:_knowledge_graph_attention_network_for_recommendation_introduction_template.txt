@@ -5,11 +5,11 @@ The prevalence of [topic/field] has positioned it as a critical component in [ap
 
 To overcome these limitations, a common approach involves [describe a common methodology or technique] to [goal]. This framework has been effectively employed in [applications/industries] \cite{ref3, ref4}, with notable examples including [specific models or techniques].
 
-Despite their advancements, a significant drawback remains: [describe the deficiency of current models]. This issue is compounded as [discuss how interactions or elements fail to interconnect], necessitating a method that can [explain the need for an integrated approach]. 
+Despite their advancements, a significant drawback remains: [describe the deficiency of current models]. This issue is compounded as [discuss how interactions or elements fail to interconnect], necessitating a method that can [explain the need for an integrated approach].
 
 To address the limitations of [specific technique], we propose [module name] which leverages [conceptual framework or structure] to enhance [goal]. As illustrated in [refer to figure or diagram], the key to successful [application] lies in [discuss the importance of high-order or interconnected relationships].
 
-We identify several challenges that this approach presents: 
+We identify several challenges that this approach presents:
 \begin{enumerate}
     \item [Challenge 1: explain the specific obstacle]
     \item [Challenge 2: relate to computational or modeling issues]

@@ -1,8 +1,8 @@
 \section{Preliminaries}
 
-Inspired by [previous work/technique], we propose [module name] to address [challenge]. 
+Inspired by [previous work/technique], we propose [module name] to address [challenge].
 
-To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3]. 
+To tackle [challenge], our method consists of three main components: [component 1], [component 2], and [component 3].
 
 Furthermore, we provide motivation for our approach outlined through the following points:
 \begin{itemize}
@@ -15,7 +15,7 @@ The workflow of our proposed method is outlined as follows:
 [A paragraph describing the detailed workflow of the module]
 
 \subsection{Comparison with Existing Approaches}
-Specifically, we compare our method with existing approaches. 
+Specifically, we compare our method with existing approaches.
 [Several sentences comparing the proposed method with existing approaches]
 
 \subsection{Mathematical Formulation}
@@ -27,6 +27,6 @@ Formally, we define [concept] as follows:
 To clarify, we elaborate on the terms in our formulation:
 \begin{itemize}
     \item [Detailed explanation of each term in the equations]
-\end{itemize} 
+\end{itemize}
 
 To this end, we conclude this section by summarizing the main contributions of our preliminary definitions and insights. This lays the groundwork for subsequent sections where we will introduce [next topic or focus area].
