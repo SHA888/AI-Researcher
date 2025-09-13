@@ -17,18 +17,18 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 - [x] Create `backend/main.py` to bootstrap FastAPI app on port 8001.
 - [ ] Add CORS for `http://127.0.0.1:5173` and later production domains.
 - [ ] Endpoints:
-  - [ ] `GET /api/env`: Return filtered environment variables (API-related and task configs).
-  - [ ] `PUT /api/env`: Write updates to `.env` via python-dotenv, then `load_dotenv`.
-  - [ ] `POST /api/run`: Body `{ question, reference, mode }`. Launch run using `main_ai_researcher()` in background; return `{ job_id }`.
-  - [ ] `GET /api/run/{job_id}/status`: Return minimal status (`running|done|error`) and metadata.
-  - [ ] `GET /api/logs/stream`: SSE endpoint; tail `global_state.LOG_PATH` and push incremental lines.
-- [ ] Add `backend/requirements.txt`: `fastapi`, `uvicorn`, `python-dotenv`, `pydantic`, `sse-starlette`.
+  - [x] `GET /api/env`: Return filtered environment variables (API-related and task configs).
+  - [x] `PUT /api/env`: Write updates to `.env` via python-dotenv, then `load_dotenv`.
+  - [x] `POST /api/run`: Body `{ question, reference, mode }`. Launch run using `main_ai_researcher()` in background; return `{ job_id }`.
+  - [x] `GET /api/run/{job_id}/status`: Return minimal status (`running|done|error`) and metadata.
+  - [x] `GET /api/logs/stream`: SSE endpoint; tail `global_state.LOG_PATH` and push incremental lines.
+- [x] Add `backend/requirements.txt`: `fastapi`, `uvicorn`, `python-dotenv`, `pydantic`, `sse-starlette`.
 - [ ] Decide where to spawn the job: thread/process. Implement safe cancellation hooks later (optional).
 
 ### Integration with existing code
-- [ ] Import and call `main_ai_researcher.main_ai_researcher()` with `{question, reference, mode}`.
-- [ ] Ensure `.env`-driven values are honored (CATEGORY, INSTANCE_ID, etc.).
-- [ ] Update or reuse log path (`global_state.LOG_PATH`) so SSE can stream.
+- [x] Import and call `main_ai_researcher.main_ai_researcher()` with `{question, reference, mode}`.
+- [x] Ensure `.env`-driven values are honored (CATEGORY, INSTANCE_ID, etc.).
+- [x] Update or reuse log path (`global_state.LOG_PATH`) so SSE can stream.
 
 ---
 
