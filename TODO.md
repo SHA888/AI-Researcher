@@ -5,7 +5,7 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 ## High-Level Plan
 
 - [ ] Replace Gradio-based UI with a modern React + Vite + Tailwind frontend in `webui/`.
-- [ ] Introduce a small FastAPI backend in `backend/` to expose REST endpoints used by the UI.
+- [x] Introduce a small FastAPI backend in `backend/` to expose REST endpoints used by the UI.
 - [ ] Keep current Python orchestration intact (`main_ai_researcher.py`, `web_ai_researcher.py`) but route new UI actions via REST.
 - [ ] Support Dark/Light theme switching (Tailwind class strategy) and High Contrast accessibility.
 - [ ] Stream logs to the UI via SSE.
@@ -15,7 +15,7 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 ## Backend (FastAPI) — `backend/`
 
 - [x] Create `backend/main.py` to bootstrap FastAPI app on port 8001.
-- [ ] Add CORS for `http://127.0.0.1:5173` and later production domains.
+- [x] Add CORS for `http://127.0.0.1:5173` and later production domains.
 - [ ] Endpoints:
   - [x] `GET /api/env`: Return filtered environment variables (API-related and task configs).
   - [x] `PUT /api/env`: Write updates to `.env` via python-dotenv, then `load_dotenv`.
@@ -23,7 +23,7 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
   - [x] `GET /api/run/{job_id}/status`: Return minimal status (`running|done|error`) and metadata.
   - [x] `GET /api/logs/stream`: SSE endpoint; tail `global_state.LOG_PATH` and push incremental lines.
 - [x] Add `backend/requirements.txt`: `fastapi`, `uvicorn`, `python-dotenv`, `pydantic`, `sse-starlette`.
-- [ ] Decide where to spawn the job: thread/process. Implement safe cancellation hooks later (optional).
+- [x] Decide where to spawn the job: thread/process. Implement safe cancellation hooks later (optional).
 
 ### Integration with existing code
 - [x] Import and call `main_ai_researcher.main_ai_researcher()` with `{question, reference, mode}`.
@@ -40,31 +40,31 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 - [x] Install client libs: `@tanstack/react-query`, `axios`.
 
 ### App structure
-- [ ] `src/App.tsx` with router and layout.
+- [x] `src/App.tsx` with router and layout.
 - [ ] Pages:
-  - [ ] `src/pages/Run.tsx`: Inputs (Prompt, Reference, Mode), Submit, live log panel.
-  - [ ] `src/pages/Env.tsx`: Env var table (filtered), edit/save, refresh.
+  - [x] `src/pages/Run.tsx`: Inputs (Prompt, Reference, Mode), Submit, live log panel.
+  - [x] `src/pages/Env.tsx`: Env var table (filtered), edit/save, refresh.
   - [ ] `src/pages/Logs.tsx`: Dedicated logs with search/download.
-  - [ ] `src/pages/Home.tsx`: Landing with quick actions.
+  - [x] `src/pages/Home.tsx`: Landing with quick actions.
 - [ ] Components:
-  - [ ] `src/components/ThemeToggle.tsx`: toggles `class="dark"` on `html`; persist in localStorage.
-  - [ ] `src/components/LogStream.tsx`: SSE client using `EventSource` to `/api/logs/stream`.
-  - [ ] `src/components/EnvTable.tsx`: Editable table for env vars.
+  - [x] `src/components/ThemeToggle.tsx`: toggles `class="dark"` on `html`; persist in localStorage.
+  - [x] `src/components/LogStream.tsx`: SSE client using `EventSource` to `/api/logs/stream`.
+  - [x] `src/components/EnvTable.tsx`: Editable table for env vars.
 - [ ] API client:
-  - [ ] `src/api/client.ts` (`axios` with baseURL `/api`).
-  - [ ] `src/api/env.ts` (`getEnv`, `saveEnv`).
-  - [ ] `src/api/run.ts` (`startRun`, `getRunStatus`).
+  - [x] `src/api/client.ts` (`axios` with baseURL `/api`).
+  - [x] `src/api/env.ts` (`getEnv`, `saveEnv`).
+  - [x] `src/api/run.ts` (`startRun`, `getRunStatus`).
 
 ### Dev experience
-- [ ] `vite.config.ts`: proxy `'/api'` → `http://127.0.0.1:8001`.
-- [ ] NPM scripts: `dev`, `build`, `preview`.
+- [x] `vite.config.ts`: proxy `'/api'` → `http://127.0.0.1:8001`.
+- [x] NPM scripts: `dev`, `build`, `preview`.
 - [ ] README: how to run backend (`uvicorn`) + frontend (`npm run dev`).
 
 ---
 
 ## Theming & Accessibility
 
-- [ ] Tailwind dark/light using `html.classList.toggle('dark')` and store in localStorage.
+- [x] Tailwind dark/light using `html.classList.toggle('dark')` and store in localStorage.
 - [ ] Add High Contrast mode: CSS variables or Tailwind plugin; toggle independent of theme.
 - [ ] Ensure strong color contrast on inputs, tables, buttons; test with dark and light.
 
@@ -72,7 +72,7 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 
 ## Logs & Observability
 
-- [ ] Implement SSE in backend to stream log lines.
+- [x] Implement SSE in backend to stream log lines.
 - [ ] Frontend `LogStream` component: auto-scroll, pause/resume, copy/download.
 - [ ] Ensure log retention/rotation strategy (optional).
 
@@ -85,6 +85,26 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 - [ ] Optional: Combine into a single container that runs FastAPI and serves `webui/dist`.
 
 ---
+
+## Next Up (Prioritized)
+
+- [ ] Add routing and layout to `webui/src/App.tsx` using `react-router-dom` with pages: Home, Run, Env, Logs.
+- [ ] Create API client:
+  - [ ] `src/api/client.ts` (axios base with `/api`).
+  - [ ] `src/api/env.ts` (`getEnv`, `saveEnv`).
+  - [ ] `src/api/run.ts` (`startRun`, `getRunStatus`).
+- [ ] Build components:
+  - [ ] `src/components/ThemeToggle.tsx` (persist theme to localStorage).
+  - [ ] `src/components/LogStream.tsx` (SSE to `/api/logs/stream`).
+  - [ ] `src/components/EnvTable.tsx` (editable env vars table).
+- [ ] Implement pages:
+  - [ ] `src/pages/Home.tsx` (landing with quick actions).
+  - [ ] `src/pages/Run.tsx` (prompt/reference/mode form, start run, status, live logs panel).
+  - [ ] `src/pages/Env.tsx` (editable env table with save/refresh).
+  - [ ] `src/pages/Logs.tsx` (dedicated log view with search/download).
+- [ ] Update `README.md` with backend (`uvicorn backend.main:app --reload --port 8001`) and frontend (`npm run dev`) dev instructions.
+- [ ] Add High Contrast mode (CSS variables or Tailwind plugin) with independent toggle.
+- [ ] Add `Dockerfile.webui` and decide serving strategy for `webui/dist` (FastAPI `StaticFiles` vs separate service).
 
 ## Clean-up & Decommission
 
