@@ -1,4 +1,54 @@
-# React + TypeScript + Vite
+# AI-Researcher Web UI (React + Vite + Tailwind)
+
+This is the React/Vite frontend for AI-Researcher. It talks to the FastAPI backend via a dev proxy and provides pages for Home, Run, Env, and Logs.
+
+## Development
+
+1. Install backend dependencies and start FastAPI on port 8001
+
+```bash
+pip install -r backend/requirements.txt
+uvicorn backend.main:app --reload --port 8001
+```
+
+OpenAPI docs are available at http://127.0.0.1:8001/docs
+
+2. Install frontend dependencies and start Vite dev server on port 5173
+
+```bash
+cd webui
+npm install
+npm run dev
+```
+
+The Vite dev server proxies requests from `/api` to `http://127.0.0.1:8001` (see `vite.config.ts`).
+
+## Pages
+
+- Home: quick entry points.
+- Run: start a run via `POST /api/run` and see status and live logs.
+- Env: view/edit environment variables via `GET/PUT /api/env`.
+- Logs: list, search, view streaming logs and download raw files.
+
+## Theming & Accessibility
+
+- Light/Dark theme toggled via the button in the header (Tailwind dark class).
+- High Contrast mode toggle is independent of theme and adds `html.hc` for enhanced contrast.
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+This produces a static bundle in `dist/`. You can serve this via a static server or integrate with FastAPI `StaticFiles` in production.
+
+---
+
+# React + TypeScript + Vite (template notes)
+
+The content below comes from the Vite template for reference.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

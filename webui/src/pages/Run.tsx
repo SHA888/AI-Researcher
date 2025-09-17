@@ -11,7 +11,7 @@ import LogStream from "../components/LogStream";
 export default function Run() {
   const [question, setQuestion] = useState("");
   const [reference, setReference] = useState("");
-  const [mode, setMode] = useState("task1");
+  const [mode, setMode] = useState("Detailed Idea Description");
   const [jobId, setJobId] = useState<string | null>(null);
   const [status, setStatus] = useState<RunStatus | null>(null);
   const timerRef = useRef<number | null>(null);
@@ -79,12 +79,15 @@ export default function Run() {
 
         <div>
           <label className="block text-sm mb-1">Mode</label>
-          <input
-            className="w-48 px-2 py-1 rounded-md border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+          <select
+            className="w-full max-w-md px-2 py-1 rounded-md border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-900"
             value={mode}
             onChange={(e) => setMode(e.target.value)}
-            placeholder="e.g. task1"
-          />
+          >
+            <option>Detailed Idea Description</option>
+            <option>Reference-Based Ideation</option>
+            <option>Paper Generation Agent</option>
+          </select>
         </div>
 
         <div className="flex items-center gap-2">

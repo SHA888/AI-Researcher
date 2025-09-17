@@ -9,7 +9,7 @@ from typing import AsyncGenerator
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from pydantic import BaseModel
 
 # Import project modules
@@ -101,6 +101,11 @@ async def put_env(payload: EnvPayload) -> dict:
     # Also export into process env for immediate effect
     for k, v in payload.values.items():
         os.environ[k] = v
+    # Reload dotenv
+    try:
+        load_dotenv(override=True)
+    except Exception:
+        pass
     return {"ok": True}
 
 
@@ -204,3 +209,36 @@ async def stream_logs(request: Request, path: str = ""):
             yield chunk
 
     return StreamingResponse(event_generator(), media_type="text/event-stream")
+
+
+# ===== Log utilities: list & download =====
+@app.get("/api/logs/list")
+async def list_logs() -> dict:
+    os.makedirs("logs", exist_ok=True)
+    files = []
+    for p in glob.glob("logs/*.log"):
+        try:
+            stat = os.stat(p)
+            files.append(
+                {
+                    "path": p,
+                    "name": os.path.basename(p),
+                    "size": stat.st_size,
+                    "mtime": stat.st_mtime,
+                }
+            )
+        except Exception:
+            continue
+    files.sort(key=lambda x: x["mtime"], reverse=True)
+    return {"files": files}
+
+
+@app.get("/api/logs/download")
+async def download_log(path: str) -> FileResponse:
+    # Security: restrict to logs directory
+    abs_logs = os.path.abspath("logs")
+    abs_path = os.path.abspath(path)
+    if not abs_path.startswith(abs_logs) or not os.path.exists(abs_path):
+        return JSONResponse({"error": "Invalid path"}, status_code=400)
+    filename = os.path.basename(abs_path)
+    return FileResponse(abs_path, filename=filename, media_type="text/plain")

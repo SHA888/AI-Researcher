@@ -8,7 +8,7 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 - [x] Introduce a small FastAPI backend in `backend/` to expose REST endpoints used by the UI.
 - [ ] Keep current Python orchestration intact (`main_ai_researcher.py`, `web_ai_researcher.py`) but route new UI actions via REST.
 - [ ] Support Dark/Light theme switching (Tailwind class strategy) and High Contrast accessibility.
-- [ ] Stream logs to the UI via SSE.
+- [x] Stream logs to the UI via SSE.
 
 ---
 
@@ -41,10 +41,10 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 
 ### App structure
 - [x] `src/App.tsx` with router and layout.
-- [ ] Pages:
+- [x] Pages:
   - [x] `src/pages/Run.tsx`: Inputs (Prompt, Reference, Mode), Submit, live log panel.
   - [x] `src/pages/Env.tsx`: Env var table (filtered), edit/save, refresh.
-  - [ ] `src/pages/Logs.tsx`: Dedicated logs with search/download.
+  - [x] `src/pages/Logs.tsx`: Dedicated logs with search/download.
   - [x] `src/pages/Home.tsx`: Landing with quick actions.
 - [ ] Components:
   - [x] `src/components/ThemeToggle.tsx`: toggles `class="dark"` on `html`; persist in localStorage.
@@ -58,14 +58,14 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 ### Dev experience
 - [x] `vite.config.ts`: proxy `'/api'` → `http://127.0.0.1:8001`.
 - [x] NPM scripts: `dev`, `build`, `preview`.
-- [ ] README: how to run backend (`uvicorn`) + frontend (`npm run dev`).
+- [x] README: how to run backend (`uvicorn`) + frontend (`npm run dev`).
 
 ---
 
 ## Theming & Accessibility
 
 - [x] Tailwind dark/light using `html.classList.toggle('dark')` and store in localStorage.
-- [ ] Add High Contrast mode: CSS variables or Tailwind plugin; toggle independent of theme.
+- [x] Add High Contrast mode: CSS variables or Tailwind plugin; toggle independent of theme.
 - [ ] Ensure strong color contrast on inputs, tables, buttons; test with dark and light.
 
 ---
@@ -73,7 +73,7 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 ## Logs & Observability
 
 - [x] Implement SSE in backend to stream log lines.
-- [ ] Frontend `LogStream` component: auto-scroll, pause/resume, copy/download.
+- [x] Frontend `LogStream` component: auto-scroll, pause/resume, copy/download.
 - [ ] Ensure log retention/rotation strategy (optional).
 
 ---
@@ -88,22 +88,22 @@ This document tracks the explicit tasks to migrate the UI and supporting APIs. W
 
 ## Next Up (Prioritized)
 
-- [ ] Add routing and layout to `webui/src/App.tsx` using `react-router-dom` with pages: Home, Run, Env, Logs.
-- [ ] Create API client:
-  - [ ] `src/api/client.ts` (axios base with `/api`).
-  - [ ] `src/api/env.ts` (`getEnv`, `saveEnv`).
-  - [ ] `src/api/run.ts` (`startRun`, `getRunStatus`).
-- [ ] Build components:
-  - [ ] `src/components/ThemeToggle.tsx` (persist theme to localStorage).
-  - [ ] `src/components/LogStream.tsx` (SSE to `/api/logs/stream`).
-  - [ ] `src/components/EnvTable.tsx` (editable env vars table).
-- [ ] Implement pages:
-  - [ ] `src/pages/Home.tsx` (landing with quick actions).
-  - [ ] `src/pages/Run.tsx` (prompt/reference/mode form, start run, status, live logs panel).
-  - [ ] `src/pages/Env.tsx` (editable env table with save/refresh).
-  - [ ] `src/pages/Logs.tsx` (dedicated log view with search/download).
-- [ ] Update `README.md` with backend (`uvicorn backend.main:app --reload --port 8001`) and frontend (`npm run dev`) dev instructions.
-- [ ] Add High Contrast mode (CSS variables or Tailwind plugin) with independent toggle.
+- [x] Add routing and layout to `webui/src/App.tsx` using `react-router-dom` with pages: Home, Run, Env, Logs.
+- [x] Create API client:
+  - [x] `src/api/client.ts` (axios base with `/api`).
+  - [x] `src/api/env.ts` (`getEnv`, `saveEnv`).
+  - [x] `src/api/run.ts` (`startRun`, `getRunStatus`).
+  - [x] `src/api/logs.ts` (`listLogs`, `getDownloadUrl`).
+- [x] Build components:
+  - [x] `src/components/ThemeToggle.tsx` (persist theme to localStorage; add High Contrast toggle).
+  - [x] `src/components/LogStream.tsx` (SSE to `/api/logs/stream`, with pause/resume, filter, copy, download, auto-scroll toggle).
+  - [x] `src/components/EnvTable.tsx` (editable env vars table).
+- [x] Implement pages:
+  - [x] `src/pages/Home.tsx` (landing with quick actions).
+  - [x] `src/pages/Run.tsx` (prompt/reference/mode form, start run, status, live logs panel).
+  - [x] `src/pages/Env.tsx` (editable env table with save/refresh).
+  - [x] `src/pages/Logs.tsx` (dedicated log view with search/download).
+- [x] Update `README.md` with backend (`uvicorn backend.main:app --reload --port 8001`) and frontend (`npm run dev`) dev instructions.
 - [ ] Add `Dockerfile.webui` and decide serving strategy for `webui/dist` (FastAPI `StaticFiles` vs separate service).
 
 ## Clean-up & Decommission
